@@ -1,0 +1,106 @@
+name: Probe YouTube Ingestion
+
+on:
+  workflow_dispatch:
+
+jobs:
+  youtube-probe:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install yt-dlp
+        run: |
+          python -m pip install -U "yt-dlp[default]"
+
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Probe YouTube metadata and chapters
+        run: |
+          yt-dlp \
+            --js-runtimes deno \
+            --remote-components ejs:github \
+            --dump-single-json \
+            --skip-download \
+            "https://www.youtube.com/watch?v=qWYTenEUdFc" \
+            > youtube_metadata.json
+
+      - name: Validate metadata and chapters
+        run: |
+          python - <<'PY'
+          import json
+
+          with open("youtube_metadata.json", encoding="utf-8") as f:
+              data = json.load(f)
+
+          print("=" * 80)
+          print("YOUTUBE METADATA PROBE")
+          print("=" * 80)
+
+          print("TITLE:", data.get("title"))
+          print("VIDEO ID:", data.get("id"))
+          print("DURATION:", data.get("duration"))
+
+          chapters = data.get("chapters") or []
+
+          print("CHAPTER COUNT:", len(chapters))
+          print()
+
+          for chapter in chapters:
+              print(
+                  f"{chapter['start_time']:.1f}s -> "
+                  f"{chapter['end_time']:.1f}s | "
+                  f"{chapter['title']}"
+              )
+
+          if not chapters:
+              raise SystemExit(
+                  "FAIL — YouTube chapters unavailable"
+              )
+
+          print()
+          print("CHAPTER PROBE: PASS")
+          PY
+
+      - name: Download English automatic transcript
+        run: |
+          mkdir -p youtube_probe
+
+          yt-dlp \
+            --js-runtimes deno \
+            --remote-components ejs:github \
+            --skip-download \
+            --write-auto-subs \
+            --sub-langs "en" \
+            --sub-format "vtt" \
+            -o "youtube_probe/%(id)s.%(ext)s" \
+            "https://www.youtube.com/watch?v=qWYTenEUdFc"
+
+      - name: Validate transcript artifact
+        run: |
+          echo "Transcript artifacts:"
+          find youtube_probe -type f -maxdepth 2 -print
+
+          COUNT=$(find youtube_probe -type f | wc -l)
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "FAIL — no transcript artifact"
+            exit 1
+          fi
+
+          echo "TRANSCRIPT PROBE: PASS"
+
+      - name: Final ingestion gate
+        run: |
+          echo "========================================"
+          echo "YOUTUBE INGESTION PROBE"
+          echo "========================================"
+          echo "METADATA: PASS"
+          echo "CHAPTERS: PASS"
+          echo "TRANSCRIPT: PASS"
+          echo "INGESTION GATE: PASS"
