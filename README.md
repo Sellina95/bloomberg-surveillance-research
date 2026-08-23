@@ -201,6 +201,8 @@ Markdown / TV Report
         ↓
 Research Artifact Commit
 
+```
+
 Runtime Data Contract
 
 Each daily run is parameterized by:
