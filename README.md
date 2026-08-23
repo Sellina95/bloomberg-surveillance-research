@@ -110,7 +110,7 @@ Every acquired episode must preserve, where available:
 
 ### Acquisition Gate
 
-Status: **CLOSED — PASS**
+**Status: CLOSED — PASS**
 
 Validation window:
 
@@ -122,6 +122,7 @@ Validation window:
 - 15/15 transcripts contained segments, words, and word-level timestamps
 
 Canonical episode URLs are discovered from official Omny RSS metadata.
+
 Episode URLs must not be inferred from date-based slug conventions.
 
 Detailed evidence:
@@ -200,15 +201,16 @@ Daily Cross-Guest Research Report
 Markdown / TV Report
         ↓
 Research Artifact Commit
-
 ```
 
-Runtime Data Contract
+---
+
+## Runtime Data Contract
 
 Each daily run is parameterized by:
 
-SURVEILLANCE_DATE
-VIDEO_ID
+- `SURVEILLANCE_DATE`
+- `VIDEO_ID`
 
 The production pipeline must acquire and process data for the actual episode
 selected during the current run.
@@ -219,29 +221,34 @@ development files.
 For example, the production daily pipeline must not depend on fixed artifacts
 such as:
 
+```text
 data/raw/youtube_probe/serpapi_2026-08-14.json
 data/raw/youtube_probe/supadata_2026-08-14.json
+```
 
 Instead:
 
-YouTube transcript data is acquired for the current VIDEO_ID.
-Chapter metadata is queried for the current VIDEO_ID.
-Raw inputs are stored under the current processing date.
-Canonical outputs are generated from current-run inputs.
-Historical probe artifacts remain research/development artifacts and are not
-production runtime dependencies.
-Episode Discovery
+- YouTube transcript data is acquired for the current `VIDEO_ID`.
+- Chapter metadata is queried for the current `VIDEO_ID`.
+- Raw inputs are stored under the current processing date.
+- Canonical outputs are generated from current-run inputs.
+- Historical probe artifacts remain research/development artifacts and are not
+  production runtime dependencies.
+
+---
+
+## Episode Discovery
 
 The discovery layer searches for Bloomberg Surveillance TV episodes and builds
 a structured video inventory.
 
 Current discovery uses:
 
-SerpApi YouTube search
-Bloomberg Surveillance title filtering
-video ID deduplication
-publication date extraction
-episode metadata preservation
+- SerpApi YouTube search;
+- Bloomberg Surveillance title filtering;
+- video ID deduplication;
+- publication date extraction;
+- episode metadata preservation.
 
 The discovery layer is responsible for finding candidate episodes.
 
@@ -251,29 +258,36 @@ inventory and selecting valid episodes for processing.
 The system must not assume that a date-based URL slug or manually constructed
 YouTube URL is valid.
 
-Raw Transcript Ingestion
+---
+
+## Raw Transcript Ingestion
 
 The ingestion layer retrieves the transcript for the selected episode.
 
 Runtime inputs:
 
-SURVEILLANCE_DATE
-VIDEO_ID
-SUPADATA_API_KEY
+- `SURVEILLANCE_DATE`
+- `VIDEO_ID`
+- `SUPADATA_API_KEY`
 
 The raw transcript is stored separately from processed research outputs.
 
 Example runtime artifact:
 
+```text
 data/raw/youtube/<DATE>/transcript.json
+```
 
 The ingestion layer must preserve the source response without applying research
 interpretation.
 
-Canonicalization
+---
+
+## Canonicalization
 
 The canonicalization layer combines:
 
+```text
 Current VIDEO_ID
         +
 Current SerpApi chapter metadata
@@ -281,64 +295,73 @@ Current SerpApi chapter metadata
 Current Supadata transcript
         ↓
 youtube_canonical_v0_2.json
+```
 
-Chapter metadata is queried for the current VIDEO_ID.
+Chapter metadata is queried for the current `VIDEO_ID`.
 
 The canonicalization layer must not load historical fixed-date probe files.
 
 The canonical dataset preserves:
 
-chapter metadata;
-chapter start times;
-transcript segments;
-segment timestamps;
-transcript text;
-chapter assignments;
-source attribution;
-transcript coverage;
-unassigned segment count.
+- chapter metadata;
+- chapter start times;
+- transcript segments;
+- segment timestamps;
+- transcript text;
+- chapter assignments;
+- source attribution;
+- transcript coverage;
+- unassigned segment count.
 
 A canonical build must fail or enter review when required source inputs are
 missing.
 
-Guest Unit Construction
+---
+
+## Guest Unit Construction
 
 Guest interviews are represented as structured units derived from the canonical
 episode structure.
 
 Each guest unit preserves:
 
-unit ID;
-chapter;
-guest;
-title;
-start timestamp;
-end timestamp;
-transcript segments belonging to the unit.
+- unit ID;
+- chapter;
+- guest;
+- title;
+- start timestamp;
+- end timestamp;
+- transcript segments belonging to the unit.
 
 Guest boundaries are treated as research data and should remain auditable
 against the canonical transcript.
 
-Guest Transcript Extraction
+---
 
-Guest-level transcript artifacts are created from canonical transcript segments.
+## Guest Transcript Extraction
+
+Guest-level transcript artifacts are created from canonical transcript
+segments.
 
 The extraction layer does not generate new transcript content.
 
 It selects the transcript segments belonging to each identified guest unit and
 preserves them as the evidence base for downstream research generation.
 
-Evidence-Grounded Research Generation
+---
 
-Guest-level research summaries are generated from the supplied guest transcript.
+## Evidence-Grounded Research Generation
+
+Guest-level research summaries are generated from the supplied guest
+transcript.
 
 The research generation layer uses Gemini for structured research extraction.
 
 The intended output separates:
 
-What the guest said.
-Why the view matters.
-Market implication.
+1. What the guest said.
+2. Why the view matters.
+3. Market implication.
 
 Maximum key views are constrained by the research schema.
 
@@ -352,7 +375,9 @@ Research generation failures are explicitly recorded.
 Rate-limit handling and retry logic are implemented so that temporary model API
 limits do not automatically convert into silent missing research units.
 
-Research Dataset
+---
+
+## Research Dataset
 
 Validated guest research summaries are converted into a structured research
 dataset.
@@ -363,53 +388,61 @@ research and the daily cross-guest synthesis.
 A research unit that fails completeness or evidence validation must not be
 silently treated as a valid completed unit.
 
-Daily Research Report
+---
+
+## Daily Research Report
 
 The daily report synthesizes validated guest research units into a cross-guest
 market research brief.
 
 The report is intended to help identify:
 
-recurring macro themes;
-areas of disagreement;
-cross-asset implications;
-institutional perspectives;
-notable market risks;
-changes in narrative emphasis.
+- recurring macro themes;
+- areas of disagreement;
+- cross-asset implications;
+- institutional perspectives;
+- notable market risks;
+- changes in narrative emphasis.
 
 The report remains a research artifact and is not a trading instruction.
 
-TV Report
+---
+
+## TV Report
 
 A human-readable TV-style HTML report is generated from the structured daily
 research report.
 
 Example artifact:
 
+```text
 data/processed/surveillance/<DATE>/
     daily_research_report_tv_v0_1.html
+```
 
 The TV report is a presentation layer over the validated research dataset and
 does not constitute an independent source of truth.
 
-Validation Gates
+---
+
+# Validation Gates
 
 The daily pipeline is expected to fail rather than silently continue when
 required research inputs are unavailable.
 
 Current validation layers include:
 
-required secret availability;
-episode discovery;
-inventory validity;
-transcript availability;
-canonical chapter/transcript coverage;
-guest-unit construction;
-guest transcript extraction;
-evidence-grounded research generation;
-research dataset completeness;
-daily report generation;
-final artifact verification.
+- required secret availability;
+- episode discovery;
+- inventory validity;
+- transcript availability;
+- canonical chapter/transcript coverage;
+- guest-unit construction;
+- guest transcript extraction;
+- evidence-grounded research generation;
+- research dataset completeness;
+- daily report generation;
+- final artifact verification.
 
 A research summary that cannot be generated or grounded against the supplied
 transcript remains explicitly marked for review or failure.
@@ -417,35 +450,43 @@ transcript remains explicitly marked for review or failure.
 The pipeline should not report an operational PASS when required artifacts are
 missing.
 
-Clean Runner Requirement
+---
+
+# Clean Runner Requirement
 
 A successful local run is not sufficient evidence of production readiness.
 
 The automated workflow is designed to validate the complete pipeline on a clean
 GitHub Actions runner, where:
 
-local caches are unavailable;
-historical probe files are unavailable;
-developer-specific environment state is unavailable;
-only explicitly configured secrets are available;
-repository-tracked code and runtime-generated artifacts are available.
+- local caches are unavailable;
+- historical probe files are unavailable;
+- developer-specific environment state is unavailable;
+- only explicitly configured secrets are available;
+- repository-tracked code and runtime-generated artifacts are available.
 
 This design helps expose hidden dependencies before the research system is
 relied upon for recurring daily use.
 
-Secrets
+---
+
+# Secrets
 
 The automated workflow requires the following GitHub Actions secrets:
 
+```text
 SUPADATA_API_KEY
 GEMINI_API_KEY
 SERPAPI_API_KEY
+```
 
 Secrets are never stored in the repository.
 
 They are injected only into the workflow steps that require them.
 
-Research / Production Boundary
+---
+
+# Research / Production Boundary
 
 This repository is a research system.
 
@@ -457,13 +498,16 @@ The pipeline is intentionally separated from investment execution systems.
 Future integration into another research or investment project should preserve
 the same source, provenance, validation, and research/production boundaries.
 
-Reusable Research Automation Architecture
+---
+
+# Reusable Research Automation Architecture
 
 The automation is designed as a reusable research pattern rather than a
 Bloomberg-specific execution system.
 
 The general architecture is:
 
+```text
 Discovery
     ↓
 Point-in-Time Source Ingestion
@@ -477,16 +521,17 @@ Evidence-Grounded Research
 Structured Dataset
     ↓
 Report / Artifact
+```
 
 This architecture can later be adapted to other research sources, including:
 
-macroeconomic releases;
-company earnings;
-financial news;
-central-bank communications;
-industry research;
-institutional commentary;
-other structured or semi-structured research sources.
+- macroeconomic releases;
+- company earnings;
+- financial news;
+- central-bank communications;
+- industry research;
+- institutional commentary;
+- other structured or semi-structured research sources.
 
 The source-specific acquisition and parsing layers may change, but the
 validation, provenance, evidence, research, and artifact layers should remain
@@ -495,36 +540,43 @@ conceptually separated.
 This allows the research automation architecture to be reused without coupling
 external information directly to production investment logic.
 
-Operational Governance
+---
+
+# Operational Governance
 
 The repository distinguishes between:
 
-Research / Development
+## Research / Development
 
 Used for:
 
-probes;
-source comparison;
-boundary experiments;
-parser development;
-schema experiments;
-validation tests;
-research methodology development.
-Automated Daily Runtime
+- probes;
+- source comparison;
+- boundary experiments;
+- parser development;
+- schema experiments;
+- validation tests;
+- research methodology development.
+
+## Automated Daily Runtime
 
 Used for:
 
-current episode discovery;
-current-source ingestion;
-canonicalization;
-validated research extraction;
-daily report generation;
-recurring artifact production.
+- current episode discovery;
+- current-source ingestion;
+- canonicalization;
+- validated research extraction;
+- daily report generation;
+- recurring artifact production.
 
 Development artifacts must not become hidden dependencies of the automated
 runtime.
 
-Repository Structure
+---
+
+# Repository Structure
+
+```text
 .
 ├── .github/
 │   └── workflows/
@@ -557,20 +609,24 @@ Repository Structure
     ├── build_youtube_canonical_v0_2.py
     ├── build_guest_units_v0_3.py
     └── build_guest_transcripts_v0_1.py
-Status
+```
 
-Research prototype with automated daily pipeline.
+---
+
+# Status
+
+**Research prototype with automated daily pipeline.**
 
 Current automated workflow:
 
-GitHub Actions: ACTIVE
-Scheduled execution: Weekdays 07:30 KST
-Manual execution: SUPPORTED
-Clean-runner execution: VALIDATED
-Runtime legacy probe dependency: REMOVED
-Evidence-grounded guest research: ACTIVE
-Daily research report: ACTIVE
-TV report: ACTIVE
+- **GitHub Actions:** ACTIVE
+- **Scheduled execution:** Weekdays 07:30 KST
+- **Manual execution:** SUPPORTED
+- **Clean-runner execution:** VALIDATED
+- **Runtime legacy probe dependency:** REMOVED
+- **Evidence-grounded guest research:** ACTIVE
+- **Daily research report:** ACTIVE
+- **TV report:** ACTIVE
 
 The system remains a research workflow and is not connected directly to
 production investment execution.
