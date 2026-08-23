@@ -1,0 +1,245 @@
+{
+  "date": "2026-08-20",
+  "method": "chapter_attribution_v0_3",
+  "total_chapters": 13,
+  "guest_chapter_count": 12,
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Treasury Bond Rescue Tests Fed Credibility",
+      "start_seconds": 0,
+      "source": "serpapi",
+      "is_guest": false
+    },
+    {
+      "chapter": 2,
+      "title": "Fed's Warsh Needs to Launch Operation Twist — Peter Tchir, Academy Securities",
+      "start_seconds": 325,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 3,
+      "title": "Trump's Iran Sanctions Risk a Clash With China — Peter Tchir, Academy Securities",
+      "start_seconds": 1162,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 4,
+      "title": "Treasury's Bond Fix Won't Solve Long-End Pressure — Collin Martin, Schwab Center for Financial Research",
+      "start_seconds": 1924,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 5,
+      "title": "Treasury Move Not a Fed Game Changer for September — Krishna Guha, Evercore ISI",
+      "start_seconds": 2436,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 6,
+      "title": "US Treasuries Carry More Credit Risk Than Before — Jack Manley, JPMorgan Asset Management",
+      "start_seconds": 3248,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 7,
+      "title": "Treasury Intervention Risks a Fed Doom Loop — Daleep Singh, PGIM",
+      "start_seconds": 3899,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 8,
+      "title": "Housing Market May Have Run Out of Buyers — Jeff Jacobson, 22V Research",
+      "start_seconds": 4767,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 9,
+      "title": "Fed May Need Three Hikes to Regain Credibility — Guneet Dhingra, BNP Paribas",
+      "start_seconds": 5329,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 10,
+      "title": "5% Yields Offer an Alternative to Equities — Mona Mahajan, Edward Jones",
+      "start_seconds": 6075,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 11,
+      "title": "Walmart Posts Slowest US Sales Growth in Six Years — David Bellinger, Mizuho",
+      "start_seconds": 6819,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 12,
+      "title": "Fed Is Focused on Its Job, Not Treasury — Mary Daly, San Francisco Fed",
+      "start_seconds": 7359,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 13,
+      "title": "Why Workers Can't Outrun Inflation — Nela Richardson, ADP",
+      "start_seconds": 8403,
+      "source": "serpapi",
+      "is_guest": true
+    }
+  ],
+  "guest_units": [
+    {
+      "unit_id": 1,
+      "chapter": 2,
+      "title": "Fed's Warsh Needs to Launch Operation Twist — Peter Tchir, Academy Securities",
+      "guest": "Peter Tchir, Academy Securities",
+      "start_seconds": 325,
+      "end_seconds": 1162,
+      "duration_seconds": 837,
+      "segment_count": 224,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 2,
+      "chapter": 3,
+      "title": "Trump's Iran Sanctions Risk a Clash With China — Peter Tchir, Academy Securities",
+      "guest": "Peter Tchir, Academy Securities",
+      "start_seconds": 1162,
+      "end_seconds": 1924,
+      "duration_seconds": 762,
+      "segment_count": 202,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 3,
+      "chapter": 4,
+      "title": "Treasury's Bond Fix Won't Solve Long-End Pressure — Collin Martin, Schwab Center for Financial Research",
+      "guest": "Collin Martin, Schwab Center for Financial Research",
+      "start_seconds": 1924,
+      "end_seconds": 2436,
+      "duration_seconds": 512,
+      "segment_count": 140,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 4,
+      "chapter": 5,
+      "title": "Treasury Move Not a Fed Game Changer for September — Krishna Guha, Evercore ISI",
+      "guest": "Krishna Guha, Evercore ISI",
+      "start_seconds": 2436,
+      "end_seconds": 3248,
+      "duration_seconds": 812,
+      "segment_count": 218,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 5,
+      "chapter": 6,
+      "title": "US Treasuries Carry More Credit Risk Than Before — Jack Manley, JPMorgan Asset Management",
+      "guest": "Jack Manley, JPMorgan Asset Management",
+      "start_seconds": 3248,
+      "end_seconds": 3899,
+      "duration_seconds": 651,
+      "segment_count": 177,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 6,
+      "chapter": 7,
+      "title": "Treasury Intervention Risks a Fed Doom Loop — Daleep Singh, PGIM",
+      "guest": "Daleep Singh, PGIM",
+      "start_seconds": 3899,
+      "end_seconds": 4767,
+      "duration_seconds": 868,
+      "segment_count": 236,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 7,
+      "chapter": 8,
+      "title": "Housing Market May Have Run Out of Buyers — Jeff Jacobson, 22V Research",
+      "guest": "Jeff Jacobson, 22V Research",
+      "start_seconds": 4767,
+      "end_seconds": 5329,
+      "duration_seconds": 562,
+      "segment_count": 114,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 8,
+      "chapter": 9,
+      "title": "Fed May Need Three Hikes to Regain Credibility — Guneet Dhingra, BNP Paribas",
+      "guest": "Guneet Dhingra, BNP Paribas",
+      "start_seconds": 5329,
+      "end_seconds": 6075,
+      "duration_seconds": 746,
+      "segment_count": 203,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 9,
+      "chapter": 10,
+      "title": "5% Yields Offer an Alternative to Equities — Mona Mahajan, Edward Jones",
+      "guest": "Mona Mahajan, Edward Jones",
+      "start_seconds": 6075,
+      "end_seconds": 6819,
+      "duration_seconds": 744,
+      "segment_count": 234,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 10,
+      "chapter": 11,
+      "title": "Walmart Posts Slowest US Sales Growth in Six Years — David Bellinger, Mizuho",
+      "guest": "David Bellinger, Mizuho",
+      "start_seconds": 6819,
+      "end_seconds": 7359,
+      "duration_seconds": 540,
+      "segment_count": 141,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 11,
+      "chapter": 12,
+      "title": "Fed Is Focused on Its Job, Not Treasury — Mary Daly, San Francisco Fed",
+      "guest": "Mary Daly, San Francisco Fed",
+      "start_seconds": 7359,
+      "end_seconds": 8403,
+      "duration_seconds": 1044,
+      "segment_count": 297,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 12,
+      "chapter": 13,
+      "title": "Why Workers Can't Outrun Inflation — Nela Richardson, ADP",
+      "guest": "Nela Richardson, ADP",
+      "start_seconds": 8403,
+      "end_seconds": 8660.351,
+      "duration_seconds": 257.35100000000057,
+      "segment_count": 72,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    }
+  ]
+}

@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+
+<title>
+Bloomberg Surveillance —
+2026-08-20
+</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at top,
+            #20252b,
+            #0c0e10 65%
+        );
+    color: #e9edf0;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+.page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* TV */
+
+.tv {
+    background: #17191c;
+    border-radius: 34px;
+    padding: 24px 24px 34px;
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.tv-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 12px 18px;
+}
+
+.brand {
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+.live {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #ff6b6b;
+}
+
+.screen {
+    background:
+        linear-gradient(
+            135deg,
+            #111b1d,
+            #071011
+        );
+    border-radius: 18px;
+    padding: 34px;
+    min-height: 260px;
+    border: 1px solid #30383b;
+    box-shadow:
+        inset 0 0 60px rgba(0,0,0,.55);
+}
+
+.screen-label {
+    color: #7ee2c5;
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.screen h1 {
+    font-size: 42px;
+    margin: 0 0 8px;
+    letter-spacing: -1px;
+}
+
+.date {
+    color: #89949a;
+    font-size: 14px;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.knob {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #737b80;
+}
+
+.status {
+    margin-left: auto;
+    color: #7ee2c5;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* Content */
+
+.content {
+    margin-top: 24px;
+}
+
+.card {
+    background: #181b1f;
+    border: 1px solid #2a2f34;
+    border-radius: 18px;
+    padding: 26px;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.executive {
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+ul {
+    padding-left: 22px;
+}
+
+li {
+    margin-bottom: 10px;
+    line-height: 1.55;
+}
+
+.macro-card,
+.market-card {
+    background: #14171a;
+    border: 1px solid #282d31;
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 14px;
+}
+
+.macro-card h3 {
+    margin-top: 0;
+}
+
+.summary {
+    color: #c6cdd1;
+    line-height: 1.65;
+}
+
+h4 {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #7ee2c5;
+    margin-top: 22px;
+}
+
+.guest-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 16px 0;
+}
+
+.guest {
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #242a2e;
+    color: #aeb8bd;
+    font-size: 11px;
+}
+
+.evidence {
+    border-left: 2px solid #5e7771;
+    padding: 9px 12px;
+    margin-top: 8px;
+    background: #111416;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.timestamp {
+    color: #7ee2c5;
+    font-family: monospace;
+    margin-right: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(320px, 1fr)
+        );
+    gap: 18px;
+}
+
+.insight {
+    padding: 16px;
+    border-left: 3px solid #7ee2c5;
+    background: #121518;
+    margin-bottom: 10px;
+    line-height: 1.55;
+}
+
+.conflict {
+    padding: 18px;
+    background: #171416;
+    border-left: 3px solid #d99a68;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.risk {
+    padding: 18px;
+    background: #191618;
+    border-left: 3px solid #cf7070;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.risk-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.small {
+    color: #8e999f;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.action {
+    display: flex;
+    gap: 16px;
+    padding: 18px;
+    background: #101719;
+    border: 1px solid #29443e;
+    border-radius: 14px;
+    margin-bottom: 12px;
+}
+
+.action-number {
+    min-width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #7ee2c5;
+    color: #10201c;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+}
+
+.action p {
+    color: #aeb8bd;
+    line-height: 1.5;
+}
+
+.monitor {
+    color: #7ee2c5;
+    font-size: 12px;
+    letter-spacing: .4px;
+}
+
+.footer {
+    text-align: center;
+    color: #697278;
+    font-size: 11px;
+    padding: 30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="tv">
+
+    <div class="tv-top">
+        <div class="brand">
+            BLOOMBERG SURVEILLANCE
+        </div>
+
+        <div class="live">
+            ● RESEARCH
+        </div>
+    </div>
+
+    <div class="screen">
+
+        <div class="screen-label">
+            DAILY MARKET BRIEF
+        </div>
+
+        <h1>
+            Global Market Research
+        </h1>
+
+        <div class="date">
+            2026-08-20
+        </div>
+
+        <div class="controls">
+            <span class="knob"></span>
+            <span class="knob"></span>
+            <span class="knob"></span>
+
+            <span class="status">
+                13 GUESTS · EVIDENCE GROUNDED
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="content">
+
+<section class="card">
+
+    <div class="section-title">
+        EXECUTIVE SUMMARY
+    </div>
+
+    <div class="executive">
+        <ul>
+            <li>Surging long-term bond yields and massive fiscal deficits are driving a wedge between traditional monetary policy and sovereign debt management, with several guests warning of potential yield curve control, Operation Twist, or renewed Fed tightening risks.</li><li>Housing and consumer sectors show mounting stress as high mortgage rates and persistent inflation erode purchasing power, reflected in Walmart&#x27;s soft U.S. sales growth and heightened homebuilder concessions.</li><li>Deep disagreement persists among guests regarding Federal Reserve credibility and the necessity of rate hikes, contrasting Mary Daly&#x27;s data-dependent, shock-focused stance with forecasts from BNP Paribas and PGIM predicting potential rate hikes.</li>
+        </ul>
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MACRO THEMES
+    </div>
+
+    
+        <div class="macro-card">
+            <h3>Fiscal Dominance &amp; Treasury Supply Pressures</h3>
+
+            <p>
+                Exploding U.S. budget deficits, heavy debt issuance, and structural investments like the AI compute buildout are pushing long-term yields higher, rendering generic U.S. Treasuries less attractive relative to corporate debt.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Peter Tchir, Academy Securities</span> <span class="guest">Collin Martin, Schwab Center for Financial Research</span> <span class="guest">Krishna Guha, Evercore ISI</span> <span class="guest">Jack Manley, JPMorgan Asset Management</span> <span class="guest">Daleep Singh, PGIM</span> <span class="guest">Mona Mahajan, Edward Jones</span>
+            </div>
+
+            
+                <div class="evidence">
+                    <span class="timestamp">
+                        12:31
+                    </span>
+                    <span>
+                        OUR DEFICITS HAVE GONE CRAZY
+AND THIS IS THE BIGGEST
+                    </span>
+                </div>
+                
+                <div class="evidence">
+                    <span class="timestamp">
+                        22:52
+                    </span>
+                    <span>
+                        I WOULD BE VERY UNDERWEIGHT
+TREASURY AND OVERWEIGHT
+                    </span>
+                </div>
+                
+                <div class="evidence">
+                    <span class="timestamp">
+                        43:40
+                    </span>
+                    <span>
+                        DRIVEN BY THE TITLE WAVE OF
+ISSUANCE ACROSS THE AI
+                    </span>
+                </div>
+                
+                <div class="evidence">
+                    <span class="timestamp">
+                        55:35
+                    </span>
+                    <span>
+                        WHEN YOU HEAR ABOUT A $40
+TRILLION DEBT NUMBER THAT CAME
+                    </span>
+                </div>
+                
+        </div>
+        
+        <div class="macro-card">
+            <h3>Consumer Strain &amp; Housing Affordability Pressures</h3>
+
+            <p>
+                Extreme housing affordability constraints and sticky inflation are weighing on lower-income consumers and retail earnings, leaving small drops in mortgage rates insufficient to revive buyer demand.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Jeff Jacobson, 22V Research</span> <span class="guest">David Bellinger, Mizuho</span> <span class="guest">Nela Richardson, ADP</span>
+            </div>
+
+            
+                <div class="evidence">
+                    <span class="timestamp">
+                        81:59
+                    </span>
+                    <span>
+                        YOU ARE POSSIBLY AT A POINT
+WHERE YOU JUST RUN OUT OF
+                    </span>
+                </div>
+                
+                <div class="evidence">
+                    <span class="timestamp">
+                        115:48
+                    </span>
+                    <span>
+                        &gt;&gt; THERE&#x27;S A LITTLE BIT OF
+LOW-END CONSUMER STRESS.
+                    </span>
+                </div>
+                
+                <div class="evidence">
+                    <span class="timestamp">
+                        141:57
+                    </span>
+                    <span>
+                        AND WHEN THOSE INFLATION TRACKS
+OR UNEXPECTED, WE ARE OFF THAT
+                    </span>
+                </div>
+                
+        </div>
+        
+
+</section>
+
+
+<div class="grid">
+
+
+    <section class="market-card">
+        <div class="section-title">
+            RATES / BONDS
+        </div>
+
+        <p class="summary">
+            Long-term yields remain elevated despite front-end easing, leading to debates over whether the Treasury&#x27;s buyback actions are sufficient or if the Fed will need to intervene via Operation Twist or rate hikes.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>The Federal Reserve may need to implement Operation Twist or target yields to control the long end of the curve (Peter Tchir).</li><li>Investors should remain patient, avoid adding duration, and favor short- to medium-term securities (Collin Martin).</li><li>Treasury buybacks lack sufficient firepower without the Federal Reserve, risking a front-end doom loop (Daleep Singh).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Exploding national deficits and generic Treasury status driving investors to high-grade corporate debt.</li><li>Uncoordinated fiscal interventions triggering a monetary policy clash.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            USD / FX
+        </div>
+
+        <p class="summary">
+            The U.S. dollar faces downward pressure as a release valve for fiscal and issuance imbalances if the Federal Reserve sits on its hands.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Markets may continue to sell the dollar and buy gold, digital assets, and non-dollar currencies if the Fed maintains its current stance (Daleep Singh).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Escalating geopolitical sanctions on Iran risking clashes with China and impacting global currency and energy flows.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            EQUITIES
+        </div>
+
+        <p class="summary">
+            Equities remain supported by secular AI tailwinds and solid earnings, though attractive 5% fixed-income yields offer a direct alternative for income-seeking investors.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Bonds are increasingly held as insurance, with investors pivoting to the S&amp;P 500 when looking for returns (Jack Manley).</li><li>As long as 10-year yields stay roughly between 4.5% and 5%, equities make sense backed by strong AI earnings (Mona Mahajan).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Seasonal headwinds in September and October combined with elevated yields testing equity valuation multiples.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            CREDIT
+        </div>
+
+        <p class="summary">
+            Corporate debt is favored over U.S. Treasuries due to superior corporate governance and better yield pickup.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Investors should be underweight U.S. Treasuries and overweight corporate bonds and foreign sovereigns (Peter Tchir).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Surging borrowing costs and incremental fuel expenses weighing on corporate margins.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            AI / TECHNOLOGY
+        </div>
+
+        <p class="summary">
+            The AI compute buildout represents a powerful structural inflation driver and global industrial phenomenon that cannot be halted by central bank rate hikes.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Hyperscalers&#x27; massive AI investments drive real term premiums higher across global sovereign and corporate issuance (Peter Tchir, Krishna Guha, Mary Daly).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Heavy issuance from AI infrastructure contributing to long-end yield pressures.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            COMMODITIES
+        </div>
+
+        <p class="summary">
+            Geopolitical risks and alternative asset demand are gaining momentum amid fiscal uncertainty.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Geopolitical conflicts in Iran and potential Gulf infrastructure threats act as persistent inflation elements (Peter Tchir).</li><li>Investors are rotating into gold and digital assets as a hedge against fiscal inaction (Daleep Singh).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Energy price shocks and incremental fuel costs impacting retail and industrial supply chains.</li>
+        </ul>
+    </section>
+    
+
+</div>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONSENSUS
+    </div>
+
+    
+        <div class="insight">
+            <strong>
+                Long-term Treasury yields are being driven higher by massive structural supply and issuance (including AI hyperscalers and sovereign debt) rather than traditional inflation compensation alone.
+            </strong>
+            <div class="small">
+                Guests:
+                Peter Tchir, Academy Securities, Krishna Guha, Evercore ISI, Mona Mahajan, Edward Jones, Mary Daly, San Francisco Fed
+            </div>
+        </div>
+        
+        <div class="insight">
+            <strong>
+                Recent Treasury interventions and buybacks are relatively small band-aids that cannot fully resolve the deep-rooted fiscal deficit and supply dynamics.
+            </strong>
+            <div class="small">
+                Guests:
+                Collin Martin, Schwab Center for Financial Research, Daleep Singh, PGIM, Mona Mahajan, Edward Jones
+            </div>
+        </div>
+        
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONFLICTS
+    </div>
+
+    
+        <div class="conflict">
+            <strong>
+                Federal Reserve Rate Path and Credibility
+            </strong>
+
+            <div>
+                <b>VIEW A:</b>
+                The Fed may need to execute three to four rate hikes to regain market credibility and combat loosening financial conditions (Guneet Dhingra, Daleep Singh).
+            </div>
+
+            <div>
+                <b>VIEW B:</b>
+                There is no urgent problem or evidence requiring preemptive rate hikes, and the Fed remains focused on data dependence and its price stability mandate (Krishna Guha, Mary Daly).
+            </div>
+
+            <div class="small">
+                Conflicting views on Fed policy direction create sharp divergence in fixed-income duration strategies and risk asset valuations.
+            </div>
+        </div>
+        
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        KEY RISKS
+    </div>
+
+    
+        <div class="risk">
+            <div class="risk-title">
+                Front-End Doom Loop / Uncoordinated Monetary Policy
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Continued fiscal expansion combined with loose financial conditions forcing the Fed into unexpected rate hikes.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                Severe volatility across the yield curve, pressure on risk assets, and downward pressure on the U.S. dollar.
+            </div>
+        </div>
+        
+        <div class="risk">
+            <div class="risk-title">
+                Housing and Consumer Credit Stress
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Mortgage rates remaining elevated near peak levels while consumer purchasing power lags cumulative inflation.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                Broad contraction in discretionary retail spending, margin compression for homebuilders, and slowing economic growth.
+            </div>
+        </div>
+        
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        RESEARCH TAKEAWAYS
+    </div>
+
+    <ul>
+        <li>U.S. Treasuries face structural headwinds as investors view them as generic relative to high-grade corporate debt and alternative stores of value like gold and digital assets.</li><li>The disconnect between headline disinflation and everyday worker purchasing power highlights ongoing vulnerability in lower-income consumer spending.</li><li>Federal Reserve officials view long-end yield movements as a reflection of global productivity and AI infrastructure trends rather than a direct signal for monetary easing or tightening.</li>
+    </ul>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        DAILY ACTION
+    </div>
+
+    <div class="small">
+        Analytical interpretation —
+        not a Bloomberg guest quote.
+    </div>
+
+    <br>
+
+    
+        <div class="action">
+            <div class="action-number">
+                1
+            </div>
+
+            <div>
+                <strong>
+                    Maintain an underweight posture on long-duration U.S. Treasuries; favor short- to medium-term fixed income or high-grade corporate debt.
+                </strong>
+
+                <p>
+                    Persistent fiscal deficits, heavy sovereign/AI issuance, and structural supply pressures continue to drive term premia higher at the long end of the curve.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    Treasury auction demand metrics, 10-year and 30-year yield levels relative to the 5% threshold, and upcoming Treasury buyback announcements.
+                </div>
+            </div>
+        </div>
+        
+        <div class="action">
+            <div class="action-number">
+                2
+            </div>
+
+            <div>
+                <strong>
+                    Exercise selective caution in consumer discretionary and housing-exposed equities.
+                </strong>
+
+                <p>
+                    Severe affordability constraints, rising mortgage rates, and signals of low-end consumer stress (e.g., Walmart earnings and builder incentives) threaten margin expansion.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    Homebuilder sentiment indices, upcoming retail earnings reports, and labor wage growth data relative to inflation.
+                </div>
+            </div>
+        </div>
+        
+
+</section>
+
+</div>
+
+
+<div class="footer">
+    Bloomberg Surveillance Research Engine · 2026-08-20
+</div>
+
+</div>
+
+</body>
+
+</html>
