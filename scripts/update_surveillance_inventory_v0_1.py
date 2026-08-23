@@ -23,9 +23,62 @@ DISCOVER = (
 
 def main() -> None:
 
+    # First-run bootstrap:
+    # GitHub Actions runners do not retain local generated
+    # inventory artifacts. If the canonical inventory does
+    # not exist yet, initialize it from the fresh discovery
+    # artifact produced in this run.
+
+    discovery_path = (
+        ROOT
+        / "data/processed/surveillance/"
+        / "surveillance_video_inventory_v0_3.json"
+    )
+
     if not INVENTORY.exists():
-        raise SystemExit(
-            f"FAIL — inventory not found: {INVENTORY}"
+
+        if not discovery_path.exists():
+            raise SystemExit(
+                "FAIL — inventory not found and "
+                "discovery artifact not found"
+            )
+
+        print(
+            "INVENTORY BOOTSTRAP — "
+            "initializing from discovery"
+        )
+
+        discovery = json.loads(
+            discovery_path.read_text(
+                encoding="utf-8"
+            )
+        )
+
+        discovered_videos = discovery.get(
+            "videos",
+            []
+        )
+
+        if not discovered_videos:
+            raise SystemExit(
+                "FAIL — discovery returned no videos"
+            )
+
+        inventory = {
+            "start_date": "",
+            "end_date": "",
+            "selected_count": 0,
+            "excluded_count": 0,
+            "unparseable_count": 0,
+            "videos": [],
+        }
+
+    else:
+
+        inventory = json.loads(
+            INVENTORY.read_text(
+                encoding="utf-8"
+            )
         )
 
     if not DISCOVER.exists():
@@ -84,12 +137,6 @@ def main() -> None:
     # ------------------------------------------------------------
     # 3. Load existing inventory
     # ------------------------------------------------------------
-
-    inventory = json.loads(
-        INVENTORY.read_text(
-            encoding="utf-8"
-        )
-    )
 
     existing_videos = inventory.get(
         "videos",
