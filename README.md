@@ -9,6 +9,9 @@ This project is designed to reduce the time required to review long-form
 institutional market commentary while preserving the context needed for
 independent research.
 
+The system is intentionally designed as a research and evidence pipeline,
+not as a trading or execution system.
+
 Initial pipeline:
 
 Date
@@ -17,6 +20,8 @@ Date
 → Transcript Processing
 → Institutional Research Extraction
 → Daily Research Brief
+
+---
 
 ## Research Principles
 
@@ -27,10 +32,15 @@ Date
 - Do not treat commentary frequency as a trading signal.
 - Do not connect outputs directly to production investment systems.
 - External facts and transcript-derived statements must remain distinguishable.
+- Research outputs must remain auditable against the underlying source.
+- Automated failures must be explicit rather than silently producing incomplete
+  research artifacts.
+
+---
 
 ## v0.1 Goal
 
-Given a Bloomberg Surveillance date:
+For a Bloomberg Surveillance broadcast date:
 
 1. Discover the relevant episode.
 2. Acquire an available transcript.
@@ -38,9 +48,8 @@ Given a Bloomberg Surveillance date:
 4. Produce a structured daily research brief.
 5. Maintain enough provenance to audit the summary against the source.
 
-## Status
-
-Research prototype.
+The automated workflow may discover the latest valid broadcast rather than
+requiring a manually supplied date.
 
 ---
 
@@ -119,9 +128,447 @@ Detailed evidence:
 
 `docs/validation/acquisition_gate_v0.1.md`
 
-### Research Boundary
+---
+
+## Research Boundary
 
 Bloomberg Surveillance commentary is research material, not a trading signal.
 
 Guest views, reported facts, transcript-derived interpretations, and external
-context must remain distinguishishable in downstream outputs.
+context must remain distinguishable in downstream outputs.
+
+Research summaries must remain grounded in the supplied transcript.
+
+For each key view:
+
+- the claim must be supported by one or more transcript segments;
+- the supporting segment IDs must originate from the supplied transcript;
+- evidence text must be preserved from the source;
+- unsupported claims must not be presented as transcript-derived facts;
+- analytical market implications must remain distinguishable from what the guest
+  explicitly said.
+
+---
+
+# Automated Daily Research Pipeline
+
+The research pipeline can run automatically on a clean GitHub Actions runner
+without relying on local development artifacts.
+
+## Schedule
+
+The production research workflow runs on weekdays at:
+
+- **07:30 KST**
+- **22:30 UTC on the previous day**
+
+The workflow also supports manual execution through GitHub Actions
+(`workflow_dispatch`).
+
+GitHub Actions scheduling may experience minor execution delay around the
+scheduled time.
+
+---
+
+## Runtime Flow
+
+```text
+Scheduled GitHub Actions
+        ↓
+Episode Discovery
+        ↓
+Surveillance Inventory Update
+        ↓
+Latest Valid Episode Selection
+        ↓
+Raw Transcript Ingestion
+        ↓
+Current-Video Chapter Metadata
+        ↓
+Canonical Transcript Dataset
+        ↓
+Guest Unit Construction
+        ↓
+Guest Transcript Extraction
+        ↓
+Evidence-Grounded Research Summaries
+        ↓
+Structured Research Dataset
+        ↓
+Daily Cross-Guest Research Report
+        ↓
+Markdown / TV Report
+        ↓
+Research Artifact Commit
+
+Runtime Data Contract
+
+Each daily run is parameterized by:
+
+SURVEILLANCE_DATE
+VIDEO_ID
+
+The production pipeline must acquire and process data for the actual episode
+selected during the current run.
+
+Source acquisition must not depend on historical probe artifacts or local-only
+development files.
+
+For example, the production daily pipeline must not depend on fixed artifacts
+such as:
+
+data/raw/youtube_probe/serpapi_2026-08-14.json
+data/raw/youtube_probe/supadata_2026-08-14.json
+
+Instead:
+
+YouTube transcript data is acquired for the current VIDEO_ID.
+Chapter metadata is queried for the current VIDEO_ID.
+Raw inputs are stored under the current processing date.
+Canonical outputs are generated from current-run inputs.
+Historical probe artifacts remain research/development artifacts and are not
+production runtime dependencies.
+Episode Discovery
+
+The discovery layer searches for Bloomberg Surveillance TV episodes and builds
+a structured video inventory.
+
+Current discovery uses:
+
+SerpApi YouTube search
+Bloomberg Surveillance title filtering
+video ID deduplication
+publication date extraction
+episode metadata preservation
+
+The discovery layer is responsible for finding candidate episodes.
+
+The inventory layer is responsible for maintaining the reusable episode
+inventory and selecting valid episodes for processing.
+
+The system must not assume that a date-based URL slug or manually constructed
+YouTube URL is valid.
+
+Raw Transcript Ingestion
+
+The ingestion layer retrieves the transcript for the selected episode.
+
+Runtime inputs:
+
+SURVEILLANCE_DATE
+VIDEO_ID
+SUPADATA_API_KEY
+
+The raw transcript is stored separately from processed research outputs.
+
+Example runtime artifact:
+
+data/raw/youtube/<DATE>/transcript.json
+
+The ingestion layer must preserve the source response without applying research
+interpretation.
+
+Canonicalization
+
+The canonicalization layer combines:
+
+Current VIDEO_ID
+        +
+Current SerpApi chapter metadata
+        +
+Current Supadata transcript
+        ↓
+youtube_canonical_v0_2.json
+
+Chapter metadata is queried for the current VIDEO_ID.
+
+The canonicalization layer must not load historical fixed-date probe files.
+
+The canonical dataset preserves:
+
+chapter metadata;
+chapter start times;
+transcript segments;
+segment timestamps;
+transcript text;
+chapter assignments;
+source attribution;
+transcript coverage;
+unassigned segment count.
+
+A canonical build must fail or enter review when required source inputs are
+missing.
+
+Guest Unit Construction
+
+Guest interviews are represented as structured units derived from the canonical
+episode structure.
+
+Each guest unit preserves:
+
+unit ID;
+chapter;
+guest;
+title;
+start timestamp;
+end timestamp;
+transcript segments belonging to the unit.
+
+Guest boundaries are treated as research data and should remain auditable
+against the canonical transcript.
+
+Guest Transcript Extraction
+
+Guest-level transcript artifacts are created from canonical transcript segments.
+
+The extraction layer does not generate new transcript content.
+
+It selects the transcript segments belonging to each identified guest unit and
+preserves them as the evidence base for downstream research generation.
+
+Evidence-Grounded Research Generation
+
+Guest-level research summaries are generated from the supplied guest transcript.
+
+The research generation layer uses Gemini for structured research extraction.
+
+The intended output separates:
+
+What the guest said.
+Why the view matters.
+Market implication.
+
+Maximum key views are constrained by the research schema.
+
+Every key view must contain supporting transcript segment IDs.
+
+Evidence is subsequently materialized from the canonical transcript rather than
+being trusted solely from model-generated text.
+
+Research generation failures are explicitly recorded.
+
+Rate-limit handling and retry logic are implemented so that temporary model API
+limits do not automatically convert into silent missing research units.
+
+Research Dataset
+
+Validated guest research summaries are converted into a structured research
+dataset.
+
+The dataset provides a stable intermediate layer between individual guest
+research and the daily cross-guest synthesis.
+
+A research unit that fails completeness or evidence validation must not be
+silently treated as a valid completed unit.
+
+Daily Research Report
+
+The daily report synthesizes validated guest research units into a cross-guest
+market research brief.
+
+The report is intended to help identify:
+
+recurring macro themes;
+areas of disagreement;
+cross-asset implications;
+institutional perspectives;
+notable market risks;
+changes in narrative emphasis.
+
+The report remains a research artifact and is not a trading instruction.
+
+TV Report
+
+A human-readable TV-style HTML report is generated from the structured daily
+research report.
+
+Example artifact:
+
+data/processed/surveillance/<DATE>/
+    daily_research_report_tv_v0_1.html
+
+The TV report is a presentation layer over the validated research dataset and
+does not constitute an independent source of truth.
+
+Validation Gates
+
+The daily pipeline is expected to fail rather than silently continue when
+required research inputs are unavailable.
+
+Current validation layers include:
+
+required secret availability;
+episode discovery;
+inventory validity;
+transcript availability;
+canonical chapter/transcript coverage;
+guest-unit construction;
+guest transcript extraction;
+evidence-grounded research generation;
+research dataset completeness;
+daily report generation;
+final artifact verification.
+
+A research summary that cannot be generated or grounded against the supplied
+transcript remains explicitly marked for review or failure.
+
+The pipeline should not report an operational PASS when required artifacts are
+missing.
+
+Clean Runner Requirement
+
+A successful local run is not sufficient evidence of production readiness.
+
+The automated workflow is designed to validate the complete pipeline on a clean
+GitHub Actions runner, where:
+
+local caches are unavailable;
+historical probe files are unavailable;
+developer-specific environment state is unavailable;
+only explicitly configured secrets are available;
+repository-tracked code and runtime-generated artifacts are available.
+
+This design helps expose hidden dependencies before the research system is
+relied upon for recurring daily use.
+
+Secrets
+
+The automated workflow requires the following GitHub Actions secrets:
+
+SUPADATA_API_KEY
+GEMINI_API_KEY
+SERPAPI_API_KEY
+
+Secrets are never stored in the repository.
+
+They are injected only into the workflow steps that require them.
+
+Research / Production Boundary
+
+This repository is a research system.
+
+Automated outputs are research artifacts and must not be interpreted as
+production trading instructions.
+
+The pipeline is intentionally separated from investment execution systems.
+
+Future integration into another research or investment project should preserve
+the same source, provenance, validation, and research/production boundaries.
+
+Reusable Research Automation Architecture
+
+The automation is designed as a reusable research pattern rather than a
+Bloomberg-specific execution system.
+
+The general architecture is:
+
+Discovery
+    ↓
+Point-in-Time Source Ingestion
+    ↓
+Canonicalization
+    ↓
+Validation
+    ↓
+Evidence-Grounded Research
+    ↓
+Structured Dataset
+    ↓
+Report / Artifact
+
+This architecture can later be adapted to other research sources, including:
+
+macroeconomic releases;
+company earnings;
+financial news;
+central-bank communications;
+industry research;
+institutional commentary;
+other structured or semi-structured research sources.
+
+The source-specific acquisition and parsing layers may change, but the
+validation, provenance, evidence, research, and artifact layers should remain
+conceptually separated.
+
+This allows the research automation architecture to be reused without coupling
+external information directly to production investment logic.
+
+Operational Governance
+
+The repository distinguishes between:
+
+Research / Development
+
+Used for:
+
+probes;
+source comparison;
+boundary experiments;
+parser development;
+schema experiments;
+validation tests;
+research methodology development.
+Automated Daily Runtime
+
+Used for:
+
+current episode discovery;
+current-source ingestion;
+canonicalization;
+validated research extraction;
+daily report generation;
+recurring artifact production.
+
+Development artifacts must not become hidden dependencies of the automated
+runtime.
+
+Repository Structure
+.
+├── .github/
+│   └── workflows/
+│       └── daily-surveillance.yml
+│
+├── data/
+│   ├── raw/
+│   │   └── youtube/
+│   │       └── <DATE>/
+│   │
+│   └── processed/
+│       └── surveillance/
+│           └── <DATE>/
+│
+├── docs/
+│   └── validation/
+│
+├── scripts/
+│   ├── discover_surveillance_videos_v0_3.py
+│   ├── update_surveillance_inventory_v0_1.py
+│   ├── run_latest_surveillance_v0_1.py
+│   ├── youtube_daily_runner_v0_3.py
+│   ├── generate_research_summaries_gemini_v0_2.py
+│   ├── build_research_dataset_v0_1.py
+│   ├── build_daily_research_report_v0_1.py
+│   └── render_daily_research_report_v0_1.py
+│
+└── tests/
+    ├── run_youtube_daily_ingestion_v0_1.py
+    ├── build_youtube_canonical_v0_2.py
+    ├── build_guest_units_v0_3.py
+    └── build_guest_transcripts_v0_1.py
+Status
+
+Research prototype with automated daily pipeline.
+
+Current automated workflow:
+
+GitHub Actions: ACTIVE
+Scheduled execution: Weekdays 07:30 KST
+Manual execution: SUPPORTED
+Clean-runner execution: VALIDATED
+Runtime legacy probe dependency: REMOVED
+Evidence-grounded guest research: ACTIVE
+Daily research report: ACTIVE
+TV report: ACTIVE
+
+The system remains a research workflow and is not connected directly to
+production investment execution.
