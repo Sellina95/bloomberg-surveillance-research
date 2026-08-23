@@ -1,5 +1,6 @@
 from __future__ import annotations
 import os
+import time
 
 import json
 from pathlib import Path
@@ -113,17 +114,67 @@ TRANSCRIPT:
 {transcript}
 """
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=prompt,
-        config={
-            "temperature": 0.1,
-            "response_mime_type":
-                "application/json",
-        },
-    )
+    for attempt in range(1, 6):
 
-    return json.loads(response.text)
+        try:
+
+            response = client.models.generate_content(
+                model=MODEL,
+                contents=prompt,
+                config={
+                    "temperature": 0.1,
+                    "response_mime_type": "application/json",
+                },
+            )
+
+            try:
+                return json.loads(response.text)
+
+            except json.JSONDecodeError as exc:
+
+                if attempt >= 2:
+                    raise
+
+                retry_seconds = 5 * attempt
+
+                print(
+                    "JSON PARSE RETRY — "
+                    f"UNIT {unit['unit_id']:02d} "
+                    f"in {retry_seconds}s"
+                )
+
+                time.sleep(retry_seconds)
+
+        except Exception as exc:
+
+            message = str(exc)
+
+            is_rate_limit = (
+                "429" in message
+                or "RESOURCE_EXHAUSTED" in message
+                or "quota" in message.lower()
+            )
+
+            if not is_rate_limit:
+                raise
+
+            if attempt >= 5:
+                raise
+
+            retry_seconds = 40 * attempt
+
+            print(
+                "RATE LIMIT RETRY — "
+                f"UNIT {unit['unit_id']:02d} "
+                f"attempt {attempt}/4 "
+                f"in {retry_seconds}s"
+            )
+
+            time.sleep(retry_seconds)
+
+    raise RuntimeError(
+        "Gemini generation failed after retries"
+    )
 
 
 def validate_evidence(
@@ -323,6 +374,38 @@ def main():
         "summaries":
             results,
     }
+
+    # ------------------------------------------------------------
+    # COMPLETENESS GATE
+    # Downstream research stages must never consume
+    # a partial guest-summary dataset.
+    # ------------------------------------------------------------
+
+    complete_count = artifact["complete"]
+    review_count = artifact["review"]
+    failed_count = artifact["failed"]
+    expected_count = len(units)
+
+    if (
+        complete_count != expected_count
+        or review_count != 0
+        or failed_count != 0
+    ):
+
+        print()
+        print("=" * 100)
+        print("COMPLETENESS GATE: FAIL")
+        print("=" * 100)
+        print("EXPECTED:", expected_count)
+        print("COMPLETE:", complete_count)
+        print("REVIEW:", review_count)
+        print("FAILED:", failed_count)
+        print(
+            "DOWNSTREAM RESEARCH PIPELINE MUST STOP"
+        )
+        print("=" * 100)
+
+        raise SystemExit(2)
 
     OUTPUT.write_text(
         json.dumps(

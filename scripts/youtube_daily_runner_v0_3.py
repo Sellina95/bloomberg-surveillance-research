@@ -65,34 +65,40 @@ run(
 )
 
 
-# 4. Guest-level evidence-grounded research summaries
+# 4. Guest transcript extraction
+run(
+    "tests/build_guest_transcripts_v0_1.py"
+)
+
+
+# 5. Guest-level evidence-grounded research summaries
 run(
     "scripts/generate_research_summaries_gemini_v0_2.py"
 )
 
 
-# 5. Structured research dataset
+# 6. Structured research dataset
 run(
     "scripts/build_research_dataset_v0_1.py"
 )
 
 
-# 6. Daily cross-guest research synthesis
+# 7. Daily cross-guest research synthesis
 run(
     "scripts/build_daily_research_report_v0_1.py"
 )
 
 
-# 7. Human-readable Markdown report
+# 8. Human-readable Markdown report
 run(
     "scripts/render_daily_research_report_v0_1.py"
 )
 
 
-# 8. Final artifact verification
+# 9. Final artifact verification
 expected = [
-    BASE / "youtube_canonical.json",
-    BASE / "guest_units.json",
+    BASE / "youtube_canonical_v0_2.json",
+    BASE / "guest_units_v0_3.json",
     BASE / "research_summaries_gemini_v0_2.json",
     BASE / "research_dataset_v0_1.json",
     BASE / "daily_research_report_v0_1.json",

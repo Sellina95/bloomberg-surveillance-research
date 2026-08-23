@@ -1,0 +1,93 @@
+name: Daily Bloomberg Surveillance Research
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # 07:30 KST = 22:30 UTC (previous day)
+    - cron: "30 22 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  daily-surveillance:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-genai
+
+      - name: Verify required secrets
+        env:
+          SUPADATA_API_KEY: ${{ secrets.SUPADATA_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+        run: |
+          test -n "$SUPADATA_API_KEY"
+          test -n "$GEMINI_API_KEY"
+          test -n "$SERPAPI_API_KEY"
+
+          echo "SUPADATA_API_KEY=SET"
+          echo "GEMINI_API_KEY=SET"
+          echo "SERPAPI_API_KEY=SET"
+
+      - name: Discover Bloomberg Surveillance videos
+        env:
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+        run: |
+          python scripts/discover_surveillance_videos_v0_3.py
+
+      - name: Update surveillance inventory
+        env:
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+        run: |
+          python scripts/update_surveillance_inventory_v0_1.py
+
+      - name: Run latest surveillance pipeline
+        env:
+          SUPADATA_API_KEY: ${{ secrets.SUPADATA_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+        run: |
+          python scripts/run_latest_surveillance_v0_1.py
+
+      - name: Verify latest TV report
+        run: |
+          latest_dir=$(find data/processed/surveillance \
+            -mindepth 1 \
+            -maxdepth 1 \
+            -type d \
+            | sort \
+            | tail -1)
+
+          test -n "$latest_dir"
+
+          test -f "$latest_dir/daily_research_report_tv_v0_1.html"
+
+          echo "LATEST REPORT:"
+          echo "$latest_dir/daily_research_report_tv_v0_1.html"
+
+      - name: Commit generated research artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/processed/surveillance/
+
+          if git diff --cached --quiet; then
+            echo "NO NEW ARTIFACTS"
+          else
+            git commit -m "Update daily Bloomberg Surveillance research"
+            git push
+          fi

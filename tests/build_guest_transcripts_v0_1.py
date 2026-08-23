@@ -1,13 +1,18 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 
-DATES = [
-    "2026-08-10",
-    "2026-08-14",
-]
+DATE = os.environ.get("SURVEILLANCE_DATE")
+
+if not DATE:
+    raise SystemExit(
+        "FAIL — SURVEILLANCE_DATE is not set"
+    )
+
+DATES = [DATE]
 
 
 for date in DATES:
@@ -17,11 +22,11 @@ for date in DATES:
     )
 
     canonical_path = (
-        base / "youtube_canonical.json"
+        base / "youtube_canonical_v0_2.json"
     )
 
     guest_path = (
-        base / "guest_units.json"
+        base / "guest_units_v0_3.json"
     )
 
     output_path = (
