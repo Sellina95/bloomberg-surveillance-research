@@ -200,8 +200,8 @@ def main() -> None:
         # the actual broadcast date:
         # "Bloomberg Surveillance 8/20/2026"
         match = re.search(
-            r"Bloomberg Surveillance\\s+"
-            r"(\\d{1,2})/(\\d{1,2})/(\\d{4})",
+            r"Bloomberg Surveillance\s+"
+            r"(\d{1,2})/(\d{1,2})/(\d{4})",
             title,
             flags=re.IGNORECASE,
         )
