@@ -3,30 +3,121 @@ import os
 
 import json
 from pathlib import Path
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 
 
-DATE = os.environ.get("SURVEILLANCE_DATE", "2026-08-14")
+DATE = os.environ.get("SURVEILLANCE_DATE")
 
-SERPAPI = Path(
-    "data/raw/youtube_probe/serpapi_2026-08-14.json"
+VIDEO_ID = os.environ.get("VIDEO_ID")
+
+if not DATE:
+    raise SystemExit(
+        "FAIL — SURVEILLANCE_DATE is not set"
+    )
+
+if not VIDEO_ID:
+    raise SystemExit(
+        "FAIL — VIDEO_ID is not set"
+    )
+
+SERPAPI_API_KEY = os.environ.get(
+    "SERPAPI_API_KEY"
 )
 
-SUPADATA = Path(
-    "data/raw/youtube_probe/supadata_2026-08-14.json"
+if not SERPAPI_API_KEY:
+    raise SystemExit(
+        "FAIL — SERPAPI_API_KEY is not set"
+    )
+
+BASE_RAW = Path(
+    f"data/raw/youtube/{DATE}"
 )
 
-OUTPUT = Path(
-    f"data/processed/surveillance/{DATE}/"
-    "youtube_canonical_v0_2.json"
+BASE_PROCESSED = Path(
+    f"data/processed/surveillance/{DATE}"
+)
+
+SUPADATA = (
+    BASE_RAW / "transcript.json"
+)
+
+SERPAPI = (
+    BASE_RAW / "serpapi_video.json"
+)
+
+OUTPUT = (
+    BASE_PROCESSED
+    / "youtube_canonical_v0_2.json"
 )
 
 
-serp = json.loads(
-    SERPAPI.read_text(encoding="utf-8")
+# ============================================================
+# 0. CURRENT VIDEO METADATA — SerpApi
+#
+# IMPORTANT:
+# Never use a historical probe artifact here.
+# Query the exact VIDEO_ID being processed.
+# ============================================================
+
+params = {
+    "engine": "youtube_video",
+    "v": VIDEO_ID,
+    "api_key": SERPAPI_API_KEY,
+}
+
+url = (
+    "https://serpapi.com/search.json?"
+    + urlencode(params)
 )
+
+request = Request(
+    url,
+    headers={
+        "User-Agent": "Mozilla/5.0",
+    },
+)
+
+with urlopen(
+    request,
+    timeout=60,
+) as response:
+
+    serp = json.loads(
+        response.read().decode("utf-8")
+    )
+
+
+# Persist the exact metadata used by this run.
+BASE_RAW.mkdir(
+    parents=True,
+    exist_ok=True,
+)
+
+SERPAPI.write_text(
+    json.dumps(
+        serp,
+        ensure_ascii=False,
+        indent=2,
+    ),
+    encoding="utf-8",
+)
+
+
+# ============================================================
+# 0.1 CURRENT TRANSCRIPT — Supadata
+# ============================================================
+
+if not SUPADATA.exists():
+    raise SystemExit(
+        f"FAIL — transcript artifact not found: "
+        f"{SUPADATA}"
+    )
 
 supadata = json.loads(
-    SUPADATA.read_text(encoding="utf-8")
+    SUPADATA.read_text(
+        encoding="utf-8"
+    )
 )
 
 
