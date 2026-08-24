@@ -1,0 +1,208 @@
+# Bloomberg Surveillance — Daily Research
+
+**Date:** 2026-08-24
+
+## Executive Summary
+
+- The ongoing AI infrastructure and earnings boom is driving an unprecedented earnings cycle, supporting robust equity market gains and providing high free-cash-flow hyperscalers with insulation from elevated interest rates.
+- Fixed income markets are seeing measured repricing for higher term premiums and supply dynamics rather than panic over runaway inflation, with long-end yields facing upward pressure from massive debt issuance and energy/geopolitical correlations.
+- Global and domestic political factors—ranging from secondary trade sanctions and shifting US-Canada/Mexico relations to Federal Reserve leadership transitions and structural framework reviews—introduce key tail risks for cross-asset portfolios.
+
+## Macro Themes
+
+### AI Infrastructure Boom and Economic Resilience
+
+Massive capital expenditure and infrastructure spending for artificial intelligence are fueling an unprecedented earnings cycle, underpinning broader economic growth and neutralizing traditional monetary policy tightening.
+
+**Supporting Guests**
+
+- Steve Chiavarone, Federated Hermes
+- Ajay Rajadhyaksha, Barclays
+- Troy Gayeski, Future Standard
+
+**Evidence**
+
+- Steve Chiavarone notes that the largest companies are raising capital to increase AI capex, driving the sharpest two-year earnings revisions ever (Unit 1, Segments 27-32).
+- Ajay Rajadhyaksha states that U.S. growth is driven by the cyclical AI boom, rendering standard 25 or 50 basis point rate hikes insufficient to slow the economy (Unit 4, Segments 15-40).
+- Troy Gayeski highlights that capital concentration around AI has increased substantially across both public and private markets (Unit 6, Segments 0-14).
+
+### Treasury Supply, Duration Risk, and Yield Curve Dynamics
+
+Heavy sovereign and corporate debt issuance—partly driven by AI data center funding—is placing upward pressure on long-end term premiums and steepening yield curves globally.
+
+**Supporting Guests**
+
+- Kelsey Berro, JPMorgan Asset Management
+- Earl Davis, BMO Global Asset Management
+- Anne Walsh, Guggenheim Investments
+
+**Evidence**
+
+- Kelsey Berro points out that bond market pricing reflects gradual adjustments for higher term premiums due to increased supply and fall uncertainty (Unit 3, Segments 43-48).
+- Earl Davis notes a higher probability of the 30-year yield hitting 6% before the 10-year hits 5%, driven by long-duration risk pressures (Unit 7, Segments 28-33).
+- Anne Walsh emphasizes that massive long-end issuance for AI infrastructure demands higher coupons because issuers are currently free-cash-flow negative (Unit 8, Segments 120-130).
+
+### Geopolitical Realignment and Trade Policy Friction
+
+Aggressive U.S. secondary sanctions against foreign partners of Iran and zero-sum trade postures create cross-border friction, testing alliances and shifting traditional global trade frameworks.
+
+**Supporting Guests**
+
+- Steven Cook, Council on Foreign Relations
+- Brian Gardner, Stifel
+
+**Evidence**
+
+- Steven Cook highlights that enforcing sanctions on Iran requires taking on major trading partners such as China, Turkey, and the UAE (Unit 2, Segments 7-8).
+- Brian Gardner states that the President views trade as a zero-sum game, making U.S.-Mexico relations smoother and more productive for potential agreements than U.S.-Canada relations (Unit 5, Segments 3-24).
+
+## Rates / Bonds
+
+### Summary
+
+Fixed-income markets are navigating heavy issuance supply, long-duration risk, and evolving Federal Reserve leadership expectations, with long-term yields stabilizing or heading higher.
+
+### Key Views
+
+- The 10-year Treasury yield is viewed as an attractive buying opportunity near 4.75% to 5.00%, offering better risk-reward than the 30-year bond (Unit 3, Unit 7, Unit 8).
+- Yield curve steepening is a global phenomenon led by Japan and is viewed as growth-productive for bank net interest margins (Unit 7).
+- Federal Reserve balance sheet reduction is expected to continue gradually over time without disrupting orderly market functioning (Unit 10).
+
+### Risks
+
+- Potential 30-year yield spike toward 6% driven by persistent long-duration supply and AI-related corporate borrowing needs (Unit 7, Unit 8).
+- Uncertainty regarding the reaction function and policy framework of new Federal Reserve leadership (Unit 3, Unit 10).
+
+
+## USD / FX
+
+### Summary
+
+The U.S. dollar maintains its fundamental credibility and global reserve status despite shifting geopolitical dynamics and alternative reserve asset accumulation.
+
+### Key Views
+
+- Global investors are not running away from dollar-denominated assets, and Fed inflation credibility remains intact (Unit 4).
+- The United States has increasingly become a wildcard for both geopolitical and economic stability, altering traditional reserve holding calculations at the margin (Unit 2).
+
+### Risks
+
+- Escalating secondary sanctions and geopolitical friction that challenge global trade channels and currency dominance (Unit 2).
+
+
+## Equities
+
+### Summary
+
+Equity markets remain supported by exceptional AI-driven earnings revisions and strong corporate cash flows, though concentration and valuation risks are rising.
+
+### Key Views
+
+- Unprecedented two-year earnings revisions and robust free cash flows insulate top tech hyperscalers from high interest rates (Unit 1).
+- Nvidia and other market leaders face mounting pressure to prove platform durability and manage public backlash regarding rapid data center expansion (Unit 9).
+
+### Risks
+
+- Extreme portfolio concentration around AI creating systemic vulnerability if adoption and spending fail to justify current valuations (Unit 6, Unit 9).
+
+
+## Credit
+
+### Summary
+
+Corporate credit demand remains exceptionally strong alongside record issuance, though AI infrastructure buildouts introduce structural credit stratification.
+
+### Key Views
+
+- Retail and institutional demand for high-grade corporate bonds has broken historical records, ready to deploy upon yield stability (Unit 3).
+- Issuers funding heavy AI infrastructure are currently free cash flow negative, demanding higher coupon compensation (Unit 8).
+
+### Risks
+
+- Potential obsolescence and negative cash flow risks among aggressive corporate infrastructure borrowers (Unit 8).
+
+
+## AI / Technology
+
+### Summary
+
+The artificial intelligence super-cycle continues to drive corporate capital expenditure and earnings, though market participants are hedging bets across multiple layers of the stack.
+
+### Key Views
+
+- Hyperscalers are generating massive free cash flows that fund an unprecedented capital expenditure and infrastructure build (Unit 1).
+- Tech companies and investors are cross-investing across the ecosystem because of uncertainty regarding where final value will accrue (Unit 9).
+
+### Risks
+
+- Public and political backlash against data center development and power consumption accelerating near-term market volatility (Unit 9).
+
+
+## Commodities
+
+### Summary
+
+Oil prices and energy markets maintain a direct correlation with Treasury yields and geopolitical risk premiums.
+
+### Key Views
+
+- Treasury yields maintain a tight lockstep correlation with oil price movements driven by Middle East geopolitical risks (Unit 3).
+
+### Risks
+
+- Geopolitical shocks in energy corridors threatening price stability and complicating monetary policy (Unit 2, Unit 3).
+
+
+## Cross-Guest Consensus
+
+### AI capital expenditure and infrastructure building are driving a massive structural cycle that remains largely insulated from conventional macroeconomic friction.
+
+**Guests:** Steve Chiavarone, Federated Hermes, Ajay Rajadhyaksha, Barclays, Troy Gayeski, Future Standard, Momei Qu, PSP Growth
+
+### Long-term bond yields face structural upward pressure due to heavy sovereign issuance, term premiums, and supply dynamics.
+
+**Guests:** Kelsey Berro, JPMorgan Asset Management, Earl Davis, BMO Global Asset Management, Anne Walsh, Guggenheim Investments
+
+## Cross-Guest Conflicts
+
+### Attractiveness and Risk Thresholds of Long-Duration Treasuries
+
+**View A:** Earl Davis (BMO) sees higher probability of the 30-year hitting 6% before the 10-year hits 5% and advises caution on the 30-year due to duration risk.
+
+**View B:** Anne Walsh (Guggenheim) states she would aggressively back up the truck to buy 30-year Treasuries if yields hit 6%.
+
+**Why It Matters:** Highlights differing institutional risk appetites for long-duration sovereign debt during periods of heavy supply and fiscal uncertainty.
+
+## Key Risks
+
+### Long-End Yield Spike Toward 6%
+
+- **Trigger:** Unabated sovereign debt issuance and heavy corporate borrowing for AI data centers.
+- **Market Impact:** Mark-to-market drawdowns on long-duration fixed-income assets and increased cost of capital across rate-sensitive sectors.
+
+### AI Capital Concentration Reversal
+
+- **Trigger:** Failure of AI adoption rates to match current massive infrastructure expenditures.
+- **Market Impact:** Severe growth-oriented equity correction, prompting sharp rotation into non-tech alternative assets and defensive sectors.
+
+## Research Takeaways
+
+- High bond yields around 5% do not preclude equity market gains as long as tech earnings revisions remain robust and companies generate high free cash flow.
+- Fixed-income investors find attractive entry points in 10-year Treasuries at 5% and potential 30-year Treasuries at 6%, favoring intermediate and high-grade credit to manage duration risk.
+- Portfolio diversification away from AI concentration into private market alternatives and non-tech growth sectors is increasingly vital for downside risk mitigation.
+
+## Daily Action
+
+> **Analytical interpretation — not a Bloomberg guest quote.**
+
+### 1. Maintain selective exposure to high-grade 10-year fixed income while limiting long-duration 30-year exposure.
+
+**Why:** Yields near 5% offer compelling entry points and fair term premium compensation, but extreme long-end supply pressures favor intermediate positioning.
+
+**What to Monitor:** Treasury auction demand metrics, 10-year/30-year yield curve steepening, and daily oil price correlations.
+
+### 2. Implement portfolio diversification strategies away from mega-cap AI concentration.
+
+**Why:** Public and private capital concentration creates systemic vulnerability if AI revenue realization disappoints.
+
+**What to Monitor:** Corporate capex announcements, hyperscale free cash flow margins, and growth trends in defensive/private market sectors.

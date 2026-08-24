@@ -1,7 +1,7 @@
 {
   "start_date": "",
-  "end_date": "2026-08-20",
-  "selected_count": 29,
+  "end_date": "2026-08-24",
+  "selected_count": 33,
   "excluded_count": 0,
   "unparseable_count": 0,
   "videos": [
@@ -270,6 +270,17 @@
       "video_date": "2026-08-07"
     },
     {
+      "video_id": "8j3SSyrHU2Y",
+      "title": "Bloomberg Surveillance 8/10/2026",
+      "link": "https://www.youtube.com/watch?v=8j3SSyrHU2Y",
+      "channel_name": "Bloomberg Television",
+      "channel_verified": true,
+      "published_date": "2 weeks ago",
+      "length": "2:24:16",
+      "description": "Jonathan Ferro, Lisa Abramowicz and Annmarie Hordern speak daily with leaders and decision makers from Wall Street to ...",
+      "video_date": "2026-08-10"
+    },
+    {
       "video_id": "ekZlIPOzjvU",
       "title": "Bloomberg Surveillance 8/11/2026",
       "link": "https://www.youtube.com/watch?v=ekZlIPOzjvU",
@@ -279,6 +290,17 @@
       "length": "2:24:15",
       "description": "Jonathan Ferro, Lisa Abramowicz and Annmarie Hordern speak daily with leaders and decision makers from Wall Street to ...",
       "video_date": "2026-08-11"
+    },
+    {
+      "video_id": "x4ESj9QqKbY",
+      "title": "Bloomberg Surveillance 8/13/2026",
+      "link": "https://www.youtube.com/watch?v=x4ESj9QqKbY",
+      "channel_name": "Bloomberg Television",
+      "channel_verified": true,
+      "published_date": "11 days ago",
+      "length": "2:24:21",
+      "description": "Jonathan Ferro, Lisa Abramowicz and Annmarie Hordern speak daily with leaders and decision makers from Wall Street to ...",
+      "video_date": "2026-08-13"
     },
     {
       "video_id": "ySpUV2M2lGo",
@@ -323,6 +345,28 @@
       "length": "2:24:21",
       "description": "Jonathan Ferro, Lisa Abramowicz and Annmarie Hordern speak daily with leaders and decision makers from Wall Street to ...",
       "video_date": "2026-08-20"
+    },
+    {
+      "video_id": "qWYTenEUdFc",
+      "title": "Bloomberg Surveillance 8/21/2026",
+      "link": "https://www.youtube.com/watch?v=qWYTenEUdFc",
+      "channel_name": "Bloomberg Television",
+      "channel_verified": true,
+      "published_date": "3 days ago",
+      "length": "2:24:22",
+      "description": "Jonathan Ferro, Lisa Abramowicz and Annmarie Hordern speak daily with leaders and decision makers from Wall Street to ...",
+      "video_date": "2026-08-21"
+    },
+    {
+      "video_id": "61ut9tjmY28",
+      "title": "Bloomberg Surveillance 8/24/2026",
+      "link": "https://www.youtube.com/watch?v=61ut9tjmY28",
+      "channel_name": "Bloomberg Television",
+      "channel_verified": true,
+      "published_date": "7 hours ago",
+      "length": "2:24:13",
+      "description": "Jonathan Ferro, Lisa Abramowicz and Annmarie Hordern speak daily with leaders and decision makers from Wall Street to ...",
+      "video_date": "2026-08-24"
     }
   ]
 }
