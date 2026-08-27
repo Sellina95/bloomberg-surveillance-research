@@ -1,0 +1,264 @@
+{
+  "date": "2026-08-26",
+  "method": "chapter_attribution_v0_3",
+  "total_chapters": 14,
+  "guest_chapter_count": 13,
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Nvidia Earnings, PCE Inflation and the Fed's Next Move",
+      "start_seconds": 0,
+      "source": "serpapi",
+      "is_guest": false
+    },
+    {
+      "chapter": 2,
+      "title": "Fed's 2% Inflation Target Is Losing Meaning — Marvin Loh, State Street",
+      "start_seconds": 472,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 3,
+      "title": "US Pressure on Iran Ultimately Runs Through China — Col. Wayne Sanders (Ret.)",
+      "start_seconds": 1158,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 4,
+      "title": "Nvidia's Biggest Question Is Who's Paying for AI — Sarah Kunst, Cleo Capital",
+      "start_seconds": 2041,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 5,
+      "title": "Long-Term Bonds Are Finally Paying for the Risk — Andrew Balls, PIMCO",
+      "start_seconds": 2450,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 6,
+      "title": "AI Adoption Is About to Show Up in Earnings — Dan Skelly, Morgan Stanley Wealth Management",
+      "start_seconds": 3236,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 7,
+      "title": "Treasury Would Need to Go Eight Times Bigger — Tobin Marcus, Wolfe Research",
+      "start_seconds": 3920,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 8,
+      "title": "Why MLS Teams Can Be Worth More Than Premier League Clubs — Mark Ein, Capitol Investment Corp.",
+      "start_seconds": 4713,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 9,
+      "title": "Six Years Above 2% Is Testing Fed Credibility — Conrad DeQuadros, Citi Wealth",
+      "start_seconds": 5420,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 10,
+      "title": "AI Buildout Is Moving From Cash Flow to Debt — Tracie McMillion, Wells Fargo Investment Institute",
+      "start_seconds": 6186,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 11,
+      "title": "Nvidia Nears the Line Between Funding and Creating Demand — Jay Goldberg, Seaport Research Partners",
+      "start_seconds": 6920,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 12,
+      "title": "US Core PCE Rises 0.2% in July, Consumer Spending Stalls — Michael McKee, Bloomberg",
+      "start_seconds": 7261,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 13,
+      "title": "Fed Can Credibly Avoid Hiking on Cooler Data — Stephanie Roth, Wolfe Research",
+      "start_seconds": 7633,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 14,
+      "title": "AI Boom Is Leaving Workers Feeling Left Behind — Mark Lehmann, Citizens Commercial Bank",
+      "start_seconds": 8411,
+      "source": "serpapi",
+      "is_guest": true
+    }
+  ],
+  "guest_units": [
+    {
+      "unit_id": 1,
+      "chapter": 2,
+      "title": "Fed's 2% Inflation Target Is Losing Meaning — Marvin Loh, State Street",
+      "guest": "Marvin Loh, State Street",
+      "start_seconds": 472,
+      "end_seconds": 1158,
+      "duration_seconds": 686,
+      "segment_count": 194,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 2,
+      "chapter": 3,
+      "title": "US Pressure on Iran Ultimately Runs Through China — Col. Wayne Sanders (Ret.)",
+      "guest": "Col. Wayne Sanders (Ret.)",
+      "start_seconds": 1158,
+      "end_seconds": 2041,
+      "duration_seconds": 883,
+      "segment_count": 258,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 3,
+      "chapter": 4,
+      "title": "Nvidia's Biggest Question Is Who's Paying for AI — Sarah Kunst, Cleo Capital",
+      "guest": "Sarah Kunst, Cleo Capital",
+      "start_seconds": 2041,
+      "end_seconds": 2450,
+      "duration_seconds": 409,
+      "segment_count": 111,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 4,
+      "chapter": 5,
+      "title": "Long-Term Bonds Are Finally Paying for the Risk — Andrew Balls, PIMCO",
+      "guest": "Andrew Balls, PIMCO",
+      "start_seconds": 2450,
+      "end_seconds": 3236,
+      "duration_seconds": 786,
+      "segment_count": 199,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 5,
+      "chapter": 6,
+      "title": "AI Adoption Is About to Show Up in Earnings — Dan Skelly, Morgan Stanley Wealth Management",
+      "guest": "Dan Skelly, Morgan Stanley Wealth Management",
+      "start_seconds": 3236,
+      "end_seconds": 3920,
+      "duration_seconds": 684,
+      "segment_count": 190,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 6,
+      "chapter": 7,
+      "title": "Treasury Would Need to Go Eight Times Bigger — Tobin Marcus, Wolfe Research",
+      "guest": "Tobin Marcus, Wolfe Research",
+      "start_seconds": 3920,
+      "end_seconds": 4713,
+      "duration_seconds": 793,
+      "segment_count": 208,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 7,
+      "chapter": 8,
+      "title": "Why MLS Teams Can Be Worth More Than Premier League Clubs — Mark Ein, Capitol Investment Corp.",
+      "guest": "Mark Ein, Capitol Investment Corp.",
+      "start_seconds": 4713,
+      "end_seconds": 5420,
+      "duration_seconds": 707,
+      "segment_count": 190,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 8,
+      "chapter": 9,
+      "title": "Six Years Above 2% Is Testing Fed Credibility — Conrad DeQuadros, Citi Wealth",
+      "guest": "Conrad DeQuadros, Citi Wealth",
+      "start_seconds": 5420,
+      "end_seconds": 6186,
+      "duration_seconds": 766,
+      "segment_count": 247,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 9,
+      "chapter": 10,
+      "title": "AI Buildout Is Moving From Cash Flow to Debt — Tracie McMillion, Wells Fargo Investment Institute",
+      "guest": "Tracie McMillion, Wells Fargo Investment Institute",
+      "start_seconds": 6186,
+      "end_seconds": 6920,
+      "duration_seconds": 734,
+      "segment_count": 206,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 10,
+      "chapter": 11,
+      "title": "Nvidia Nears the Line Between Funding and Creating Demand — Jay Goldberg, Seaport Research Partners",
+      "guest": "Jay Goldberg, Seaport Research Partners",
+      "start_seconds": 6920,
+      "end_seconds": 7261,
+      "duration_seconds": 341,
+      "segment_count": 91,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 11,
+      "chapter": 12,
+      "title": "US Core PCE Rises 0.2% in July, Consumer Spending Stalls — Michael McKee, Bloomberg",
+      "guest": "Michael McKee, Bloomberg",
+      "start_seconds": 7261,
+      "end_seconds": 7633,
+      "duration_seconds": 372,
+      "segment_count": 93,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 12,
+      "chapter": 13,
+      "title": "Fed Can Credibly Avoid Hiking on Cooler Data — Stephanie Roth, Wolfe Research",
+      "guest": "Stephanie Roth, Wolfe Research",
+      "start_seconds": 7633,
+      "end_seconds": 8411,
+      "duration_seconds": 778,
+      "segment_count": 200,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 13,
+      "chapter": 14,
+      "title": "AI Boom Is Leaving Workers Feeling Left Behind — Mark Lehmann, Citizens Commercial Bank",
+      "guest": "Mark Lehmann, Citizens Commercial Bank",
+      "start_seconds": 8411,
+      "end_seconds": 8659.216999999999,
+      "duration_seconds": 248.21699999999873,
+      "segment_count": 75,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    }
+  ]
+}

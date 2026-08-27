@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+
+<title>
+Bloomberg Surveillance —
+2026-08-25
+</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #111214;
+    --panel: #191a1d;
+    --panel-2: #151619;
+    --panel-3: #202125;
+    --line: #303136;
+    --text: #f1f1ee;
+    --muted: #96979b;
+    --amber: #f2a23a;
+    --amber-soft: #c9852c;
+    --green: #72c7a7;
+    --red: #e46f6f;
+    --blue: #7fa9d8;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #292b2f 0%,
+            #151619 35%,
+            #0d0e10 100%
+        );
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-size: 14px;
+}
+
+.page {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+}
+
+.tv {
+    background: #17181b;
+    border: 1px solid #303136;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow:
+        0 22px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    overflow: hidden;
+}
+
+.tv-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 18px;
+    background: linear-gradient(180deg,#222327,#18191c);
+    border-bottom: 1px solid #333438;
+}
+
+.brand {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #f4f4f1;
+}
+
+.live {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: var(--amber);
+}
+
+.screen {
+    position: relative;
+    background: linear-gradient(135deg,#17191b,#101113);
+    min-height: 220px;
+    padding: 30px 34px;
+    border-bottom: 1px solid #303136;
+}
+
+.screen-label {
+    color: var(--amber);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.6px;
+    margin-bottom: 12px;
+}
+
+.screen h1 {
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.date {
+    margin-top: 10px;
+    color: var(--muted);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 12px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 28px;
+}
+
+.knob {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #67686b;
+}
+
+.status {
+    margin-left: 12px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.content {
+    margin-top: 18px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #e8e8e5;
+    margin-bottom: 16px;
+}
+
+.section-title::before {
+    content: "";
+    width: 3px;
+    height: 14px;
+    background: var(--amber);
+    border-radius: 2px;
+}
+
+.executive {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.executive ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.executive li {
+    margin-bottom: 9px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.market-card {
+    position: relative;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 17px;
+    min-height: 190px;
+}
+
+.market-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: var(--amber-soft);
+    opacity: .75;
+}
+
+.market-card .section-title {
+    padding-left: 8px;
+}
+
+.summary {
+    color: #c8c9cb;
+    line-height: 1.55;
+    margin: 0 0 14px;
+}
+
+h4 {
+    margin: 16px 0 7px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: var(--amber);
+}
+
+.market-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.market-card li {
+    margin-bottom: 7px;
+    color: #d9d9d7;
+    line-height: 1.45;
+}
+
+.macro-card {
+    background: var(--panel-2);
+    border: 1px solid #292a2e;
+    border-radius: 8px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+.macro-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #f0f0ed;
+}
+
+.macro-card p {
+    color: #c6c7c9;
+    line-height: 1.55;
+}
+
+.guest-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 12px 0;
+}
+
+.guest {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid #3a3b3f;
+    border-radius: 4px;
+    background: #222327;
+    color: #c5c6c8;
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.evidence {
+    display: flex;
+    gap: 10px;
+    padding: 9px 10px;
+    margin-top: 6px;
+    background: #111214;
+    border: 1px solid #292a2d;
+    border-left: 2px solid var(--green);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.timestamp {
+    flex: 0 0 auto;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.insight,
+.conflict,
+.risk {
+    border-radius: 7px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    line-height: 1.55;
+}
+
+.insight {
+    background: #151c19;
+    border: 1px solid #293a34;
+    border-left: 3px solid var(--green);
+}
+
+.conflict {
+    background: #1b1815;
+    border: 1px solid #3c3025;
+    border-left: 3px solid var(--amber);
+}
+
+.risk {
+    background: #1c1617;
+    border: 1px solid #40292b;
+    border-left: 3px solid var(--red);
+}
+
+.small {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.action {
+    display: flex;
+    gap: 14px;
+    padding: 15px;
+    background: #171a18;
+    border: 1px solid #304238;
+    border-radius: 8px;
+    margin-bottom: 9px;
+}
+
+.action-number {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: var(--amber);
+    color: #17120b;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.action p {
+    margin: 7px 0;
+    color: #b9babd;
+    line-height: 1.5;
+}
+
+.monitor {
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+}
+
+.footer {
+    text-align: center;
+    color: #66686d;
+    font-size: 10px;
+    padding: 26px;
+}
+
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        padding: 12px;
+    }
+
+    .screen {
+        padding: 24px;
+    }
+
+    .screen h1 {
+        font-size: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<div class="page">
+
+
+<div class="tv">
+
+    <div class="tv-top">
+
+        <div class="brand">
+            BLOOMBERG SURVEILLANCE · RESEARCH DESK
+        </div>
+
+        <div class="live">
+            ● DAILY RESEARCH
+        </div>
+
+    </div>
+
+    <div class="screen">
+
+        <div class="screen-label">
+            GLOBAL MARKET RESEARCH
+        </div>
+
+        <h1>
+            Daily Market Brief
+        </h1>
+
+        <div class="date">
+            2026-08-25
+        </div>
+
+        <div class="controls">
+
+            <span class="knob"></span>
+            <span class="knob"></span>
+            <span class="knob"></span>
+
+            <span class="status">
+                EVIDENCE GROUNDED · RESEARCH ONLY
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content">
+
+<section class="card">
+
+    <div class="section-title">
+        EXECUTIVE SUMMARY
+    </div>
+
+    <div class="executive">
+        <ul>
+            <li>Bond yields and term premiums face structural upward pressure from heavy fiscal deficits, high nominal growth, and fierce capital competition driven by government infrastructure and AI buildouts.</li><li>Equity markets continue to demonstrate resilience supported by interest-rate insensitive AI CapEx, robust tech balance sheets, and solid consumer demand, though higher yields loom as a valuation threat.</li><li>Geopolitical and trade tensions—specifically regarding China, Iran, and U.S.-Canada relations—are escalating, driven partly by domestic political positioning ahead of elections and impending post-election tariff adjustments.</li>
+        </ul>
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MACRO THEMES
+    </div>
+
+    
+        <div class="macro-card">
+            <h3>Fiscal Dominance and Structural Inflation Pressures</h3>
+
+            <p>
+                Heavy government spending, large deficits, and strong nominal growth are placing a structural floor on inflation and interest rates, challenging traditional monetary policy transmission.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">George Goncalves, MUFG</span> <span class="guest">Dan Suzuki, iCapital</span> <span class="guest">Robert Sockin, PGIM</span>
+            </div>
+
+            
+        </div>
+        
+        <div class="macro-card">
+            <h3>AI Infrastructure CapEx and Capital Competition</h3>
+
+            <p>
+                Massive capital expenditure for artificial intelligence and sovereign buildouts is consuming vast amounts of capital, intensifying competition with government borrowing and keeping borrowing costs elevated.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">George Goncalves, MUFG</span> <span class="guest">Ted Mortonson, Baird</span> <span class="guest">Dan Greenhaus, Solus Alternative Asset Management</span>
+            </div>
+
+            
+        </div>
+        
+        <div class="macro-card">
+            <h3>Geopolitical and Trade Friction as Domestic Political Strategy</h3>
+
+            <p>
+                Trade escalations with allies like Canada and tough postures toward adversaries are heavily influenced by domestic political strategies aimed at galvanizing core voting bases.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Kate Kalutkiewicz, Former Trump White House Trade Official</span> <span class="guest">Henrietta Treyz, Veda Partners</span>
+            </div>
+
+            
+        </div>
+        
+
+</section>
+
+
+<div class="grid">
+
+
+    <section class="market-card">
+        <div class="section-title">
+            RATES / BONDS
+        </div>
+
+        <p class="summary">
+            Fixed-income markets face significant upward yield pressure driven by heavy debt issuance, structural inflation floors, and heavy capital competition. Treasury management tools like buybacks are seen by some as symbolic or secondary compared to the need for actual back-end issuance cuts.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Treasury yields are exceptionally high relative to current inflation and growth, requiring active debt management or issuance cuts to meaningfully lower long-term rates (Kit Juckes, Meghan Swiber).</li><li>Treasury buybacks represent a novel structural pivot to manage liquidity and perception, but back-end issuance cuts would send a more direct signal to reduce borrowing costs (Meghan Swiber, Dan Suzuki).</li><li>The Federal Reserve&#x27;s read on financial conditions is complicated by active fiscal and Treasury interventions at the long end of the curve (Meghan Swiber).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Persistent term premiums and a 10-year Treasury yield pushing toward 5% could destabilize equity valuation multiples and increase debt-servicing costs.</li><li>Conflict between fiscal debt management strategies and monetary policy signals reduces the clarity of information available to central bankers.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            USD / FX
+        </div>
+
+        <p class="summary">
+            Management of the bond market and structural overvaluation of the currency are encouraging policies aimed at fostering a weaker U.S. dollar to improve international competitiveness.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Treasury efforts to manage bond market conditions serve as an alternative, preferred mechanism for engineering a weaker U.S. dollar given its overvaluation on long-term fundamentals (Kit Juckes).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Overly aggressive currency management or perceived attempts to rig debt markets carry execution risks and could provoke international retaliatory currency measures.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            EQUITIES
+        </div>
+
+        <p class="summary">
+            Equity markets remain resilient, buoyed by robust corporate consumer demand and rate-insensitive AI capital expenditure. However, rising benchmark yields pose a looming valuation threat, particularly outside mega-cap tech.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>AI capital expenditure has been largely interest-rate insensitive, allowing equity markets to withstand rising yields thus far (Lisa Shalett).</li><li>Broad economic fundamentals remain solid with stable GDP growth, a holding labor market, and tight credit spreads (Dan Greenhaus, United Airlines).</li><li>Vulnerability is concentrated in smaller caps, unprofitable tech, and the broader tech ecosystem rather than cash-rich hyperscalers (Lisa Shalett).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>A 10-year Treasury yield pushing through 4.75% on its way to 5% could trigger a severe valuation reckoning for high-multiple equities (Lisa Shalett, Ted Mortonson).</li><li>The return of bond and cap-ex vigilantes means companies cannot spend without abandon; markets demand concrete evidence of return on investment (Dan Suzuki).</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            CREDIT
+        </div>
+
+        <p class="summary">
+            Credit conditions remain generally benign with tight spreads, though heavy corporate funding requirements and rising borrowing costs place pressure on issuers needing to refinance or finance massive capital expenditures.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Credit spreads remain tight, signaling a lack of systemic stress in corporate risk assets despite high annual interest costs and large government deficits (Dan Greenhaus).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Heavy debt issuance demands across the technology supply chain could face higher hurdles if benchmark borrowing costs continue to climb.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            AI / TECHNOLOGY
+        </div>
+
+        <p class="summary">
+            The artificial intelligence hardware trade maintains intense momentum with exceptional pricing leverage and backlogs, functioning as a dominant market driver independent of traditional macro constraints.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>AI hardware demand exceeds fulfillment capabilities, with companies like Nvidia positioned to post robust earnings supported by sovereign and enterprise buildouts (Ted Mortonson).</li><li>The AI secular narrative operates independently of interest rates, regulations, valuations, and money flows (Dan Greenhaus).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Massive capital expenditure requirements make the sector sensitive to persistent increases in the cost of capital and 10-year Treasury yields.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            COMMODITIES
+        </div>
+
+        <p class="summary">
+            Commodity markets, particularly oil, face structural price floors driven by geopolitical friction, sanctions dynamics, and sustained global demand.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Economic strangulation of Iran is constrained without strict cooperation or sanctions on China, which holds significant counter-leverage via rare earth controls (Lt. Gen. Karen Gibson).</li><li>Persistent oil prices staying near elevated levels contribute to the structural floor under inflation and interest rates (Dan Suzuki).</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Geopolitical miscalculations or supply chain disruptions could inject sudden inflationary shocks into energy and industrial commodities.</li>
+        </ul>
+    </section>
+    
+
+</div>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONSENSUS
+    </div>
+
+    
+        <div class="insight">
+            <strong>
+                Structural government spending, heavy capital demands, and fiscal deficits are exerting sustained upward pressure on long-term bond yields and the cost of capital.
+            </strong>
+            <div class="small">
+                Guests:
+                George Goncalves, MUFG, Ted Mortonson, Baird, Dan Suzuki, iCapital, Robert Sockin, PGIM
+            </div>
+        </div>
+        
+        <div class="insight">
+            <strong>
+                AI-related capital expenditures and infrastructure buildouts remain robust and have largely decoupled from traditional interest rate sensitivity in the near term.
+            </strong>
+            <div class="small">
+                Guests:
+                Lisa Shalett, Morgan Stanley, Ted Mortonson, Baird, Dan Greenhaus, Solus Alternative Asset Management
+            </div>
+        </div>
+        
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONFLICTS
+    </div>
+
+    
+        <div class="conflict">
+            <strong>
+                Federal Reserve Monetary Policy Outlook
+            </strong>
+
+            <div>
+                <b>VIEW A:</b>
+                The Federal Reserve may need to implement as many as three rate hikes this year due to hot nominal GDP, above-trend real growth, and sticky inflation (PGIM - Robert Sockin).
+            </div>
+
+            <div>
+                <b>VIEW B:</b>
+                Treasury and administrative actions are actively attempting to manage or lower long-term yields and engineer a weaker dollar, creating friction with central bank policy transmission (Société Générale - Kit Juckes, BofA Securities - Meghan Swiber).
+            </div>
+
+            <div class="small">
+                Contradictory signals between fiscal debt management and potential central bank tightening complicate market pricing for fixed income duration and increase macroeconomic volatility.
+            </div>
+        </div>
+        
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        KEY RISKS
+    </div>
+
+    
+        <div class="risk">
+            <div class="risk-title">
+                Treasury Yield Breach of Critical Thresholds
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                10-year Treasury yield pushing decisively through 4.75% toward 5%.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                Potential valuation reckoning for high-multiple equities, increased equity market volatility, and a sharp rise in corporate borrowing costs.
+            </div>
+        </div>
+        
+        <div class="risk">
+            <div class="risk-title">
+                Escalation of Cross-Border Trade Conflicts
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Implementation of reciprocal tariffs and retaliatory measures between the U.S., Canada, and international trade partners.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                Supply chain disruption, margin compression in internationally exposed sectors, and heightened political risk premiums.
+            </div>
+        </div>
+        
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        RESEARCH TAKEAWAYS
+    </div>
+
+    <ul>
+        <li>Fixed-income strategies should favor curve-flattening structures or defensive duration positioning as structural fiscal deficits and heavy issuance keep term premiums elevated.</li><li>Equity exposure should emphasize cash-generative mega-caps with rock-solid balance sheets capable of absorbing higher capital costs, while trimming exposure to unprofitable tech and high-multiple small caps.</li><li>Portfolio managers must account for geopolitical trade friction as a persistent feature driven by domestic political incentives rather than transient policy noise.</li>
+    </ul>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        DAILY ACTION
+    </div>
+
+    <div class="small">
+        Analytical interpretation —
+        not a Bloomberg guest quote.
+    </div>
+
+    <br>
+
+    
+        <div class="action">
+            <div class="action-number">
+                1
+            </div>
+
+            <div>
+                <strong>
+                    Reduce portfolio duration sensitivity and underweight high-multiple, unprofitable technology equities.
+                </strong>
+
+                <p>
+                    Persistent structural fiscal deficits, heavy AI-related capital expenditure, and sticky inflation risks create a high-probability environment where 10-year Treasury yields test or exceed 5%, threatening valuation multiples.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    10-year Treasury yield movements through the 4.75%-5.00% range, upcoming Treasury auction demand, and Federal Reserve communications regarding long-end yields.
+                </div>
+            </div>
+        </div>
+        
+
+</section>
+
+</div>
+
+
+<div class="footer">
+    Bloomberg Surveillance Research Engine · 2026-08-25
+</div>
+
+</div>
+
+</body>
+
+</html>

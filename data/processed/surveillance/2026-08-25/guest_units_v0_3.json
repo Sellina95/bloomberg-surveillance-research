@@ -1,0 +1,245 @@
+{
+  "date": "2026-08-25",
+  "method": "chapter_attribution_v0_3",
+  "total_chapters": 13,
+  "guest_chapter_count": 12,
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Treasury vs. Bond Market, Nvidia and Canada Trade War",
+      "start_seconds": 0,
+      "source": "serpapi",
+      "is_guest": false
+    },
+    {
+      "chapter": 2,
+      "title": "Treasury Can't Override Bond Market Forces — George Goncalves, MUFG",
+      "start_seconds": 311,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 3,
+      "title": "Iran Can't Be Economically Strangled Without China — Lt. Gen. Karen Gibson (Ret.), Academy Securities",
+      "start_seconds": 1079,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 4,
+      "title": "Canada Is Showing Trump It Won't Back Down — Kate Kalutkiewicz, Former Trump White House Trade Official",
+      "start_seconds": 2112,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 5,
+      "title": "Treasury Move Is Another Way to a Weaker Dollar — Kit Juckes, Société Générale",
+      "start_seconds": 2544,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 6,
+      "title": "5% Treasury Yield Could Trigger Stock Reckoning — Lisa Shalett, Morgan Stanley",
+      "start_seconds": 3295,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 7,
+      "title": "Canada Fight Helps Trump Rally MAGA Voters — Henrietta Treyz, Veda Partners",
+      "start_seconds": 4075,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 8,
+      "title": "AI Boom Hasn't Even Reached Sovereign Buildout — Ted Mortonson, Baird",
+      "start_seconds": 4620,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 9,
+      "title": "Treasury Needs Issuance Cuts to Really Move Yields — Meghan Swiber, BofA Securities",
+      "start_seconds": 5317,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 10,
+      "title": "Bond Vigilantes Are Back for First Time in Decades — Dan Suzuki, iCapital",
+      "start_seconds": 6043,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 11,
+      "title": "United Sees No Cracks in Travel Demand — Scott Kirby, United Airlines",
+      "start_seconds": 6576,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 12,
+      "title": "Fed Could Still Hike Three Times This Year — Robert Sockin, PGIM",
+      "start_seconds": 7617,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 13,
+      "title": "Everyone Is Afraid to Say the Economy Is Fine — Dan Greenhaus, Solus Alternative Asset Management",
+      "start_seconds": 8158,
+      "source": "serpapi",
+      "is_guest": true
+    }
+  ],
+  "guest_units": [
+    {
+      "unit_id": 1,
+      "chapter": 2,
+      "title": "Treasury Can't Override Bond Market Forces — George Goncalves, MUFG",
+      "guest": "George Goncalves, MUFG",
+      "start_seconds": 311,
+      "end_seconds": 1079,
+      "duration_seconds": 768,
+      "segment_count": 209,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 2,
+      "chapter": 3,
+      "title": "Iran Can't Be Economically Strangled Without China — Lt. Gen. Karen Gibson (Ret.), Academy Securities",
+      "guest": "Lt. Gen. Karen Gibson (Ret.), Academy Securities",
+      "start_seconds": 1079,
+      "end_seconds": 2112,
+      "duration_seconds": 1033,
+      "segment_count": 272,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 3,
+      "chapter": 4,
+      "title": "Canada Is Showing Trump It Won't Back Down — Kate Kalutkiewicz, Former Trump White House Trade Official",
+      "guest": "Kate Kalutkiewicz, Former Trump White House Trade Official",
+      "start_seconds": 2112,
+      "end_seconds": 2544,
+      "duration_seconds": 432,
+      "segment_count": 112,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 4,
+      "chapter": 5,
+      "title": "Treasury Move Is Another Way to a Weaker Dollar — Kit Juckes, Société Générale",
+      "guest": "Kit Juckes, Société Générale",
+      "start_seconds": 2544,
+      "end_seconds": 3295,
+      "duration_seconds": 751,
+      "segment_count": 199,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 5,
+      "chapter": 6,
+      "title": "5% Treasury Yield Could Trigger Stock Reckoning — Lisa Shalett, Morgan Stanley",
+      "guest": "Lisa Shalett, Morgan Stanley",
+      "start_seconds": 3295,
+      "end_seconds": 4075,
+      "duration_seconds": 780,
+      "segment_count": 200,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 6,
+      "chapter": 7,
+      "title": "Canada Fight Helps Trump Rally MAGA Voters — Henrietta Treyz, Veda Partners",
+      "guest": "Henrietta Treyz, Veda Partners",
+      "start_seconds": 4075,
+      "end_seconds": 4620,
+      "duration_seconds": 545,
+      "segment_count": 150,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 7,
+      "chapter": 8,
+      "title": "AI Boom Hasn't Even Reached Sovereign Buildout — Ted Mortonson, Baird",
+      "guest": "Ted Mortonson, Baird",
+      "start_seconds": 4620,
+      "end_seconds": 5317,
+      "duration_seconds": 697,
+      "segment_count": 205,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 8,
+      "chapter": 9,
+      "title": "Treasury Needs Issuance Cuts to Really Move Yields — Meghan Swiber, BofA Securities",
+      "guest": "Meghan Swiber, BofA Securities",
+      "start_seconds": 5317,
+      "end_seconds": 6043,
+      "duration_seconds": 726,
+      "segment_count": 226,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 9,
+      "chapter": 10,
+      "title": "Bond Vigilantes Are Back for First Time in Decades — Dan Suzuki, iCapital",
+      "guest": "Dan Suzuki, iCapital",
+      "start_seconds": 6043,
+      "end_seconds": 6576,
+      "duration_seconds": 533,
+      "segment_count": 151,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 10,
+      "chapter": 11,
+      "title": "United Sees No Cracks in Travel Demand — Scott Kirby, United Airlines",
+      "guest": "Scott Kirby, United Airlines",
+      "start_seconds": 6576,
+      "end_seconds": 7617,
+      "duration_seconds": 1041,
+      "segment_count": 274,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 11,
+      "chapter": 12,
+      "title": "Fed Could Still Hike Three Times This Year — Robert Sockin, PGIM",
+      "guest": "Robert Sockin, PGIM",
+      "start_seconds": 7617,
+      "end_seconds": 8158,
+      "duration_seconds": 541,
+      "segment_count": 144,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 12,
+      "chapter": 13,
+      "title": "Everyone Is Afraid to Say the Economy Is Fine — Dan Greenhaus, Solus Alternative Asset Management",
+      "guest": "Dan Greenhaus, Solus Alternative Asset Management",
+      "start_seconds": 8158,
+      "end_seconds": 8645.303,
+      "duration_seconds": 487.3029999999999,
+      "segment_count": 131,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    }
+  ]
+}

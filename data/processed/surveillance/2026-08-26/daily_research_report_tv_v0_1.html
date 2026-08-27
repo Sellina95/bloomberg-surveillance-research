@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+
+<title>
+Bloomberg Surveillance —
+2026-08-26
+</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #111214;
+    --panel: #191a1d;
+    --panel-2: #151619;
+    --panel-3: #202125;
+    --line: #303136;
+    --text: #f1f1ee;
+    --muted: #96979b;
+    --amber: #f2a23a;
+    --amber-soft: #c9852c;
+    --green: #72c7a7;
+    --red: #e46f6f;
+    --blue: #7fa9d8;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #292b2f 0%,
+            #151619 35%,
+            #0d0e10 100%
+        );
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-size: 14px;
+}
+
+.page {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+}
+
+.tv {
+    background: #17181b;
+    border: 1px solid #303136;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow:
+        0 22px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    overflow: hidden;
+}
+
+.tv-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 18px;
+    background: linear-gradient(180deg,#222327,#18191c);
+    border-bottom: 1px solid #333438;
+}
+
+.brand {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #f4f4f1;
+}
+
+.live {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: var(--amber);
+}
+
+.screen {
+    position: relative;
+    background: linear-gradient(135deg,#17191b,#101113);
+    min-height: 220px;
+    padding: 30px 34px;
+    border-bottom: 1px solid #303136;
+}
+
+.screen-label {
+    color: var(--amber);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.6px;
+    margin-bottom: 12px;
+}
+
+.screen h1 {
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.date {
+    margin-top: 10px;
+    color: var(--muted);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 12px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 28px;
+}
+
+.knob {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #67686b;
+}
+
+.status {
+    margin-left: 12px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.content {
+    margin-top: 18px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #e8e8e5;
+    margin-bottom: 16px;
+}
+
+.section-title::before {
+    content: "";
+    width: 3px;
+    height: 14px;
+    background: var(--amber);
+    border-radius: 2px;
+}
+
+.executive {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.executive ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.executive li {
+    margin-bottom: 9px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.market-card {
+    position: relative;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 17px;
+    min-height: 190px;
+}
+
+.market-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: var(--amber-soft);
+    opacity: .75;
+}
+
+.market-card .section-title {
+    padding-left: 8px;
+}
+
+.summary {
+    color: #c8c9cb;
+    line-height: 1.55;
+    margin: 0 0 14px;
+}
+
+h4 {
+    margin: 16px 0 7px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: var(--amber);
+}
+
+.market-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.market-card li {
+    margin-bottom: 7px;
+    color: #d9d9d7;
+    line-height: 1.45;
+}
+
+.macro-card {
+    background: var(--panel-2);
+    border: 1px solid #292a2e;
+    border-radius: 8px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+.macro-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #f0f0ed;
+}
+
+.macro-card p {
+    color: #c6c7c9;
+    line-height: 1.55;
+}
+
+.guest-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 12px 0;
+}
+
+.guest {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid #3a3b3f;
+    border-radius: 4px;
+    background: #222327;
+    color: #c5c6c8;
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.evidence {
+    display: flex;
+    gap: 10px;
+    padding: 9px 10px;
+    margin-top: 6px;
+    background: #111214;
+    border: 1px solid #292a2d;
+    border-left: 2px solid var(--green);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.timestamp {
+    flex: 0 0 auto;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.insight,
+.conflict,
+.risk {
+    border-radius: 7px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    line-height: 1.55;
+}
+
+.insight {
+    background: #151c19;
+    border: 1px solid #293a34;
+    border-left: 3px solid var(--green);
+}
+
+.conflict {
+    background: #1b1815;
+    border: 1px solid #3c3025;
+    border-left: 3px solid var(--amber);
+}
+
+.risk {
+    background: #1c1617;
+    border: 1px solid #40292b;
+    border-left: 3px solid var(--red);
+}
+
+.small {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.action {
+    display: flex;
+    gap: 14px;
+    padding: 15px;
+    background: #171a18;
+    border: 1px solid #304238;
+    border-radius: 8px;
+    margin-bottom: 9px;
+}
+
+.action-number {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: var(--amber);
+    color: #17120b;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.action p {
+    margin: 7px 0;
+    color: #b9babd;
+    line-height: 1.5;
+}
+
+.monitor {
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+}
+
+.footer {
+    text-align: center;
+    color: #66686d;
+    font-size: 10px;
+    padding: 26px;
+}
+
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        padding: 12px;
+    }
+
+    .screen {
+        padding: 24px;
+    }
+
+    .screen h1 {
+        font-size: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<div class="page">
+
+
+<div class="tv">
+
+    <div class="tv-top">
+
+        <div class="brand">
+            BLOOMBERG SURVEILLANCE · RESEARCH DESK
+        </div>
+
+        <div class="live">
+            ● DAILY RESEARCH
+        </div>
+
+    </div>
+
+    <div class="screen">
+
+        <div class="screen-label">
+            GLOBAL MARKET RESEARCH
+        </div>
+
+        <h1>
+            Daily Market Brief
+        </h1>
+
+        <div class="date">
+            2026-08-26
+        </div>
+
+        <div class="controls">
+
+            <span class="knob"></span>
+            <span class="knob"></span>
+            <span class="knob"></span>
+
+            <span class="status">
+                EVIDENCE GROUNDED · RESEARCH ONLY
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content">
+
+<section class="card">
+
+    <div class="section-title">
+        EXECUTIVE SUMMARY
+    </div>
+
+    <div class="executive">
+        <ul>
+            <li>Federal Reserve credibility and the longevity of the 2% inflation target face intensifying scrutiny, with persistent sticky inflation driving division over whether the FOMC&#x27;s next move is a rate hike or pause.</li><li>The artificial intelligence infrastructure boom is shifting from internal cash-flow financing to debt markets, raising concerns over data center supply bottlenecks, valuation concentration, and end-user monetization.</li><li>Fixed-income markets are navigating heavy long-end supply and structural fiscal deficits, with yields returning to pre-2008 baseline norms and offering attractive risk-adjusted compensation.</li>
+        </ul>
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MACRO THEMES
+    </div>
+
+    
+        <div class="macro-card">
+            <h3>Federal Reserve Policy and Inflation Credibility</h3>
+
+            <p>
+                Economists and strategists debate whether sticky, broad-based inflation and a resilient economy will force the Federal Reserve to consider late-year rate hikes to protect its credibility after six years above target.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Marvin Loh, State Street</span> <span class="guest">Conrad DeQuadros, Citi Wealth</span> <span class="guest">Michael McKee, Bloomberg</span> <span class="guest">Stephanie Roth, Wolfe Research</span>
+            </div>
+
+            
+        </div>
+        
+        <div class="macro-card">
+            <h3>AI Infrastructure Financing and Supply Chain Realities</h3>
+
+            <p>
+                The AI capital expenditure cycle is expanding rapidly, but rising corporate debt issuance, physical data center capacity constraints, and intensifying global competition introduce new operational and financial headwinds.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Sarah Kunst, Cleo Capital</span> <span class="guest">Dan Skelly, Morgan Stanley Wealth Management</span> <span class="guest">Tracie McMillion, Wells Fargo Investment Institute</span> <span class="guest">Jay Goldberg, Seaport Research Partners</span> <span class="guest">Mark Lehmann, Citizens Commercial Bank</span>
+            </div>
+
+            
+        </div>
+        
+        <div class="macro-card">
+            <h3>Fiscal Deficits, Treasury Supply, and Fixed Income Yields</h3>
+
+            <p>
+                Heavy long-end debt issuance and structural budget deficits continue to challenge the Treasury market, while high-quality bond yields offer equity-like risk compensation.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Andrew Balls, PIMCO</span> <span class="guest">Tobin Marcus, Wolfe Research</span> <span class="guest">Tracie McMillion, Wells Fargo Investment Institute</span>
+            </div>
+
+            
+        </div>
+        
+
+</section>
+
+
+<div class="grid">
+
+
+    <section class="market-card">
+        <div class="section-title">
+            RATES / BONDS
+        </div>
+
+        <p class="summary">
+            Higher bond yields represent a return to pre-2008 economic baselines rather than a market aberration, though heavy issuance and structural supply pressures keep term premia elevated.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>High-quality bond funds yielding 6% to 7% offer attractive, equity-like risk compensation for global macro deterioration.</li><li>Treasury bond buyback programs would need to be scaled up massively to achieve a meaningful, lasting impact on long-end yields.</li><li>Incremental buyers of US Treasuries are increasingly price-sensitive, moving away from historical captive demand.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Persistent fiscal deficits and heavy long-end debt issuance could steepen the yield curve.</li><li>Failure of Treasury market interventions to absorb heavy supply may keep upward pressure on borrowing costs.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            USD / FX
+        </div>
+
+        <p class="summary">
+            Foreign exchange dynamics are indirectly influenced by shifting yield differentials, as resilient US economic data and sticky inflation challenge expectations for policy easing.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Stronger-than-expected US consumer spending and sticky core PCE support relative yield attractiveness.</li><li>Diverging central bank credibility concerns regarding inflation targets frame medium-term currency risks.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Uncertainty surrounding US fiscal policy and secondary geopolitical sanctions could introduce volatility into global currency flows.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            EQUITIES
+        </div>
+
+        <p class="summary">
+            Equities remain supported by strong fundamental growth and broadening AI productivity gains in old-economy sectors, though mega-cap tech valuations face mounting scrutiny over monetization and margin pressures.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Morgan Stanley remains constructive on risk assets due to strong fundamentals, emerging AI productivity, and undemanding average stock valuations.</li><li>Old-economy sectors (financials, healthcare, manufacturing) are seeing increased AI adoption and are positioned for operational leverage.</li><li>Nvidia and semiconductor leaders face tougher comparisons next year due to capacity limits, rising memory costs, and custom chip competition.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Potential data center construction delays and lagging end-user monetization could trigger multiple compression in high-multiple tech stocks.</li><li>Shift in AI infrastructure funding from cash flow to corporate debt increases sensitivity to elevated borrowing costs.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            CREDIT
+        </div>
+
+        <p class="summary">
+            Corporate credit markets are absorbing a significant increase in issuance as companies transition from funding AI capital expenditures internally to borrowing in debt markets.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>AI infrastructure buildout is increasingly reliant on corporate credit and debt markets rather than pure internal cash flow.</li><li>High-quality corporate and aggregate bonds offer robust yields that compensate investors for structural fiscal risks.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Heavy corporate debt issuance combined with heavy sovereign supply could widen credit spreads and drive up corporate borrowing costs.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            AI / TECHNOLOGY
+        </div>
+
+        <p class="summary">
+            The AI ecosystem is transitioning from hardware scarcity to questions regarding end-user monetization, data center capacity bottlenecks, and rising enterprise debt funding.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Approximately 40% of S&amp;P companies now reference direct productive uses of AI, up from 25% a year ago.</li><li>Nvidia&#x27;s lead is narrowing as hyperscalers and competitors like AMD and Google accelerate custom chip design.</li><li>Physical infrastructure constraints and data center leasing activity indicate uncertainty around optimal capacity scaling.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>A mismatch between massive infrastructure capex and actual enterprise revenue generation could expose cyclical vulnerabilities.</li><li>Surging memory prices and data center construction bottlenecks threaten hardware profit margins.</li>
+        </ul>
+    </section>
+    
+
+
+    <section class="market-card">
+        <div class="section-title">
+            COMMODITIES
+        </div>
+
+        <p class="summary">
+            Geopolitical tensions involving energy flows and defense manufacturing constraints highlight vulnerabilities in commodity supply chains.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Oil price fluctuations driven by Middle East geopolitical risks continue to impact fiscal and fixed income sentiment.</li><li>Defense manufacturing scalability disparities show that certain munitions and capabilities can be produced faster than US interceptors.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Escalating secondary sanctions on Chinese buyers of Iranian oil could disrupt global crude flows and shipping risk premiums.</li>
+        </ul>
+    </section>
+    
+
+</div>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONSENSUS
+    </div>
+
+    
+        <div class="insight">
+            <strong>
+                The artificial intelligence infrastructure boom is facing structural bottlenecks, including data center capacity limits and rising competitive pressure.
+            </strong>
+            <div class="small">
+                Guests:
+                Sarah Kunst, Cleo Capital, Jay Goldberg, Seaport Research Partners, Mark Lehmann, Citizens Commercial Bank
+            </div>
+        </div>
+        
+        <div class="insight">
+            <strong>
+                Heavy debt supply—both sovereign and corporate—is a primary driver of elevated long-term bond yields.
+            </strong>
+            <div class="small">
+                Guests:
+                Andrew Balls, PIMCO, Tobin Marcus, Wolfe Research, Tracie McMillion, Wells Fargo Investment Institute
+            </div>
+        </div>
+        
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONFLICTS
+    </div>
+
+    
+        <div class="conflict">
+            <strong>
+                Federal Reserve Policy Direction (Rate Hikes vs. Pauses)
+            </strong>
+
+            <div>
+                <b>VIEW A:</b>
+                The Fed&#x27;s next move is likely a rate hike due to persistent inflation above target and strong economic resilience.
+            </div>
+
+            <div>
+                <b>VIEW B:</b>
+                The Fed can credibly avoid hiking rates because incoming inflation data and seasonals are expected to show moderating price pressures.
+            </div>
+
+            <div class="small">
+                Contrasting views on the inflation trajectory dictate whether front-end fixed income duration should be extended or hedged against tightening risks.
+            </div>
+        </div>
+        
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        KEY RISKS
+    </div>
+
+    
+        <div class="risk">
+            <div class="risk-title">
+                Persistent Core Inflation and Hawkish Fed Repricing
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Incoming PCE and CPI data printing above consensus expectations
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                Upward pressure on front-end Treasury yields, tighter financial conditions, and multiple compression across equities.
+            </div>
+        </div>
+        
+        <div class="risk">
+            <div class="risk-title">
+                AI Monetization Lag and Capex Saturation
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Delays in data center construction or failure of enterprises to monetize AI investments
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                Severe valuation repricing in semiconductor and mega-cap technology equities.
+            </div>
+        </div>
+        
+        <div class="risk">
+            <div class="risk-title">
+                Sovereign and Corporate Debt Supply Glut
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Continued heavy Treasury issuance combined with corporate credit funding for AI infrastructure
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                Upward pressure on long-end term premia and higher corporate borrowing costs.
+            </div>
+        </div>
+        
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        RESEARCH TAKEAWAYS
+    </div>
+
+    <ul>
+        <li>Fixed-income investors are well-compensated at current yield ranges, with high-quality bonds offering attractive pre-2008 baseline returns.</li><li>The transition of AI infrastructure financing from internal cash flow to corporate debt increases credit market vulnerability.</li><li>Equity market leadership is showing signs of broadening into old-economy sectors experiencing measurable AI productivity gains.</li><li>Geopolitical friction and energy market sensitivities remain underpriced risks across cross-asset portfolios.</li>
+    </ul>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        DAILY ACTION
+    </div>
+
+    <div class="small">
+        Analytical interpretation —
+        not a Bloomberg guest quote.
+    </div>
+
+    <br>
+
+    
+        <div class="action">
+            <div class="action-number">
+                1
+            </div>
+
+            <div>
+                <strong>
+                    Maintain selective duration exposure in high-quality fixed income while guarding against long-end supply pressure.
+                </strong>
+
+                <p>
+                    Yields offer attractive pre-2008 baseline compensation, but heavy Treasury and corporate AI debt issuance limits downside in long-term yields.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    US Treasury auction demand, long-end yield curve steepness, and upcoming inflation data revisions.
+                </div>
+            </div>
+        </div>
+        
+        <div class="action">
+            <div class="action-number">
+                2
+            </div>
+
+            <div>
+                <strong>
+                    Rotate selectively within equities toward old-economy sectors demonstrating tangible AI productivity gains while trimming exposure to concentrated semiconductor names facing margin compression.
+                </strong>
+
+                <p>
+                    Enterprise AI adoption is broadening to 40% of S&amp;P companies, whereas pure-play chip makers face capacity ceilings, rising memory costs, and custom silicon competition.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    Corporate earnings transcripts for verifiable AI ROI, memory component pricing, and data center buildout timelines.
+                </div>
+            </div>
+        </div>
+        
+
+</section>
+
+</div>
+
+
+<div class="footer">
+    Bloomberg Surveillance Research Engine · 2026-08-26
+</div>
+
+</div>
+
+</body>
+
+</html>
