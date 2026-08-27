@@ -9,6 +9,8 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   daily-surveillance:
@@ -91,3 +93,19 @@ jobs:
             git commit -m "Update daily Bloomberg Surveillance research"
             git push
           fi
+
+      - name: Build public Research Desk site
+        run: |
+          python scripts/build_research_desk_pages_v0_1.py
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Research Desk Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy Research Desk to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
