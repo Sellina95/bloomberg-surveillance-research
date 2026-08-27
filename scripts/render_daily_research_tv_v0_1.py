@@ -16,9 +16,53 @@ BASE = Path(
     f"data/processed/surveillance/{DATE}"
 )
 
-INPUT = BASE / "daily_research_report_v0_1.json"
-PROVENANCE_INPUT = BASE / "report_provenance_v0_1.json"
-OUTPUT = BASE / "daily_research_report_tv_v0_1.html"
+LANG = os.environ.get(
+    "SURVEILLANCE_LANG",
+    "en",
+).strip().lower()
+
+if LANG not in {
+    "en",
+    "ko",
+}:
+    raise SystemExit(
+        f"FAIL — unsupported SURVEILLANCE_LANG: {LANG}"
+    )
+
+REPORT_FILENAME_EN = (
+    "daily_research_report_v0_1.json"
+)
+
+REPORT_FILENAME_KO = (
+    "daily_research_report_ko_v0_1.json"
+)
+
+TV_FILENAME_EN = (
+    "daily_research_report_tv_v0_1.html"
+)
+
+TV_FILENAME_KO = (
+    "daily_research_report_tv_ko_v0_1.html"
+)
+
+# Deterministic browser-cache identity for Research Desk navigation.
+#
+# IMPORTANT:
+# - Do not use timestamps or random values here.
+# - Rendered HTML must remain exact-byte deterministic.
+# - Increment only when the public navigation shell contract changes.
+NAV_CACHE_TOKEN = "desk=v0_1"
+
+if LANG == "ko":
+    INPUT = BASE / REPORT_FILENAME_KO
+    OUTPUT = BASE / TV_FILENAME_KO
+else:
+    INPUT = BASE / REPORT_FILENAME_EN
+    OUTPUT = BASE / TV_FILENAME_EN
+
+PROVENANCE_INPUT = (
+    BASE / "report_provenance_v0_1.json"
+)
 
 
 if not INPUT.exists():
@@ -60,11 +104,6 @@ SURVEILLANCE_ROOT = Path(
     "data/processed/surveillance"
 )
 
-TV_FILENAME = (
-    "daily_research_report_tv_v0_1.html"
-)
-
-
 def discover_public_tv_dates():
 
     dates = []
@@ -92,9 +131,23 @@ def discover_public_tv_dates():
         ):
             continue
 
-        if (
-            date_dir / TV_FILENAME
-        ).exists():
+        en_tv = (
+            date_dir / TV_FILENAME_EN
+        )
+
+        ko_tv = (
+            date_dir / TV_FILENAME_KO
+        )
+
+        if LANG == "ko":
+            available = (
+                ko_tv.exists()
+                or en_tv.exists()
+            )
+        else:
+            available = en_tv.exists()
+
+        if available:
 
             dates.append(date)
 
@@ -149,10 +202,31 @@ def navigation_html():
                 else ""
             )
 
+            target_dir = (
+                SURVEILLANCE_ROOT
+                / date
+            )
+
+            if (
+                LANG == "ko"
+                and (
+                    target_dir
+                    / TV_FILENAME_KO
+                ).exists()
+            ):
+                target_filename = (
+                    TV_FILENAME_KO
+                )
+            else:
+                target_filename = (
+                    TV_FILENAME_EN
+                )
+
             href = (
                 "../"
                 f"{date}/"
-                f"{TV_FILENAME}"
+                f"{target_filename}"
+                f"?{NAV_CACHE_TOKEN}"
             )
 
             links.append(
@@ -589,7 +663,7 @@ def build_html():
         """
 
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{e(LANG)}">
 
 <head>
 
@@ -1349,18 +1423,64 @@ h4 {{
                 class="language-switch"
                 aria-label="Report language"
             >
-                <span
-                    class="lang-option lang-active"
-                >
-                    EN
-                </span>
+                {
+                    (
+                        f"""
+                        <span
+                            class="lang-option lang-active"
+                        >
+                            EN
+                        </span>
 
-                <span
-                    class="lang-option lang-disabled"
-                    title="Korean presentation coming next"
-                >
-                    한국어
-                </span>
+                        <a
+                            class="lang-option"
+                            href="{e(TV_FILENAME_KO + '?' + NAV_CACHE_TOKEN)}"
+                        >
+                            한국어
+                        </a>
+                        """
+                        if (
+                            LANG == "en"
+                            and (
+                                BASE
+                                / TV_FILENAME_KO
+                            ).exists()
+                        )
+                        else
+                        (
+                            """
+                            <span
+                                class="lang-option lang-active"
+                            >
+                                EN
+                            </span>
+
+                            <span
+                                class="lang-option lang-disabled"
+                                title="Korean presentation not available"
+                            >
+                                한국어
+                            </span>
+                            """
+                            if LANG == "en"
+                            else
+                            f"""
+                            <a
+                                class="lang-option"
+                                href="{e(TV_FILENAME_EN + '?' + NAV_CACHE_TOKEN)}"
+                            >
+                                EN
+                            </a>
+
+                            <span
+                                class="lang-option lang-active"
+                            >
+                                한국어
+                            </span>
+                            """
+                        )
+                    )
+                }
             </div>
 
         </div>
@@ -1611,6 +1731,7 @@ print("=" * 100)
 print("DAILY RESEARCH TV REPORT")
 print("=" * 100)
 print("DATE:", DATE)
+print("LANG:", LANG)
 print("OUTPUT:", OUTPUT)
 print("=" * 100)
 print("HTML BUILD: PASS")

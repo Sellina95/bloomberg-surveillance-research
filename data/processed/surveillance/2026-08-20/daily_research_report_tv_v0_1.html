@@ -96,6 +96,159 @@ body {
     color: var(--amber);
 }
 
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background: #111214;
+    border: 1px solid #34353a;
+    border-radius: 6px;
+}
+
+.lang-option {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.lang-active {
+    background: var(--amber);
+    color: #111214;
+}
+
+.lang-disabled {
+    color: #626368;
+    cursor: not-allowed;
+}
+
+.calendar-control {
+    position: relative;
+}
+
+.calendar-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 29px;
+    padding: 5px 9px;
+    background: #17181b;
+    border: 1px solid #3a3b40;
+    border-radius: 6px;
+    color: #dededb;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.calendar-button:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+}
+
+.calendar-icon {
+    font-size: 13px;
+}
+
+.calendar-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    z-index: 100;
+    width: 270px;
+    padding: 14px;
+    background: #151619;
+    border: 1px solid #3a3b40;
+    border-radius: 8px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55);
+}
+
+.calendar-control.open
+.calendar-panel {
+    display: block;
+}
+
+.nav-month + .nav-month {
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid #303136;
+}
+
+.nav-month-label {
+    margin-bottom: 10px;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.nav-date-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(7,1fr);
+    gap: 5px;
+}
+
+.nav-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 1px solid #303136;
+    border-radius: 5px;
+    background: #1d1e22;
+    color: #bdbec1;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-date:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+    background: #24211c;
+}
+
+.nav-date-current {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #111214;
+}
+
+.nav-date-current:hover {
+    color: #111214;
+}
+
 .screen {
     position: relative;
     background: linear-gradient(135deg,#17191b,#101113);
@@ -339,6 +492,128 @@ h4 {
     font-size: 11px;
 }
 
+.provenance-block {
+    margin-top: 11px;
+    padding-top: 9px;
+    border-top: 1px solid #2c2d31;
+}
+
+.prov-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 7px;
+}
+
+.prov-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.prov-approved {
+    color: var(--green);
+    background: #14231e;
+    border: 1px solid #2e5547;
+}
+
+.prov-review {
+    color: var(--amber);
+    background: #261e14;
+    border: 1px solid #634826;
+}
+
+.prov-type {
+    color: #b9c9dc;
+    background: #171d24;
+    border: 1px solid #344252;
+}
+
+.prov-warning {
+    margin: 7px 0;
+    padding: 7px 9px;
+    border-left: 2px solid var(--amber);
+    background: #211b14;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.provenance-details {
+    margin-top: 6px;
+}
+
+.provenance-details summary {
+    cursor: pointer;
+    color: #9fa8b4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    user-select: none;
+}
+
+.provenance-details summary:hover {
+    color: var(--text);
+}
+
+.claim-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.claim-id {
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid #353b43;
+    border-radius: 4px;
+    background: #121519;
+    color: #aeb8c4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+}
+
+.prov-note {
+    margin-top: 8px;
+    color: #73777e;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.conflict-view {
+    margin-top: 10px;
+}
+
+.takeaway-item {
+    margin-bottom: 12px;
+}
+
 .action {
     display: flex;
     gap: 14px;
@@ -393,6 +668,26 @@ h4 {
         padding: 12px;
     }
 
+    .tv-top {
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .top-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .calendar-panel {
+        position: fixed;
+        top: 70px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }
+
     .screen {
         padding: 24px;
     }
@@ -424,8 +719,130 @@ h4 {
             BLOOMBERG SURVEILLANCE · RESEARCH DESK
         </div>
 
-        <div class="live">
-            ● DAILY RESEARCH
+        <div class="top-actions">
+
+            <div class="live">
+                ● DAILY RESEARCH
+            </div>
+
+            <div
+                class="calendar-control"
+                id="calendarControl"
+            >
+
+                <button
+                    class="calendar-button"
+                    id="calendarButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="calendarPanel"
+                >
+                    <span class="calendar-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        2026-08-20
+                    </span>
+                </button>
+
+                <div
+                    class="calendar-panel"
+                    id="calendarPanel"
+                >
+
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    AUG 2026
+                </div>
+
+                <div class="nav-date-grid">
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-14/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-14"
+                >
+                    14
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-18/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-18"
+                >
+                    18
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-19/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-19"
+                >
+                    19
+                </a>
+
+                <a
+                    class="nav-date nav-date-current"
+                    href="../2026-08-20/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-20"
+                >
+                    20
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-24/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-24"
+                >
+                    24
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-25/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-25"
+                >
+                    25
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-26/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-26"
+                >
+                    26
+                </a>
+
+                </div>
+
+            </div>
+
+                </div>
+
+            </div>
+
+            <div
+                class="language-switch"
+                aria-label="Report language"
+            >
+
+                            <span
+                                class="lang-option lang-active"
+                            >
+                                EN
+                            </span>
+
+                            <span
+                                class="lang-option lang-disabled"
+                                title="Korean presentation not available"
+                            >
+                                한국어
+                            </span>
+
+            </div>
+
         </div>
 
     </div>
@@ -483,7 +900,7 @@ h4 {
         MACRO THEMES
     </div>
 
-    
+
         <div class="macro-card">
             <h3>Fiscal Dominance &amp; Treasury Supply Pressures</h3>
 
@@ -495,7 +912,7 @@ h4 {
                 <span class="guest">Peter Tchir, Academy Securities</span> <span class="guest">Collin Martin, Schwab Center for Financial Research</span> <span class="guest">Krishna Guha, Evercore ISI</span> <span class="guest">Jack Manley, JPMorgan Asset Management</span> <span class="guest">Daleep Singh, PGIM</span> <span class="guest">Mona Mahajan, Edward Jones</span>
             </div>
 
-            
+
                 <div class="evidence">
                     <span class="timestamp">
                         12:31
@@ -505,7 +922,7 @@ h4 {
 AND THIS IS THE BIGGEST
                     </span>
                 </div>
-                
+
                 <div class="evidence">
                     <span class="timestamp">
                         22:52
@@ -515,7 +932,7 @@ AND THIS IS THE BIGGEST
 TREASURY AND OVERWEIGHT
                     </span>
                 </div>
-                
+
                 <div class="evidence">
                     <span class="timestamp">
                         43:40
@@ -525,7 +942,7 @@ TREASURY AND OVERWEIGHT
 ISSUANCE ACROSS THE AI
                     </span>
                 </div>
-                
+
                 <div class="evidence">
                     <span class="timestamp">
                         55:35
@@ -535,9 +952,9 @@ ISSUANCE ACROSS THE AI
 TRILLION DEBT NUMBER THAT CAME
                     </span>
                 </div>
-                
+
         </div>
-        
+
         <div class="macro-card">
             <h3>Consumer Strain &amp; Housing Affordability Pressures</h3>
 
@@ -549,7 +966,7 @@ TRILLION DEBT NUMBER THAT CAME
                 <span class="guest">Jeff Jacobson, 22V Research</span> <span class="guest">David Bellinger, Mizuho</span> <span class="guest">Nela Richardson, ADP</span>
             </div>
 
-            
+
                 <div class="evidence">
                     <span class="timestamp">
                         81:59
@@ -559,7 +976,7 @@ TRILLION DEBT NUMBER THAT CAME
 WHERE YOU JUST RUN OUT OF
                     </span>
                 </div>
-                
+
                 <div class="evidence">
                     <span class="timestamp">
                         115:48
@@ -569,7 +986,7 @@ WHERE YOU JUST RUN OUT OF
 LOW-END CONSUMER STRESS.
                     </span>
                 </div>
-                
+
                 <div class="evidence">
                     <span class="timestamp">
                         141:57
@@ -579,9 +996,9 @@ LOW-END CONSUMER STRESS.
 OR UNEXPECTED, WE ARE OFF THAT
                     </span>
                 </div>
-                
+
         </div>
-        
+
 
 </section>
 
@@ -608,7 +1025,7 @@ OR UNEXPECTED, WE ARE OFF THAT
             <li>Exploding national deficits and generic Treasury status driving investors to high-grade corporate debt.</li><li>Uncoordinated fiscal interventions triggering a monetary policy clash.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -630,7 +1047,7 @@ OR UNEXPECTED, WE ARE OFF THAT
             <li>Escalating geopolitical sanctions on Iran risking clashes with China and impacting global currency and energy flows.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -652,7 +1069,7 @@ OR UNEXPECTED, WE ARE OFF THAT
             <li>Seasonal headwinds in September and October combined with elevated yields testing equity valuation multiples.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -674,7 +1091,7 @@ OR UNEXPECTED, WE ARE OFF THAT
             <li>Surging borrowing costs and incremental fuel expenses weighing on corporate margins.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -696,7 +1113,7 @@ OR UNEXPECTED, WE ARE OFF THAT
             <li>Heavy issuance from AI infrastructure contributing to long-end yield pressures.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -718,7 +1135,7 @@ OR UNEXPECTED, WE ARE OFF THAT
             <li>Energy price shocks and incremental fuel costs impacting retail and industrial supply chains.</li>
         </ul>
     </section>
-    
+
 
 </div>
 
@@ -729,27 +1146,33 @@ OR UNEXPECTED, WE ARE OFF THAT
         CROSS-GUEST CONSENSUS
     </div>
 
-    
+
         <div class="insight">
             <strong>
                 Long-term Treasury yields are being driven higher by massive structural supply and issuance (including AI hyperscalers and sovereign debt) rather than traditional inflation compensation alone.
             </strong>
+
             <div class="small">
                 Guests:
                 Peter Tchir, Academy Securities, Krishna Guha, Evercore ISI, Mona Mahajan, Edward Jones, Mary Daly, San Francisco Fed
             </div>
+
+
         </div>
-        
+
         <div class="insight">
             <strong>
                 Recent Treasury interventions and buybacks are relatively small band-aids that cannot fully resolve the deep-rooted fiscal deficit and supply dynamics.
             </strong>
+
             <div class="small">
                 Guests:
                 Collin Martin, Schwab Center for Financial Research, Daleep Singh, PGIM, Mona Mahajan, Edward Jones
             </div>
+
+
         </div>
-        
+
 
 </section>
 
@@ -760,27 +1183,31 @@ OR UNEXPECTED, WE ARE OFF THAT
         CROSS-GUEST CONFLICTS
     </div>
 
-    
+
         <div class="conflict">
             <strong>
                 Federal Reserve Rate Path and Credibility
             </strong>
 
-            <div>
+            <div class="conflict-view">
                 <b>VIEW A:</b>
                 The Fed may need to execute three to four rate hikes to regain market credibility and combat loosening financial conditions (Guneet Dhingra, Daleep Singh).
+
+
             </div>
 
-            <div>
+            <div class="conflict-view">
                 <b>VIEW B:</b>
                 There is no urgent problem or evidence requiring preemptive rate hikes, and the Fed remains focused on data dependence and its price stability mandate (Krishna Guha, Mary Daly).
+
+
             </div>
 
             <div class="small">
                 Conflicting views on Fed policy direction create sharp divergence in fixed-income duration strategies and risk asset valuations.
             </div>
         </div>
-        
+
 
 </section>
 
@@ -791,7 +1218,7 @@ OR UNEXPECTED, WE ARE OFF THAT
         KEY RISKS
     </div>
 
-    
+
         <div class="risk">
             <div class="risk-title">
                 Front-End Doom Loop / Uncoordinated Monetary Policy
@@ -807,7 +1234,7 @@ OR UNEXPECTED, WE ARE OFF THAT
                 Severe volatility across the yield curve, pressure on risk assets, and downward pressure on the U.S. dollar.
             </div>
         </div>
-        
+
         <div class="risk">
             <div class="risk-title">
                 Housing and Consumer Credit Stress
@@ -823,7 +1250,7 @@ OR UNEXPECTED, WE ARE OFF THAT
                 Broad contraction in discretionary retail spending, margin compression for homebuilders, and slowing economic growth.
             </div>
         </div>
-        
+
 
 </section>
 
@@ -835,7 +1262,31 @@ OR UNEXPECTED, WE ARE OFF THAT
     </div>
 
     <ul>
-        <li>U.S. Treasuries face structural headwinds as investors view them as generic relative to high-grade corporate debt and alternative stores of value like gold and digital assets.</li><li>The disconnect between headline disinflation and everyday worker purchasing power highlights ongoing vulnerability in lower-income consumer spending.</li><li>Federal Reserve officials view long-end yield movements as a reflection of global productivity and AI infrastructure trends rather than a direct signal for monetary easing or tightening.</li>
+
+        <li class="takeaway-item">
+            <div>
+                U.S. Treasuries face structural headwinds as investors view them as generic relative to high-grade corporate debt and alternative stores of value like gold and digital assets.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                The disconnect between headline disinflation and everyday worker purchasing power highlights ongoing vulnerability in lower-income consumer spending.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Federal Reserve officials view long-end yield movements as a reflection of global productivity and AI infrastructure trends rather than a direct signal for monetary easing or tightening.
+            </div>
+
+
+        </li>
+
     </ul>
 
 </section>
@@ -854,7 +1305,7 @@ OR UNEXPECTED, WE ARE OFF THAT
 
     <br>
 
-    
+
         <div class="action">
             <div class="action-number">
                 1
@@ -875,7 +1326,7 @@ OR UNEXPECTED, WE ARE OFF THAT
                 </div>
             </div>
         </div>
-        
+
         <div class="action">
             <div class="action-number">
                 2
@@ -896,7 +1347,7 @@ OR UNEXPECTED, WE ARE OFF THAT
                 </div>
             </div>
         </div>
-        
+
 
 </section>
 
@@ -908,6 +1359,77 @@ OR UNEXPECTED, WE ARE OFF THAT
 </div>
 
 </div>
+
+<script>
+(function () {
+    const control =
+        document.getElementById(
+            "calendarControl"
+        );
+
+    const button =
+        document.getElementById(
+            "calendarButton"
+        );
+
+    if (!control || !button) {
+        return;
+    }
+
+    button.addEventListener(
+        "click",
+        function (event) {
+            event.stopPropagation();
+
+            const open =
+                control.classList.toggle(
+                    "open"
+                );
+
+            button.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+        }
+    );
+
+    document.addEventListener(
+        "click",
+        function (event) {
+            if (
+                !control.contains(
+                    event.target
+                )
+            ) {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+            if (event.key === "Escape") {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+})();
+</script>
 
 </body>
 
