@@ -159,6 +159,55 @@ PUBLIC_TV_DATES = (
 )
 
 
+def language_switch_html() -> str:
+    if LANG == "en":
+        if (BASE / TV_FILENAME_KO).exists():
+            return f"""
+            <span
+                class="lang-option lang-active"
+            >
+                EN
+            </span>
+
+            <a
+                class="lang-option"
+                href="{e(TV_FILENAME_KO + '?' + NAV_CACHE_TOKEN)}"
+            >
+                한국어
+            </a>
+            """
+
+        return """
+        <span
+            class="lang-option lang-active"
+        >
+            EN
+        </span>
+
+        <span
+            class="lang-option lang-disabled"
+            title="Korean presentation not available"
+        >
+            한국어
+        </span>
+        """
+
+    return f"""
+    <a
+        class="lang-option"
+        href="{e(TV_FILENAME_EN + '?' + NAV_CACHE_TOKEN)}"
+    >
+        EN
+    </a>
+
+    <span
+        class="lang-option lang-active"
+    >
+        한국어
+    </span>
+    """
+
+
 def navigation_html():
 
     grouped = {}
@@ -1423,64 +1472,7 @@ h4 {{
                 class="language-switch"
                 aria-label="Report language"
             >
-                {
-                    (
-                        f"""
-                        <span
-                            class="lang-option lang-active"
-                        >
-                            EN
-                        </span>
-
-                        <a
-                            class="lang-option"
-                            href="{e(TV_FILENAME_KO + '?' + NAV_CACHE_TOKEN)}"
-                        >
-                            한국어
-                        </a>
-                        """
-                        if (
-                            LANG == "en"
-                            and (
-                                BASE
-                                / TV_FILENAME_KO
-                            ).exists()
-                        )
-                        else
-                        (
-                            """
-                            <span
-                                class="lang-option lang-active"
-                            >
-                                EN
-                            </span>
-
-                            <span
-                                class="lang-option lang-disabled"
-                                title="Korean presentation not available"
-                            >
-                                한국어
-                            </span>
-                            """
-                            if LANG == "en"
-                            else
-                            f"""
-                            <a
-                                class="lang-option"
-                                href="{e(TV_FILENAME_EN + '?' + NAV_CACHE_TOKEN)}"
-                            >
-                                EN
-                            </a>
-
-                            <span
-                                class="lang-option lang-active"
-                            >
-                                한국어
-                            </span>
-                            """
-                        )
-                    )
-                }
+                {language_switch_html()}
             </div>
 
         </div>
