@@ -6,3 +6,6 @@ data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+
+# Private transcript reference artifacts
+data/reference/youtube/*_transcript.txt
