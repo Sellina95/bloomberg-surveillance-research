@@ -96,6 +96,159 @@ body {
     color: var(--amber);
 }
 
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background: #111214;
+    border: 1px solid #34353a;
+    border-radius: 6px;
+}
+
+.lang-option {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.lang-active {
+    background: var(--amber);
+    color: #111214;
+}
+
+.lang-disabled {
+    color: #626368;
+    cursor: not-allowed;
+}
+
+.calendar-control {
+    position: relative;
+}
+
+.calendar-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 29px;
+    padding: 5px 9px;
+    background: #17181b;
+    border: 1px solid #3a3b40;
+    border-radius: 6px;
+    color: #dededb;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.calendar-button:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+}
+
+.calendar-icon {
+    font-size: 13px;
+}
+
+.calendar-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    z-index: 100;
+    width: 270px;
+    padding: 14px;
+    background: #151619;
+    border: 1px solid #3a3b40;
+    border-radius: 8px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55);
+}
+
+.calendar-control.open
+.calendar-panel {
+    display: block;
+}
+
+.nav-month + .nav-month {
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid #303136;
+}
+
+.nav-month-label {
+    margin-bottom: 10px;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.nav-date-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(7,1fr);
+    gap: 5px;
+}
+
+.nav-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 1px solid #303136;
+    border-radius: 5px;
+    background: #1d1e22;
+    color: #bdbec1;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-date:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+    background: #24211c;
+}
+
+.nav-date-current {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #111214;
+}
+
+.nav-date-current:hover {
+    color: #111214;
+}
+
 .screen {
     position: relative;
     background: linear-gradient(135deg,#17191b,#101113);
@@ -339,6 +492,128 @@ h4 {
     font-size: 11px;
 }
 
+.provenance-block {
+    margin-top: 11px;
+    padding-top: 9px;
+    border-top: 1px solid #2c2d31;
+}
+
+.prov-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 7px;
+}
+
+.prov-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.prov-approved {
+    color: var(--green);
+    background: #14231e;
+    border: 1px solid #2e5547;
+}
+
+.prov-review {
+    color: var(--amber);
+    background: #261e14;
+    border: 1px solid #634826;
+}
+
+.prov-type {
+    color: #b9c9dc;
+    background: #171d24;
+    border: 1px solid #344252;
+}
+
+.prov-warning {
+    margin: 7px 0;
+    padding: 7px 9px;
+    border-left: 2px solid var(--amber);
+    background: #211b14;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.provenance-details {
+    margin-top: 6px;
+}
+
+.provenance-details summary {
+    cursor: pointer;
+    color: #9fa8b4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    user-select: none;
+}
+
+.provenance-details summary:hover {
+    color: var(--text);
+}
+
+.claim-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.claim-id {
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid #353b43;
+    border-radius: 4px;
+    background: #121519;
+    color: #aeb8c4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+}
+
+.prov-note {
+    margin-top: 8px;
+    color: #73777e;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.conflict-view {
+    margin-top: 10px;
+}
+
+.takeaway-item {
+    margin-bottom: 12px;
+}
+
 .action {
     display: flex;
     gap: 14px;
@@ -393,6 +668,26 @@ h4 {
         padding: 12px;
     }
 
+    .tv-top {
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .top-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .calendar-panel {
+        position: fixed;
+        top: 70px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }
+
     .screen {
         padding: 24px;
     }
@@ -424,8 +719,106 @@ h4 {
             BLOOMBERG SURVEILLANCE · RESEARCH DESK
         </div>
 
-        <div class="live">
-            ● DAILY RESEARCH
+        <div class="top-actions">
+
+            <div class="live">
+                ● DAILY RESEARCH
+            </div>
+
+            <div
+                class="calendar-control"
+                id="calendarControl"
+            >
+
+                <button
+                    class="calendar-button"
+                    id="calendarButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="calendarPanel"
+                >
+                    <span class="calendar-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        2026-08-26
+                    </span>
+                </button>
+
+                <div
+                    class="calendar-panel"
+                    id="calendarPanel"
+                >
+
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    AUG 2026
+                </div>
+
+                <div class="nav-date-grid">
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-20/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-20"
+                >
+                    20
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-24/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-24"
+                >
+                    24
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-25/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-25"
+                >
+                    25
+                </a>
+
+                <a
+                    class="nav-date nav-date-current"
+                    href="../2026-08-26/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-26"
+                >
+                    26
+                </a>
+
+                </div>
+
+            </div>
+
+                </div>
+
+            </div>
+
+            <div
+                class="language-switch"
+                aria-label="Report language"
+            >
+
+        <span
+            class="lang-option lang-active"
+        >
+            EN
+        </span>
+
+        <span
+            class="lang-option lang-disabled"
+            title="Korean presentation not available"
+        >
+            한국어
+        </span>
+
+            </div>
+
         </div>
 
     </div>
@@ -470,7 +863,7 @@ h4 {
 
     <div class="executive">
         <ul>
-            <li>Federal Reserve credibility and the longevity of the 2% inflation target face intensifying scrutiny, with persistent sticky inflation driving division over whether the FOMC&#x27;s next move is a rate hike or pause.</li><li>The artificial intelligence infrastructure boom is shifting from internal cash-flow financing to debt markets, raising concerns over data center supply bottlenecks, valuation concentration, and end-user monetization.</li><li>Fixed-income markets are navigating heavy long-end supply and structural fiscal deficits, with yields returning to pre-2008 baseline norms and offering attractive risk-adjusted compensation.</li>
+            <li>Federal Reserve credibility and monetary policy paths remain a central point of debate, with divisions over whether persistent inflation above target and strong economic indicators could trigger further rate hikes or require a prolonged higher-for-longer pause.</li><li>Artificial intelligence infrastructure financing is transitioning from internal corporate cash flows to the credit markets, raising concerns about heavy debt supply, end-user monetization visibility, and potential growth deceleration.</li><li>Global fixed income markets face structural yield pressures from heavy sovereign and corporate issuance, leading experts to frame current higher yields as a normalization toward pre-2008 levels rather than a temporary anomaly.</li>
         </ul>
     </div>
 
@@ -483,49 +876,49 @@ h4 {
         MACRO THEMES
     </div>
 
-    
+
         <div class="macro-card">
-            <h3>Federal Reserve Policy and Inflation Credibility</h3>
+            <h3>Federal Reserve Credibility and Inflation Persistence</h3>
 
             <p>
-                Economists and strategists debate whether sticky, broad-based inflation and a resilient economy will force the Federal Reserve to consider late-year rate hikes to protect its credibility after six years above target.
+                Persistent inflation readings and strong consumer spending data have ignited debate over whether the Fed&#x27;s next move will be a rate hike to reestablish credibility or a pause supported by upcoming cooler data and seasonal revisions.
             </p>
 
             <div class="guest-row">
                 <span class="guest">Marvin Loh, State Street</span> <span class="guest">Conrad DeQuadros, Citi Wealth</span> <span class="guest">Michael McKee, Bloomberg</span> <span class="guest">Stephanie Roth, Wolfe Research</span>
             </div>
 
-            
+
         </div>
-        
+
         <div class="macro-card">
-            <h3>AI Infrastructure Financing and Supply Chain Realities</h3>
+            <h3>AI Infrastructure Financing and Corporate Leverage</h3>
 
             <p>
-                The AI capital expenditure cycle is expanding rapidly, but rising corporate debt issuance, physical data center capacity constraints, and intensifying global competition introduce new operational and financial headwinds.
+                The massive capital expenditure required for artificial intelligence is shifting from internal cash flows to corporate credit markets, increasing debt issuance and supply pressures.
             </p>
 
             <div class="guest-row">
-                <span class="guest">Sarah Kunst, Cleo Capital</span> <span class="guest">Dan Skelly, Morgan Stanley Wealth Management</span> <span class="guest">Tracie McMillion, Wells Fargo Investment Institute</span> <span class="guest">Jay Goldberg, Seaport Research Partners</span> <span class="guest">Mark Lehmann, Citizens Commercial Bank</span>
+                <span class="guest">Sarah Kunst, Cleo Capital</span> <span class="guest">Tracie McMillion, Wells Fargo Investment Institute</span> <span class="guest">Jay Goldberg, Seaport Research Partners</span>
             </div>
 
-            
+
         </div>
-        
+
         <div class="macro-card">
-            <h3>Fiscal Deficits, Treasury Supply, and Fixed Income Yields</h3>
+            <h3>Fixed Income Supply and Yield Normalization</h3>
 
             <p>
-                Heavy long-end debt issuance and structural budget deficits continue to challenge the Treasury market, while high-quality bond yields offer equity-like risk compensation.
+                Higher bond yields are increasingly viewed as a structural normalization to pre-2008 levels driven by fiscal deficits, geopolitical oil price risks, and heavy corporate supply.
             </p>
 
             <div class="guest-row">
                 <span class="guest">Andrew Balls, PIMCO</span> <span class="guest">Tobin Marcus, Wolfe Research</span> <span class="guest">Tracie McMillion, Wells Fargo Investment Institute</span>
             </div>
 
-            
+
         </div>
-        
+
 
 </section>
 
@@ -539,20 +932,20 @@ h4 {
         </div>
 
         <p class="summary">
-            Higher bond yields represent a return to pre-2008 economic baselines rather than a market aberration, though heavy issuance and structural supply pressures keep term premia elevated.
+            Fixed income markets face ongoing duration pressure and supply concerns, though high-quality bond funds offering 6% to 7% yields are viewed as providing compelling risk compensation.
         </p>
 
         <h4>KEY VIEWS</h4>
         <ul>
-            <li>High-quality bond funds yielding 6% to 7% offer attractive, equity-like risk compensation for global macro deterioration.</li><li>Treasury bond buyback programs would need to be scaled up massively to achieve a meaningful, lasting impact on long-end yields.</li><li>Incremental buyers of US Treasuries are increasingly price-sensitive, moving away from historical captive demand.</li>
+            <li>Higher long-term yields reflect a normalization toward pre-financial crisis levels rather than an anomaly (Andrew Balls).</li><li>Treasury bond buyback programs are currently far too small to materially alter long-term yield dynamics without massive structural expansion (Tobin Marcus).</li><li>Heavy corporate debt issuance to fund AI infrastructure is compounding sovereign supply pressures in the fixed income market (Tracie McMillion).</li>
         </ul>
 
         <h4>RISKS</h4>
         <ul>
-            <li>Persistent fiscal deficits and heavy long-end debt issuance could steepen the yield curve.</li><li>Failure of Treasury market interventions to absorb heavy supply may keep upward pressure on borrowing costs.</li>
+            <li>Front-end and long-end rate volatility if inflation persistence forces the Fed to reconsider rate hikes.</li><li>Crowding out effects in corporate credit markets due to massive capital-intensive AI borrowing.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -561,20 +954,20 @@ h4 {
         </div>
 
         <p class="summary">
-            Foreign exchange dynamics are indirectly influenced by shifting yield differentials, as resilient US economic data and sticky inflation challenge expectations for policy easing.
+            Foreign exchange dynamics remain tied to relative central bank credibility, persistent US economic resilience, and global commodity price pressures.
         </p>
 
         <h4>KEY VIEWS</h4>
         <ul>
-            <li>Stronger-than-expected US consumer spending and sticky core PCE support relative yield attractiveness.</li><li>Diverging central bank credibility concerns regarding inflation targets frame medium-term currency risks.</li>
+            <li>Stronger-than-expected US nominal GDP growth and consumer spending support the relative resilience of domestic economic fundamentals.</li>
         </ul>
 
         <h4>RISKS</h4>
         <ul>
-            <li>Uncertainty surrounding US fiscal policy and secondary geopolitical sanctions could introduce volatility into global currency flows.</li>
+            <li>Potential dollar volatility stemming from shifts in Fed rate expectations relative to global central banks.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -583,20 +976,20 @@ h4 {
         </div>
 
         <p class="summary">
-            Equities remain supported by strong fundamental growth and broadening AI productivity gains in old-economy sectors, though mega-cap tech valuations face mounting scrutiny over monetization and margin pressures.
+            Equity market breadth is supported by old-economy adoption of AI and undemanding valuations for average stocks, though mega-cap tech faces questions regarding monetization and looming competition.
         </p>
 
         <h4>KEY VIEWS</h4>
         <ul>
-            <li>Morgan Stanley remains constructive on risk assets due to strong fundamentals, emerging AI productivity, and undemanding average stock valuations.</li><li>Old-economy sectors (financials, healthcare, manufacturing) are seeing increased AI adoption and are positioned for operational leverage.</li><li>Nvidia and semiconductor leaders face tougher comparisons next year due to capacity limits, rising memory costs, and custom chip competition.</li>
+            <li>Old-economy sectors such as financials, healthcare, and manufacturing are increasingly adopting AI and seeing measurable productivity gains (Dan Skelly).</li><li>S&amp;P transcript references to direct productive uses of AI have risen from 25% a year ago to 40% currently (Dan Skelly).</li><li>Nvidia is approaching capacity constraints and facing rising competition from AMD and Google alongside increasing memory prices (Jay Goldberg).</li>
         </ul>
 
         <h4>RISKS</h4>
         <ul>
-            <li>Potential data center construction delays and lagging end-user monetization could trigger multiple compression in high-multiple tech stocks.</li><li>Shift in AI infrastructure funding from cash flow to corporate debt increases sensitivity to elevated borrowing costs.</li>
+            <li>Deceleration in AI infrastructure demand if end-user monetization fails to materialize.</li><li>Multiple compression for semiconductor leaders as comparisons get tougher and supply catches up.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -605,20 +998,20 @@ h4 {
         </div>
 
         <p class="summary">
-            Corporate credit markets are absorbing a significant increase in issuance as companies transition from funding AI capital expenditures internally to borrowing in debt markets.
+            Corporate credit spreads remain tight, but investors are cautioned against generic exposure and bespoke tech-sector deals amidst rising corporate leverage.
         </p>
 
         <h4>KEY VIEWS</h4>
         <ul>
-            <li>AI infrastructure buildout is increasingly reliant on corporate credit and debt markets rather than pure internal cash flow.</li><li>High-quality corporate and aggregate bonds offer robust yields that compensate investors for structural fiscal risks.</li>
+            <li>Corporate credit spreads look tight, and investors should exercise selectivity regarding tech-sector issuance and bespoke deals (Andrew Balls).</li><li>Strong corporate earnings and high nominal GDP growth currently support higher borrowing costs, making 5% to 7% debt yields appealing to corporations (Tracie McMillion).</li>
         </ul>
 
         <h4>RISKS</h4>
         <ul>
-            <li>Heavy corporate debt issuance combined with heavy sovereign supply could widen credit spreads and drive up corporate borrowing costs.</li>
+            <li>Credit deterioration if AI capital expenditures fail to generate expected earnings growth relative to rising debt servicing costs.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -627,20 +1020,20 @@ h4 {
         </div>
 
         <p class="summary">
-            The AI ecosystem is transitioning from hardware scarcity to questions regarding end-user monetization, data center capacity bottlenecks, and rising enterprise debt funding.
+            The AI narrative is shifting from pure technological excitement to scrutiny over end-user monetization, chip design competition, and financing structures.
         </p>
 
         <h4>KEY VIEWS</h4>
         <ul>
-            <li>Approximately 40% of S&amp;P companies now reference direct productive uses of AI, up from 25% a year ago.</li><li>Nvidia&#x27;s lead is narrowing as hyperscalers and competitors like AMD and Google accelerate custom chip design.</li><li>Physical infrastructure constraints and data center leasing activity indicate uncertainty around optimal capacity scaling.</li>
+            <li>Well-funded hyperscalers and companies like OpenAI are accelerating proprietary chip design, narrowing Nvidia&#x27;s historical lead (Sarah Kunst).</li><li>Nvidia is increasingly utilizing its balance sheet as a competitive tool, treading the line between enabling and creating demand (Jay Goldberg).</li><li>China is actively catching up in the AI race with strong government backing, while global sales face ongoing political scrutiny (Mark Lehmann).</li>
         </ul>
 
         <h4>RISKS</h4>
         <ul>
-            <li>A mismatch between massive infrastructure capex and actual enterprise revenue generation could expose cyclical vulnerabilities.</li><li>Surging memory prices and data center construction bottlenecks threaten hardware profit margins.</li>
+            <li>Geopolitical and political interference regarding international sales and data center buildouts.</li><li>Potential bottlenecks if data center projects experience delays or rising memory costs next year.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -649,20 +1042,20 @@ h4 {
         </div>
 
         <p class="summary">
-            Geopolitical tensions involving energy flows and defense manufacturing constraints highlight vulnerabilities in commodity supply chains.
+            Geopolitical tensions involving Iran and trade relationships with China introduce ongoing supply and risk premium considerations for energy markets.
         </p>
 
         <h4>KEY VIEWS</h4>
         <ul>
-            <li>Oil price fluctuations driven by Middle East geopolitical risks continue to impact fiscal and fixed income sentiment.</li><li>Defense manufacturing scalability disparities show that certain munitions and capabilities can be produced faster than US interceptors.</li>
+            <li>Geopolitical friction points involving Iran and China create underlying risks for global crude oil supplies and shipping routes (Col. Wayne Sanders).</li>
         </ul>
 
         <h4>RISKS</h4>
         <ul>
-            <li>Escalating secondary sanctions on Chinese buyers of Iranian oil could disrupt global crude flows and shipping risk premiums.</li>
+            <li>Escalation in Middle Eastern kinetic conflicts or secondary sanctions impacting Chinese imports of Iranian oil.</li>
         </ul>
     </section>
-    
+
 
 </div>
 
@@ -673,27 +1066,33 @@ h4 {
         CROSS-GUEST CONSENSUS
     </div>
 
-    
+
         <div class="insight">
             <strong>
-                The artificial intelligence infrastructure boom is facing structural bottlenecks, including data center capacity limits and rising competitive pressure.
+                AI adoption is expanding across traditional corporate sectors, shifting from theoretical discussion to operational integration.
             </strong>
+
             <div class="small">
                 Guests:
-                Sarah Kunst, Cleo Capital, Jay Goldberg, Seaport Research Partners, Mark Lehmann, Citizens Commercial Bank
+                Dan Skelly, Morgan Stanley Wealth Management, Mark Lehmann, Citizens Commercial Bank
             </div>
+
+
         </div>
-        
+
         <div class="insight">
             <strong>
-                Heavy debt supply—both sovereign and corporate—is a primary driver of elevated long-term bond yields.
+                China represents a critical variable in both global AI development and geopolitical sanctions enforcement.
             </strong>
+
             <div class="small">
                 Guests:
-                Andrew Balls, PIMCO, Tobin Marcus, Wolfe Research, Tracie McMillion, Wells Fargo Investment Institute
+                Col. Wayne Sanders (Ret.), Mark Lehmann, Citizens Commercial Bank
             </div>
+
+
         </div>
-        
+
 
 </section>
 
@@ -704,27 +1103,55 @@ h4 {
         CROSS-GUEST CONFLICTS
     </div>
 
-    
+
         <div class="conflict">
             <strong>
-                Federal Reserve Policy Direction (Rate Hikes vs. Pauses)
+                The likelihood of Federal Reserve rate hikes vs. a prolonged pause
             </strong>
 
-            <div>
+            <div class="conflict-view">
                 <b>VIEW A:</b>
-                The Fed&#x27;s next move is likely a rate hike due to persistent inflation above target and strong economic resilience.
+                The Fed will likely need to hike rates further or maintain a tightening bias due to persistent inflation above 2% and strong economic data.
+
+
             </div>
 
-            <div>
+            <div class="conflict-view">
                 <b>VIEW B:</b>
-                The Fed can credibly avoid hiking rates because incoming inflation data and seasonals are expected to show moderating price pressures.
+                The Fed can credibly avoid hiking and maintain a pause as incoming inflation prints are expected to moderate due to seasonal factors and upcoming methodological revisions.
+
+
             </div>
 
             <div class="small">
-                Contrasting views on the inflation trajectory dictate whether front-end fixed income duration should be extended or hedged against tightening risks.
+                Sets opposing expectations for front-end yield trajectories and market volatility ahead of upcoming inflation and employment data.
             </div>
         </div>
-        
+
+        <div class="conflict">
+            <strong>
+                Sustainability of Nvidia&#x27;s demand and growth trajectory
+            </strong>
+
+            <div class="conflict-view">
+                <b>VIEW A:</b>
+                Nvidia is sold out, maximizing supply chain allocations, and facing tougher comparisons, rising competition, and potential data center build delays next year.
+
+
+            </div>
+
+            <div class="conflict-view">
+                <b>VIEW B:</b>
+                Competition is increasing every quarter, but leading AI companies continue to maintain their market lead unabated.
+
+
+            </div>
+
+            <div class="small">
+                Dictates valuation multiples, multiple compression risks, and the durability of the broader artificial intelligence equity trade.
+            </div>
+        </div>
+
 
 </section>
 
@@ -735,55 +1162,55 @@ h4 {
         KEY RISKS
     </div>
 
-    
+
         <div class="risk">
             <div class="risk-title">
-                Persistent Core Inflation and Hawkish Fed Repricing
+                Persistent inflation forcing aggressive monetary policy tightening
             </div>
 
             <div>
                 <b>TRIGGER</b>
-                Incoming PCE and CPI data printing above consensus expectations
+                Incoming CPI and PCE prints exceeding consensus expectations
             </div>
 
             <div>
                 <b>IMPACT</b>
-                Upward pressure on front-end Treasury yields, tighter financial conditions, and multiple compression across equities.
+
             </div>
         </div>
-        
+
         <div class="risk">
             <div class="risk-title">
-                AI Monetization Lag and Capex Saturation
+                AI capital expenditure overextension and credit strain
             </div>
 
             <div>
                 <b>TRIGGER</b>
-                Delays in data center construction or failure of enterprises to monetize AI investments
+                Lack of clear end-user monetization forcing corporations to slow down data center investments
             </div>
 
             <div>
                 <b>IMPACT</b>
-                Severe valuation repricing in semiconductor and mega-cap technology equities.
+
             </div>
         </div>
-        
+
         <div class="risk">
             <div class="risk-title">
-                Sovereign and Corporate Debt Supply Glut
+                Geopolitical escalation in the Middle East impacting energy supplies
             </div>
 
             <div>
                 <b>TRIGGER</b>
-                Continued heavy Treasury issuance combined with corporate credit funding for AI infrastructure
+                Deterioration of US-Iran coercive diplomacy and friction over Chinese oil purchases
             </div>
 
             <div>
                 <b>IMPACT</b>
-                Upward pressure on long-end term premia and higher corporate borrowing costs.
+
             </div>
         </div>
-        
+
 
 </section>
 
@@ -795,7 +1222,31 @@ h4 {
     </div>
 
     <ul>
-        <li>Fixed-income investors are well-compensated at current yield ranges, with high-quality bonds offering attractive pre-2008 baseline returns.</li><li>The transition of AI infrastructure financing from internal cash flow to corporate debt increases credit market vulnerability.</li><li>Equity market leadership is showing signs of broadening into old-economy sectors experiencing measurable AI productivity gains.</li><li>Geopolitical friction and energy market sensitivities remain underpriced risks across cross-asset portfolios.</li>
+
+        <li class="takeaway-item">
+            <div>
+                Fixed income yields have normalized to pre-2008 levels, offering attractive high-quality yields (6%-7%) that compensate for duration and structural fiscal supply risks.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                The AI infrastructure buildout is shifting from internal cash generation to corporate credit markets, increasing corporate leverage and supply pressures.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Monetary policy remains data-dependent and divided, with sticky inflation keeping the risk of a hawkish surprise alive despite expectations for a steady Fed pause.
+            </div>
+
+
+        </li>
+
     </ul>
 
 </section>
@@ -814,7 +1265,7 @@ h4 {
 
     <br>
 
-    
+
         <div class="action">
             <div class="action-number">
                 1
@@ -822,20 +1273,20 @@ h4 {
 
             <div>
                 <strong>
-                    Maintain selective duration exposure in high-quality fixed income while guarding against long-end supply pressure.
+                    Maintain selective duration positioning in high-quality fixed income while avoiding generic, heavily leveraged corporate credit exposure in the tech sector.
                 </strong>
 
                 <p>
-                    Yields offer attractive pre-2008 baseline compensation, but heavy Treasury and corporate AI debt issuance limits downside in long-term yields.
+                    Yields have structurally normalized to pre-crisis levels, providing strong risk compensation, but corporate debt supply to fund AI infrastructure is expanding rapidly.
                 </p>
 
                 <div class="monitor">
                     MONITOR →
-                    US Treasury auction demand, long-end yield curve steepness, and upcoming inflation data revisions.
+                    Corporate debt issuance volumes, Treasury auction demand, and upcoming core PCE and payroll releases.
                 </div>
             </div>
         </div>
-        
+
         <div class="action">
             <div class="action-number">
                 2
@@ -843,20 +1294,20 @@ h4 {
 
             <div>
                 <strong>
-                    Rotate selectively within equities toward old-economy sectors demonstrating tangible AI productivity gains while trimming exposure to concentrated semiconductor names facing margin compression.
+                    Adopt a barbell equity strategy that pairs old-economy value stocks benefiting from tangible AI productivity gains with caution toward high-multiple semiconductor suppliers facing tougher year-over-year comparisons.
                 </strong>
 
                 <p>
-                    Enterprise AI adoption is broadening to 40% of S&amp;P companies, whereas pure-play chip makers face capacity ceilings, rising memory costs, and custom silicon competition.
+                    AI adoption breadth is rising across Fortune 100 non-tech sectors, while hardware leaders approach capacity constraints and face rising competition and input costs.
                 </p>
 
                 <div class="monitor">
                     MONITOR →
-                    Corporate earnings transcripts for verifiable AI ROI, memory component pricing, and data center buildout timelines.
+                    Corporate earnings guidance mentioning AI efficiency gains, memory price trends, and data center construction delivery schedules.
                 </div>
             </div>
         </div>
-        
+
 
 </section>
 
@@ -868,6 +1319,77 @@ h4 {
 </div>
 
 </div>
+
+<script>
+(function () {
+    const control =
+        document.getElementById(
+            "calendarControl"
+        );
+
+    const button =
+        document.getElementById(
+            "calendarButton"
+        );
+
+    if (!control || !button) {
+        return;
+    }
+
+    button.addEventListener(
+        "click",
+        function (event) {
+            event.stopPropagation();
+
+            const open =
+                control.classList.toggle(
+                    "open"
+                );
+
+            button.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+        }
+    );
+
+    document.addEventListener(
+        "click",
+        function (event) {
+            if (
+                !control.contains(
+                    event.target
+                )
+            ) {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+            if (event.key === "Escape") {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+})();
+</script>
 
 </body>
 
