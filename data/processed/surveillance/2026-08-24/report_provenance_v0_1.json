@@ -1,0 +1,85 @@
+{
+  "schema_version": "report_provenance_v0_1",
+  "date": "2026-08-24",
+  "source_dataset": "data/processed/surveillance/2026-08-24/research_dataset_v0_1.json",
+  "source_summary_sha256": "cac7d567c725abb9b57d41e8133362a01cda93e48af4c6a46e58279f6149d14b",
+  "mapping_policy": "HUMAN_REVIEWED",
+  "public_private_boundary": "IDENTIFIERS_ONLY_NO_TRANSCRIPT_EVIDENCE",
+  "mappings": [
+    {
+      "target_id": "TAKEAWAY-01",
+      "target_type": "research_takeaway",
+      "provenance_type": "SUPPORTED_SYNTHESIS",
+      "audit_status": "APPROVED",
+      "claim_ids": [
+        "20260824-U001-C01",
+        "20260824-U001-C02",
+        "20260824-U001-C03"
+      ]
+    },
+    {
+      "target_id": "TAKEAWAY-02",
+      "target_type": "research_takeaway",
+      "provenance_type": "SUPPORTED_SYNTHESIS",
+      "audit_status": "APPROVED",
+      "claim_ids": [
+        "20260824-U008-C01",
+        "20260824-U007-C01",
+        "20260824-U007-C02"
+      ]
+    },
+    {
+      "target_id": "TAKEAWAY-03",
+      "target_type": "research_takeaway",
+      "provenance_type": "SUPPORTED_SYNTHESIS",
+      "audit_status": "APPROVED",
+      "claim_ids": [
+        "20260824-U006-C01",
+        "20260824-U006-C02",
+        "20260824-U006-C03"
+      ]
+    },
+    {
+      "target_id": "CONSENSUS-01",
+      "target_type": "cross_guest_consensus",
+      "provenance_type": "PARTIAL_CONSENSUS",
+      "audit_status": "REVIEW",
+      "claim_ids": [
+        "20260824-U001-C01",
+        "20260824-U001-C02",
+        "20260824-U004-C02"
+      ],
+      "declared_guest_support_status": "OVER_ATTRIBUTION_DETECTED"
+    },
+    {
+      "target_id": "CONSENSUS-02",
+      "target_type": "cross_guest_consensus",
+      "provenance_type": "SUPPORTED_CONSENSUS",
+      "audit_status": "APPROVED",
+      "claim_ids": [
+        "20260824-U003-C01",
+        "20260824-U007-C01",
+        "20260824-U008-C02"
+      ]
+    },
+    {
+      "target_id": "CONFLICT-01-VIEW_A",
+      "target_type": "cross_guest_conflict_view",
+      "provenance_type": "SUPPORTED",
+      "audit_status": "APPROVED",
+      "claim_ids": [
+        "20260824-U007-C01",
+        "20260824-U007-C02"
+      ]
+    },
+    {
+      "target_id": "CONFLICT-01-VIEW_B",
+      "target_type": "cross_guest_conflict_view",
+      "provenance_type": "SUPPORTED",
+      "audit_status": "APPROVED",
+      "claim_ids": [
+        "20260824-U008-C01"
+      ]
+    }
+  ]
+}
