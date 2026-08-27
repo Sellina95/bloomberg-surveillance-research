@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import calendar
 import json
 import os
 from html import escape
@@ -53,6 +54,136 @@ provenance_by_target = {
     )
     if item.get("target_id")
 }
+
+
+SURVEILLANCE_ROOT = Path(
+    "data/processed/surveillance"
+)
+
+TV_FILENAME = (
+    "daily_research_report_tv_v0_1.html"
+)
+
+
+def discover_public_tv_dates():
+
+    dates = []
+
+    if not SURVEILLANCE_ROOT.exists():
+        return dates
+
+    for date_dir in sorted(
+        SURVEILLANCE_ROOT.iterdir()
+    ):
+
+        if not date_dir.is_dir():
+            continue
+
+        date = date_dir.name
+
+        parts = date.split("-")
+
+        if (
+            len(parts) != 3
+            or not all(
+                part.isdigit()
+                for part in parts
+            )
+        ):
+            continue
+
+        if (
+            date_dir / TV_FILENAME
+        ).exists():
+
+            dates.append(date)
+
+    return dates
+
+
+PUBLIC_TV_DATES = (
+    discover_public_tv_dates()
+)
+
+
+def navigation_html():
+
+    grouped = {}
+
+    for date in PUBLIC_TV_DATES:
+
+        year, month, day = map(
+            int,
+            date.split("-")
+        )
+
+        grouped.setdefault(
+            (year, month),
+            [],
+        ).append(
+            (date, day)
+        )
+
+    month_blocks = []
+
+    for (
+        year,
+        month,
+    ), dates in sorted(
+        grouped.items(),
+        reverse=True,
+    ):
+
+        month_label = (
+            f"{calendar.month_abbr[month].upper()} "
+            f"{year}"
+        )
+
+        links = []
+
+        for date, day in dates:
+
+            current_class = (
+                " nav-date-current"
+                if date == DATE
+                else ""
+            )
+
+            href = (
+                "../"
+                f"{date}/"
+                f"{TV_FILENAME}"
+            )
+
+            links.append(
+                f'''
+                <a
+                    class="nav-date{current_class}"
+                    href="{e(href)}"
+                    aria-label="{e(date)}"
+                >
+                    {day:02d}
+                </a>
+                '''
+            )
+
+        month_blocks.append(
+            f'''
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    {e(month_label)}
+                </div>
+
+                <div class="nav-date-grid">
+                    {"".join(links)}
+                </div>
+
+            </div>
+            '''
+        )
+
+    return "".join(month_blocks)
 
 
 def e(value):
@@ -555,6 +686,159 @@ body {{
     color: var(--amber);
 }}
 
+.top-actions {{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}}
+
+.language-switch {{
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background: #111214;
+    border: 1px solid #34353a;
+    border-radius: 6px;
+}}
+
+.lang-option {{
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}}
+
+.lang-active {{
+    background: var(--amber);
+    color: #111214;
+}}
+
+.lang-disabled {{
+    color: #626368;
+    cursor: not-allowed;
+}}
+
+.calendar-control {{
+    position: relative;
+}}
+
+.calendar-button {{
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 29px;
+    padding: 5px 9px;
+    background: #17181b;
+    border: 1px solid #3a3b40;
+    border-radius: 6px;
+    color: #dededb;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    cursor: pointer;
+}}
+
+.calendar-button:hover {{
+    border-color: var(--amber-soft);
+    color: var(--amber);
+}}
+
+.calendar-icon {{
+    font-size: 13px;
+}}
+
+.calendar-panel {{
+    display: none;
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    z-index: 100;
+    width: 270px;
+    padding: 14px;
+    background: #151619;
+    border: 1px solid #3a3b40;
+    border-radius: 8px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55);
+}}
+
+.calendar-control.open
+.calendar-panel {{
+    display: block;
+}}
+
+.nav-month + .nav-month {{
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid #303136;
+}}
+
+.nav-month-label {{
+    margin-bottom: 10px;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}}
+
+.nav-date-grid {{
+    display: grid;
+    grid-template-columns:
+        repeat(7,1fr);
+    gap: 5px;
+}}
+
+.nav-date {{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 1px solid #303136;
+    border-radius: 5px;
+    background: #1d1e22;
+    color: #bdbec1;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}}
+
+.nav-date:hover {{
+    border-color: var(--amber-soft);
+    color: var(--amber);
+    background: #24211c;
+}}
+
+.nav-date-current {{
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #111214;
+}}
+
+.nav-date-current:hover {{
+    color: #111214;
+}}
+
 .screen {{
     position: relative;
     background: linear-gradient(135deg,#17191b,#101113);
@@ -974,6 +1258,26 @@ h4 {{
         padding: 12px;
     }}
 
+    .tv-top {{
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }}
+
+    .top-actions {{
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }}
+
+    .calendar-panel {{
+        position: fixed;
+        top: 70px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }}
+
     .screen {{
         padding: 24px;
     }}
@@ -1005,8 +1309,60 @@ h4 {{
             BLOOMBERG SURVEILLANCE · RESEARCH DESK
         </div>
 
-        <div class="live">
-            ● DAILY RESEARCH
+        <div class="top-actions">
+
+            <div class="live">
+                ● DAILY RESEARCH
+            </div>
+
+            <div
+                class="calendar-control"
+                id="calendarControl"
+            >
+
+                <button
+                    class="calendar-button"
+                    id="calendarButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="calendarPanel"
+                >
+                    <span class="calendar-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        {e(DATE)}
+                    </span>
+                </button>
+
+                <div
+                    class="calendar-panel"
+                    id="calendarPanel"
+                >
+                    {navigation_html()}
+                </div>
+
+            </div>
+
+            <div
+                class="language-switch"
+                aria-label="Report language"
+            >
+                <span
+                    class="lang-option lang-active"
+                >
+                    EN
+                </span>
+
+                <span
+                    class="lang-option lang-disabled"
+                    title="Korean presentation coming next"
+                >
+                    한국어
+                </span>
+            </div>
+
         </div>
 
     </div>
@@ -1157,6 +1513,77 @@ h4 {{
 </div>
 
 </div>
+
+<script>
+(function () {{
+    const control =
+        document.getElementById(
+            "calendarControl"
+        );
+
+    const button =
+        document.getElementById(
+            "calendarButton"
+        );
+
+    if (!control || !button) {{
+        return;
+    }}
+
+    button.addEventListener(
+        "click",
+        function (event) {{
+            event.stopPropagation();
+
+            const open =
+                control.classList.toggle(
+                    "open"
+                );
+
+            button.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+        }}
+    );
+
+    document.addEventListener(
+        "click",
+        function (event) {{
+            if (
+                !control.contains(
+                    event.target
+                )
+            ) {{
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }}
+        }}
+    );
+
+    document.addEventListener(
+        "keydown",
+        function (event) {{
+            if (event.key === "Escape") {{
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }}
+        }}
+    );
+}})();
+</script>
 
 </body>
 
