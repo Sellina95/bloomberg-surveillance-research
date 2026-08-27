@@ -26,6 +26,11 @@ TV_RENDERER = (
     / "scripts/render_daily_research_tv_v0_1.py"
 )
 
+HOME_BUILDER = (
+    ROOT
+    / "scripts/build_research_desk_home_v0_1.py"
+)
+
 
 def main() -> None:
 
@@ -42,6 +47,11 @@ def main() -> None:
     if not TV_RENDERER.exists():
         raise SystemExit(
             f"FAIL — TV renderer not found: {TV_RENDERER}"
+        )
+
+    if not HOME_BUILDER.exists():
+        raise SystemExit(
+            f"FAIL — Home builder not found: {HOME_BUILDER}"
         )
 
     inventory = json.loads(
@@ -150,6 +160,25 @@ def main() -> None:
     if tv.returncode != 0:
         raise SystemExit(
             "FAIL — TV render failed"
+        )
+
+    print()
+    print("=" * 100)
+    print("REFRESH RESEARCH DESK HOME")
+    print("=" * 100)
+
+    home = subprocess.run(
+        [
+            sys.executable,
+            str(HOME_BUILDER),
+        ],
+        cwd=ROOT,
+        env=env,
+    )
+
+    if home.returncode != 0:
+        raise SystemExit(
+            "FAIL — Research Desk Home refresh failed"
         )
 
     output = (
