@@ -14,293 +14,522 @@ Bloomberg Surveillance —
 2026-08-24
 </title>
 
+
 <style>
 
 * {
     box-sizing: border-box;
 }
 
+:root {
+    --bg: #111214;
+    --panel: #191a1d;
+    --panel-2: #151619;
+    --panel-3: #202125;
+    --line: #303136;
+    --text: #f1f1ee;
+    --muted: #96979b;
+    --amber: #f2a23a;
+    --amber-soft: #c9852c;
+    --green: #72c7a7;
+    --red: #e46f6f;
+    --blue: #7fa9d8;
+}
+
 body {
     margin: 0;
     background:
         radial-gradient(
-            circle at top,
-            #20252b,
-            #0c0e10 65%
+            circle at 50% -10%,
+            #292b2f 0%,
+            #151619 35%,
+            #0d0e10 100%
         );
-    color: #e9edf0;
+    color: var(--text);
     font-family:
         Inter,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
         sans-serif;
+    font-size: 14px;
 }
 
 .page {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
 }
 
-/* TV */
-
 .tv {
-    background: #17191c;
-    border-radius: 34px;
-    padding: 24px 24px 34px;
+    background: #17181b;
+    border: 1px solid #303136;
+    border-radius: 12px;
+    padding: 0;
     box-shadow:
-        0 30px 80px rgba(0,0,0,.55),
-        inset 0 1px 0 rgba(255,255,255,.06);
+        0 22px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    overflow: hidden;
 }
 
 .tv-top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 4px 12px 18px;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 18px;
+    background: linear-gradient(180deg,#222327,#18191c);
+    border-bottom: 1px solid #333438;
 }
 
 .brand {
+    font-size: 13px;
     font-weight: 800;
-    letter-spacing: 2px;
-    font-size: 15px;
+    letter-spacing: 1.8px;
+    color: #f4f4f1;
 }
 
 .live {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    color: #ff6b6b;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: var(--amber);
 }
 
 .screen {
-    background:
-        linear-gradient(
-            135deg,
-            #111b1d,
-            #071011
-        );
-    border-radius: 18px;
-    padding: 34px;
-    min-height: 260px;
-    border: 1px solid #30383b;
-    box-shadow:
-        inset 0 0 60px rgba(0,0,0,.55);
+    position: relative;
+    background: linear-gradient(135deg,#17191b,#101113);
+    min-height: 220px;
+    padding: 30px 34px;
+    border-bottom: 1px solid #303136;
 }
 
 .screen-label {
-    color: #7ee2c5;
-    font-size: 11px;
-    letter-spacing: 3px;
+    color: var(--amber);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.6px;
     margin-bottom: 12px;
 }
 
 .screen h1 {
-    font-size: 42px;
-    margin: 0 0 8px;
-    letter-spacing: -1px;
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
 }
 
 .date {
-    color: #89949a;
-    font-size: 14px;
+    margin-top: 10px;
+    color: var(--muted);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 12px;
 }
 
 .controls {
     display: flex;
-    gap: 8px;
-    margin-top: 20px;
+    align-items: center;
+    gap: 7px;
+    margin-top: 28px;
 }
 
 .knob {
-    width: 11px;
-    height: 11px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background: #737b80;
+    background: #67686b;
 }
 
 .status {
-    margin-left: auto;
-    color: #7ee2c5;
-    font-size: 11px;
+    margin-left: 12px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
     letter-spacing: 1px;
 }
 
-/* Content */
-
 .content {
-    margin-top: 24px;
+    margin-top: 18px;
 }
 
 .card {
-    background: #181b1f;
-    border: 1px solid #2a2f34;
-    border-radius: 18px;
-    padding: 26px;
-    margin-bottom: 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.16);
 }
 
 .section-title {
-    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
     font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 18px;
+    letter-spacing: 1.8px;
+    color: #e8e8e5;
+    margin-bottom: 16px;
+}
+
+.section-title::before {
+    content: "";
+    width: 3px;
+    height: 14px;
+    background: var(--amber);
+    border-radius: 2px;
 }
 
 .executive {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.65;
 }
 
-ul {
-    padding-left: 22px;
+.executive ul {
+    margin: 0;
+    padding-left: 20px;
 }
 
-li {
-    margin-bottom: 10px;
-    line-height: 1.55;
+.executive li {
+    margin-bottom: 9px;
 }
 
-.macro-card,
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
 .market-card {
-    background: #14171a;
-    border: 1px solid #282d31;
-    border-radius: 14px;
-    padding: 20px;
-    margin-top: 14px;
+    position: relative;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 17px;
+    min-height: 190px;
 }
 
-.macro-card h3 {
-    margin-top: 0;
+.market-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: var(--amber-soft);
+    opacity: .75;
+}
+
+.market-card .section-title {
+    padding-left: 8px;
 }
 
 .summary {
-    color: #c6cdd1;
-    line-height: 1.65;
+    color: #c8c9cb;
+    line-height: 1.55;
+    margin: 0 0 14px;
 }
 
 h4 {
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #7ee2c5;
-    margin-top: 22px;
+    margin: 16px 0 7px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: var(--amber);
+}
+
+.market-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.market-card li {
+    margin-bottom: 7px;
+    color: #d9d9d7;
+    line-height: 1.45;
+}
+
+.macro-card {
+    background: var(--panel-2);
+    border: 1px solid #292a2e;
+    border-radius: 8px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+.macro-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #f0f0ed;
+}
+
+.macro-card p {
+    color: #c6c7c9;
+    line-height: 1.55;
 }
 
 .guest-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
-    margin: 16px 0;
+    gap: 5px;
+    margin: 12px 0;
 }
 
 .guest {
-    padding: 5px 9px;
-    border-radius: 20px;
-    background: #242a2e;
-    color: #aeb8bd;
-    font-size: 11px;
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid #3a3b3f;
+    border-radius: 4px;
+    background: #222327;
+    color: #c5c6c8;
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
 }
 
 .evidence {
-    border-left: 2px solid #5e7771;
-    padding: 9px 12px;
-    margin-top: 8px;
-    background: #111416;
-    font-size: 12px;
+    display: flex;
+    gap: 10px;
+    padding: 9px 10px;
+    margin-top: 6px;
+    background: #111214;
+    border: 1px solid #292a2d;
+    border-left: 2px solid var(--green);
+    font-size: 11px;
     line-height: 1.5;
 }
 
 .timestamp {
-    color: #7ee2c5;
-    font-family: monospace;
-    margin-right: 10px;
+    flex: 0 0 auto;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(320px, 1fr)
-        );
-    gap: 18px;
-}
-
-.insight {
-    padding: 16px;
-    border-left: 3px solid #7ee2c5;
-    background: #121518;
-    margin-bottom: 10px;
+.insight,
+.conflict,
+.risk {
+    border-radius: 7px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
     line-height: 1.55;
 }
 
+.insight {
+    background: #151c19;
+    border: 1px solid #293a34;
+    border-left: 3px solid var(--green);
+}
+
 .conflict {
-    padding: 18px;
-    background: #171416;
-    border-left: 3px solid #d99a68;
-    margin-bottom: 12px;
-    line-height: 1.6;
+    background: #1b1815;
+    border: 1px solid #3c3025;
+    border-left: 3px solid var(--amber);
 }
 
 .risk {
-    padding: 18px;
-    background: #191618;
-    border-left: 3px solid #cf7070;
-    margin-bottom: 12px;
-    line-height: 1.6;
-}
-
-.risk-title {
-    font-weight: 700;
-    margin-bottom: 10px;
+    background: #1c1617;
+    border: 1px solid #40292b;
+    border-left: 3px solid var(--red);
 }
 
 .small {
-    color: #8e999f;
-    font-size: 12px;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.provenance-block {
+    margin-top: 11px;
+    padding-top: 9px;
+    border-top: 1px solid #2c2d31;
+}
+
+.prov-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 7px;
+}
+
+.prov-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.prov-approved {
+    color: var(--green);
+    background: #14231e;
+    border: 1px solid #2e5547;
+}
+
+.prov-review {
+    color: var(--amber);
+    background: #261e14;
+    border: 1px solid #634826;
+}
+
+.prov-type {
+    color: #b9c9dc;
+    background: #171d24;
+    border: 1px solid #344252;
+}
+
+.prov-warning {
+    margin: 7px 0;
+    padding: 7px 9px;
+    border-left: 2px solid var(--amber);
+    background: #211b14;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.provenance-details {
+    margin-top: 6px;
+}
+
+.provenance-details summary {
+    cursor: pointer;
+    color: #9fa8b4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    user-select: none;
+}
+
+.provenance-details summary:hover {
+    color: var(--text);
+}
+
+.claim-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.claim-id {
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid #353b43;
+    border-radius: 4px;
+    background: #121519;
+    color: #aeb8c4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+}
+
+.prov-note {
     margin-top: 8px;
+    color: #73777e;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.conflict-view {
+    margin-top: 10px;
+}
+
+.takeaway-item {
+    margin-bottom: 12px;
 }
 
 .action {
     display: flex;
-    gap: 16px;
-    padding: 18px;
-    background: #101719;
-    border: 1px solid #29443e;
-    border-radius: 14px;
-    margin-bottom: 12px;
+    gap: 14px;
+    padding: 15px;
+    background: #171a18;
+    border: 1px solid #304238;
+    border-radius: 8px;
+    margin-bottom: 9px;
 }
 
 .action-number {
-    min-width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: #7ee2c5;
-    color: #10201c;
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
     display: grid;
     place-items: center;
-    font-weight: 800;
+    border-radius: 5px;
+    background: var(--amber);
+    color: #17120b;
+    font-size: 12px;
+    font-weight: 900;
 }
 
 .action p {
-    color: #aeb8bd;
+    margin: 7px 0;
+    color: #b9babd;
     line-height: 1.5;
 }
 
 .monitor {
-    color: #7ee2c5;
-    font-size: 12px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
     letter-spacing: .4px;
 }
 
 .footer {
     text-align: center;
-    color: #697278;
-    font-size: 11px;
-    padding: 30px;
+    color: #66686d;
+    font-size: 10px;
+    padding: 26px;
+}
+
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        padding: 12px;
+    }
+
+    .screen {
+        padding: 24px;
+    }
+
+    .screen h1 {
+        font-size: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 </style>
+
 
 </head>
 
@@ -308,26 +537,29 @@ h4 {
 
 <div class="page">
 
+
 <div class="tv">
 
     <div class="tv-top">
+
         <div class="brand">
-            BLOOMBERG SURVEILLANCE
+            BLOOMBERG SURVEILLANCE · RESEARCH DESK
         </div>
 
         <div class="live">
-            ● RESEARCH
+            ● DAILY RESEARCH
         </div>
+
     </div>
 
     <div class="screen">
 
         <div class="screen-label">
-            DAILY MARKET BRIEF
+            GLOBAL MARKET RESEARCH
         </div>
 
         <h1>
-            Global Market Research
+            Daily Market Brief
         </h1>
 
         <div class="date">
@@ -335,19 +567,20 @@ h4 {
         </div>
 
         <div class="controls">
+
             <span class="knob"></span>
             <span class="knob"></span>
             <span class="knob"></span>
 
             <span class="status">
-                13 GUESTS · EVIDENCE GROUNDED
+                EVIDENCE GROUNDED · RESEARCH ONLY
             </span>
+
         </div>
 
     </div>
 
 </div>
-
 
 <div class="content">
 
@@ -372,7 +605,7 @@ h4 {
         MACRO THEMES
     </div>
 
-    
+
         <div class="macro-card">
             <h3>AI Infrastructure Boom and Economic Resilience</h3>
 
@@ -384,9 +617,9 @@ h4 {
                 <span class="guest">Steve Chiavarone, Federated Hermes</span> <span class="guest">Ajay Rajadhyaksha, Barclays</span> <span class="guest">Troy Gayeski, Future Standard</span>
             </div>
 
-            
+
         </div>
-        
+
         <div class="macro-card">
             <h3>Treasury Supply, Duration Risk, and Yield Curve Dynamics</h3>
 
@@ -398,9 +631,9 @@ h4 {
                 <span class="guest">Kelsey Berro, JPMorgan Asset Management</span> <span class="guest">Earl Davis, BMO Global Asset Management</span> <span class="guest">Anne Walsh, Guggenheim Investments</span>
             </div>
 
-            
+
         </div>
-        
+
         <div class="macro-card">
             <h3>Geopolitical Realignment and Trade Policy Friction</h3>
 
@@ -412,9 +645,9 @@ h4 {
                 <span class="guest">Steven Cook, Council on Foreign Relations</span> <span class="guest">Brian Gardner, Stifel</span>
             </div>
 
-            
+
         </div>
-        
+
 
 </section>
 
@@ -441,7 +674,7 @@ h4 {
             <li>Potential 30-year yield spike toward 6% driven by persistent long-duration supply and AI-related corporate borrowing needs (Unit 7, Unit 8).</li><li>Uncertainty regarding the reaction function and policy framework of new Federal Reserve leadership (Unit 3, Unit 10).</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -463,7 +696,7 @@ h4 {
             <li>Escalating secondary sanctions and geopolitical friction that challenge global trade channels and currency dominance (Unit 2).</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -485,7 +718,7 @@ h4 {
             <li>Extreme portfolio concentration around AI creating systemic vulnerability if adoption and spending fail to justify current valuations (Unit 6, Unit 9).</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -507,7 +740,7 @@ h4 {
             <li>Potential obsolescence and negative cash flow risks among aggressive corporate infrastructure borrowers (Unit 8).</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -529,7 +762,7 @@ h4 {
             <li>Public and political backlash against data center development and power consumption accelerating near-term market volatility (Unit 9).</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -551,7 +784,7 @@ h4 {
             <li>Geopolitical shocks in energy corridors threatening price stability and complicating monetary policy (Unit 2, Unit 3).</li>
         </ul>
     </section>
-    
+
 
 </div>
 
@@ -562,27 +795,111 @@ h4 {
         CROSS-GUEST CONSENSUS
     </div>
 
-    
+
         <div class="insight">
             <strong>
                 AI capital expenditure and infrastructure building are driving a massive structural cycle that remains largely insulated from conventional macroeconomic friction.
             </strong>
+
             <div class="small">
                 Guests:
                 Steve Chiavarone, Federated Hermes, Ajay Rajadhyaksha, Barclays, Troy Gayeski, Future Standard, Momei Qu, PSP Growth
             </div>
+
+
+    <div class="provenance-block">
+
+
+    <div class="prov-badges">
+        <span class="prov-badge prov-review">
+            REVIEW
+        </span>
+
+        <span class="prov-badge prov-type">
+            PARTIAL CONSENSUS
+        </span>
+    </div>
+
+
+
+        <div class="prov-warning">
+            OVER-ATTRIBUTION DETECTED
         </div>
-        
+
+
+        <details class="provenance-details">
+
+            <summary>
+                PROVENANCE ·
+                3
+                GROUNDED CLAIMS
+            </summary>
+
+            <div class="claim-list">
+                <span class='claim-id'>20260824-U001-C01</span><span class='claim-id'>20260824-U001-C02</span><span class='claim-id'>20260824-U004-C02</span>
+            </div>
+
+            <div class="prov-note">
+                Source references only.
+                Transcript and evidence text remain private.
+            </div>
+
+        </details>
+
+    </div>
+
+        </div>
+
         <div class="insight">
             <strong>
                 Long-term bond yields face structural upward pressure due to heavy sovereign issuance, term premiums, and supply dynamics.
             </strong>
+
             <div class="small">
                 Guests:
                 Kelsey Berro, JPMorgan Asset Management, Earl Davis, BMO Global Asset Management, Anne Walsh, Guggenheim Investments
             </div>
+
+
+    <div class="provenance-block">
+
+
+    <div class="prov-badges">
+        <span class="prov-badge prov-approved">
+            APPROVED
+        </span>
+
+        <span class="prov-badge prov-type">
+            SUPPORTED CONSENSUS
+        </span>
+    </div>
+
+
+
+
+        <details class="provenance-details">
+
+            <summary>
+                PROVENANCE ·
+                3
+                GROUNDED CLAIMS
+            </summary>
+
+            <div class="claim-list">
+                <span class='claim-id'>20260824-U003-C01</span><span class='claim-id'>20260824-U007-C01</span><span class='claim-id'>20260824-U008-C02</span>
+            </div>
+
+            <div class="prov-note">
+                Source references only.
+                Transcript and evidence text remain private.
+            </div>
+
+        </details>
+
+    </div>
+
         </div>
-        
+
 
 </section>
 
@@ -593,27 +910,105 @@ h4 {
         CROSS-GUEST CONFLICTS
     </div>
 
-    
+
         <div class="conflict">
             <strong>
                 Attractiveness and Risk Thresholds of Long-Duration Treasuries
             </strong>
 
-            <div>
+            <div class="conflict-view">
                 <b>VIEW A:</b>
                 Earl Davis (BMO) sees higher probability of the 30-year hitting 6% before the 10-year hits 5% and advises caution on the 30-year due to duration risk.
+
+
+    <div class="provenance-block">
+
+
+    <div class="prov-badges">
+        <span class="prov-badge prov-approved">
+            APPROVED
+        </span>
+
+        <span class="prov-badge prov-type">
+            SUPPORTED
+        </span>
+    </div>
+
+
+
+
+        <details class="provenance-details">
+
+            <summary>
+                PROVENANCE ·
+                2
+                GROUNDED CLAIMS
+            </summary>
+
+            <div class="claim-list">
+                <span class='claim-id'>20260824-U007-C01</span><span class='claim-id'>20260824-U007-C02</span>
             </div>
 
-            <div>
+            <div class="prov-note">
+                Source references only.
+                Transcript and evidence text remain private.
+            </div>
+
+        </details>
+
+    </div>
+
+            </div>
+
+            <div class="conflict-view">
                 <b>VIEW B:</b>
                 Anne Walsh (Guggenheim) states she would aggressively back up the truck to buy 30-year Treasuries if yields hit 6%.
+
+
+    <div class="provenance-block">
+
+
+    <div class="prov-badges">
+        <span class="prov-badge prov-approved">
+            APPROVED
+        </span>
+
+        <span class="prov-badge prov-type">
+            SUPPORTED
+        </span>
+    </div>
+
+
+
+
+        <details class="provenance-details">
+
+            <summary>
+                PROVENANCE ·
+                1
+                GROUNDED CLAIMS
+            </summary>
+
+            <div class="claim-list">
+                <span class='claim-id'>20260824-U008-C01</span>
+            </div>
+
+            <div class="prov-note">
+                Source references only.
+                Transcript and evidence text remain private.
+            </div>
+
+        </details>
+
+    </div>
+
             </div>
 
             <div class="small">
                 Highlights differing institutional risk appetites for long-duration sovereign debt during periods of heavy supply and fiscal uncertainty.
             </div>
         </div>
-        
+
 
 </section>
 
@@ -624,7 +1019,7 @@ h4 {
         KEY RISKS
     </div>
 
-    
+
         <div class="risk">
             <div class="risk-title">
                 Long-End Yield Spike Toward 6%
@@ -640,7 +1035,7 @@ h4 {
                 Mark-to-market drawdowns on long-duration fixed-income assets and increased cost of capital across rate-sensitive sectors.
             </div>
         </div>
-        
+
         <div class="risk">
             <div class="risk-title">
                 AI Capital Concentration Reversal
@@ -656,7 +1051,7 @@ h4 {
                 Severe growth-oriented equity correction, prompting sharp rotation into non-tech alternative assets and defensive sectors.
             </div>
         </div>
-        
+
 
 </section>
 
@@ -668,7 +1063,142 @@ h4 {
     </div>
 
     <ul>
-        <li>High bond yields around 5% do not preclude equity market gains as long as tech earnings revisions remain robust and companies generate high free cash flow.</li><li>Fixed-income investors find attractive entry points in 10-year Treasuries at 5% and potential 30-year Treasuries at 6%, favoring intermediate and high-grade credit to manage duration risk.</li><li>Portfolio diversification away from AI concentration into private market alternatives and non-tech growth sectors is increasingly vital for downside risk mitigation.</li>
+
+        <li class="takeaway-item">
+            <div>
+                High bond yields around 5% do not preclude equity market gains as long as tech earnings revisions remain robust and companies generate high free cash flow.
+            </div>
+
+
+    <div class="provenance-block">
+
+
+    <div class="prov-badges">
+        <span class="prov-badge prov-approved">
+            APPROVED
+        </span>
+
+        <span class="prov-badge prov-type">
+            SUPPORTED SYNTHESIS
+        </span>
+    </div>
+
+
+
+
+        <details class="provenance-details">
+
+            <summary>
+                PROVENANCE ·
+                3
+                GROUNDED CLAIMS
+            </summary>
+
+            <div class="claim-list">
+                <span class='claim-id'>20260824-U001-C01</span><span class='claim-id'>20260824-U001-C02</span><span class='claim-id'>20260824-U001-C03</span>
+            </div>
+
+            <div class="prov-note">
+                Source references only.
+                Transcript and evidence text remain private.
+            </div>
+
+        </details>
+
+    </div>
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Fixed-income investors find attractive entry points in 10-year Treasuries at 5% and potential 30-year Treasuries at 6%, favoring intermediate and high-grade credit to manage duration risk.
+            </div>
+
+
+    <div class="provenance-block">
+
+
+    <div class="prov-badges">
+        <span class="prov-badge prov-approved">
+            APPROVED
+        </span>
+
+        <span class="prov-badge prov-type">
+            SUPPORTED SYNTHESIS
+        </span>
+    </div>
+
+
+
+
+        <details class="provenance-details">
+
+            <summary>
+                PROVENANCE ·
+                3
+                GROUNDED CLAIMS
+            </summary>
+
+            <div class="claim-list">
+                <span class='claim-id'>20260824-U008-C01</span><span class='claim-id'>20260824-U007-C01</span><span class='claim-id'>20260824-U007-C02</span>
+            </div>
+
+            <div class="prov-note">
+                Source references only.
+                Transcript and evidence text remain private.
+            </div>
+
+        </details>
+
+    </div>
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Portfolio diversification away from AI concentration into private market alternatives and non-tech growth sectors is increasingly vital for downside risk mitigation.
+            </div>
+
+
+    <div class="provenance-block">
+
+
+    <div class="prov-badges">
+        <span class="prov-badge prov-approved">
+            APPROVED
+        </span>
+
+        <span class="prov-badge prov-type">
+            SUPPORTED SYNTHESIS
+        </span>
+    </div>
+
+
+
+
+        <details class="provenance-details">
+
+            <summary>
+                PROVENANCE ·
+                3
+                GROUNDED CLAIMS
+            </summary>
+
+            <div class="claim-list">
+                <span class='claim-id'>20260824-U006-C01</span><span class='claim-id'>20260824-U006-C02</span><span class='claim-id'>20260824-U006-C03</span>
+            </div>
+
+            <div class="prov-note">
+                Source references only.
+                Transcript and evidence text remain private.
+            </div>
+
+        </details>
+
+    </div>
+
+        </li>
+
     </ul>
 
 </section>
@@ -687,7 +1217,7 @@ h4 {
 
     <br>
 
-    
+
         <div class="action">
             <div class="action-number">
                 1
@@ -708,7 +1238,7 @@ h4 {
                 </div>
             </div>
         </div>
-        
+
         <div class="action">
             <div class="action-number">
                 2
@@ -729,7 +1259,7 @@ h4 {
                 </div>
             </div>
         </div>
-        
+
 
 </section>
 

@@ -16,6 +16,7 @@ BASE = Path(
 )
 
 INPUT = BASE / "daily_research_report_v0_1.json"
+PROVENANCE_INPUT = BASE / "report_provenance_v0_1.json"
 OUTPUT = BASE / "daily_research_report_tv_v0_1.html"
 
 
@@ -32,6 +33,28 @@ report = json.loads(
 )
 
 
+if PROVENANCE_INPUT.exists():
+    provenance = json.loads(
+        PROVENANCE_INPUT.read_text(
+            encoding="utf-8"
+        )
+    )
+else:
+    provenance = {
+        "mappings": []
+    }
+
+
+provenance_by_target = {
+    item.get("target_id"): item
+    for item in provenance.get(
+        "mappings",
+        []
+    )
+    if item.get("target_id")
+}
+
+
 def e(value):
     if value is None:
         return ""
@@ -46,6 +69,108 @@ def list_items(items):
         f"<li>{e(item)}</li>"
         for item in items
     )
+
+
+def provenance_badge(mapping):
+    if not mapping:
+        return ""
+
+    audit_status = mapping.get(
+        "audit_status",
+        ""
+    )
+
+    provenance_type = mapping.get(
+        "provenance_type",
+        ""
+    )
+
+    status_class = (
+        "prov-review"
+        if audit_status == "REVIEW"
+        else "prov-approved"
+    )
+
+    return f"""
+    <div class="prov-badges">
+        <span class="prov-badge {status_class}">
+            {e(audit_status)}
+        </span>
+
+        <span class="prov-badge prov-type">
+            {e(
+                provenance_type.replace(
+                    "_",
+                    " "
+                )
+            )}
+        </span>
+    </div>
+    """
+
+
+def provenance_details(target_id):
+    mapping = provenance_by_target.get(
+        target_id
+    )
+
+    if not mapping:
+        return ""
+
+    claim_ids = mapping.get(
+        "claim_ids",
+        []
+    )
+
+    claim_html = "".join(
+        f"<span class='claim-id'>{e(cid)}</span>"
+        for cid in claim_ids
+    )
+
+    over_attribution = (
+        mapping.get(
+            "declared_guest_support_status"
+        )
+        == "OVER_ATTRIBUTION_DETECTED"
+    )
+
+    warning = ""
+
+    if over_attribution:
+        warning = """
+        <div class="prov-warning">
+            OVER-ATTRIBUTION DETECTED
+        </div>
+        """
+
+    return f"""
+    <div class="provenance-block">
+
+        {provenance_badge(mapping)}
+
+        {warning}
+
+        <details class="provenance-details">
+
+            <summary>
+                PROVENANCE ·
+                {len(claim_ids)}
+                GROUNDED CLAIMS
+            </summary>
+
+            <div class="claim-list">
+                {claim_html}
+            </div>
+
+            <div class="prov-note">
+                Source references only.
+                Transcript and evidence text remain private.
+            </div>
+
+        </details>
+
+    </div>
+    """
 
 
 def market_section(title, key):
@@ -168,13 +293,21 @@ def build_html():
 
     consensus_html = ""
 
-    for item in consensus:
+    for i, item in enumerate(
+        consensus,
+        1,
+    ):
+
+        target_id = (
+            f"CONSENSUS-{i:02d}"
+        )
 
         consensus_html += f"""
         <div class="insight">
             <strong>
                 {e(item.get("view"))}
             </strong>
+
             <div class="small">
                 Guests:
                 {", ".join(
@@ -185,6 +318,8 @@ def build_html():
                     )
                 )}
             </div>
+
+            {provenance_details(target_id)}
         </div>
         """
 
@@ -195,7 +330,18 @@ def build_html():
 
     conflicts_html = ""
 
-    for item in conflicts:
+    for i, item in enumerate(
+        conflicts,
+        1,
+    ):
+
+        view_a_id = (
+            f"CONFLICT-{i:02d}-VIEW_A"
+        )
+
+        view_b_id = (
+            f"CONFLICT-{i:02d}-VIEW_B"
+        )
 
         conflicts_html += f"""
         <div class="conflict">
@@ -203,14 +349,18 @@ def build_html():
                 {e(item.get("topic"))}
             </strong>
 
-            <div>
+            <div class="conflict-view">
                 <b>VIEW A:</b>
                 {e(item.get("view_a"))}
+
+                {provenance_details(view_a_id)}
             </div>
 
-            <div>
+            <div class="conflict-view">
                 <b>VIEW B:</b>
                 {e(item.get("view_b"))}
+
+                {provenance_details(view_b_id)}
             </div>
 
             <div class="small">
@@ -246,12 +396,31 @@ def build_html():
         </div>
         """
 
-    takeaways = list_items(
-        report.get(
-            "research_takeaways",
-            []
-        )
+    takeaway_items = report.get(
+        "research_takeaways",
+        []
     )
+
+    takeaways = ""
+
+    for i, takeaway in enumerate(
+        takeaway_items,
+        1,
+    ):
+
+        target_id = (
+            f"TAKEAWAY-{i:02d}"
+        )
+
+        takeaways += f"""
+        <li class="takeaway-item">
+            <div>
+                {e(takeaway)}
+            </div>
+
+            {provenance_details(target_id)}
+        </li>
+        """
 
     actions = report.get(
         "daily_action",
@@ -629,6 +798,128 @@ h4 {{
     font-size: 11px;
 }}
 
+.provenance-block {{
+    margin-top: 11px;
+    padding-top: 9px;
+    border-top: 1px solid #2c2d31;
+}}
+
+.prov-badges {{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 7px;
+}}
+
+.prov-badge {{
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}}
+
+.prov-approved {{
+    color: var(--green);
+    background: #14231e;
+    border: 1px solid #2e5547;
+}}
+
+.prov-review {{
+    color: var(--amber);
+    background: #261e14;
+    border: 1px solid #634826;
+}}
+
+.prov-type {{
+    color: #b9c9dc;
+    background: #171d24;
+    border: 1px solid #344252;
+}}
+
+.prov-warning {{
+    margin: 7px 0;
+    padding: 7px 9px;
+    border-left: 2px solid var(--amber);
+    background: #211b14;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}}
+
+.provenance-details {{
+    margin-top: 6px;
+}}
+
+.provenance-details summary {{
+    cursor: pointer;
+    color: #9fa8b4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    user-select: none;
+}}
+
+.provenance-details summary:hover {{
+    color: var(--text);
+}}
+
+.claim-list {{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+}}
+
+.claim-id {{
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid #353b43;
+    border-radius: 4px;
+    background: #121519;
+    color: #aeb8c4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+}}
+
+.prov-note {{
+    margin-top: 8px;
+    color: #73777e;
+    font-size: 9px;
+    line-height: 1.4;
+}}
+
+.conflict-view {{
+    margin-top: 10px;
+}}
+
+.takeaway-item {{
+    margin-bottom: 12px;
+}}
+
 .action {{
     display: flex;
     gap: 14px;
@@ -873,8 +1164,18 @@ h4 {{
 """
 
 
+html = build_html()
+
+# Serialization hygiene:
+# remove trailing whitespace generated when optional
+# HTML fragments expand to empty/indented lines.
+html = "\n".join(
+    line.rstrip()
+    for line in html.splitlines()
+) + "\n"
+
 OUTPUT.write_text(
-    build_html(),
+    html,
     encoding="utf-8",
 )
 
