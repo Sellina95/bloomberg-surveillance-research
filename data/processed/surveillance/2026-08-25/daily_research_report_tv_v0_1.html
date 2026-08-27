@@ -96,6 +96,159 @@ body {
     color: var(--amber);
 }
 
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background: #111214;
+    border: 1px solid #34353a;
+    border-radius: 6px;
+}
+
+.lang-option {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.lang-active {
+    background: var(--amber);
+    color: #111214;
+}
+
+.lang-disabled {
+    color: #626368;
+    cursor: not-allowed;
+}
+
+.calendar-control {
+    position: relative;
+}
+
+.calendar-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 29px;
+    padding: 5px 9px;
+    background: #17181b;
+    border: 1px solid #3a3b40;
+    border-radius: 6px;
+    color: #dededb;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.calendar-button:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+}
+
+.calendar-icon {
+    font-size: 13px;
+}
+
+.calendar-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    z-index: 100;
+    width: 270px;
+    padding: 14px;
+    background: #151619;
+    border: 1px solid #3a3b40;
+    border-radius: 8px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55);
+}
+
+.calendar-control.open
+.calendar-panel {
+    display: block;
+}
+
+.nav-month + .nav-month {
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid #303136;
+}
+
+.nav-month-label {
+    margin-bottom: 10px;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.nav-date-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(7,1fr);
+    gap: 5px;
+}
+
+.nav-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 1px solid #303136;
+    border-radius: 5px;
+    background: #1d1e22;
+    color: #bdbec1;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-date:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+    background: #24211c;
+}
+
+.nav-date-current {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #111214;
+}
+
+.nav-date-current:hover {
+    color: #111214;
+}
+
 .screen {
     position: relative;
     background: linear-gradient(135deg,#17191b,#101113);
@@ -339,6 +492,128 @@ h4 {
     font-size: 11px;
 }
 
+.provenance-block {
+    margin-top: 11px;
+    padding-top: 9px;
+    border-top: 1px solid #2c2d31;
+}
+
+.prov-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 7px;
+}
+
+.prov-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.prov-approved {
+    color: var(--green);
+    background: #14231e;
+    border: 1px solid #2e5547;
+}
+
+.prov-review {
+    color: var(--amber);
+    background: #261e14;
+    border: 1px solid #634826;
+}
+
+.prov-type {
+    color: #b9c9dc;
+    background: #171d24;
+    border: 1px solid #344252;
+}
+
+.prov-warning {
+    margin: 7px 0;
+    padding: 7px 9px;
+    border-left: 2px solid var(--amber);
+    background: #211b14;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.provenance-details {
+    margin-top: 6px;
+}
+
+.provenance-details summary {
+    cursor: pointer;
+    color: #9fa8b4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    user-select: none;
+}
+
+.provenance-details summary:hover {
+    color: var(--text);
+}
+
+.claim-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.claim-id {
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid #353b43;
+    border-radius: 4px;
+    background: #121519;
+    color: #aeb8c4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+}
+
+.prov-note {
+    margin-top: 8px;
+    color: #73777e;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.conflict-view {
+    margin-top: 10px;
+}
+
+.takeaway-item {
+    margin-bottom: 12px;
+}
+
 .action {
     display: flex;
     gap: 14px;
@@ -393,6 +668,26 @@ h4 {
         padding: 12px;
     }
 
+    .tv-top {
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .top-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .calendar-panel {
+        position: fixed;
+        top: 70px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }
+
     .screen {
         padding: 24px;
     }
@@ -424,8 +719,130 @@ h4 {
             BLOOMBERG SURVEILLANCE · RESEARCH DESK
         </div>
 
-        <div class="live">
-            ● DAILY RESEARCH
+        <div class="top-actions">
+
+            <div class="live">
+                ● DAILY RESEARCH
+            </div>
+
+            <div
+                class="calendar-control"
+                id="calendarControl"
+            >
+
+                <button
+                    class="calendar-button"
+                    id="calendarButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="calendarPanel"
+                >
+                    <span class="calendar-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        2026-08-25
+                    </span>
+                </button>
+
+                <div
+                    class="calendar-panel"
+                    id="calendarPanel"
+                >
+
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    AUG 2026
+                </div>
+
+                <div class="nav-date-grid">
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-14/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-14"
+                >
+                    14
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-18/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-18"
+                >
+                    18
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-19/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-19"
+                >
+                    19
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-20/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-20"
+                >
+                    20
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-24/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-24"
+                >
+                    24
+                </a>
+
+                <a
+                    class="nav-date nav-date-current"
+                    href="../2026-08-25/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-25"
+                >
+                    25
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-26/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-26"
+                >
+                    26
+                </a>
+
+                </div>
+
+            </div>
+
+                </div>
+
+            </div>
+
+            <div
+                class="language-switch"
+                aria-label="Report language"
+            >
+
+        <span
+            class="lang-option lang-active"
+        >
+            EN
+        </span>
+
+        <span
+            class="lang-option lang-disabled"
+            title="Korean presentation not available"
+        >
+            한국어
+        </span>
+
+            </div>
+
         </div>
 
     </div>
@@ -483,7 +900,7 @@ h4 {
         MACRO THEMES
     </div>
 
-    
+
         <div class="macro-card">
             <h3>Fiscal Dominance and Structural Inflation Pressures</h3>
 
@@ -495,9 +912,9 @@ h4 {
                 <span class="guest">George Goncalves, MUFG</span> <span class="guest">Dan Suzuki, iCapital</span> <span class="guest">Robert Sockin, PGIM</span>
             </div>
 
-            
+
         </div>
-        
+
         <div class="macro-card">
             <h3>AI Infrastructure CapEx and Capital Competition</h3>
 
@@ -509,9 +926,9 @@ h4 {
                 <span class="guest">George Goncalves, MUFG</span> <span class="guest">Ted Mortonson, Baird</span> <span class="guest">Dan Greenhaus, Solus Alternative Asset Management</span>
             </div>
 
-            
+
         </div>
-        
+
         <div class="macro-card">
             <h3>Geopolitical and Trade Friction as Domestic Political Strategy</h3>
 
@@ -523,9 +940,9 @@ h4 {
                 <span class="guest">Kate Kalutkiewicz, Former Trump White House Trade Official</span> <span class="guest">Henrietta Treyz, Veda Partners</span>
             </div>
 
-            
+
         </div>
-        
+
 
 </section>
 
@@ -552,7 +969,7 @@ h4 {
             <li>Persistent term premiums and a 10-year Treasury yield pushing toward 5% could destabilize equity valuation multiples and increase debt-servicing costs.</li><li>Conflict between fiscal debt management strategies and monetary policy signals reduces the clarity of information available to central bankers.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -574,7 +991,7 @@ h4 {
             <li>Overly aggressive currency management or perceived attempts to rig debt markets carry execution risks and could provoke international retaliatory currency measures.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -596,7 +1013,7 @@ h4 {
             <li>A 10-year Treasury yield pushing through 4.75% on its way to 5% could trigger a severe valuation reckoning for high-multiple equities (Lisa Shalett, Ted Mortonson).</li><li>The return of bond and cap-ex vigilantes means companies cannot spend without abandon; markets demand concrete evidence of return on investment (Dan Suzuki).</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -618,7 +1035,7 @@ h4 {
             <li>Heavy debt issuance demands across the technology supply chain could face higher hurdles if benchmark borrowing costs continue to climb.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -640,7 +1057,7 @@ h4 {
             <li>Massive capital expenditure requirements make the sector sensitive to persistent increases in the cost of capital and 10-year Treasury yields.</li>
         </ul>
     </section>
-    
+
 
 
     <section class="market-card">
@@ -662,7 +1079,7 @@ h4 {
             <li>Geopolitical miscalculations or supply chain disruptions could inject sudden inflationary shocks into energy and industrial commodities.</li>
         </ul>
     </section>
-    
+
 
 </div>
 
@@ -673,27 +1090,33 @@ h4 {
         CROSS-GUEST CONSENSUS
     </div>
 
-    
+
         <div class="insight">
             <strong>
                 Structural government spending, heavy capital demands, and fiscal deficits are exerting sustained upward pressure on long-term bond yields and the cost of capital.
             </strong>
+
             <div class="small">
                 Guests:
                 George Goncalves, MUFG, Ted Mortonson, Baird, Dan Suzuki, iCapital, Robert Sockin, PGIM
             </div>
+
+
         </div>
-        
+
         <div class="insight">
             <strong>
                 AI-related capital expenditures and infrastructure buildouts remain robust and have largely decoupled from traditional interest rate sensitivity in the near term.
             </strong>
+
             <div class="small">
                 Guests:
                 Lisa Shalett, Morgan Stanley, Ted Mortonson, Baird, Dan Greenhaus, Solus Alternative Asset Management
             </div>
+
+
         </div>
-        
+
 
 </section>
 
@@ -704,27 +1127,31 @@ h4 {
         CROSS-GUEST CONFLICTS
     </div>
 
-    
+
         <div class="conflict">
             <strong>
                 Federal Reserve Monetary Policy Outlook
             </strong>
 
-            <div>
+            <div class="conflict-view">
                 <b>VIEW A:</b>
                 The Federal Reserve may need to implement as many as three rate hikes this year due to hot nominal GDP, above-trend real growth, and sticky inflation (PGIM - Robert Sockin).
+
+
             </div>
 
-            <div>
+            <div class="conflict-view">
                 <b>VIEW B:</b>
                 Treasury and administrative actions are actively attempting to manage or lower long-term yields and engineer a weaker dollar, creating friction with central bank policy transmission (Société Générale - Kit Juckes, BofA Securities - Meghan Swiber).
+
+
             </div>
 
             <div class="small">
                 Contradictory signals between fiscal debt management and potential central bank tightening complicate market pricing for fixed income duration and increase macroeconomic volatility.
             </div>
         </div>
-        
+
 
 </section>
 
@@ -735,7 +1162,7 @@ h4 {
         KEY RISKS
     </div>
 
-    
+
         <div class="risk">
             <div class="risk-title">
                 Treasury Yield Breach of Critical Thresholds
@@ -751,7 +1178,7 @@ h4 {
                 Potential valuation reckoning for high-multiple equities, increased equity market volatility, and a sharp rise in corporate borrowing costs.
             </div>
         </div>
-        
+
         <div class="risk">
             <div class="risk-title">
                 Escalation of Cross-Border Trade Conflicts
@@ -767,7 +1194,7 @@ h4 {
                 Supply chain disruption, margin compression in internationally exposed sectors, and heightened political risk premiums.
             </div>
         </div>
-        
+
 
 </section>
 
@@ -779,7 +1206,31 @@ h4 {
     </div>
 
     <ul>
-        <li>Fixed-income strategies should favor curve-flattening structures or defensive duration positioning as structural fiscal deficits and heavy issuance keep term premiums elevated.</li><li>Equity exposure should emphasize cash-generative mega-caps with rock-solid balance sheets capable of absorbing higher capital costs, while trimming exposure to unprofitable tech and high-multiple small caps.</li><li>Portfolio managers must account for geopolitical trade friction as a persistent feature driven by domestic political incentives rather than transient policy noise.</li>
+
+        <li class="takeaway-item">
+            <div>
+                Fixed-income strategies should favor curve-flattening structures or defensive duration positioning as structural fiscal deficits and heavy issuance keep term premiums elevated.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Equity exposure should emphasize cash-generative mega-caps with rock-solid balance sheets capable of absorbing higher capital costs, while trimming exposure to unprofitable tech and high-multiple small caps.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Portfolio managers must account for geopolitical trade friction as a persistent feature driven by domestic political incentives rather than transient policy noise.
+            </div>
+
+
+        </li>
+
     </ul>
 
 </section>
@@ -798,7 +1249,7 @@ h4 {
 
     <br>
 
-    
+
         <div class="action">
             <div class="action-number">
                 1
@@ -819,7 +1270,7 @@ h4 {
                 </div>
             </div>
         </div>
-        
+
 
 </section>
 
@@ -831,6 +1282,77 @@ h4 {
 </div>
 
 </div>
+
+<script>
+(function () {
+    const control =
+        document.getElementById(
+            "calendarControl"
+        );
+
+    const button =
+        document.getElementById(
+            "calendarButton"
+        );
+
+    if (!control || !button) {
+        return;
+    }
+
+    button.addEventListener(
+        "click",
+        function (event) {
+            event.stopPropagation();
+
+            const open =
+                control.classList.toggle(
+                    "open"
+                );
+
+            button.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+        }
+    );
+
+    document.addEventListener(
+        "click",
+        function (event) {
+            if (
+                !control.contains(
+                    event.target
+                )
+            ) {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+            if (event.key === "Escape") {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+})();
+</script>
 
 </body>
 
