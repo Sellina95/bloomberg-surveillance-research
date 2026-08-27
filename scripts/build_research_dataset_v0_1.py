@@ -1,6 +1,7 @@
 from __future__ import annotations
 import os
 
+import hashlib
 import json
 from pathlib import Path
 
@@ -22,10 +23,14 @@ OUTPUT = (
 )
 
 
+source_summary_bytes = INPUT.read_bytes()
+
+source_summary_sha256 = hashlib.sha256(
+    source_summary_bytes
+).hexdigest()
+
 data = json.loads(
-    INPUT.read_text(
-        encoding="utf-8"
-    )
+    source_summary_bytes.decode("utf-8")
 )
 
 
@@ -40,10 +45,19 @@ for item in data["summaries"]:
 
     key_views = []
 
-    for view in summary.get(
-        "key_views",
-        []
+    for source_ordinal, view in enumerate(
+        summary.get(
+            "key_views",
+            []
+        ),
+        start=1,
     ):
+
+        claim_id = (
+            f"{DATE.replace('-', '')}-"
+            f"U{item['unit_id']:03d}-"
+            f"C{source_ordinal:02d}"
+        )
 
         if view["grounding_status"] != "PASS":
             continue
@@ -65,8 +79,12 @@ for item in data["summaries"]:
 
         key_views.append(
             {
+                "claim_id":
+                    claim_id,
+
                 "claim":
                     view["claim"],
+
                 "evidence":
                     evidence,
             }
@@ -140,6 +158,9 @@ artifact = {
 
     "source_summary":
         str(INPUT),
+
+    "source_summary_sha256":
+        source_summary_sha256,
 
     "guest_count":
         len(research_units),
