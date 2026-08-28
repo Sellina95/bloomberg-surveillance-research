@@ -226,6 +226,48 @@ def generate_with_retry(client, prompt: str):
 
 
 
+def repair_invalid_json(client, text: str) -> str:
+
+    prompt = f"""
+You are a strict JSON syntax repair engine.
+
+The following text was intended to be valid JSON but contains
+one or more JSON syntax errors.
+
+RULES:
+1. Repair JSON SYNTAX ONLY.
+2. Do NOT add, remove, summarize, rewrite, or reinterpret content.
+3. Preserve all facts, numbers, strings, arrays, objects, and attribution.
+4. Preserve the intended schema and nesting.
+5. Return ONLY valid JSON.
+6. Do NOT use markdown fences.
+
+BROKEN JSON:
+
+{text}
+"""
+
+    response = generate_with_retry(
+        client,
+        prompt,
+    )
+
+    repaired = response.text.strip()
+
+    if repaired.startswith("```"):
+        repaired = repaired.replace(
+            "```json",
+            "",
+            1,
+        )
+        repaired = repaired.rsplit(
+            "```",
+            1,
+        )[0].strip()
+
+    return repaired
+
+
 def main():
 
     print("=" * 100)
@@ -281,12 +323,40 @@ def main():
 
         print()
         print(
-            "MODEL OUTPUT WAS NOT VALID JSON:"
+            "WARNING — model output was not valid JSON."
         )
-        print(text)
+        print(
+            f"INITIAL JSON ERROR: {exc}"
+        )
+        print(
+            "ATTEMPTING JSON SYNTAX REPAIR"
+        )
 
-        raise SystemExit(
-            f"FAIL — invalid JSON: {exc}"
+        repaired_text = repair_invalid_json(
+            client,
+            text,
+        )
+
+        try:
+            report = json.loads(
+                repaired_text
+            )
+
+        except json.JSONDecodeError as repair_exc:
+
+            print()
+            print(
+                "JSON REPAIR FAILED:"
+            )
+            print(repaired_text)
+
+            raise SystemExit(
+                "FAIL — repaired output is still "
+                f"invalid JSON: {repair_exc}"
+            )
+
+        print(
+            "JSON SYNTAX REPAIR: PASS"
         )
 
     OUTPUT.write_text(
