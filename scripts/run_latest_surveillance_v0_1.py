@@ -210,6 +210,78 @@ def main() -> None:
 
     print()
     print("=" * 100)
+    print("REFRESH HISTORICAL TV NAVIGATION")
+    print("=" * 100)
+
+    surveillance_root = (
+        ROOT / "data/processed/surveillance"
+    )
+
+    for date_dir in sorted(
+        surveillance_root.iterdir()
+    ):
+        if not date_dir.is_dir():
+            continue
+
+        historical_date = date_dir.name
+
+        try:
+            date.fromisoformat(historical_date)
+        except ValueError:
+            continue
+
+        historical_en = (
+            date_dir
+            / "daily_research_report_v0_1.json"
+        )
+
+        if not historical_en.exists():
+            continue
+
+        historical_env = os.environ.copy()
+        historical_env["SURVEILLANCE_DATE"] = (
+            historical_date
+        )
+
+        historical_languages = ["en"]
+
+        historical_ko = (
+            date_dir
+            / "daily_research_report_ko_v0_1.json"
+        )
+
+        if historical_ko.exists():
+            historical_languages.append("ko")
+
+        for lang in historical_languages:
+            historical_env[
+                "SURVEILLANCE_LANG"
+            ] = lang
+
+            print(
+                "REFRESH NAVIGATION:",
+                historical_date,
+                lang.upper(),
+            )
+
+            historical_tv = subprocess.run(
+                [
+                    sys.executable,
+                    str(TV_RENDERER),
+                ],
+                cwd=ROOT,
+                env=historical_env,
+            )
+
+            if historical_tv.returncode != 0:
+                raise SystemExit(
+                    "FAIL — historical TV navigation "
+                    f"refresh failed "
+                    f"({historical_date}, {lang})"
+                )
+
+    print()
+    print("=" * 100)
     print("REFRESH RESEARCH DESK HOME")
     print("=" * 100)
 
