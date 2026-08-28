@@ -4,227 +4,229 @@
 
 ## Executive Summary
 
-- Federal Reserve policy is caught in a complex 'tale of two economies,' balancing an AI-driven corporate investment boom against consumer credit strains and sticky inflation pressures.
-- Nvidia's robust 70% forward growth guidance and expanding compute demand continue to propel the broader AI earnings momentum trade, though concerns persist regarding hidden leverage, cash-flow gaps, and local infrastructure pushback.
-- Fixed-income and macroeconomic strategists warn that persistent structural forces—including federal debt issuance, hyperscaler financing, and global central bank divergence—will keep interest rates higher for longer.
+- Artificial intelligence infrastructure demand remains exceptionally robust, highlighted by Nvidia's 70% growth guidance and tangible net margin expansion among S&P 500 AI adopters, though analysts debate earnings transparency and hidden leverage in corporate footnotes.
+- The Federal Reserve faces a 'tale of two economies' and potential policy divergence, with Kansas City Fed President Jeffrey Schmid signaling that underlying demand pressures could justify a rate hike as soon as September.
+- U.S. fiscal deficits and long-end bond yields face upward pressure from heavy debt issuance, structural entitlement spending, and external factors, while analysts urge skepticism toward executive deficit plans lacking congressional buy-in.
 
 ## Macro Themes
 
-### The Tale of Two Economies & Consumer vs. Asset-Owner Disconnect
+### The AI Infrastructure Boom vs. Earnings Quality & Transparency
 
-Asset owners and technology corporations are experiencing unprecedented financial gains, while lower-income consumers face higher borrowing costs, elevated credit card defaults, and a stagnant housing market locked in by high mortgage rates.
-
-**Supporting Guests**
-
-- Aaron Kennon, Clear Harbor Asset Management
-- Libby Cantrill, PIMCO
-- Matt Miskin, Manulife John Hancock Investments
-
-**Evidence**
-
-- **[09:01] Segment 50** — ">> IT IS THE TALE OF TWO ECONOMIES."
-- **[09:14] Segment 53** — "A BROADER EQUITY MARKET SINCE 2022, YOU HAVE BEEN LEFT OUT IN THE COLD."
-- **[09:37] Segment 60** — "CREDIT CARD DEFAULTS HAVE AT THE LOWER QUARTILE HAVE ACTUALLY INCREASED AND THEIR LINES HAVE BEEN CUT"
-- **[70:46] Segment 78** — "EFFECT HAS BEEN INCREDIBLY PERNICIOUS FOR THE HOUSING MARKET"
-
-### AI Infrastructure Boom & Enterprise Fundamentals
-
-Corporate demand for AI compute remains exceptionally strong, with tech leaders forecasting massive revenue growth, expanding net margins for adopters, and transitioning from testing phases into live production.
+While hardware demand and compute requirements continue to surge, institutional perspectives diverge on whether headline growth metrics accurately reflect cash generation and balance sheet health.
 
 **Supporting Guests**
 
 - Angelo Zino, CFRA
-- Michelle Weaver, Morgan Stanley
+- Savita Subramanian, BofA Global Research
 - Gil Luria, DA Davidson
-- Matt Miskin, Manulife John Hancock Investments
+- Michelle Weaver, Morgan Stanley
 
 **Evidence**
 
-- **[18:00] Segment 15** — "NEXT YEAR, GUIDING TO 70% PLUS."
-- **[53:40] Segment 19** — "BEEN AN EARNINGS MOMENTUM FREIGHT TRAIN THAT HAS NOT"
-- **[140:07] Segment 40** — "BASIS POINTS OF RELATIVE NET MARGIN EXPANSION FOR AI ADOPTERS."
+- Nvidia guiding to roughly 70% revenue growth into 2028 supported by architecture shifts across Vera Rubin, Rubin Ultra, and Feynman (Angelo Zino, Segment 15, 18, 42-43; Gil Luria, Segment 7-9).
+- A significant gap exists in tech between reported earnings gains and actual cash flow generation, partly due to mark-to-market private investments and leverage obligations hidden in footnotes (Savita Subramanian, Segment 16-18, 37-44).
+- 25% of S&P 500 companies are reporting tangible impacts from AI adoption, showing 50 basis points of relative net margin expansion (Michelle Weaver, Segment 37-41).
 
-### Inflationary Pressures and Monetary Policy Divergence
+### Central Bank Policy Challenges & Bifurcated Economy
 
-Central bankers and market analysts debate whether monetary policy is truly restrictive or slightly accommodative, as localized inflation, data center energy shocks, and shifting tariff policies complicate the path of interest rates.
+The Federal Reserve is navigating sticky inflation driven by non-monetary factors (such as AI buildouts and energy) and a two-speed economy where asset owners thrive while lower-income consumers experience credit stress.
 
 **Supporting Guests**
 
+- Aaron Kennon, Clear Harbor Asset Management
 - Jeffrey Schmid, Kansas City Fed President
-- Torsten Slok, Apollo
-- Frances Donald, RBC
 - Nela Richardson, ADP
+- Torsten Slok, Apollo
 
 **Evidence**
 
-- **[73:58] Segment 12** — "NOT RESTRICTIVE, AND MAYBE A LITTLE ACCOMMODATIVE."
-- **[78:06] Segment 75** — "THAT IS CERTAINLY CREATING SOME INFLATION UNDERNEATH THE ENERGY SHOCK SIDE OF THINGS."
-- **[92:45] Segment 38** — "INFLATION AND JOBS BUT THERE HAVE BEEN MORE THAN 50 CHANGES TO TARIFF POLICY OVER THE PAST YEAR."
+- AI creates short-term inflationary pressures and employment displacement for younger workers while offering long-term productivity gains (Aaron Kennon, Segment 8-14; Nela Richardson, Segment 8-9).
+- Current short-end policy settings may be accommodative rather than restrictive, and underlying demand pressures could justify a rate hike as soon as September (Jeffrey Schmid, Segment 12, 39).
+- Interest rates are projected to stay higher for longer due to persistent inflation pressures and structural factors like fiscal deficits (Torsten Slok, Segment 1-2).
+
+### Fiscal Realities & Bond Market Dynamics
+
+Escalating debt issuance, structural entitlement spending, and political gridlock are driving long-end bond yields higher, independent of direct Federal Reserve control.
+
+**Supporting Guests**
+
+- Libby Cantrill, PIMCO
+- Matt Miskin, Manulife John Hancock Investments
+- Torsten Slok, Apollo
+
+**Evidence**
+
+- 75% of government spending is on autopilot (mandatory entitlement spending), and investors should discount any standalone executive deficit plans until Congress gets involved (Libby Cantrill, Segment 7, 9-10, 15-16).
+- Upward pressure on the yield curve is driven by external forces such as fiscal deficits and hyperscaler debt issuance, which are outside the Fed's control (Torsten Slok, Segment 47-59).
+- Recent back-ups in bond yields offer attractive opportunistic entry points for high-quality bonds yielding 5% to 6% (Matt Miskin, Segment 30-31).
 
 ## Rates / Bonds
 
 ### Summary
 
-Long-term interest rates face ongoing upward pressure driven by federal debt issuance, hyperscaler capital expenditure, and structural supply dynamics independent of Federal Reserve rate adjustments.
+The fixed income landscape is dominated by persistent long-end yield pressures stemming from heavy fiscal issuance, structural entitlement spending, and hawkish central bank commentary regarding stubborn underlying demand.
 
 ### Key Views
 
-- Interest rates are projected to stay higher for longer due to structural fiscal deficits and corporate issuance.
-- Investors can opportunistically target high-quality bond yields in the 5% to 6% range as an attractive alternative to equities.
-- Kansas City Fed President Jeffrey Schmid notes that underlying demand pressures could justify considering a rate hike as soon as September.
+- Interest rates will remain higher for longer due to structural inflation drivers and heavy debt issuance (Torsten Slok).
+- Current short-end monetary policy settings are viewed by some policymakers as accommodative, leaving the door open for potential rate adjustments as early as September (Jeffrey Schmid).
+- Backups in bond yields provide opportunistic entry points for investors to lock in 5% to 6% yields in high-quality fixed income and corporate credit (Matt Miskin).
 
 ### Risks
 
-- Vagueness in Federal Reserve communication or reaction functions could cause term premiums to expand and long-term yields to spike.
-- Persistent trade friction and tariff policy changes risk pushing goods inflation higher.
+- Lack of framework clarity from leadership transitions or central bank communication failures could drive long-term bond yields higher.
+- Persistent fiscal deficits and heavy corporate/hyperscaler debt issuance risk destabilizing term premia.
 
 
 ## USD / FX
 
 ### Summary
 
-Global central banks are pursuing divergent monetary policies while local inflation measures create varied currency responses.
+The U.S. dollar is influenced by global monetary policy divergence, central bank credibility concerns, and widening advanced goods-trade deficits.
 
 ### Key Views
 
-- Major central banks (ECB, BOJ, Brazil) are moving in different directions, heightening policy divergence.
-- Resilient U.S. employment data and potential hawkish stances support the U.S. dollar relative to peers.
+- Major global central banks are pursuing divergent monetary paths in response to localized inflation pressures, creating foreign exchange volatility (Nela Richardson).
+- Interventions or policy shifts can impact currency stability, as observed when Treasury announcements coincide with shifts in dollar strength and yield movements (Matt Miskin).
 
 ### Risks
 
-- Unpredictable localized inflation prints could trigger sudden macroeconomic shocks across global currency pairs.
+- Intervention fatigue or lack of confidence in fiscal-monetary coordination could weigh on the dollar despite relative yield advantages.
+- A widening U.S. goods-trade deficit acts as a growth subtraction and introduces negative fundamental currency pressures.
 
 
 ## Equities
 
 ### Summary
 
-Mega-cap tech and AI-exposed equities continue to benefit from robust earnings momentum, though hidden leverage in footnotes and cash-flow discrepancies warrant caution.
+Equity markets remain supported by exceptional earnings momentum in AI-adjacent sectors and semiconductors, though institutional investors highlight valuation risks, hidden leverage, and political headwinds facing physical infrastructure.
 
 ### Key Views
 
-- Nvidia's 70% revenue guidance and architectural transitions (Vera Rubin, Rubin Ultra) reinforce bullish sentiment in hardware and semiconductors.
-- Software companies are regaining favor as enterprises move AI models into live production layers.
-- Large-cap value stocks offer an attractive alternative for aging demographics seeking inflation-protected income.
+- Nvidia's 70% growth guidance and extended visibility into the next 12 to 18 months anchor strong structural demand across hyperscalers and supply chains (Angelo Zino, Gil Luria, Michelle Weaver).
+- Large-cap value stocks offer an attractive alternative for aging demographics seeking inflation-protected income amid rising long-term interest rates (Savita Subramanian).
+- S&P 500 adopters of AI are beginning to show tangible fundamentals with relative net margin expansion (Michelle Weaver).
 
 ### Risks
 
-- Opaque corporate leverage and gaps between tech earnings and actual cash flow present hidden vulnerabilities.
-- Local political pushback and environmental concerns regarding data centers could cause near-term volatility ahead of midterms.
+- Hidden leverage obligations and financing structures residing in company footnotes rather than traditional balance sheets obscure true earnings visibility (Savita Subramanian).
+- Political backlash, environmental concerns, and localized pushback against data center builds ahead of the midterms could create near-term project friction (Gil Luria).
 
 
 ## Credit
 
 ### Summary
 
-Lower-income consumers face mounting financial stress while corporate tech financing relies heavily on alternative structures and ecosystem capital.
+Credit markets display a bifurcated reality, with corporate issuers leveraging strong cash flows and innovative financing structures while lower-income consumer credit exhibits rising default rates.
 
 ### Key Views
 
-- Credit card defaults in the lower quartile have risen, and consumer credit lines have experienced tightening.
-- Hyperscaler debt and financial commitments are frequently housed in footnotes rather than standard balance sheets.
+- Lower-income consumers face higher borrowing costs, leading to rising credit card delinquencies and lower credit limits in the bottom quartile (Aaron Kennon).
+- Corporate credit buys offer attractive yields in the 5% to 6% range following recent yield backups (Matt Miskin).
 
 ### Risks
 
-- A broader macroeconomic slowdown could expose hidden leverage and accelerate credit strain in vulnerable consumer segments.
+- Hidden leverage and ecosystem financing structures among tech hyperscalers introduce potential credit vulnerability if underlying cash flows face compression (Savita Subramanian).
 
 
 ## AI / Technology
 
 ### Summary
 
-Artificial intelligence adoption is successfully moving from testing phases to live enterprise production, generating measurable net margin expansion and sustained demand for compute.
+The artificial intelligence sector continues to experience voracious demand for compute and hardware infrastructure, while expanding into the software application layer and showing measurable margin benefits for corporate adopters.
 
 ### Key Views
 
-- The majority of major companies expect to have an AI tool in production by early next year.
-- Hardware leaders are unapologetically financing supply chain bottlenecks to maintain ecosystem dominance and secure long-term demand.
-- Software application layers are essential for helping end users interact with models and deploy capabilities effectively.
+- Nvidia is unapologetically utilizing its massive cash generation to finance ecosystem partners and alleviate supply chain bottlenecks, ensuring sustained demand growth (Angelo Zino, Gil Luria).
+- The software application layer is gaining appreciation as enterprises require functional tools for end users to interact with AI models (Michelle Weaver).
+- Meta's legal settlement aligns the company with state regulators to pressure competitors like TikTok and YouTube into adopting protective guardrails for younger users, potentially constraining engagement models (Stuart Benjamin).
 
 ### Risks
 
-- Execution risks are rising alongside lofty revenue growth targets and potential political friction over data center footprints.
+- Execution risk and competitive pressures are rising as hardware architectures transition rapidly across Rubin, Rubin Ultra, and Feynman (Angelo Zino).
+- Physical data center expansions face localized political resistance and environmental scrutiny ahead of midterm elections (Gil Luria).
 
 
 ## Commodities
 
 ### Summary
 
-Energy and agricultural supply chains face stress from geopolitical trade disputes and localized infrastructure demands.
+Commodities and energy markets remain tied to structural demand drivers such as data center power requirements, alongside trade frictions impacting cross-border supply chains.
 
 ### Key Views
 
-- Data centers and AI infrastructure are driving heavy energy demand and creating underlying inflationary pressures.
-- Frequent changes to U.S.-Canada tariff policies disrupt supply chains and pressure agricultural markets.
+- Data centers and AI development are creating foundational energy demand and localized inflation pressures underneath traditional energy shocks (Jeffrey Schmid).
+- U.S. economic success in sectors like energy and AI depends heavily on stable cross-border trade relationships, particularly with Canada, following frequent tariff policy shifts (Frances Donald).
 
 ### Risks
 
-- Failure to de-escalate trade tensions with key partners like Canada could threaten strategic supplies in energy, agriculture, and tech.
+- Central banks have limited direct monetary control over non-monetary inflation drivers like oil prices and AI energy consumption (Nela Richardson).
+- Inventory drawdowns and trade-related job losses resulting from shifting tariff policies pose risks to regional industrial sectors (Frances Donald).
 
 
 ## Cross-Guest Consensus
 
-### AI infrastructure demand and tech sector capital expenditure remain exceptionally robust.
+### AI infrastructure demand and compute spending remain exceptionally strong, driving robust top-line growth across semiconductor and hardware ecosystems.
 
-**Guests:** Aaron Kennon, Clear Harbor Asset Management, Angelo Zino, CFRA, Torsten Slok, Apollo, Matt Miskin, Manulife John Hancock Investments, Michelle Weaver, Morgan Stanley, Gil Luria, DA Davidson
+**Guests:** Angelo Zino, CFRA, Gil Luria, DA Davidson, Michelle Weaver, Morgan Stanley
 
-### Interest rates will likely remain higher for longer due to structural forces outside the Fed's direct control.
+### Interest rates are likely to remain higher for longer due to persistent structural inflation pressures and heavy fiscal burdens.
 
-**Guests:** Torsten Slok, Apollo, Matt Miskin, Manulife John Hancock Investments, Jeffrey Schmid, Kansas City Fed President
+**Guests:** Torsten Slok, Apollo, Jeffrey Schmid, Kansas City Fed President
 
 ## Cross-Guest Conflicts
 
-### Appropriate Federal Reserve Rate Action
+### Federal Reserve Rate Action Timing & Policy Restrictiveness
 
-**View A:** The Fed may need to consider raising rates as soon as September due to accommodative conditions and underlying demand pressures (Jeffrey Schmid).
+**View A:** The Federal Reserve is in a holding pattern, likely keeping rates unchanged in September before contemplating a move in December (Aaron Kennon).
 
-**View B:** The Fed is in a holding pattern and will likely keep rates steady in September, contemplating a move later in the year amid mixed economic data (Aaron Kennon).
+**View B:** Underlying demand pressures and accommodative short-end policy settings could justify considering a rate hike as soon as September (Jeffrey Schmid).
 
-**Why It Matters:** Conflicting views on whether current monetary policy is restrictive or accommodative directly impact short-term fixed-income pricing and rate-cut expectations.
+**Why It Matters:** Divergence between market pricing for a pause/cut and hawkish Federal Reserve officials signaling potential rate hikes creates significant volatility risk for fixed-income and equity valuations.
 
-### Quality of Tech Earnings and Balance Sheet Health
+### Earnings Transparency and Sustainability in the AI Trade
 
-**View A:** Tech earnings represent an unstoppable momentum freight train supported by high margins and clear multi-year visibility (Matt Miskin, Angelo Zino, Michelle Weaver, Gil Luria).
+**View A:** Nvidia and the broader AI sector represent an unstoppable earnings momentum freight train with unprecedented forward visibility and margin expansion (Angelo Zino, Michelle Weaver, Gil Luria, Matt Miskin).
 
-**View B:** Tech earnings carry undue investment gains that create a large gap against actual cash flow, with meaningful leverage hidden in footnotes (Savita Subramanian).
+**View B:** Earnings visibility is obscured by hidden leverage in footnotes and paper gains from private investments, masking true cash flow realities (Savita Subramanian).
 
-**Why It Matters:** Determining whether tech valuations are fully justified depends on distinguishing between top-line accounting gains and actual cash generation.
+**Why It Matters:** Conflicting interpretations of tech earnings quality dictate whether current valuations are justified by secular growth or vulnerable to hidden balance sheet risks.
 
 ## Key Risks
 
-### Inflation Re-Acceleration & Tariff Shocks
+### Aggressive Central Bank Policy Tightening
 
-- **Trigger:** Inventory drawdowns exhausting tariff-free goods and continued trade policy volatility.
-- **Market Impact:** Goods inflation surprises to the upside, forcing bond yields higher and compressing equity multiples.
+- **Trigger:** Incoming inflation or labor market prints reinforcing hawkish Fed rhetoric, leading to unexpected rate hikes.
+- **Market Impact:** Upward spike in Treasury yields, compression of equity multiples, and heightened volatility in rate-sensitive sectors.
 
-### Hidden Tech Leverage and Cash Flow Discrepancies
+### Hidden Leverage Unraveling in Tech Ecosystems
 
-- **Trigger:** A broader credit shock or slower-than-expected software monetization.
-- **Market Impact:** Rapid repricing of high-multiple growth equities and a rotation into defensive value sectors.
+- **Trigger:** Deterioration in enterprise AI ROI or tighter credit conditions exposing vendor-financing obligations.
+- **Market Impact:** Sharp repricing of high-multiple growth equities and potential credit liquidity dislocations.
 
-### Political and Infrastructure Backlash
+### Political and Environmental Backlash on Infrastructure
 
-- **Trigger:** Midterm campaign rhetoric targeting data center energy consumption, noise, and local zoning.
-- **Market Impact:** Near-term regulatory friction and volatility for semiconductor and infrastructure equities.
+- **Trigger:** Legislative opposition or localized zoning bans targeting data center builds ahead of midterm elections.
+- **Market Impact:** Project delays for hyperscalers and short-term volatility in semiconductor supply chain equities.
 
 ## Research Takeaways
 
-- Macroeconomic reality is divided between booming financial asset owners and stressed lower-income consumers.
-- Corporate AI adoption is transitioning from experimentation to live production, validating high capital expenditures.
-- Structural yield pressures from federal deficits and supply-chain friction override simple central bank rate-cut narratives.
+- Investors should distinguish between executive branch fiscal announcements and actionable congressional legislation when evaluating deficit reduction risks.
+- AI adoption has successfully transitioned from speculative experimentation into fundamental S&P 500 margin expansion, though footnote disclosures require rigorous credit scrutiny.
+- With labor markets remaining stable and hawkish regional Fed voices open to rate hikes, fixed-income investors should favor high-quality bonds offering attractive yields over duration risk.
 
 ## Daily Action
 
 > **Analytical interpretation — not a Bloomberg guest quote.**
 
-### 1. Maintain selective exposure to high-quality AI infrastructure leaders while implementing hedges against near-term political and infrastructure noise.
+### 1. Maintain selective exposure to high-quality fixed income and corporate credit yielding 5% to 6% to capitalize on recent yield backups.
 
-**Why:** Robust forward guidance and live production adoption support secular growth, but upcoming midterms and local data center pushback introduce headline volatility.
+**Why:** Persistent fiscal issuance and hawkish central bank commentary support a 'higher-for-longer' rate environment, rewarding attractive carry in high-grade bonds.
 
-**What to Monitor:** Regulatory headlines regarding data center permits, enterprise software deployment metrics, and upcoming inflation prints.
+**What to Monitor:** Incoming FOMC communications, core inflation prints, and Treasury auction demand.
 
-### 2. Utilize opportunistic back-end fixed-income yields (5% to 6%) to lock in duration.
+### 2. Selectively accumulate AI infrastructure leaders and application-layer software providers on pullbacks while closely auditing footnote leverage and cash flow generation.
 
-**Why:** Structural pressures from fiscal deficits and corporate debt issuance suggest long-term interest rates will remain elevated.
+**Why:** While top-line demand and margin expansion remain robust, hidden financing structures across the hyperscaler ecosystem warrant heightened balance sheet vigilance.
 
-**What to Monitor:** Treasury auction demand, FOMC communications regarding rate trajectories, and employment/inflation data releases.
+**What to Monitor:** Corporate capital expenditure disclosures, cash-flow-to-earnings conversion ratios, and localized data center regulatory developments.
