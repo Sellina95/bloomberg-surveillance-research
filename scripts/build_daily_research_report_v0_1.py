@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import json
 import os
+import time
 from pathlib import Path
 
 from google import genai
+from google.genai import errors as genai_errors
 
 
 DATE = os.environ.get(
@@ -13,6 +15,9 @@ DATE = os.environ.get(
 )
 
 MODEL = "gemini-3.5-flash-lite"
+
+MAX_GENERATION_ATTEMPTS = 4
+RETRY_DELAYS_SECONDS = (15, 30, 60)
 
 BASE = Path(
     f"data/processed/surveillance/{DATE}"
@@ -181,6 +186,46 @@ RESEARCH UNITS:
 """
 
 
+
+def generate_with_retry(client, prompt: str):
+
+    for attempt in range(1, MAX_GENERATION_ATTEMPTS + 1):
+
+        try:
+            return client.models.generate_content(
+                model=MODEL,
+                contents=prompt,
+            )
+
+        except genai_errors.ServerError as exc:
+
+            status_code = getattr(
+                exc,
+                "status_code",
+                None,
+            )
+
+            if (
+                status_code not in (500, 502, 503, 504)
+                or attempt == MAX_GENERATION_ATTEMPTS
+            ):
+                raise
+
+            delay = RETRY_DELAYS_SECONDS[
+                attempt - 1
+            ]
+
+            print()
+            print(
+                "WARNING — transient Gemini server error "
+                f"({status_code}). "
+                f"Retrying in {delay}s."
+            )
+
+            time.sleep(delay)
+
+
+
 def main():
 
     print("=" * 100)
@@ -210,9 +255,9 @@ def main():
         api_key=API_KEY
     )
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=build_prompt(dataset),
+    response = generate_with_retry(
+        client,
+        build_prompt(dataset),
     )
 
     text = response.text.strip()
