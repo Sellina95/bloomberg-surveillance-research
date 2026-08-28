@@ -167,9 +167,12 @@ def main() -> None:
         env=env,
     )
 
-    if korean.returncode != 0:
-        raise SystemExit(
-            "FAIL — Korean presentation build failed"
+    korean_available = korean.returncode == 0
+
+    if not korean_available:
+        print(
+            "WARNING — Korean presentation build failed. "
+            "English publication will continue."
         )
 
     print()
@@ -177,8 +180,14 @@ def main() -> None:
     print("RUN TV RENDER")
     print("=" * 100)
 
-    # Render both public language versions.
-    for lang in ("en", "ko"):
+    # English publication is mandatory.
+    # Korean publication is rendered only after its validation passes.
+    render_languages = ["en"]
+
+    if korean_available:
+        render_languages.append("ko")
+
+    for lang in render_languages:
         render_env = env.copy()
         render_env["SURVEILLANCE_LANG"] = lang
 

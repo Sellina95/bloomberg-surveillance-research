@@ -659,6 +659,87 @@ def translate(report):
         ) from exc
 
 
+def repair_numeric_translation(
+    source_report,
+    translated,
+    numeric_differences,
+):
+    """
+    One-shot repair for path-level numeric preservation
+    failures. The model may edit only the Korean translation
+    necessary to restore the reported numeric invariants.
+    """
+
+    client = genai.Client(
+        api_key=API_KEY
+    )
+
+    repair_prompt = """
+You are repairing an existing Korean translation of a
+financial research report.
+
+STRICT RULES:
+
+1. Return ONLY valid JSON.
+2. Preserve the JSON structure exactly.
+3. Do NOT regenerate or summarize the research.
+4. Do NOT change guest attribution.
+5. Do NOT change dates.
+6. Fix ONLY the translation errors identified in
+   NUMERIC DIFFERENCES.
+7. At each reported JSON path, preserve every numeric
+   meaning from the English source.
+8. Do not add numeric meanings that are absent from
+   the corresponding English source.
+9. Preserve all other Korean translation content unless
+   a minimal edit is required to repair the numeric error.
+
+SOURCE REPORT:
+
+""" + json.dumps(
+        source_report,
+        ensure_ascii=False,
+        indent=2,
+    ) + """
+
+CURRENT KOREAN TRANSLATION:
+
+""" + json.dumps(
+        translated,
+        ensure_ascii=False,
+        indent=2,
+    ) + """
+
+NUMERIC DIFFERENCES:
+
+""" + json.dumps(
+        numeric_differences,
+        ensure_ascii=False,
+        indent=2,
+    )
+
+    response = client.models.generate_content(
+        model=MODEL,
+        contents=repair_prompt,
+        config={
+            "temperature": 0.0,
+            "response_mime_type":
+                "application/json",
+        },
+    )
+
+    try:
+        return json.loads(
+            response.text
+        )
+
+    except json.JSONDecodeError as exc:
+        raise SystemExit(
+            "FAIL — numeric repair model "
+            "returned invalid JSON"
+        ) from exc
+
+
 # ============================================================
 # Build
 # ============================================================
@@ -807,6 +888,43 @@ numeric_result = compare_numeric_inventory(
     translated,
 )
 
+# Gemini translation is non-deterministic. If the first
+# translation changes numeric meaning, attempt one constrained
+# repair and then re-run the numeric gate.
+if not numeric_result["pass"]:
+
+    print()
+    print(
+        "NUMERIC VALIDATION FAILED — "
+        "ATTEMPTING ONE REPAIR"
+    )
+
+    translated = repair_numeric_translation(
+        source_report,
+        translated,
+        numeric_result["differences"],
+    )
+
+    # Preserve the repaired private candidate for audit.
+    candidate_serialized = (
+        json.dumps(
+            translated,
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n"
+    )
+
+    CANDIDATE.write_text(
+        candidate_serialized,
+        encoding="utf-8",
+    )
+
+    numeric_result = compare_numeric_inventory(
+        source_report,
+        translated,
+    )
+
 numbers_pass = numeric_result[
     "pass"
 ]
@@ -831,6 +949,7 @@ if not numbers_pass:
     errors.append(
         "path-level numeric invariants changed"
     )
+
 
 
 # ============================================================
