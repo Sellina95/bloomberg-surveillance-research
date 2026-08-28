@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import time
 import re
 from pathlib import Path
 
@@ -622,6 +623,59 @@ Do not wrap the JSON in markdown.
 """
 
 
+
+def generate_with_transient_retry(
+    client,
+    prompt,
+    *,
+    label,
+):
+    max_attempts = 5
+
+    for attempt in range(1, max_attempts + 1):
+        try:
+            return client.models.generate_content(
+                model=MODEL,
+                contents=prompt,
+                config={
+                    "temperature": 0.0,
+                    "response_mime_type":
+                        "application/json",
+                },
+            )
+
+        except Exception as exc:
+            message = str(exc)
+
+            is_transient = (
+                "429" in message
+                or "RESOURCE_EXHAUSTED" in message
+                or "quota" in message.lower()
+                or "500" in message
+                or "502" in message
+                or "503" in message
+                or "504" in message
+                or "UNAVAILABLE" in message
+            )
+
+            if not is_transient:
+                raise
+
+            if attempt >= max_attempts:
+                raise
+
+            retry_seconds = 40 * attempt
+
+            print(
+                "TRANSIENT GEMINI RETRY — "
+                f"{label} "
+                f"attempt {attempt}/{max_attempts - 1} "
+                f"in {retry_seconds}s"
+            )
+
+            time.sleep(retry_seconds)
+
+
 def translate(report):
     client = genai.Client(
         api_key=API_KEY
@@ -637,14 +691,10 @@ def translate(report):
         )
     )
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=prompt,
-        config={
-            "temperature": 0.0,
-            "response_mime_type":
-                "application/json",
-        },
+    response = generate_with_transient_retry(
+        client,
+        prompt,
+        label="KOREAN TRANSLATION",
     )
 
     try:
@@ -718,14 +768,10 @@ NUMERIC DIFFERENCES:
         indent=2,
     )
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=repair_prompt,
-        config={
-            "temperature": 0.0,
-            "response_mime_type":
-                "application/json",
-        },
+    response = generate_with_transient_retry(
+        client,
+        repair_prompt,
+        label="KOREAN NUMERIC REPAIR",
     )
 
     try:

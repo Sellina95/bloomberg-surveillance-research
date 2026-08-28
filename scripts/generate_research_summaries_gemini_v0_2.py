@@ -149,13 +149,18 @@ TRANSCRIPT:
 
             message = str(exc)
 
-            is_rate_limit = (
+            is_transient = (
                 "429" in message
                 or "RESOURCE_EXHAUSTED" in message
                 or "quota" in message.lower()
+                or "500" in message
+                or "502" in message
+                or "503" in message
+                or "504" in message
+                or "UNAVAILABLE" in message
             )
 
-            if not is_rate_limit:
+            if not is_transient:
                 raise
 
             if attempt >= 5:
@@ -164,7 +169,7 @@ TRANSCRIPT:
             retry_seconds = 40 * attempt
 
             print(
-                "RATE LIMIT RETRY — "
+                "TRANSIENT GEMINI RETRY — "
                 f"UNIT {unit['unit_id']:02d} "
                 f"attempt {attempt}/4 "
                 f"in {retry_seconds}s"
