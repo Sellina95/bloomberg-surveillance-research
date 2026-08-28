@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+
+<title>
+Bloomberg Surveillance —
+2026-08-27
+</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #111214;
+    --panel: #191a1d;
+    --panel-2: #151619;
+    --panel-3: #202125;
+    --line: #303136;
+    --text: #f1f1ee;
+    --muted: #96979b;
+    --amber: #f2a23a;
+    --amber-soft: #c9852c;
+    --green: #72c7a7;
+    --red: #e46f6f;
+    --blue: #7fa9d8;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #292b2f 0%,
+            #151619 35%,
+            #0d0e10 100%
+        );
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-size: 14px;
+}
+
+.page {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+}
+
+.tv {
+    background: #17181b;
+    border: 1px solid #303136;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow:
+        0 22px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    overflow: hidden;
+}
+
+.tv-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 18px;
+    background: linear-gradient(180deg,#222327,#18191c);
+    border-bottom: 1px solid #333438;
+}
+
+.brand {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #f4f4f1;
+}
+
+.live {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: var(--amber);
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background: #111214;
+    border: 1px solid #34353a;
+    border-radius: 6px;
+}
+
+.lang-option {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.lang-active {
+    background: var(--amber);
+    color: #111214;
+}
+
+.lang-disabled {
+    color: #626368;
+    cursor: not-allowed;
+}
+
+.calendar-control {
+    position: relative;
+}
+
+.calendar-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 29px;
+    padding: 5px 9px;
+    background: #17181b;
+    border: 1px solid #3a3b40;
+    border-radius: 6px;
+    color: #dededb;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.calendar-button:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+}
+
+.calendar-icon {
+    font-size: 13px;
+}
+
+.calendar-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    z-index: 100;
+    width: 270px;
+    padding: 14px;
+    background: #151619;
+    border: 1px solid #3a3b40;
+    border-radius: 8px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55);
+}
+
+.calendar-control.open
+.calendar-panel {
+    display: block;
+}
+
+.nav-month + .nav-month {
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid #303136;
+}
+
+.nav-month-label {
+    margin-bottom: 10px;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.nav-date-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(7,1fr);
+    gap: 5px;
+}
+
+.nav-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 1px solid #303136;
+    border-radius: 5px;
+    background: #1d1e22;
+    color: #bdbec1;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-date:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+    background: #24211c;
+}
+
+.nav-date-current {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #111214;
+}
+
+.nav-date-current:hover {
+    color: #111214;
+}
+
+.screen {
+    position: relative;
+    background: linear-gradient(135deg,#17191b,#101113);
+    min-height: 220px;
+    padding: 30px 34px;
+    border-bottom: 1px solid #303136;
+}
+
+.screen-label {
+    color: var(--amber);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.6px;
+    margin-bottom: 12px;
+}
+
+.screen h1 {
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.date {
+    margin-top: 10px;
+    color: var(--muted);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 12px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 28px;
+}
+
+.knob {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #67686b;
+}
+
+.status {
+    margin-left: 12px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.content {
+    margin-top: 18px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #e8e8e5;
+    margin-bottom: 16px;
+}
+
+.section-title::before {
+    content: "";
+    width: 3px;
+    height: 14px;
+    background: var(--amber);
+    border-radius: 2px;
+}
+
+.executive {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.executive ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.executive li {
+    margin-bottom: 9px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.market-card {
+    position: relative;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 17px;
+    min-height: 190px;
+}
+
+.market-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: var(--amber-soft);
+    opacity: .75;
+}
+
+.market-card .section-title {
+    padding-left: 8px;
+}
+
+.summary {
+    color: #c8c9cb;
+    line-height: 1.55;
+    margin: 0 0 14px;
+}
+
+h4 {
+    margin: 16px 0 7px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: var(--amber);
+}
+
+.market-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.market-card li {
+    margin-bottom: 7px;
+    color: #d9d9d7;
+    line-height: 1.45;
+}
+
+.macro-card {
+    background: var(--panel-2);
+    border: 1px solid #292a2e;
+    border-radius: 8px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+.macro-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #f0f0ed;
+}
+
+.macro-card p {
+    color: #c6c7c9;
+    line-height: 1.55;
+}
+
+.guest-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 12px 0;
+}
+
+.guest {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid #3a3b3f;
+    border-radius: 4px;
+    background: #222327;
+    color: #c5c6c8;
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.evidence {
+    display: flex;
+    gap: 10px;
+    padding: 9px 10px;
+    margin-top: 6px;
+    background: #111214;
+    border: 1px solid #292a2d;
+    border-left: 2px solid var(--green);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.timestamp {
+    flex: 0 0 auto;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.insight,
+.conflict,
+.risk {
+    border-radius: 7px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    line-height: 1.55;
+}
+
+.insight {
+    background: #151c19;
+    border: 1px solid #293a34;
+    border-left: 3px solid var(--green);
+}
+
+.conflict {
+    background: #1b1815;
+    border: 1px solid #3c3025;
+    border-left: 3px solid var(--amber);
+}
+
+.risk {
+    background: #1c1617;
+    border: 1px solid #40292b;
+    border-left: 3px solid var(--red);
+}
+
+.small {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.provenance-block {
+    margin-top: 11px;
+    padding-top: 9px;
+    border-top: 1px solid #2c2d31;
+}
+
+.prov-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 7px;
+}
+
+.prov-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.prov-approved {
+    color: var(--green);
+    background: #14231e;
+    border: 1px solid #2e5547;
+}
+
+.prov-review {
+    color: var(--amber);
+    background: #261e14;
+    border: 1px solid #634826;
+}
+
+.prov-type {
+    color: #b9c9dc;
+    background: #171d24;
+    border: 1px solid #344252;
+}
+
+.prov-warning {
+    margin: 7px 0;
+    padding: 7px 9px;
+    border-left: 2px solid var(--amber);
+    background: #211b14;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.provenance-details {
+    margin-top: 6px;
+}
+
+.provenance-details summary {
+    cursor: pointer;
+    color: #9fa8b4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    user-select: none;
+}
+
+.provenance-details summary:hover {
+    color: var(--text);
+}
+
+.claim-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.claim-id {
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid #353b43;
+    border-radius: 4px;
+    background: #121519;
+    color: #aeb8c4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+}
+
+.prov-note {
+    margin-top: 8px;
+    color: #73777e;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.conflict-view {
+    margin-top: 10px;
+}
+
+.takeaway-item {
+    margin-bottom: 12px;
+}
+
+.action {
+    display: flex;
+    gap: 14px;
+    padding: 15px;
+    background: #171a18;
+    border: 1px solid #304238;
+    border-radius: 8px;
+    margin-bottom: 9px;
+}
+
+.action-number {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: var(--amber);
+    color: #17120b;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.action p {
+    margin: 7px 0;
+    color: #b9babd;
+    line-height: 1.5;
+}
+
+.monitor {
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+}
+
+.footer {
+    text-align: center;
+    color: #66686d;
+    font-size: 10px;
+    padding: 26px;
+}
+
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        padding: 12px;
+    }
+
+    .tv-top {
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .top-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .calendar-panel {
+        position: fixed;
+        top: 70px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }
+
+    .screen {
+        padding: 24px;
+    }
+
+    .screen h1 {
+        font-size: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<div class="page">
+
+
+<div class="tv">
+
+    <div class="tv-top">
+
+        <div class="brand">
+            BLOOMBERG SURVEILLANCE · RESEARCH DESK
+        </div>
+
+        <div class="top-actions">
+
+            <div class="live">
+                ● DAILY RESEARCH
+            </div>
+
+            <div
+                class="calendar-control"
+                id="calendarControl"
+            >
+
+                <button
+                    class="calendar-button"
+                    id="calendarButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="calendarPanel"
+                >
+                    <span class="calendar-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        2026-08-27
+                    </span>
+                </button>
+
+                <div
+                    class="calendar-panel"
+                    id="calendarPanel"
+                >
+
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    AUG 2026
+                </div>
+
+                <div class="nav-date-grid">
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-14/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-14"
+                >
+                    14
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-18/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-18"
+                >
+                    18
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-19/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-19"
+                >
+                    19
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-20/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-20"
+                >
+                    20
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-24/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-24"
+                >
+                    24
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-25/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-25"
+                >
+                    25
+                </a>
+
+                <a
+                    class="nav-date"
+                    href="../2026-08-26/daily_research_report_tv_v0_1.html?desk=v0_1"
+                    aria-label="2026-08-26"
+                >
+                    26
+                </a>
+
+                </div>
+
+            </div>
+
+                </div>
+
+            </div>
+
+            <div
+                class="language-switch"
+                aria-label="Report language"
+            >
+
+        <span
+            class="lang-option lang-active"
+        >
+            EN
+        </span>
+
+        <span
+            class="lang-option lang-disabled"
+            title="Korean presentation not available"
+        >
+            한국어
+        </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="screen">
+
+        <div class="screen-label">
+            GLOBAL MARKET RESEARCH
+        </div>
+
+        <h1>
+            Daily Market Brief
+        </h1>
+
+        <div class="date">
+            2026-08-27
+        </div>
+
+        <div class="controls">
+
+            <span class="knob"></span>
+            <span class="knob"></span>
+            <span class="knob"></span>
+
+            <span class="status">
+                EVIDENCE GROUNDED · RESEARCH ONLY
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content">
+
+<section class="card">
+
+    <div class="section-title">
+        EXECUTIVE SUMMARY
+    </div>
+
+    <div class="executive">
+        <ul>
+            <li>Artificial intelligence infrastructure demand and corporate earnings continue to defy valuation skepticism, supported by aggressive forward guidance from key semiconductor and technology providers like Nvidia.</li><li>Federal Reserve policy expectations remain divided between holding rates steady due to slowing parts of the economy and potential tightening pressures driven by sticky inflation and robust underlying demand.</li><li>Fiscal deficits, bond market supply pressures, and cross-border trade friction are creating structural headwinds for fixed income, while corporate fundamentals begin to reflect tangible margin expansion from AI adoption.</li>
+        </ul>
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MACRO THEMES
+    </div>
+
+
+        <div class="macro-card">
+            <h3>The Tale of Two Economies &amp; Inflationary Pressures</h3>
+
+            <p>
+                The broader economy exhibits a clear divergence between asset owners benefiting from financial market and AI booms, and lower-income consumers facing elevated borrowing costs and rising credit card delinquencies. Meanwhile, sticky inflation around 3.5% and data center demand complicate the macroeconomic backdrop.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Aaron Kennon, Clear Harbor Asset Management</span> <span class="guest">Torsten Slok, Apollo</span> <span class="guest">Jeffrey Schmid, Kansas City Fed President</span>
+            </div>
+
+
+                <div class="evidence">
+                    <span class="timestamp">
+                        N/A
+                    </span>
+                    <span>
+                        The current economic environment is characterized as a &#x27;tale of two economies&#x27; where asset owners benefit from a booming equity and AI market, while lower-income consumers face elevated borrowing costs and rising credit card delinquencies.
+                    </span>
+                </div>
+
+                <div class="evidence">
+                    <span class="timestamp">
+                        N/A
+                    </span>
+                    <span>
+                        Interest rates will stay higher for longer due to sticky inflation at 3.5% and non-Fed pressures such as fiscal deficits and hyperscaler issuance.
+                    </span>
+                </div>
+
+                <div class="evidence">
+                    <span class="timestamp">
+                        N/A
+                    </span>
+                    <span>
+                        Underlying demand pressures and economic strength could justify a policy rate hike as soon as September.
+                    </span>
+                </div>
+
+        </div>
+
+        <div class="macro-card">
+            <h3>AI Infrastructure Buildout and Fundamentals</h3>
+
+            <p>
+                Voracious demand for compute and hardware continues to drive stellar earnings and margin expansion among tech adopters, though transparency concerns over leverage and footnote obligations persist.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Angelo Zino, CFRA</span> <span class="guest">Matt Miskin, Manulife John Hancock Investments</span> <span class="guest">Savita Subramanian, BofA Global Research</span> <span class="guest">Gil Luria, DA Davidson</span> <span class="guest">Michelle Weaver, Morgan Stanley</span>
+            </div>
+
+
+                <div class="evidence">
+                    <span class="timestamp">
+                        N/A
+                    </span>
+                    <span>
+                        Nvidia is forecasting approximately 70% revenue growth, driven by factors such as greater than expected demand from hyperscalers, pricing boosts, content growth, and innovative financing structures.
+                    </span>
+                </div>
+
+                <div class="evidence">
+                    <span class="timestamp">
+                        N/A
+                    </span>
+                    <span>
+                        Earnings visibility is obscured by growing leverage and hidden financing obligations in company footnotes.
+                    </span>
+                </div>
+
+                <div class="evidence">
+                    <span class="timestamp">
+                        N/A
+                    </span>
+                    <span>
+                        AI adoption is translating into fundamentals, with 25% of S&amp;P 500 companies discussing AI benefits and showing relative net margin expansion.
+                    </span>
+                </div>
+
+        </div>
+
+
+</section>
+
+
+<div class="grid">
+
+
+    <section class="market-card">
+        <div class="section-title">
+            RATES / BONDS
+        </div>
+
+        <p class="summary">
+            Fixed-income markets face upward pressure on long-term yields due to persistent fiscal deficits, heavy hyperscaler bond issuance, and sticky inflation, though high-quality bonds and corporate credit offer attractive yields.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Interest rates will remain higher for longer as front-end inflation lingers around 3.5% and long-end yields reflect heavy supply and fiscal expansion.</li><li>The backup in bond yields is largely driven by market sentiment and policy transition confusion rather than economic overheating.</li><li>Some Federal Reserve officials indicate that underlying demand and economic strength could justify maintaining or raising rates rather than easing.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Prolonged restrictive policy stance increasing debt-service burdens.</li><li>Yield curve steepening driven by unaddressed fiscal deficit paths and sovereign debt issuance.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            USD / FX
+        </div>
+
+        <p class="summary">
+            Foreign exchange markets navigate divergent global central bank paths and localized inflation dynamics, with cross-border trade friction and tariff shifts acting as swing factors.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Central banks globally are splitting hairs on localized inflation trends without a single global macroeconomic event to dictate unison.</li><li>Trade policy shifts and tariff adjustments with key partners like Canada introduce stress points for regional sectors and currencies.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Escalation of cross-border trade frictions and retaliatory counter-tariffs impacting growth.</li><li>Divergent central bank communications causing unexpected currency volatility.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            EQUITIES
+        </div>
+
+        <p class="summary">
+            Equities remain supported by powerful earnings momentum in technology and AI hardware, though hidden leverage in footnotes and valuation concentrations prompt selective rotation into large-cap value.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Nvidia&#x27;s 70% revenue growth forecast and multi-quarter visibility reinforce institutional confidence in the hardware trade.</li><li>Software and application layers are recovering as enterprises realize the necessity of deployment tools, alongside 25% of S&amp;P 500 companies reporting margin benefits from AI.</li><li>Large-cap value offers an appealing alternative for investors seeking inflation-protected income amid demographic shifts.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Opaque leverage and financing structures hiding true liabilities among tech hyperscalers.</li><li>Near-term political and environmental pushback against data center expansions.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            CREDIT
+        </div>
+
+        <p class="summary">
+            Corporate credit maintains attractive yields, but consumer credit shows stress in lower-income brackets.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>High-quality bonds and corporate credit offering 5% to 6% yields remain attractive destinations for incremental capital.</li><li>Lower-quartile consumers face rising credit card defaults and tighter credit lines due to elevated borrowing costs.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Deteriorating credit metrics for lower-income consumers exposed to restrictive interest rates.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            AI / TECHNOLOGY
+        </div>
+
+        <p class="summary">
+            Artificial intelligence continues to drive unprecedented infrastructure buildouts and tangible fundamental margin expansion, though regulatory and environmental hurdles are emerging.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Voracious demand for compute and architectural shifts (Vera Rubin, Rubin Ultra, Feynman) sustain multi-quarter growth visibility.</li><li>Meta&#x27;s child safety settlement establishes regulatory precedents that may structurally pressure competitors like TikTok and YouTube.</li><li>Local opposition, noise pollution concerns, and power consumption debates are turning data centers into political focal points ahead of midterms.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Regulatory crackdowns, antitrust pressures, and litigation costs across big tech platforms.</li><li>Local political pushback delaying physical data center deployment schedules.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            COMMODITIES
+        </div>
+
+        <p class="summary">
+            Commodity demand is underpinned by intensive energy and power requirements for data center infrastructure, alongside reliance on cross-border energy imports.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Data center development and AI flywheels are creating underlying inflation pressures in energy and power markets.</li><li>U.S. reliance on Canadian crude oil, electricity, and agricultural goods makes supply-side stability dependent on trade de-escalation.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Energy grid constraints and power availability bottlenecks for expanding AI infrastructure.</li><li>Trade disruptions affecting cross-border energy and agricultural supply chains.</li>
+        </ul>
+    </section>
+
+
+</div>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONSENSUS
+    </div>
+
+
+        <div class="insight">
+            <strong>
+                AI infrastructure demand and compute requirements remain exceptionally robust, driving secular earnings growth.
+            </strong>
+
+            <div class="small">
+                Guests:
+                Angelo Zino, CFRA, Matt Miskin, Manulife John Hancock Investments, Gil Luria, DA Davidson, Michelle Weaver, Morgan Stanley
+            </div>
+
+
+        </div>
+
+        <div class="insight">
+            <strong>
+                Interest rates and monetary policy will remain restrictive for an extended period due to sticky inflation and economic resilience.
+            </strong>
+
+            <div class="small">
+                Guests:
+                Aaron Kennon, Clear Harbor Asset Management, Torsten Slok, Apollo, Jeffrey Schmid, Kansas City Fed President
+            </div>
+
+
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONFLICTS
+    </div>
+
+
+        <div class="conflict">
+            <strong>
+                Federal Reserve Policy Direction
+            </strong>
+
+            <div class="conflict-view">
+                <b>VIEW A:</b>
+                The Fed is in a holding pattern and may contemplate pausing in September or cutting rates later in the year as growth moderates.
+
+
+            </div>
+
+            <div class="conflict-view">
+                <b>VIEW B:</b>
+                Underlying economic strength and sticky inflation could justify a policy rate hike as soon as September.
+
+
+            </div>
+
+            <div class="small">
+                Conflicting views on the immediate policy path create uncertainty for fixed-income duration positioning and short-term interest rate sensitivities.
+            </div>
+        </div>
+
+        <div class="conflict">
+            <strong>
+                AI Earnings Quality and Visibility
+            </strong>
+
+            <div class="conflict-view">
+                <b>VIEW A:</b>
+                Forward guidance and visibility are stronger than ever, supported by clear fundamentals and accelerating enterprise adoption.
+
+
+            </div>
+
+            <div class="conflict-view">
+                <b>VIEW B:</b>
+                Earnings visibility is obscured by hidden leverage in footnotes, investment gains, and gap discrepancies between earnings and cash flow.
+
+
+            </div>
+
+            <div class="small">
+                Disagreements over earnings transparency affect the true valuation risk and downside protection for mega-cap technology equities.
+            </div>
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        KEY RISKS
+    </div>
+
+
+        <div class="risk">
+            <div class="risk-title">
+                Persistent Sticky Inflation and Policy Tightening
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Inflation prints remaining above 3.5% alongside strong labor market stability.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+
+            </div>
+        </div>
+
+        <div class="risk">
+            <div class="risk-title">
+                Hidden Leverage and Opaque Financing in Tech
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Auditing scrutiny or credit tightening exposing off-balance-sheet hyperscaler obligations.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+
+            </div>
+        </div>
+
+        <div class="risk">
+            <div class="risk-title">
+                Data Center Deployment Friction
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Local political backlash, environmental zoning limits, and power grid constraints ahead of midterms.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+
+            </div>
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        RESEARCH TAKEAWAYS
+    </div>
+
+    <ul>
+
+        <li class="takeaway-item">
+            <div>
+                Distinguish between asset-owning beneficiaries of the AI/equity boom and credit-stressed lower-income consumers.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Monitor corporate footnotes and cash flow generation rather than headline earnings to accurately assess tech leverage risk.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Anticipate higher-for-longer bond yields driven by structural fiscal deficits and persistent service/goods inflation.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Factor in political and environmental friction points affecting physical data center rollouts over the next few months.
+            </div>
+
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        DAILY ACTION
+    </div>
+
+    <div class="small">
+        Analytical interpretation —
+        not a Bloomberg guest quote.
+    </div>
+
+    <br>
+
+
+        <div class="action">
+            <div class="action-number">
+                1
+            </div>
+
+            <div>
+                <strong>
+                    Maintain selective exposure to high-quality AI infrastructure and software application layers while hedging duration risk.
+                </strong>
+
+                <p>
+                    Secular demand for compute and margin expansion remain strong, but long-end yields face structural upward pressure from fiscal supply and sticky inflation.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    Upcoming Fed communications regarding reaction functions, inflation prints, and corporate footnote disclosures regarding off-balance-sheet obligations.
+                </div>
+            </div>
+        </div>
+
+
+</section>
+
+</div>
+
+
+<div class="footer">
+    Bloomberg Surveillance Research Engine · 2026-08-27
+</div>
+
+</div>
+
+<script>
+(function () {
+    const control =
+        document.getElementById(
+            "calendarControl"
+        );
+
+    const button =
+        document.getElementById(
+            "calendarButton"
+        );
+
+    if (!control || !button) {
+        return;
+    }
+
+    button.addEventListener(
+        "click",
+        function (event) {
+            event.stopPropagation();
+
+            const open =
+                control.classList.toggle(
+                    "open"
+                );
+
+            button.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+        }
+    );
+
+    document.addEventListener(
+        "click",
+        function (event) {
+            if (
+                !control.contains(
+                    event.target
+                )
+            ) {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+            if (event.key === "Escape") {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+})();
+</script>
+
+</body>
+
+</html>

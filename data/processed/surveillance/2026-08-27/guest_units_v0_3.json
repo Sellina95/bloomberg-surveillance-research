@@ -1,0 +1,264 @@
+{
+  "date": "2026-08-27",
+  "method": "chapter_attribution_v0_3",
+  "total_chapters": 14,
+  "guest_chapter_count": 13,
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Nvidia's Blowout Outlook and Warsh Heads to Jackson Hole",
+      "start_seconds": 0,
+      "source": "serpapi",
+      "is_guest": false
+    },
+    {
+      "chapter": 2,
+      "title": "Fed Must Navigate a ‘Tale of Two Economies’ — Aaron Kennon, Clear Harbor Asset Management",
+      "start_seconds": 365,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 3,
+      "title": "Nvidia's 70% Growth Forecast Raises Execution Risk — Angelo Zino, CFRA",
+      "start_seconds": 1025,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 4,
+      "title": "Meta Settlement Puts Pressure on TikTok and YouTube — Stuart Benjamin, Duke Law School",
+      "start_seconds": 1753,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 5,
+      "title": "Warsh to Provide ‘Framework’ Guidance on Policy — Torsten Slok, Apollo",
+      "start_seconds": 2289,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 6,
+      "title": "AI Is an ‘Earnings Momentum Freight Train’ — Matt Miskin, Manulife John Hancock Investments",
+      "start_seconds": 3149,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 7,
+      "title": "Ignore Deficit Plans Until Congress Gets Involved — Libby Cantrill, PIMCO",
+      "start_seconds": 3968,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 8,
+      "title": "Higher Rates Could Make Sense as Soon as September — Jeffrey Schmid, Kansas City Fed President",
+      "start_seconds": 4385,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 9,
+      "title": "America's Success Depends on De-Escalation With Canada — Frances Donald, RBC",
+      "start_seconds": 5423,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 10,
+      "title": "AI Earnings Aren't as Strong as They Look — Savita Subramanian, BofA Global Research",
+      "start_seconds": 6025,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 11,
+      "title": "Nvidia Has Better Visibility Than Investors Thought — Gil Luria, DA Davidson",
+      "start_seconds": 6751,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 12,
+      "title": "US Jobless Claims Fall, Goods-Trade Deficit Widens — Michael McKee, Bloomberg",
+      "start_seconds": 7262,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 13,
+      "title": "Fed Is Stuck in the ‘Muddled Middle’ — Nela Richardson, ADP",
+      "start_seconds": 7393,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 14,
+      "title": "AI Adoption Is Finally Showing Up in Fundamentals — Michelle Weaver, Morgan Stanley",
+      "start_seconds": 8277,
+      "source": "serpapi",
+      "is_guest": true
+    }
+  ],
+  "guest_units": [
+    {
+      "unit_id": 1,
+      "chapter": 2,
+      "title": "Fed Must Navigate a ‘Tale of Two Economies’ — Aaron Kennon, Clear Harbor Asset Management",
+      "guest": "Aaron Kennon, Clear Harbor Asset Management",
+      "start_seconds": 365,
+      "end_seconds": 1025,
+      "duration_seconds": 660,
+      "segment_count": 184,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 2,
+      "chapter": 3,
+      "title": "Nvidia's 70% Growth Forecast Raises Execution Risk — Angelo Zino, CFRA",
+      "guest": "Angelo Zino, CFRA",
+      "start_seconds": 1025,
+      "end_seconds": 1753,
+      "duration_seconds": 728,
+      "segment_count": 201,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 3,
+      "chapter": 4,
+      "title": "Meta Settlement Puts Pressure on TikTok and YouTube — Stuart Benjamin, Duke Law School",
+      "guest": "Stuart Benjamin, Duke Law School",
+      "start_seconds": 1753,
+      "end_seconds": 2289,
+      "duration_seconds": 536,
+      "segment_count": 141,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 4,
+      "chapter": 5,
+      "title": "Warsh to Provide ‘Framework’ Guidance on Policy — Torsten Slok, Apollo",
+      "guest": "Torsten Slok, Apollo",
+      "start_seconds": 2289,
+      "end_seconds": 3149,
+      "duration_seconds": 860,
+      "segment_count": 264,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 5,
+      "chapter": 6,
+      "title": "AI Is an ‘Earnings Momentum Freight Train’ — Matt Miskin, Manulife John Hancock Investments",
+      "guest": "Matt Miskin, Manulife John Hancock Investments",
+      "start_seconds": 3149,
+      "end_seconds": 3968,
+      "duration_seconds": 819,
+      "segment_count": 199,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 6,
+      "chapter": 7,
+      "title": "Ignore Deficit Plans Until Congress Gets Involved — Libby Cantrill, PIMCO",
+      "guest": "Libby Cantrill, PIMCO",
+      "start_seconds": 3968,
+      "end_seconds": 4385,
+      "duration_seconds": 417,
+      "segment_count": 114,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 7,
+      "chapter": 8,
+      "title": "Higher Rates Could Make Sense as Soon as September — Jeffrey Schmid, Kansas City Fed President",
+      "guest": "Jeffrey Schmid, Kansas City Fed President",
+      "start_seconds": 4385,
+      "end_seconds": 5423,
+      "duration_seconds": 1038,
+      "segment_count": 272,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 8,
+      "chapter": 9,
+      "title": "America's Success Depends on De-Escalation With Canada — Frances Donald, RBC",
+      "guest": "Frances Donald, RBC",
+      "start_seconds": 5423,
+      "end_seconds": 6025,
+      "duration_seconds": 602,
+      "segment_count": 157,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 9,
+      "chapter": 10,
+      "title": "AI Earnings Aren't as Strong as They Look — Savita Subramanian, BofA Global Research",
+      "guest": "Savita Subramanian, BofA Global Research",
+      "start_seconds": 6025,
+      "end_seconds": 6751,
+      "duration_seconds": 726,
+      "segment_count": 192,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 10,
+      "chapter": 11,
+      "title": "Nvidia Has Better Visibility Than Investors Thought — Gil Luria, DA Davidson",
+      "guest": "Gil Luria, DA Davidson",
+      "start_seconds": 6751,
+      "end_seconds": 7262,
+      "duration_seconds": 511,
+      "segment_count": 132,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 11,
+      "chapter": 12,
+      "title": "US Jobless Claims Fall, Goods-Trade Deficit Widens — Michael McKee, Bloomberg",
+      "guest": "Michael McKee, Bloomberg",
+      "start_seconds": 7262,
+      "end_seconds": 7393,
+      "duration_seconds": 131,
+      "segment_count": 31,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 12,
+      "chapter": 13,
+      "title": "Fed Is Stuck in the ‘Muddled Middle’ — Nela Richardson, ADP",
+      "guest": "Nela Richardson, ADP",
+      "start_seconds": 7393,
+      "end_seconds": 8277,
+      "duration_seconds": 884,
+      "segment_count": 225,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 13,
+      "chapter": 14,
+      "title": "AI Adoption Is Finally Showing Up in Fundamentals — Michelle Weaver, Morgan Stanley",
+      "guest": "Michelle Weaver, Morgan Stanley",
+      "start_seconds": 8277,
+      "end_seconds": 8654.212000000001,
+      "duration_seconds": 377.21200000000135,
+      "segment_count": 112,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    }
+  ]
+}
