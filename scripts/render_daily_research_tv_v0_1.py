@@ -77,6 +77,17 @@ report = json.loads(
     )
 )
 
+# Korean presentation artifacts wrap the translated canonical
+# report under "report". Normalize it here so the renderer uses
+# the same input contract for EN and KO.
+if LANG == "ko":
+    wrapped_report = report.get("report")
+    if not isinstance(wrapped_report, dict):
+        raise SystemExit(
+            "FAIL — Korean presentation missing report object"
+        )
+    report = wrapped_report
+
 
 if PROVENANCE_INPUT.exists():
     provenance = json.loads(
