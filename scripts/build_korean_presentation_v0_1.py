@@ -97,17 +97,22 @@ def structure_signature(value):
 
 def extract_numeric_tokens(text):
     """
-    Extract source-visible numeric expressions.
+    Extract semantic numeric expressions for translation
+    parity at the same JSON path.
 
-    The validator intentionally preserves textual form:
-      5% != 5.00%
-      30 != 30-year
+    Explicit numeric tokens preserve textual form, while
+    common English month names and ordinal number words are
+    normalized to the numeric form naturally used in Korean.
 
-    Comparison occurs at the same JSON path rather than
-    across the report globally.
+    Examples:
+      September -> 9
+      December  -> 12
+      fifth     -> 5
+      50        -> 50
+      5%        -> 5%
     """
 
-    return re.findall(
+    tokens = re.findall(
         r"""
         (?<![A-Za-z])
         \$?
@@ -117,6 +122,43 @@ def extract_numeric_tokens(text):
         text,
         flags=re.VERBOSE,
     )
+
+    semantic_numbers = {
+        "january": "1",
+        "february": "2",
+        "march": "3",
+        "april": "4",
+        "may": "5",
+        "june": "6",
+        "july": "7",
+        "august": "8",
+        "september": "9",
+        "october": "10",
+        "november": "11",
+        "december": "12",
+        "first": "1",
+        "second": "2",
+        "third": "3",
+        "fourth": "4",
+        "fifth": "5",
+        "sixth": "6",
+        "seventh": "7",
+        "eighth": "8",
+        "ninth": "9",
+        "tenth": "10",
+    }
+
+    words = re.findall(
+        r"\b[A-Za-z]+\b",
+        text.lower(),
+    )
+
+    for word in words:
+        normalized = semantic_numbers.get(word)
+        if normalized is not None:
+            tokens.append(normalized)
+
+    return tokens
 
 
 def numeric_inventory(value, path="$"):
@@ -525,7 +567,21 @@ STRICT RULES:
 5. Preserve the date EXACTLY.
 6. Preserve all numerical values exactly.
 7. Preserve percentages and yield levels exactly.
-8. Preserve ticker symbols exactly.
+8. NEVER introduce any numeric token that does not exist
+   in the corresponding source JSON value.
+   This includes years, months, dates, maturities, counts,
+   rankings, quantities, percentages, and inferred numbers.
+   Do NOT turn words into digits.
+   Do NOT add explanatory numbers in parentheses.
+   At each JSON path, the translated string must contain
+   exactly the same numeric tokens as the source string,
+   with the same textual form and multiplicity.
+   Example: if the source path contains only "50", the
+   translated value may contain "50" but MUST NOT introduce
+   "5", "50%", "5-year", or any other numeric token.
+   If the source path contains no numeric token, the
+   translated value MUST contain no numeric token.
+9. Preserve ticker symbols exactly.
 9. Preserve proper names of guests and institutions
    in their original English form.
 10. Preserve guest lists exactly.

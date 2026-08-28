@@ -21,6 +21,11 @@ RUNNER = (
     / "scripts/youtube_daily_runner_v0_3.py"
 )
 
+KOREAN_BUILDER = (
+    ROOT
+    / "scripts/build_korean_presentation_v0_1.py"
+)
+
 TV_RENDERER = (
     ROOT
     / "scripts/render_daily_research_tv_v0_1.py"
@@ -42,6 +47,11 @@ def main() -> None:
     if not RUNNER.exists():
         raise SystemExit(
             f"FAIL — daily runner not found: {RUNNER}"
+        )
+
+    if not KOREAN_BUILDER.exists():
+        raise SystemExit(
+            f"FAIL — Korean builder not found: {KOREAN_BUILDER}"
         )
 
     if not TV_RENDERER.exists():
@@ -145,22 +155,49 @@ def main() -> None:
 
     print()
     print("=" * 100)
-    print("RUN TV RENDER")
+    print("BUILD KOREAN PRESENTATION")
     print("=" * 100)
 
-    tv = subprocess.run(
+    korean = subprocess.run(
         [
             sys.executable,
-            str(TV_RENDERER),
+            str(KOREAN_BUILDER),
         ],
         cwd=ROOT,
         env=env,
     )
 
-    if tv.returncode != 0:
+    if korean.returncode != 0:
         raise SystemExit(
-            "FAIL — TV render failed"
+            "FAIL — Korean presentation build failed"
         )
+
+    print()
+    print("=" * 100)
+    print("RUN TV RENDER")
+    print("=" * 100)
+
+    # Render both public language versions.
+    for lang in ("en", "ko"):
+        render_env = env.copy()
+        render_env["SURVEILLANCE_LANG"] = lang
+
+        print()
+        print(f"RENDER LANGUAGE: {lang.upper()}")
+
+        tv = subprocess.run(
+            [
+                sys.executable,
+                str(TV_RENDERER),
+            ],
+            cwd=ROOT,
+            env=render_env,
+        )
+
+        if tv.returncode != 0:
+            raise SystemExit(
+                f"FAIL — TV render failed ({lang})"
+            )
 
     print()
     print("=" * 100)
