@@ -243,15 +243,10 @@ def main() -> None:
             historical_date
         )
 
+        # Historical navigation refresh is intentionally
+        # limited to English pages. Legacy Korean artifacts
+        # may use older schemas and must not block publication.
         historical_languages = ["en"]
-
-        historical_ko = (
-            date_dir
-            / "daily_research_report_ko_v0_1.json"
-        )
-
-        if historical_ko.exists():
-            historical_languages.append("ko")
 
         for lang in historical_languages:
             historical_env[
