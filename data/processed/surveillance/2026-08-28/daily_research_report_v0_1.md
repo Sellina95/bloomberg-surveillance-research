@@ -4,35 +4,33 @@
 
 ## Executive Summary
 
-- Inflation concerns and sticky price metrics—such as super core PCE at 3.8% and real-time rent data below 2%—have fueled a growing debate among guests over whether the Federal Reserve should hold rates steady, resume hiking, or manage duration risk more actively.
-- Long-end bond yield pressures are attributed by guests to heavy corporate and hyperscaler debt issuance, global supply shocks, and uncertainty regarding the Fed's reaction function, rather than traditional bond vigilantes alone.
-- Artificial intelligence infrastructure demand remains robust, highlighted by surging Alphabet TPU sales and Nvidia revenue projections scaling toward $750 billion by calendar year 2027, despite near-term supply chain and tariff anxieties.
+- Inflation persistence—driven by structural factors such as massive capital-intensive AI infrastructure spending, ongoing trade conflicts (including Canada), and geopolitical shocks—has sparked a robust debate among market experts over whether the Federal Reserve needs to pivot toward raising interest rates.
+- Uncertainty regarding Fed Chair Kevin Warsh's reaction function and forward guidance has widened rate outcome distributions, pushing long-end Treasury yields higher amid heavy global debt supply and corporate issuance.
+- Despite near-term volatility and leadership shifts in AI divisions, major equity segments like Google's TPU sales and Nvidia's inference capacity demand continue to exhibit strong fundamental momentum, with notable pullbacks viewed by some managers as buying opportunities.
 
 ## Macro Themes
 
-### Monetary Policy & Inflation Dynamics
+### Structural Inflation and Supply Shocks
 
-Guests exhibit divided perspectives on the appropriate path for the Federal Reserve, ranging from calls to hold rates steady or resume hikes to combat sticky inflation to concerns over Fed credibility and policy uncertainty.
+Inflation pressures remain elevated above target, sustained by trade headlines, geopolitical conflicts, and heavy resource allocation toward the AI infrastructure buildout.
 
 **Supporting Guests**
 
 - Peter Tchir, Academy Securities
 - Claudia Sahm, New Century Advisors
 - Patrick Harker, Former Philadelphia Fed President
-- Seth Carpenter, Morgan Stanley
 - Subadra Rajappa, Societe Generale Americas
-- Mark Cabana, BofA Global Research
 
 **Evidence**
 
-- **[07:21] Segment 59** — "I WOULD WANT TO HOLD RATES FOR THE YEAR."
-- **[44:37] Segment 78** — "I THINK IT IS TIME FOR THE FED TO DO MORE."
-- **[81:43] Segment 46** — ">> I THINK THEY HAVE TO RAISE THE FED FUND RATE."
-- **[105:24] Segment 52** — "YIELDS IS FOR THEM TO RAISE RATES."
+- Peter Tchir: Evaluate alternative, higher inflation metrics and whether hikes fix sources like war or AI data center spending.
+- Claudia Sahm: Inflation pressures sustained by trade war with Canada, stalled Middle East progress, and AI buildout pushing up chip prices.
+- Patrick Harker: Persistent inflation driven by AI buildout sucking in capital/goods and supply shocks from ongoing wars and tariffs.
+- Subadra Rajappa: Super core PCE trending higher at 3.8 percent amid sticky services inflation and supply shocks from tariffs and the war in Iran.
 
-### AI Infrastructure & Tech Spending
+### AI Infrastructure Boom and Capacity Constraints
 
-Strong demand for AI hardware, custom silicon, and cloud processing units—such as Google's TPUs and Nvidia's GPUs—continues to drive massive capital expenditures and robust revenue projections.
+Insatiable demand for AI compute, inference capacity, and custom silicon is driving historic revenue growth and capital expenditure across technology leaders like Nvidia and Alphabet.
 
 **Supporting Guests**
 
@@ -42,182 +40,173 @@ Strong demand for AI hardware, custom silicon, and cloud processing units—such
 
 **Evidence**
 
-- **[32:50] Segment 26** — "MOST UNDERAPPRECIATED PARTS. WE ARE 34% OF ON THE STREET FOR"
-- **[114:02] Segment 13** — "IT WILL PROBABLY BE $750 BILLION IN REVENUE."
-- **[141:57] Segment 63** — "BECAUSE YOU'VE HAD THIS IN SOME CASES UP TO 50% PULLBACKS IN"
+- Shweta Khajuria: Google's TPU sales are underappreciated with very high demand and capacity constraints offering top price-performance.
+- Gene Munster: Nvidia expected to reach $750 billion in revenue by calendar year 2027, driven by customers unable to get enough inference capacity.
+- Matt Orton: Up to 50% pullbacks in certain AI supply chain and memory names create compelling long-term buying opportunities supported by strong corporate balance sheets.
 
-### Supply Shocks, Trade, and Energy Independence
+### Geopolitical, Trade, and Energy Strategy
 
-Global trade negotiations, tariff structures, geopolitical conflicts, and energy refining limitations create persistent macroeconomic friction and supply chain adaptations.
+Nations are increasingly prioritizing domestic energy security, refining capacity, and supply chain independence while international partners bide their time in trade talks ahead of political cycles.
 
 **Supporting Guests**
 
 - Peter Tchir, Academy Securities
 - Jeannette Lowe, Strategas
-- Patrick Harker, Former Philadelphia Fed President
 
 **Evidence**
 
-- **[22:01] Segment 40** — "ENERGY TRACK BUT IT WILL BE A 3-5 YEAR SORT OF PLAN."
-- **[82:40] Segment 62** — "BUT THE SUPPLY SHOCKS KEEP COMING AT US."
-- **[70:50] Segment 63** — "BASICALLY A NET TARIFF CUT BECAUSE WE ARE SEEING THE"
+- Peter Tchir: Countries need to prepare for a world with more energy and refining capacity at home rather than depending on vulnerable supply chains.
+- Jeannette Lowe: Foreign leaders and nations biding their time in negotiations, anticipating U.S. midterm elections and potential Republican losses.
 
 ## Rates / Bonds
 
 ### Summary
 
-Long-end bond yields face upward pressure from heavy corporate debt supply, real rate movements driven by AI productivity growth, and market anxiety regarding Fed credibility, though some analysts view current supply angst as largely priced in.
+Long-end bond yields are experiencing upward pressure due to heavy global debt supply, corporate and hyperscaler issuance, and broad uncertainty surrounding Federal Reserve policy and credibility.
 
 ### Key Views
 
-- Upward pressure on long-end yields is heavily driven by investment-grade hyperscaler bond issuance rather than traditional bond vigilantes (Peter Tchir).
-- Duration is starting to look attractive as markets are driven by real rates, allowing investors to utilize credit and mortgages to manage rate volatility (Priya Misra).
-- The primary driver of the long end of the yield curve is broad uncertainty regarding the Federal Reserve's reaction function rather than growth expectations or supply dynamics (Mark Cabana).
+- A coordinated Treasury and Fed 'twist' operation could absorb heavy duration supply at the long end of the curve (Peter Tchir).
+- The selloff in the long end is primarily driven by real yields and robust economic growth rather than pure inflation or loss of credibility (Seth Carpenter).
+- The best way for the central bank to address long-term yields and rising inflation expectations is to raise interest rates (Subadra Rajappa).
 
 ### Risks
 
-- Persistent sticky inflation and inaction by the central bank could cause inflation expectations to rise and push bond yields higher.
-- Uncertainty surrounding Fed leadership and communication can lead to heightened volatility across fixed-income markets.
+- Persistently unanchored long-term yields and heavy fiscal deficit concerns tightening financial conditions.
+- Volatility in rate expectations as markets reprice the probability of central bank hikes or cuts.
 
 
 ## USD / FX
 
 ### Summary
 
-Foreign trade partners and governments are adopting a cautious posture in negotiations with the U.S., calculating potential impacts from domestic political shifts and upcoming midterm elections.
+Foreign exchange and trade dynamics remain heavily influenced by tariff pacing, potential political shifts in Washington, and staggered deadlines for retaliatory measures.
 
 ### Key Views
 
-- Foreign leaders and nations (such as Canada and Iran) are delaying major concessions or negotiations, anticipating potential political shifts following U.S. midterm elections (Jeannette Lowe).
+- Staggered deadlines on Canadian retaliatory tariffs and U.S. auto/steel tariffs provide an opening for renewed trade talks despite domestic political pressures (Jeannette Lowe).
 
 ### Risks
 
-- Prolonged trade negotiations and retaliatory tariff deadlines risk inducing short-term supply chain and foreign exchange volatility.
+- Prolonged trade uncertainty and sudden implementation of protectionist measures disrupting cross-border supply chains and currencies.
 
 
 ## Equities
 
 ### Summary
 
-Equity markets remain supported by secular growth trends in AI and broadening customer diversification, though tech supply chains face temporary pullbacks and tariff-related hesitations.
+Technology sector leaders continue to show exceptional fundamental strength, though recent pullbacks in AI-related equities have created attractive valuation entry points.
 
 ### Key Views
 
-- Alphabet does not need to return to the equity market for funding due to existing equity raises, attractive debt markets, and alternative financing structures like JVs and SPVs (Shweta Khajuria).
-- Nvidia's revenue is projected to reach $750 billion by calendar year 2027, bolstered by pricing power, 20-30% price increases on select products, and faster growth among non-hyperscalers (Gene Munster).
-- Recent pullbacks of up to 50% in certain AI supply chain and memory names create attractive entry points for secular growth exposure (Matt Orton).
+- Alphabet's TPU sales represent a highly underappreciated revenue driver with strong demand and excellent price-performance (Shweta Khajuria).
+- Nvidia's revenue is projected to reach $750 billion by 2027, propelled by unmatched chip speed, pricing power, and expanding non-hyperscaler demand (Gene Munster).
+- Recent pullbacks of up to 50% in AI supply chain and memory names offer compelling long-term entry points given sound corporate balance sheets (Matt Orton).
 
 ### Risks
 
-- Uncertainty regarding White House policy and tariffs causes investor hesitation in import-dependent technology sectors.
-- Richly valued growth sectors remain vulnerable to shifts in monetary policy expectations and interest rate volatility.
+- Leadership exits in AI divisions causing near-term disruption at major tech firms.
+- Potential investor skepticism regarding long-term returns on heavy capital expenditures.
 
 
 ## Credit
 
 ### Summary
 
-Credit markets remain resilient, offering alternative avenues for yield and duration management as investors navigate corporate debt issuance and high-grade supply.
+Credit markets remain supported by strong corporate balance sheets, with debt markets continuing to serve as an attractive and viable funding avenue for large technology firms.
 
 ### Key Views
 
-- The debt market remains attractive for corporate issuers like Alphabet, supporting alternative structures without creating equity dilution fears (Shweta Khajuria).
-- Investors can utilize credit and mortgages to withstand higher rate volatility while building duration exposure (Priya Misra).
+- Alphabet can comfortably manage its AI funding requirements through debt markets and structured vehicles like SPVs without needing equity dilution (Shweta Khajuria).
+- Investors can find additional yield cushion by allocating to credit and mortgage markets alongside duration (Priya Misra).
 
 ### Risks
 
-- Heavy corporate and hyperscaler debt issuance volumes can strain long-term borrowing markets and keep corporate credit spreads sensitive to yield movements.
+- Spillover effects from broader fixed-income volatility and rising real interest rates.
 
 
 ## AI / Technology
 
 ### Summary
 
-Artificial intelligence infrastructure buildouts continue at a rapid pace, with strong demand for Google TPUs and Nvidia GPUs driving substantial revenue growth and pricing power.
+The AI trade remains robust, underpinned by massive infrastructure spending, hardware supply constraints, and software diversification strategies.
 
 ### Key Views
 
-- Google's Tensor Processing Unit (TPU) sales are highly underappreciated, supported by high demand in a capacity-constrained environment and significant volume held for Anthropic (Shweta Khajuria).
-- Nvidia is experiencing massive demand for inference capacity, projected to grow revenue by 90% in calendar year 2027 to reach $750 billion (Gene Munster).
+- Google's custom TPUs are capacity-constrained and represent one of the best price-performance options available in the market (Shweta Khajuria).
+- Nvidia is diversifying its revenue base toward non-hyperscalers and open-source models via partnerships like Hugging Face as a hedge against custom silicon development (Gene Munster).
 
 ### Risks
 
-- Capacity constraints, power availability, and potential customer shifts toward custom silicon pose ongoing monitoring requirements for the hardware ecosystem.
+- Execution and talent retention risks following high-profile leadership exits.
+- Potential medium-term margin pressures if key customers successfully scale proprietary custom chips.
 
 
 ## Commodities
 
 ### Summary
 
-Global energy markets require a multi-year transition toward domestic refining and increased local production to ensure long-term energy security.
+Global energy markets face structural shifts toward domestic self-reliance, with nations emphasizing local refining capacity and energy security.
 
 ### Key Views
 
-- Energy markets require a 3-to-5-year transition plan to build out domestic refining and processing capabilities, moving away from an over-reliance on sustainable policies (Peter Tchir).
+- Countries and energy producers must fast-track domestic refining capabilities and pipelines to insulate themselves from vulnerable external supply chains (Peter Tchir).
 
 ### Risks
 
-- Geopolitical conflicts and complex sanction enforcement can lead to persistent energy and refined product supply bottlenecks.
+- Geopolitical friction and sluggish regulatory execution delaying energy infrastructure projects.
 
 
 ## Cross-Guest Consensus
 
-### The rapid buildout of artificial intelligence infrastructure is a major structural force driving economic activity and capital expenditure.
+### Persistent inflation pressures are being reinforced by structural factors including trade friction, geopolitical conflicts, and massive capital expenditure on the AI buildout.
 
-**Guests:** Shweta Khajuria, Wolfe Research, Claudia Sahm, New Century Advisors, Patrick Harker, Former Philadelphia Fed President, Seth Carpenter, Morgan Stanley, Gene Munster, Deepwater Asset Management, Matt Orton, Raymond James Investment Management
+**Guests:** Peter Tchir, Claudia Sahm, Patrick Harker, Subadra Rajappa
 
-### Supply shocks—ranging from geopolitical conflicts and trade policies to heavy corporate debt issuance—are heavily influencing macroeconomic conditions and interest rates.
+### Demand for AI hardware, chips, and inference capacity remains remarkably robust and capacity-constrained.
 
-**Guests:** Peter Tchir, Academy Securities, Claudia Sahm, New Century Advisors, Priya Misra, JPMorgan Asset Management, Patrick Harker, Former Philadelphia Fed President
+**Guests:** Shweta Khajuria, Gene Munster, Matt Orton
 
 ## Cross-Guest Conflicts
 
-### Appropriate Federal Reserve Interest Rate Policy
+### Appropriate Federal Reserve Monetary Policy Action
 
-**View A:** The Federal Reserve should hold interest rates steady or consider aggressive rate cuts given easing real-time rent data and alternative inflation metrics.
+**View A:** The Federal Reserve should consider moving toward raising interest rates to credibly address firmer-than-expected inflation and unanchored expectations.
 
-**View B:** The Federal Reserve should raise interest rates or do more to combat sticky inflation components like super core PCE and restore policy credibility.
+**View B:** Market anxiety is largely driven by questions regarding Fed function and long-end debt supply angst rather than core inflation, with duration looking increasingly attractive.
 
-**Why It Matters:** Conflicting views on the Fed's next move highlight profound uncertainty regarding monetary policy direction, which directly impacts rate expectations, yield curve steepening, and asset valuation.
-
-### Drivers of Long-End Bond Yields
-
-**View A:** Upward pressure on long-end bond yields is primarily driven by corporate debt issuance from hyperscalers and broader economic growth/productivity from AI.
-
-**View B:** Upward pressure on long-end bond yields stems from market anxiety regarding Fed credibility, policy function, and inaction in the face of firm inflation.
-
-**Why It Matters:** Distinguishing between corporate supply/productivity-driven real yields versus central bank credibility concerns dictates how fixed-income investors should position across the duration spectrum.
+**Why It Matters:** Disagreement among experts on whether the Fed needs to hike rates directly impacts fixed-income positioning, yield curve expectations, and equity valuations.
 
 ## Key Risks
 
-### Persistent Inflation and Central Bank Inaction
+### Upward pressure on long-term Treasury yields and tighter financial conditions
 
-- **Trigger:** Continuation of sticky inflation metrics (such as super core PCE at 3.8%) while the Fed holds rates steady.
-- **Market Impact:** 
+- **Trigger:** Continued heavy sovereign and corporate debt supply combined with a lack of clear central bank forward guidance
+- **Market Impact:** Higher borrowing costs, increased yield curve volatility, and compression of equity valuations
 
-### Geopolitical and Trade Policy Friction
+### Escalation of trade and geopolitical disputes
 
-- **Trigger:** Escalation of trade tensions, tariff implementations, or enforcement of complex sanctions.
-- **Market Impact:** 
+- **Trigger:** Implementation of pending tariff deadlines and stalled diplomatic progress
+- **Market Impact:** Supply chain disruptions, commodity price volatility, and foreign exchange turbulence
 
 ## Research Takeaways
 
-- Fixed-income investors should view potential yield spikes toward 5% on the 10-year Treasury as an attractive opportunity to lock in income and extend duration.
-- Secular growth exposure in AI hardware (such as Google TPUs and Nvidia GPUs) remains fundamentally sound, supported by strong pricing power and customer diversification despite recent pullbacks.
-- Federal Reserve communication ambiguity places heightened importance on individual speaker headlines and incoming inflation/employment data prints for tactical trading.
+- Inflation is proving stickier than anticipated due to structural non-monetary drivers like AI infrastructure spending and trade tariffs.
+- The Federal Reserve faces a credibility and communication challenge as market participants navigate the absence of explicit policy reaction functions.
+- Technology sector fundamentals—specifically in AI chips, inference capacity, and custom silicon demand—remain exceptionally strong despite recent equity drawdowns.
 
 ## Daily Action
 
 > **Analytical interpretation — not a Bloomberg guest quote.**
 
-### 1. Scale into long-duration fixed income selectively if 10-year Treasury yields approach the 5% threshold.
+### 1. Accumulate long-duration assets and high-quality fixed income if 10-year Treasury yields approach the 5.00% threshold.
 
-**Why:** Yields are supported by heavy corporate supply and inflation uncertainty, offering attractive real yields and income lock-in opportunities for institutional portfolios.
+**Why:** Higher real yields and structural supply anxiety have priced in significant risk, offering generational income lock-in opportunities.
 
-**What to Monitor:** Incoming PCE inflation prints, Treasury auction demand, and commentary from individual Fed officials regarding rate paths.
+**What to Monitor:** 10-year Treasury yield action, Treasury Department refunding announcements, and Federal Reserve speaker commentary.
 
-### 2. Accumulate positions in high-quality AI semiconductor and supply chain names during market pullbacks.
+### 2. Selectively buy high-quality AI infrastructure and semiconductor names experiencing steep pullbacks.
 
-**Why:** Secular demand for inference capacity and strong pricing power among market leaders provide robust fundamental support that outweighs near-term macro hesitation.
+**Why:** Underlying secular demand for inference capacity and non-hyperscaler growth remains robust, supported by solid corporate balance sheets.
 
-**What to Monitor:** Hyperscaler capital expenditure announcements, customer diversification metrics, and trade policy updates affecting hardware supply chains.
+**What to Monitor:** Cloud provider capital expenditure announcements, chip pricing power trends, and enterprise adoption metrics.
