@@ -165,9 +165,103 @@ def discover_public_tv_dates():
     return dates
 
 
-PUBLIC_TV_DATES = (
-    discover_public_tv_dates()
+PUBLICATION_STATUS_INPUT = (
+    SURVEILLANCE_ROOT
+    / "publication_status_v0_1.json"
 )
+
+
+def load_publication_status():
+
+    if not PUBLICATION_STATUS_INPUT.exists():
+        return None
+
+    try:
+        payload = json.loads(
+            PUBLICATION_STATUS_INPUT.read_text(
+                encoding="utf-8"
+            )
+        )
+    except (json.JSONDecodeError, OSError):
+        return None
+
+    if (
+        payload.get("schema_version")
+        != "publication_status_v0_1"
+    ):
+        return None
+
+    records = payload.get("dates")
+
+    if not isinstance(records, list):
+        return None
+
+    return {
+        item.get("date"): item
+        for item in records
+        if isinstance(item, dict)
+        and item.get("date")
+    }
+
+
+PUBLICATION_STATUS = (
+    load_publication_status()
+)
+
+
+if PUBLICATION_STATUS is not None:
+    PUBLIC_TV_DATES = sorted(
+        PUBLICATION_STATUS.keys()
+    )
+else:
+    # Backward-compatible fallback.
+    PUBLIC_TV_DATES = (
+        discover_public_tv_dates()
+    )
+
+
+def publication_language_status(
+    report_date: str,
+    language: str,
+) -> str:
+
+    if PUBLICATION_STATUS is None:
+        target_dir = (
+            SURVEILLANCE_ROOT
+            / report_date
+        )
+
+        if language == "ko":
+            available = (
+                target_dir
+                / TV_FILENAME_KO
+            ).exists()
+        else:
+            available = (
+                target_dir
+                / TV_FILENAME_EN
+            ).exists()
+
+        return (
+            "available"
+            if available
+            else "unavailable"
+        )
+
+    record = PUBLICATION_STATUS.get(
+        report_date,
+        {}
+    )
+
+    language_record = record.get(
+        language,
+        {}
+    )
+
+    return language_record.get(
+        "status",
+        "unavailable",
+    )
 
 
 def language_switch_html() -> str:
@@ -267,12 +361,16 @@ def navigation_html():
                 / date
             )
 
+            ko_status = (
+                publication_language_status(
+                    date,
+                    "ko",
+                )
+            )
+
             if (
                 LANG == "ko"
-                and (
-                    target_dir
-                    / TV_FILENAME_KO
-                ).exists()
+                and ko_status == "available"
             ):
                 target_filename = (
                     TV_FILENAME_KO
@@ -289,15 +387,40 @@ def navigation_html():
                 f"?{NAV_CACHE_TOKEN}"
             )
 
+            ko_available = (
+                publication_language_status(
+                    date,
+                    "ko",
+                )
+                == "available"
+            )
+
+            ko_indicator = (
+                ""
+                if ko_available
+                else """
+                <span
+                    class="nav-ko-unavailable"
+                    title="Korean report temporarily unavailable"
+                    aria-label="Korean report unavailable"
+                >
+                    KO —
+                </span>
+                """
+            )
+
             links.append(
                 f'''
-                <a
-                    class="nav-date{current_class}"
-                    href="{e(href)}"
-                    aria-label="{e(date)}"
-                >
-                    {day:02d}
-                </a>
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date{current_class}"
+                        href="{e(href)}"
+                        aria-label="{e(date)}"
+                    >
+                        {day:02d}
+                    </a>
+                    {ko_indicator}
+                </div>
                 '''
             )
 

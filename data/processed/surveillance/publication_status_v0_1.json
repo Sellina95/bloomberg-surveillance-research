@@ -1,0 +1,122 @@
+{
+  "schema_version": "publication_status_v0_1",
+  "dates": [
+    {
+      "date": "2026-08-14",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "unavailable",
+        "report": false,
+        "tv": false
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "unavailable",
+        "report": false,
+        "tv": false
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "unavailable",
+        "report": false,
+        "tv": false
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "unavailable",
+        "report": false,
+        "tv": false
+      }
+    },
+    {
+      "date": "2026-08-24",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "unavailable",
+        "report": false,
+        "tv": false
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "unavailable",
+        "report": false,
+        "tv": false
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      }
+    }
+  ]
+}
