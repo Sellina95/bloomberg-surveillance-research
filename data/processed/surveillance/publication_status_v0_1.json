@@ -4,8 +4,8 @@
     {
       "date": "2026-08-14",
       "en": {
-        "status": "available",
-        "report": true,
+        "status": "incomplete",
+        "report": false,
         "tv": true
       },
       "ko": {
@@ -17,8 +17,8 @@
     {
       "date": "2026-08-18",
       "en": {
-        "status": "available",
-        "report": true,
+        "status": "incomplete",
+        "report": false,
         "tv": true
       },
       "ko": {
@@ -30,8 +30,8 @@
     {
       "date": "2026-08-19",
       "en": {
-        "status": "available",
-        "report": true,
+        "status": "incomplete",
+        "report": false,
         "tv": true
       },
       "ko": {
