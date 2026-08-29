@@ -1,0 +1,200 @@
+{
+  "date": "2026-08-20",
+  "schema_version": "daily_research_report_ko_v0_1",
+  "language": "ko",
+  "source_report": "data/processed/surveillance/2026-08-20/daily_research_report_v0_1.json",
+  "source_report_sha256": "1919756fb9bf3962c40ab321ef7a1091a8ba2fecbedc44a4fb100ea0b31b7ca8",
+  "translation_model": "gemini-3.5-flash-lite",
+  "translation_policy": {
+    "research_regeneration": false,
+    "provenance_mutation": false,
+    "structure_preserved": true,
+    "guest_attribution_preserved": true,
+    "numeric_values_preserved": true
+  },
+  "report": {
+    "date": "2026-08-20",
+    "executive_summary": [
+      "급등하는 장기채 금리와 막대한 재정 적자는 전통 통화 정책과 국채 관리 간의 괴리를 심화시키고 있으며, 일부 패널들은 수익률 곡선 통제(YCC), 오퍼레이션 트위스트, 또는 연준의 긴축 재개 리스크를 경고하고 있습니다.",
+      "높은 모기지 금리와 지속되는 인플레이션이 구매력을 잠식하면서 주택 및 소비재 부문에서 스트레스가 고조되고 있으며, 이는 월마트의 부진한 미국 내 매출 성장세와 홈빌더들의 인센티브 증가에 반영되어 있습니다.",
+      "연방준비제도의 신뢰도와 금리 인상 필요성을 두고 패널들 간에 깊은 의견차가 지속되고 있으며, 이는 데이터 의존적이고 충격 중심적인 입장을 취하는 Mary Daly의 발언과 향후 금리 인상을 예측하는 BNP 파리바 및 PGIM의 전망을 대조적으로 보여줍니다."
+    ],
+    "macro_themes": [
+      {
+        "theme": "재정 우위 및 미 국채 발행 압력",
+        "summary": "폭발적인 미국의 재정 적자, 대규모 국채 발행, AI 인프라 구축 같은 구조적 투자가 장기 금리를 끌어올리고 있으며, 일반 미 국채가 회사채에 비해 매력을 잃게 만들고 있습니다.",
+        "supporting_guests": [
+          "Peter Tchir, Academy Securities",
+          "Collin Martin, Schwab Center for Financial Research",
+          "Krishna Guha, Evercore ISI",
+          "Jack Manley, JPMorgan Asset Management",
+          "Daleep Singh, PGIM",
+          "Mona Mahajan, Edward Jones"
+        ],
+        "evidence": [
+          {
+            "segment_id": 119,
+            "timestamp_seconds": 751.117,
+            "text": "OUR DEFICITS HAVE GONE CRAZY\nAND THIS IS THE BIGGEST"
+          },
+          {
+            "segment_id": 55,
+            "timestamp_seconds": 1372.204,
+            "text": "I WOULD BE VERY UNDERWEIGHT\nTREASURY AND OVERWEIGHT"
+          },
+          {
+            "segment_id": 49,
+            "timestamp_seconds": 2620.851,
+            "text": "DRIVEN BY THE TITLE WAVE OF\nISSUANCE ACROSS THE AI"
+          },
+          {
+            "segment_id": 22,
+            "timestamp_seconds": 3335.298,
+            "text": "WHEN YOU HEAR ABOUT A $40\nTRILLION DEBT NUMBER THAT CAME"
+          }
+        ]
+      },
+      {
+        "theme": "소비자 압박 및 주택 구입 능력 제약",
+        "summary": "극단적인 주택 구입 능력 제약과 고착화된 인플레이션이 저소득층 소비자와 소매 실적에 부담을 주고 있으며, 모기지 금리의 소폭 하락만으로는 매수 수요를 되살리기엔 부족한 상황입니다.",
+        "supporting_guests": [
+          "Jeff Jacobson, 22V Research",
+          "David Bellinger, Mizuho",
+          "Nela Richardson, ADP"
+        ],
+        "evidence": [
+          {
+            "segment_id": 29,
+            "timestamp_seconds": 4919.514,
+            "text": "YOU ARE POSSIBLY AT A POINT\nWHERE YOU JUST RUN OUT OF"
+          },
+          {
+            "segment_id": 31,
+            "timestamp_seconds": 6948.541,
+            "text": ">> THERE'S A LITTLE BIT OF\nLOW-END CONSUMER STRESS."
+          },
+          {
+            "segment_id": 33,
+            "timestamp_seconds": 8517.876,
+            "text": "AND WHEN THOSE INFLATION TRACKS\nOR UNEXPECTED, WE ARE OFF THAT"
+          }
+        ]
+      }
+    ],
+    "rates_bonds": {
+      "summary": "단기물 금리 인하에도 불구하고 장기 금리는 높은 수준을 유지하고 있어, 미 국채 바이백 조치가 충분한지 혹은 연준이 오퍼레이션 트위스트나 금리 인상을 통해 개입해야 하는지를 두고 논쟁이 벌어지고 있습니다.",
+      "key_views": [
+        "연방준비제도는 곡선 장기 구간을 통제하기 위해 오퍼레이션 트위스트를 시행하거나 목표 금리를 설정해야 할 수 있습니다 (Peter Tchir).",
+        "투자자들은 인내심을 갖고 듀레이션을 늘리지 말아야 하며, 단기 및 중기 채권에 비중을 두어야 합니다 (Collin Martin).",
+        "국채 바이백은 연준의 개입 없이는 충분한 화력이 부족하며, 단기물 악순환의 리스크를 안고 있습니다 (Daleep Singh)."
+      ],
+      "risks": [
+        "폭발적인 국가 재정 적자와 일반 미 국채 지위로 인해 투자자들이 우량 회사채로 이동하는 현상.",
+        "조율되지 않은 재정 개입이 통화 정책과의 충돌을 유발할 리스크."
+      ]
+    },
+    "usd_fx": {
+      "summary": "연준이 수동적인 태도를 유지할 경우, 미국 달러화는 재정 및 발행 불균형을 해소하는 배출구로서 하방 압력에 직면해 있습니다.",
+      "key_views": [
+        "연준이 현재의 입장을 고수할 경우 시장은 달러를 매도하고 금, 디지털 자산, 비달러 통화를 매수하는 흐름을 이어갈 수 있습니다 (Daleep Singh)."
+      ],
+      "risks": [
+        "이란에 대한 지정학적 제재 고조가 중국과의 마찰을 유발하고 글로벌 통화 및 에너지 흐름에 영향을 미칠 리스크."
+      ]
+    },
+    "equities": {
+      "summary": "주식 시장은 구조적인 AI 호재와 탄탄한 실적에 지지받고 있으나, 매력적인 5% 고정금리 수익률이 인컴 추구 투자자들에게 직접적인 대안을 제시하고 있습니다.",
+      "key_views": [
+        "채권은 점차 보험 성격으로 보유되는 추세이며, 투자자들은 수익률을 추구할 때 S&P 500으로 피벗하고 있습니다 (Jack Manley).",
+        "10년물 국채 금리가 대략 4.5%에서 5% 사이에 머무는 한, 강력한 AI 실적을 바탕으로 주식은 타당성을 가집니다 (Mona Mahajan)."
+      ],
+      "risks": [
+        "9월과 10월의 계절적 역풍과 함께 높은 금리가 주식 밸류에이션 멀티플을 시험하는 요인."
+      ]
+    },
+    "credit": {
+      "summary": "우수한 지배구조와 더 나은 수익률 메리트로 인해 미 국채보다 회사채가 선호되고 있습니다.",
+      "key_views": [
+        "투자자들은 미 국채 비중을 축소하고 회사채 및 해외 국채 비중을 확대해야 합니다 (Peter Tchir)."
+      ],
+      "risks": [
+        "급증하는 차입 비용과 추가 연료비가 기업 마진에 압박을 주는 요인."
+      ]
+    },
+    "ai_technology": {
+      "summary": "AI 컴퓨팅 인프라 구축은 중앙은행의 금리 인상으로 멈출 수 없는 강력한 구조적 인플레이션 동인이자 글로벌 산업 현상입니다.",
+      "key_views": [
+        "하이퍼스케일러들의 막대한 AI 투자는 글로벌 국채 및 회사채 발행 전반에 걸쳐 실질 기간 프리미엄을 더 높은 수준으로 끌어올리고 있습니다 (Peter Tchir, Krishna Guha, Mary Daly)."
+      ],
+      "risks": [
+        "AI 인프라 관련 대규모 발행이 장기 금리 상승 압력에 기여하는 점."
+      ]
+    },
+    "commodities": {
+      "summary": "재정적 불확실성 속에서 지정학적 리스크와 대체 자산 수요가 모멘텀을 얻고 있습니다.",
+      "key_views": [
+        "이란의 지정학적 갈등과 잠재적인 걸프만 인프라 위협은 지속적인 인플레이션 요인으로 작용합니다 (Peter Tchir).",
+        "투자자들은 재정적 무대응에 대한 헤지로 금과 디지털 자산으로 로테이션하고 있습니다 (Daleep Singh)."
+      ],
+      "risks": [
+        "에너지 가격 충격과 추가 연료비가 소매 및 산업 공급망에 미치는 영향."
+      ]
+    },
+    "cross_guest_consensus": [
+      {
+        "view": "장기 국채 금리는 전통적인 인플레이션 보전분만 아니라, (AI 하이퍼스케일러 및 국가 부채를 포함한) 막대한 구조적 공급과 발행 물량에 의해 상승하고 있습니다.",
+        "guests": [
+          "Peter Tchir, Academy Securities",
+          "Krishna Guha, Evercore ISI",
+          "Mona Mahajan, Edward Jones",
+          "Mary Daly, San Francisco Fed"
+        ]
+      },
+      {
+        "view": "최근의 국채 시장 개입과 바이백은 뿌리 깊은 재정 적자와 공급 역학을 완전히 해결할 수 없는 상대적으로 작은 임시방편에 불과합니다.",
+        "guests": [
+          "Collin Martin, Schwab Center for Financial Research",
+          "Daleep Singh, PGIM",
+          "Mona Mahajan, Edward Jones"
+        ]
+      }
+    ],
+    "cross_guest_conflicts": [
+      {
+        "topic": "연방준비제도 금리 경로 및 신뢰도",
+        "view_a": "연준은 시장 신뢰를 회복하고 완화된 금융여건에 대응하기 위해 3회에서 4회의 금리 인상을 단행해야 할 수 있습니다 (Guneet Dhingra, Daleep Singh).",
+        "view_b": "선제적 금리 인상을 요구하는 긴급한 문제나 증거는 없으며, 연준은 여전히 데이터 의존성과 물가 안정 책무에 집중하고 있습니다 (Krishna Guha, Mary Daly).",
+        "why_it_matters": "연준 정책 방향에 대한 엇갈린 시각은 고정금리 듀레이션 전략과 위험 자산 밸류에이션에서 큰 괴리를 유발합니다."
+      }
+    ],
+    "key_risks": [
+      {
+        "risk": "단기물 악순환 / 조율되지 않은 통화 정책",
+        "trigger": "지속되는 재정 확장과 완화된 금융여건이 결합하여 연준이 예상치 못한 금리 인상을 단행할 수밖에 없는 상황.",
+        "market_impact": "수익률 곡선 전반의 심각한 변동성, 위험 자산 압박, 그리고 미국 달러화의 하방 압력."
+      },
+      {
+        "risk": "주택 및 소비자 신용 스트레스",
+        "trigger": "모기지 금리가 고점 부근에서 높은 수준을 유지하는 반면 소비자의 구매력은 누적 인플레이션을 따라가지 못하는 상황.",
+        "market_impact": "임의 소비재 소매 지출의 광범위한 위축, 홈빌더 마진 압축, 그리고 경제 성장 둔화."
+      }
+    ],
+    "research_takeaways": [
+      "투자자들이 미 국채를 우량 회사채 및 금, 디지털 자산 같은 대체 가치 저장 수단에 비해 일반적인 자산으로 인식함에 따라 미 국채는 구조적 역풍에 직면해 있습니다.",
+      "헤드라인 디인플레이션과 일반 노동자의 구매력 간의 괴리는 저소득층 소비 지출의 지속적인 취약성을 부각합니다.",
+      "연방준비제도 인사들은 장기 금리의 움직임을 통화 완화나 긴축의 직접적 신호라기보다는 글로벌 생산성과 AI 인프라 트렌드의 반영으로 보고 있습니다."
+    ],
+    "daily_action": [
+      {
+        "action": "장기 미 국채에 대한 언더웨이트 기조를 유지하고, 단기~중기 고정금리 채권 또는 우량 회사채를 선호합니다.",
+        "why": "지속되는 재정 적자, 과도한 국채/AI 발행, 구조적 공급 압력이 곡선 장기 구간의 기간 프리미엄을 계속해서 높이고 있기 때문입니다.",
+        "what_to_monitor": "국채 입찰 수요 지표, 5% 임계값 대비 10년물 및 30년물 금리 수준, 향후 국채 바이백 발표 내용."
+      },
+      {
+        "action": "임의 소비재 및 주택 노출 주식에 대해 선별적인 주의를 기울입니다.",
+        "why": "심각한 구입 능력 제약, 상승하는 모기지 금리, 저소득층 소비 스트레스 신호(예: 월마트 실적 및 주택 건설업체 인센티브)가 마진 확장을 위협하고 있기 때문입니다.",
+        "what_to_monitor": "주택 건설업체 심리 지수, 다가오는 소매업체 실적 발표, 인플레이션 대비 임금 상승률 데이터."
+      }
+    ]
+  }
+}

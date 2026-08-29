@@ -9,9 +9,9 @@
         "tv": true
       },
       "ko": {
-        "status": "unavailable",
-        "report": false,
-        "tv": false
+        "status": "available",
+        "report": true,
+        "tv": true
       }
     },
     {
@@ -22,9 +22,9 @@
         "tv": true
       },
       "ko": {
-        "status": "unavailable",
-        "report": false,
-        "tv": false
+        "status": "available",
+        "report": true,
+        "tv": true
       }
     },
     {
@@ -35,9 +35,9 @@
         "tv": true
       },
       "ko": {
-        "status": "unavailable",
-        "report": false,
-        "tv": false
+        "status": "available",
+        "report": true,
+        "tv": true
       }
     },
     {
@@ -48,9 +48,9 @@
         "tv": true
       },
       "ko": {
-        "status": "unavailable",
-        "report": false,
-        "tv": false
+        "status": "available",
+        "report": true,
+        "tv": true
       }
     },
     {
@@ -74,9 +74,9 @@
         "tv": true
       },
       "ko": {
-        "status": "unavailable",
-        "report": false,
-        "tv": false
+        "status": "available",
+        "report": true,
+        "tv": true
       }
     },
     {
@@ -87,9 +87,9 @@
         "tv": true
       },
       "ko": {
-        "status": "unavailable",
-        "report": false,
-        "tv": false
+        "status": "available",
+        "report": true,
+        "tv": true
       }
     },
     {

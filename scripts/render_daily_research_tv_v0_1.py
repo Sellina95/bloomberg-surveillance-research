@@ -404,7 +404,7 @@ def navigation_html():
                     title="Korean report temporarily unavailable"
                     aria-label="Korean report unavailable"
                 >
-                    KO —
+                    EN only
                 </span>
                 """
             )
@@ -1094,6 +1094,34 @@ body {{
 
 .nav-date-current:hover {{
     color: #111214;
+}}
+
+.nav-date-cell {{
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}}
+
+.nav-date-cell .nav-date {{
+    width: 100%;
+}}
+
+.nav-ko-unavailable {{
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
 }}
 
 .screen {{

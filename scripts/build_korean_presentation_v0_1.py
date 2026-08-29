@@ -129,7 +129,8 @@ def extract_numeric_tokens(text):
         "february": "2",
         "march": "3",
         "april": "4",
-        "may": "5",
+        # "may" intentionally excluded:
+        # ambiguous between calendar month and modal verb.
         "june": "6",
         "july": "7",
         "august": "8",
@@ -137,6 +138,16 @@ def extract_numeric_tokens(text):
         "october": "10",
         "november": "11",
         "december": "12",
+        "one": "1",
+        "two": "2",
+        "three": "3",
+        "four": "4",
+        "five": "5",
+        "six": "6",
+        "seven": "7",
+        "eight": "8",
+        "nine": "9",
+        "ten": "10",
         "first": "1",
         "second": "2",
         "third": "3",
@@ -737,12 +748,29 @@ STRICT RULES:
 5. Do NOT change dates.
 6. Fix ONLY the translation errors identified in
    NUMERIC DIFFERENCES.
-7. At each reported JSON path, preserve every numeric
-   meaning from the English source.
-8. Do not add numeric meanings that are absent from
-   the corresponding English source.
-9. Preserve all other Korean translation content unless
-   a minimal edit is required to repair the numeric error.
+7. NUMERIC REPAIR IS STRICTLY PATH-LOCKED.
+   A numeric token missing from one JSON path MUST be
+   restored at that EXACT SAME JSON path.
+   NEVER move, copy, relocate, or compensate for a numeric
+   token by placing it at another JSON path.
+8. For every path listed in NUMERIC DIFFERENCES, compare
+   the English SOURCE REPORT value and the CURRENT KOREAN
+   TRANSLATION value at that exact path.
+   The repaired Korean value at that path MUST contain
+   exactly the same numeric tokens as the English value,
+   with the same textual form and multiplicity.
+9. If a difference is REMOVED, restore the missing numeric
+   token ONLY at the reported path.
+10. If a difference is ADDED, remove the extra numeric
+    token ONLY from the reported path.
+11. If a difference is CHANGED, repair the numeric tokens
+    ONLY at the reported path.
+12. A path not listed in NUMERIC DIFFERENCES MUST NOT gain,
+    lose, or change any numeric token.
+13. Do not add numeric meanings that are absent from the
+    corresponding English source.
+14. Preserve all other Korean translation content unless
+    a minimal edit at the reported path is required.
 
 SOURCE REPORT:
 
@@ -970,6 +998,40 @@ if not numeric_result["pass"]:
         source_report,
         translated,
     )
+
+    # If constrained numeric repair still fails, discard the
+    # repaired candidate and perform one fresh translation.
+    # This avoids publishing a translation whose numeric
+    # meaning remains inconsistent with the English source.
+    if not numeric_result["pass"]:
+        print()
+        print(
+            "NUMERIC REPAIR FAILED — "
+            "ATTEMPTING ONE FRESH TRANSLATION"
+        )
+
+        translated = translate(
+            source_report
+        )
+
+        candidate_serialized = (
+            json.dumps(
+                translated,
+                ensure_ascii=False,
+                indent=2,
+            )
+            + "\n"
+        )
+
+        CANDIDATE.write_text(
+            candidate_serialized,
+            encoding="utf-8",
+        )
+
+        numeric_result = compare_numeric_inventory(
+            source_report,
+            translated,
+        )
 
 numbers_pass = numeric_result[
     "pass"

@@ -135,7 +135,7 @@ def build_navigation(
                         title="Korean report temporarily unavailable"
                         aria-label="Korean report unavailable"
                     >
-                        KO —
+                        EN only
                     </span>
                 """
             )
@@ -211,6 +211,66 @@ def replace_navigation(
     )
 
 
+
+STATUS_STYLE = """
+<style id="publication-status-nav-style">
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+</style>
+"""
+
+
+def refresh_status_style(html: str) -> str:
+    pattern = re.compile(
+        r'<style\s+id="publication-status-nav-style">'
+        r'.*?</style>',
+        re.DOTALL,
+    )
+
+    if pattern.search(html):
+        return pattern.sub(
+            STATUS_STYLE.strip(),
+            html,
+            count=1,
+        )
+
+    if "</head>" not in html:
+        raise ValueError(
+            "HTML head closing tag not found"
+        )
+
+    return html.replace(
+        "</head>",
+        STATUS_STYLE + "\n</head>",
+        1,
+    )
+
+
 def main() -> None:
 
     status = load_status()
@@ -249,6 +309,10 @@ def main() -> None:
                 updated = replace_navigation(
                     html,
                     navigation,
+                )
+
+                updated = refresh_status_style(
+                    updated
                 )
             except ValueError as exc:
                 print(
