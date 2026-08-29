@@ -271,6 +271,105 @@ def refresh_status_style(html: str) -> str:
     )
 
 
+
+def refresh_language_switch(
+    html: str,
+    report_date: str,
+    language: str,
+    status: dict,
+) -> str:
+
+    record = status[report_date]
+
+    ko_available = (
+        record.get("ko", {}).get("status")
+        == "available"
+    )
+
+    en_href = (
+        f"{EN_TV}?{NAV_CACHE_TOKEN}"
+    )
+
+    ko_href = (
+        f"{KO_TV}?{NAV_CACHE_TOKEN}"
+    )
+
+    if language == "ko":
+        switch = f"""
+            <div class="language-switch"
+                aria-label="Report language"
+            >
+                <a
+                    class="lang-option"
+                    href="{en_href}"
+                >
+                    EN
+                </a>
+
+                <span
+                    class="lang-option lang-active"
+                >
+                    한국어
+                </span>
+            </div>
+        """
+    elif ko_available:
+        switch = f"""
+            <div class="language-switch"
+                aria-label="Report language"
+            >
+                <span
+                    class="lang-option lang-active"
+                >
+                    EN
+                </span>
+
+                <a
+                    class="lang-option"
+                    href="{ko_href}"
+                >
+                    한국어
+                </a>
+            </div>
+        """
+    else:
+        switch = """
+            <div class="language-switch"
+                aria-label="Report language"
+            >
+                <span
+                    class="lang-option lang-active"
+                >
+                    EN
+                </span>
+
+                <span
+                    class="lang-option lang-disabled"
+                    title="Korean report temporarily unavailable"
+                >
+                    한국어
+                </span>
+            </div>
+        """
+
+    pattern = re.compile(
+        r'<div\s+class="language-switch"\s*'
+        r'aria-label="Report language"\s*>'
+        r'.*?</div>',
+        re.DOTALL,
+    )
+
+    if not pattern.search(html):
+        raise ValueError(
+            "language switch block not found"
+        )
+
+    return pattern.sub(
+        switch.strip(),
+        html,
+        count=1,
+    )
+
 def main() -> None:
 
     status = load_status()
@@ -313,6 +412,13 @@ def main() -> None:
 
                 updated = refresh_status_style(
                     updated
+                )
+
+                updated = refresh_language_switch(
+                    updated,
+                    report_date,
+                    language,
+                    status,
                 )
             except ValueError as exc:
                 print(
