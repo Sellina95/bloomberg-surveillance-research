@@ -1571,11 +1571,25 @@ h4 {{
     letter-spacing: .4px;
 }}
 
-.footer {{
+.
+footer {{
     text-align: center;
     color: #66686d;
     font-size: 10px;
     padding: 26px;
+}}
+
+.footer-link {{
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 9px;
+    color: #8a8c91;
+    text-decoration: none;
+    letter-spacing: .2px;
+}}
+
+.footer-link:hover {{
+    text-decoration: underline;
 }}
 
 @media (max-width: 1000px) {{
@@ -1858,6 +1872,15 @@ h4 {{
     Independent research project. Not affiliated with or
     endorsed by Bloomberg. Bloomberg Surveillance is used
     solely as a source program for research.
+    <br>
+    <a
+        class="footer-link"
+        href="https://github.com/Sellina95/bloomberg-surveillance-research"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Methodology &amp; Source Code → GitHub ↗
+    </a>
 </div>
 
 </div>
