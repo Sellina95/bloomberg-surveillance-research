@@ -85,7 +85,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add -f data/processed/surveillance/
+          # Public publication allowlist.
+          # Never stage transcript/evidence-rich private research artifacts.
+          find data/processed/surveillance -type f \( \
+            -name 'daily_research_report_v0_1.json' -o \
+            -name 'daily_research_report_v0_1.md' -o \
+            -name 'daily_research_report_tv_v0_1.html' -o \
+            -name 'daily_research_report_ko_v0_1.json' -o \
+            -name 'daily_research_report_tv_ko_v0_1.html' -o \
+            -name 'guest_units_v0_3.json' -o \
+            -name 'report_provenance_v0_1.json' -o \
+            -name 'publication_status_v0_1.json' \
+          \) -print0 | xargs -0 -r git add -f --
 
           if git diff --cached --quiet; then
             echo "NO NEW ARTIFACTS"
