@@ -1,4 +1,4 @@
-# Bloomberg Surveillance Research
+# Independent Market Research Pipeline
 
 An independent research-engineering project for converting long-form
 Bloomberg Surveillance source material into structured institutional
