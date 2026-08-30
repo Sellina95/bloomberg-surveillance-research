@@ -1,14 +1,12 @@
 # Independent Market Research Pipeline
 
-An independent research-engineering project for converting long-form
-Bloomberg Surveillance source material into structured institutional
-market briefs.
+Automated research pipeline with point-in-time source integrity, evidence grounding, and validation gates — transforming long-form market commentary into structured daily research briefs.
 
-> **Independent project:** This repository is not affiliated with or endorsed
-> by Bloomberg. Bloomberg Surveillance is used solely as a source program for
-> research. Public outputs contain paraphrased research synthesis; source
-> transcripts and evidence-rich intermediate data are kept outside the public
-> publication layer.
+🔗 **[Live Research Site](https://sellina95.github.io/bloomberg-surveillance-research/)**
+
+An independent research-engineering project for converting long-form Bloomberg Surveillance source material into structured institutional market briefs.
+
+> **Independent project:** This repository is not affiliated with or endorsed by Bloomberg. Bloomberg Surveillance is used solely as a source program for research. Public outputs contain paraphrased research synthesis; source transcripts and evidence-rich intermediate data are kept outside the public publication layer.
 
 ## Purpose
 
