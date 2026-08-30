@@ -904,6 +904,66 @@ body {{
     overflow: hidden;
 }}
 
+.research-hero {{
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    background: #111;
+}}
+
+.research-hero-image {{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 68%;
+}}
+
+.research-hero-overlay {{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 18, 0.78) 0%,
+        rgba(5, 10, 18, 0.35) 52%,
+        rgba(5, 10, 18, 0.10) 100%
+    );
+}}
+
+.research-hero-content {{
+    position: absolute;
+    left: 34px;
+    bottom: 34px;
+    z-index: 2;
+}}
+
+.research-hero-kicker {{
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+}}
+
+.research-hero-title {{
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}}
+
+.research-hero-credit {{
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    z-index: 2;
+    font-size: 10px;
+    opacity: 0.72;
+}}
+
 .tv-top {{
     display: flex;
     align-items: center;
@@ -1572,6 +1632,24 @@ h4 {{
 
 
 <div class="tv">
+
+    <section class="research-hero" aria-label="Independent Market Research">
+        <img
+            class="research-hero-image"
+            src="../assets/wall-street-roberto-junior-unsplash.jpg"
+            alt="Wall Street street sign in New York"
+        >
+        <div class="research-hero-overlay"></div>
+
+        <div class="research-hero-content">
+            <div class="research-hero-kicker">📺 INDEPENDENT MARKET RESEARCH</div>
+            <div class="research-hero-title">Markets, Macro & Capital Flows</div>
+        </div>
+
+        <div class="research-hero-credit">
+            Photo by Roberto Junior on Unsplash
+        </div>
+    </section>
 
     <div class="tv-top">
 

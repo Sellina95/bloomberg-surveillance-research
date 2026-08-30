@@ -40,6 +40,19 @@ def main() -> None:
 
     OUTPUT.mkdir(parents=True)
 
+    # Public portfolio hero asset.
+    hero_source = ROOT / "assets" / "wall-street-roberto-junior-unsplash.jpg"
+    hero_dir = OUTPUT / "assets"
+    hero_target = hero_dir / hero_source.name
+
+    if not hero_source.exists() or hero_source.stat().st_size == 0:
+        raise SystemExit(
+            f"FAIL — hero asset missing or empty: {hero_source}"
+        )
+
+    hero_dir.mkdir(parents=True)
+    shutil.copy2(hero_source, hero_target)
+
     shutil.copy2(
         home,
         OUTPUT / "index.html",
