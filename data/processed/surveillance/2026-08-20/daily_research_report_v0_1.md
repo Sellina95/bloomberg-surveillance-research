@@ -1,4 +1,4 @@
-# Bloomberg Surveillance — Daily Research
+# Independent Market Research — Daily Brief
 
 **Date:** 2026-08-20
 
@@ -12,6 +12,8 @@
 
 ### Fiscal Dominance & Treasury Supply Pressures
 
+> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**
+
 Exploding U.S. budget deficits, heavy debt issuance, and structural investments like the AI compute buildout are pushing long-term yields higher, rendering generic U.S. Treasuries less attractive relative to corporate debt.
 
 **Supporting Guests**
@@ -23,18 +25,9 @@ Exploding U.S. budget deficits, heavy debt issuance, and structural investments 
 - Daleep Singh, PGIM
 - Mona Mahajan, Edward Jones
 
-**Evidence**
-
-- **[12:31] Segment 119** — "OUR DEFICITS HAVE GONE CRAZY
-AND THIS IS THE BIGGEST"
-- **[22:52] Segment 55** — "I WOULD BE VERY UNDERWEIGHT
-TREASURY AND OVERWEIGHT"
-- **[43:40] Segment 49** — "DRIVEN BY THE TITLE WAVE OF
-ISSUANCE ACROSS THE AI"
-- **[55:35] Segment 22** — "WHEN YOU HEAR ABOUT A $40
-TRILLION DEBT NUMBER THAT CAME"
-
 ### Consumer Strain & Housing Affordability Pressures
+
+> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**
 
 Extreme housing affordability constraints and sticky inflation are weighing on lower-income consumers and retail earnings, leaving small drops in mortgage rates insufficient to revive buyer demand.
 
@@ -43,15 +36,6 @@ Extreme housing affordability constraints and sticky inflation are weighing on l
 - Jeff Jacobson, 22V Research
 - David Bellinger, Mizuho
 - Nela Richardson, ADP
-
-**Evidence**
-
-- **[81:59] Segment 29** — "YOU ARE POSSIBLY AT A POINT
-WHERE YOU JUST RUN OUT OF"
-- **[115:48] Segment 31** — ">> THERE'S A LITTLE BIT OF
-LOW-END CONSUMER STRESS."
-- **[141:57] Segment 33** — "AND WHEN THOSE INFLATION TRACKS
-OR UNEXPECTED, WE ARE OFF THAT"
 
 ## Rates / Bonds
 
@@ -182,21 +166,23 @@ Geopolitical risks and alternative asset demand are gaining momentum amid fiscal
 
 ## Research Takeaways
 
+> **SYSTEM RESEARCH INTERPRETATION**
+
 - U.S. Treasuries face structural headwinds as investors view them as generic relative to high-grade corporate debt and alternative stores of value like gold and digital assets.
 - The disconnect between headline disinflation and everyday worker purchasing power highlights ongoing vulnerability in lower-income consumer spending.
 - Federal Reserve officials view long-end yield movements as a reflection of global productivity and AI infrastructure trends rather than a direct signal for monetary easing or tightening.
 
-## Daily Action
+## Monitoring Implications
 
-> **Analytical interpretation — not a Bloomberg guest quote.**
+> **SYSTEM RESEARCH INTERPRETATION — not a Bloomberg guest quote.**
 
-### 1. Maintain an underweight posture on long-duration U.S. Treasuries; favor short- to medium-term fixed income or high-grade corporate debt.
+### 1. Long-duration U.S. Treasuries remain sensitive to supply pressure, while short- and intermediate-duration and high-grade credit warrant comparative monitoring.
 
 **Why:** Persistent fiscal deficits, heavy sovereign/AI issuance, and structural supply pressures continue to drive term premia higher at the long end of the curve.
 
 **What to Monitor:** Treasury auction demand metrics, 10-year and 30-year yield levels relative to the 5% threshold, and upcoming Treasury buyback announcements.
 
-### 2. Exercise selective caution in consumer discretionary and housing-exposed equities.
+### 2. Consumer discretionary and housing-exposed equities remain sensitive to affordability and rate pressures.
 
 **Why:** Severe affordability constraints, rising mortgage rates, and signals of low-end consumer stress (e.g., Walmart earnings and builder incentives) threaten margin expansion.
 

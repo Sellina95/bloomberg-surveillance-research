@@ -91,7 +91,7 @@ def render():
     lines = []
 
     lines.append(
-        f"# Bloomberg Surveillance — Daily Research"
+        f"# Independent Market Research — Daily Brief"
     )
     lines.append("")
     lines.append(
@@ -139,6 +139,10 @@ def render():
             )
             lines.append("")
             lines.append(
+                "> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**"
+            )
+            lines.append("")
+            lines.append(
                 text(
                     theme.get(
                         "summary"
@@ -160,38 +164,6 @@ def render():
                 lines.append(
                     bullets(guests)
                 )
-                lines.append("")
-
-            evidence = theme.get(
-                "evidence",
-                []
-            )
-
-            if evidence:
-                lines.append(
-                    "**Evidence**"
-                )
-                lines.append("")
-                for ev in evidence:
-                    if isinstance(ev, dict):
-                        ts = ev.get("timestamp_seconds")
-                        segment_id = ev.get("segment_id")
-                        ev_text = text(ev.get("text"))
-
-                        if ts is not None:
-                            minutes = int(ts // 60)
-                            seconds = int(ts % 60)
-                            stamp = f"{minutes:02d}:{seconds:02d}"
-                        else:
-                            stamp = "N/A"
-
-                        lines.append(
-                            f'- **[{stamp}] Segment {segment_id}** — "{ev_text}"'
-                        )
-                    else:
-                        lines.append(
-                            f"- {text(ev)}"
-                        )
                 lines.append("")
 
     else:
@@ -407,6 +379,10 @@ def render():
         "## Research Takeaways"
     )
     lines.append("")
+    lines.append(
+        "> **SYSTEM RESEARCH INTERPRETATION**"
+    )
+    lines.append("")
 
     lines.append(
         bullets(
@@ -419,16 +395,16 @@ def render():
     lines.append("")
 
     # ------------------------------------------------------------
-    # Daily Action
+    # Monitoring Implications
     # ------------------------------------------------------------
 
     lines.append(
-        "## Daily Action"
+        "## Monitoring Implications"
     )
     lines.append("")
 
     lines.append(
-        "> **Analytical interpretation — not a Bloomberg guest quote.**"
+        "> **SYSTEM RESEARCH INTERPRETATION — not a Bloomberg guest quote.**"
     )
     lines.append("")
 
@@ -467,7 +443,7 @@ def render():
 
     else:
         lines.append(
-            "- No daily actions generated."
+            "- No monitoring implications generated."
         )
         lines.append("")
 

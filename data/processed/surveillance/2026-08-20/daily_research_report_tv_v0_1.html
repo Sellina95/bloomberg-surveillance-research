@@ -249,6 +249,34 @@ body {
     color: #111214;
 }
 
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+
 .screen {
     position: relative;
     background: linear-gradient(135deg,#17191b,#101113);
@@ -747,7 +775,7 @@ h4 {
     <div class="tv-top">
 
         <div class="brand">
-            BLOOMBERG SURVEILLANCE · RESEARCH DESK
+            INDEPENDENT MARKET RESEARCH · SURVEILLANCE DESK
         </div>
 
         <div class="top-actions">
@@ -975,6 +1003,10 @@ h4 {
         <div class="macro-card">
             <h3>Fiscal Dominance &amp; Treasury Supply Pressures</h3>
 
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
             <p>
                 Exploding U.S. budget deficits, heavy debt issuance, and structural investments like the AI compute buildout are pushing long-term yields higher, rendering generic U.S. Treasuries less attractive relative to corporate debt.
             </p>
@@ -984,50 +1016,14 @@ h4 {
             </div>
 
 
-                <div class="evidence">
-                    <span class="timestamp">
-                        12:31
-                    </span>
-                    <span>
-                        OUR DEFICITS HAVE GONE CRAZY
-AND THIS IS THE BIGGEST
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        22:52
-                    </span>
-                    <span>
-                        I WOULD BE VERY UNDERWEIGHT
-TREASURY AND OVERWEIGHT
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        43:40
-                    </span>
-                    <span>
-                        DRIVEN BY THE TITLE WAVE OF
-ISSUANCE ACROSS THE AI
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        55:35
-                    </span>
-                    <span>
-                        WHEN YOU HEAR ABOUT A $40
-TRILLION DEBT NUMBER THAT CAME
-                    </span>
-                </div>
-
         </div>
 
         <div class="macro-card">
             <h3>Consumer Strain &amp; Housing Affordability Pressures</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
 
             <p>
                 Extreme housing affordability constraints and sticky inflation are weighing on lower-income consumers and retail earnings, leaving small drops in mortgage rates insufficient to revive buyer demand.
@@ -1037,36 +1033,6 @@ TRILLION DEBT NUMBER THAT CAME
                 <span class="guest">Jeff Jacobson, 22V Research</span> <span class="guest">David Bellinger, Mizuho</span> <span class="guest">Nela Richardson, ADP</span>
             </div>
 
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        81:59
-                    </span>
-                    <span>
-                        YOU ARE POSSIBLY AT A POINT
-WHERE YOU JUST RUN OUT OF
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        115:48
-                    </span>
-                    <span>
-                        &gt;&gt; THERE&#x27;S A LITTLE BIT OF
-LOW-END CONSUMER STRESS.
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        141:57
-                    </span>
-                    <span>
-                        AND WHEN THOSE INFLATION TRACKS
-OR UNEXPECTED, WE ARE OFF THAT
-                    </span>
-                </div>
 
         </div>
 
@@ -1332,6 +1298,12 @@ OR UNEXPECTED, WE ARE OFF THAT
         RESEARCH TAKEAWAYS
     </div>
 
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION
+    </div>
+
+    <br>
+
     <ul>
 
         <li class="takeaway-item">
@@ -1366,11 +1338,11 @@ OR UNEXPECTED, WE ARE OFF THAT
 <section class="card">
 
     <div class="section-title">
-        DAILY ACTION
+        MONITORING IMPLICATIONS
     </div>
 
     <div class="small">
-        Analytical interpretation —
+        SYSTEM RESEARCH INTERPRETATION ·
         not a Bloomberg guest quote.
     </div>
 
@@ -1384,7 +1356,7 @@ OR UNEXPECTED, WE ARE OFF THAT
 
             <div>
                 <strong>
-                    Maintain an underweight posture on long-duration U.S. Treasuries; favor short- to medium-term fixed income or high-grade corporate debt.
+                    Long-duration U.S. Treasuries remain sensitive to supply pressure, while short- and intermediate-duration and high-grade credit warrant comparative monitoring.
                 </strong>
 
                 <p>
@@ -1405,7 +1377,7 @@ OR UNEXPECTED, WE ARE OFF THAT
 
             <div>
                 <strong>
-                    Exercise selective caution in consumer discretionary and housing-exposed equities.
+                    Consumer discretionary and housing-exposed equities remain sensitive to affordability and rate pressures.
                 </strong>
 
                 <p>
@@ -1426,7 +1398,11 @@ OR UNEXPECTED, WE ARE OFF THAT
 
 
 <div class="footer">
-    Bloomberg Surveillance Research Engine · 2026-08-20
+    Independent Market Research Engine · 2026-08-20
+    <br>
+    Independent research project. Not affiliated with or
+    endorsed by Bloomberg. Bloomberg Surveillance is used
+    solely as a source program for research.
 </div>
 
 </div>

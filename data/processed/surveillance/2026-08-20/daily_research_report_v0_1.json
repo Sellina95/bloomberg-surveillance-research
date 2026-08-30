@@ -16,28 +16,6 @@
         "Jack Manley, JPMorgan Asset Management",
         "Daleep Singh, PGIM",
         "Mona Mahajan, Edward Jones"
-      ],
-      "evidence": [
-        {
-          "segment_id": 119,
-          "timestamp_seconds": 751.117,
-          "text": "OUR DEFICITS HAVE GONE CRAZY\nAND THIS IS THE BIGGEST"
-        },
-        {
-          "segment_id": 55,
-          "timestamp_seconds": 1372.204,
-          "text": "I WOULD BE VERY UNDERWEIGHT\nTREASURY AND OVERWEIGHT"
-        },
-        {
-          "segment_id": 49,
-          "timestamp_seconds": 2620.851,
-          "text": "DRIVEN BY THE TITLE WAVE OF\nISSUANCE ACROSS THE AI"
-        },
-        {
-          "segment_id": 22,
-          "timestamp_seconds": 3335.298,
-          "text": "WHEN YOU HEAR ABOUT A $40\nTRILLION DEBT NUMBER THAT CAME"
-        }
       ]
     },
     {
@@ -47,23 +25,6 @@
         "Jeff Jacobson, 22V Research",
         "David Bellinger, Mizuho",
         "Nela Richardson, ADP"
-      ],
-      "evidence": [
-        {
-          "segment_id": 29,
-          "timestamp_seconds": 4919.514,
-          "text": "YOU ARE POSSIBLY AT A POINT\nWHERE YOU JUST RUN OUT OF"
-        },
-        {
-          "segment_id": 31,
-          "timestamp_seconds": 6948.541,
-          "text": ">> THERE'S A LITTLE BIT OF\nLOW-END CONSUMER STRESS."
-        },
-        {
-          "segment_id": 33,
-          "timestamp_seconds": 8517.876,
-          "text": "AND WHEN THOSE INFLATION TRACKS\nOR UNEXPECTED, WE ARE OFF THAT"
-        }
       ]
     }
   ],
@@ -172,12 +133,12 @@
   ],
   "daily_action": [
     {
-      "action": "Maintain an underweight posture on long-duration U.S. Treasuries; favor short- to medium-term fixed income or high-grade corporate debt.",
+      "action": "Long-duration U.S. Treasuries remain sensitive to supply pressure, while short- and intermediate-duration and high-grade credit warrant comparative monitoring.",
       "why": "Persistent fiscal deficits, heavy sovereign/AI issuance, and structural supply pressures continue to drive term premia higher at the long end of the curve.",
       "what_to_monitor": "Treasury auction demand metrics, 10-year and 30-year yield levels relative to the 5% threshold, and upcoming Treasury buyback announcements."
     },
     {
-      "action": "Exercise selective caution in consumer discretionary and housing-exposed equities.",
+      "action": "Consumer discretionary and housing-exposed equities remain sensitive to affordability and rate pressures.",
       "why": "Severe affordability constraints, rising mortgage rates, and signals of low-end consumer stress (e.g., Walmart earnings and builder incentives) threaten margin expansion.",
       "what_to_monitor": "Homebuilder sentiment indices, upcoming retail earnings reports, and labor wage growth data relative to inflation."
     }

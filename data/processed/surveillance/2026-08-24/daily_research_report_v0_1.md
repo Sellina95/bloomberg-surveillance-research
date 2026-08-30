@@ -1,4 +1,4 @@
-# Bloomberg Surveillance — Daily Research
+# Independent Market Research — Daily Brief
 
 **Date:** 2026-08-24
 
@@ -12,6 +12,8 @@
 
 ### AI Infrastructure Boom and Economic Resilience
 
+> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**
+
 Massive capital expenditure and infrastructure spending for artificial intelligence are fueling an unprecedented earnings cycle, underpinning broader economic growth and neutralizing traditional monetary policy tightening.
 
 **Supporting Guests**
@@ -20,13 +22,9 @@ Massive capital expenditure and infrastructure spending for artificial intellige
 - Ajay Rajadhyaksha, Barclays
 - Troy Gayeski, Future Standard
 
-**Evidence**
-
-- Steve Chiavarone notes that the largest companies are raising capital to increase AI capex, driving the sharpest two-year earnings revisions ever (Unit 1, Segments 27-32).
-- Ajay Rajadhyaksha states that U.S. growth is driven by the cyclical AI boom, rendering standard 25 or 50 basis point rate hikes insufficient to slow the economy (Unit 4, Segments 15-40).
-- Troy Gayeski highlights that capital concentration around AI has increased substantially across both public and private markets (Unit 6, Segments 0-14).
-
 ### Treasury Supply, Duration Risk, and Yield Curve Dynamics
+
+> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**
 
 Heavy sovereign and corporate debt issuance—partly driven by AI data center funding—is placing upward pressure on long-end term premiums and steepening yield curves globally.
 
@@ -36,13 +34,9 @@ Heavy sovereign and corporate debt issuance—partly driven by AI data center fu
 - Earl Davis, BMO Global Asset Management
 - Anne Walsh, Guggenheim Investments
 
-**Evidence**
-
-- Kelsey Berro points out that bond market pricing reflects gradual adjustments for higher term premiums due to increased supply and fall uncertainty (Unit 3, Segments 43-48).
-- Earl Davis notes a higher probability of the 30-year yield hitting 6% before the 10-year hits 5%, driven by long-duration risk pressures (Unit 7, Segments 28-33).
-- Anne Walsh emphasizes that massive long-end issuance for AI infrastructure demands higher coupons because issuers are currently free-cash-flow negative (Unit 8, Segments 120-130).
-
 ### Geopolitical Realignment and Trade Policy Friction
+
+> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**
 
 Aggressive U.S. secondary sanctions against foreign partners of Iran and zero-sum trade postures create cross-border friction, testing alliances and shifting traditional global trade frameworks.
 
@@ -50,11 +44,6 @@ Aggressive U.S. secondary sanctions against foreign partners of Iran and zero-su
 
 - Steven Cook, Council on Foreign Relations
 - Brian Gardner, Stifel
-
-**Evidence**
-
-- Steven Cook highlights that enforcing sanctions on Iran requires taking on major trading partners such as China, Turkey, and the UAE (Unit 2, Segments 7-8).
-- Brian Gardner states that the President views trade as a zero-sum game, making U.S.-Mexico relations smoother and more productive for potential agreements than U.S.-Canada relations (Unit 5, Segments 3-24).
 
 ## Rates / Bonds
 
@@ -187,21 +176,23 @@ Oil prices and energy markets maintain a direct correlation with Treasury yields
 
 ## Research Takeaways
 
+> **SYSTEM RESEARCH INTERPRETATION**
+
 - High bond yields around 5% do not preclude equity market gains as long as tech earnings revisions remain robust and companies generate high free cash flow.
 - Fixed-income investors find attractive entry points in 10-year Treasuries at 5% and potential 30-year Treasuries at 6%, favoring intermediate and high-grade credit to manage duration risk.
 - Portfolio diversification away from AI concentration into private market alternatives and non-tech growth sectors is increasingly vital for downside risk mitigation.
 
-## Daily Action
+## Monitoring Implications
 
-> **Analytical interpretation — not a Bloomberg guest quote.**
+> **SYSTEM RESEARCH INTERPRETATION — not a Bloomberg guest quote.**
 
-### 1. Maintain selective exposure to high-grade 10-year fixed income while limiting long-duration 30-year exposure.
+### 1. Risk-reward across 10-year versus 30-year high-grade fixed income remains important to monitor as long-end supply pressures evolve.
 
 **Why:** Yields near 5% offer compelling entry points and fair term premium compensation, but extreme long-end supply pressures favor intermediate positioning.
 
 **What to Monitor:** Treasury auction demand metrics, 10-year/30-year yield curve steepening, and daily oil price correlations.
 
-### 2. Implement portfolio diversification strategies away from mega-cap AI concentration.
+### 2. Mega-cap AI concentration remains a key portfolio concentration risk to monitor.
 
 **Why:** Public and private capital concentration creates systemic vulnerability if AI revenue realization disappoints.
 

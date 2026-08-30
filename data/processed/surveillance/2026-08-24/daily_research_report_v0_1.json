@@ -13,11 +13,6 @@
         "Steve Chiavarone, Federated Hermes",
         "Ajay Rajadhyaksha, Barclays",
         "Troy Gayeski, Future Standard"
-      ],
-      "evidence": [
-        "Steve Chiavarone notes that the largest companies are raising capital to increase AI capex, driving the sharpest two-year earnings revisions ever (Unit 1, Segments 27-32).",
-        "Ajay Rajadhyaksha states that U.S. growth is driven by the cyclical AI boom, rendering standard 25 or 50 basis point rate hikes insufficient to slow the economy (Unit 4, Segments 15-40).",
-        "Troy Gayeski highlights that capital concentration around AI has increased substantially across both public and private markets (Unit 6, Segments 0-14)."
       ]
     },
     {
@@ -27,11 +22,6 @@
         "Kelsey Berro, JPMorgan Asset Management",
         "Earl Davis, BMO Global Asset Management",
         "Anne Walsh, Guggenheim Investments"
-      ],
-      "evidence": [
-        "Kelsey Berro points out that bond market pricing reflects gradual adjustments for higher term premiums due to increased supply and fall uncertainty (Unit 3, Segments 43-48).",
-        "Earl Davis notes a higher probability of the 30-year yield hitting 6% before the 10-year hits 5%, driven by long-duration risk pressures (Unit 7, Segments 28-33).",
-        "Anne Walsh emphasizes that massive long-end issuance for AI infrastructure demands higher coupons because issuers are currently free-cash-flow negative (Unit 8, Segments 120-130)."
       ]
     },
     {
@@ -40,10 +30,6 @@
       "supporting_guests": [
         "Steven Cook, Council on Foreign Relations",
         "Brian Gardner, Stifel"
-      ],
-      "evidence": [
-        "Steven Cook highlights that enforcing sanctions on Iran requires taking on major trading partners such as China, Turkey, and the UAE (Unit 2, Segments 7-8).",
-        "Brian Gardner states that the President views trade as a zero-sum game, making U.S.-Mexico relations smoother and more productive for potential agreements than U.S.-Canada relations (Unit 5, Segments 3-24)."
       ]
     }
   ],
@@ -154,12 +140,12 @@
   ],
   "daily_action": [
     {
-      "action": "Maintain selective exposure to high-grade 10-year fixed income while limiting long-duration 30-year exposure.",
+      "action": "Risk-reward across 10-year versus 30-year high-grade fixed income remains important to monitor as long-end supply pressures evolve.",
       "why": "Yields near 5% offer compelling entry points and fair term premium compensation, but extreme long-end supply pressures favor intermediate positioning.",
       "what_to_monitor": "Treasury auction demand metrics, 10-year/30-year yield curve steepening, and daily oil price correlations."
     },
     {
-      "action": "Implement portfolio diversification strategies away from mega-cap AI concentration.",
+      "action": "Mega-cap AI concentration remains a key portfolio concentration risk to monitor.",
       "why": "Public and private capital concentration creates systemic vulnerability if AI revenue realization disappoints.",
       "what_to_monitor": "Corporate capex announcements, hyperscale free cash flow margins, and growth trends in defensive/private market sectors."
     }

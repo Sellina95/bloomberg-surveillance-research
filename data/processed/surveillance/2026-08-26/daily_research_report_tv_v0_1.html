@@ -249,6 +249,34 @@ body {
     color: #111214;
 }
 
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+
 .screen {
     position: relative;
     background: linear-gradient(135deg,#17191b,#101113);
@@ -747,7 +775,7 @@ h4 {
     <div class="tv-top">
 
         <div class="brand">
-            BLOOMBERG SURVEILLANCE · RESEARCH DESK
+            INDEPENDENT MARKET RESEARCH · SURVEILLANCE DESK
         </div>
 
         <div class="top-actions">
@@ -975,6 +1003,10 @@ h4 {
         <div class="macro-card">
             <h3>Federal Reserve Credibility and Inflation Persistence</h3>
 
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
             <p>
                 Multiple guests highlighted that a multi-year stretch of missing the 2% inflation target, combined with sticky core PCE prints and broad component pressures, is challenging the Fed&#x27;s credibility and keeping the risk of further rate hikes active.
             </p>
@@ -988,6 +1020,10 @@ h4 {
 
         <div class="macro-card">
             <h3>AI Infrastructure Financing and Bond Supply Pressures</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
 
             <p>
                 The method of funding the AI infrastructure boom is pivoting from corporate cash flow to heavy debt and credit market issuance, adding structural supply pressure to long-term Treasury yields.
@@ -1278,6 +1314,12 @@ h4 {
         RESEARCH TAKEAWAYS
     </div>
 
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION
+    </div>
+
+    <br>
+
     <ul>
 
         <li class="takeaway-item">
@@ -1312,11 +1354,11 @@ h4 {
 <section class="card">
 
     <div class="section-title">
-        DAILY ACTION
+        MONITORING IMPLICATIONS
     </div>
 
     <div class="small">
-        Analytical interpretation —
+        SYSTEM RESEARCH INTERPRETATION ·
         not a Bloomberg guest quote.
     </div>
 
@@ -1330,7 +1372,7 @@ h4 {
 
             <div>
                 <strong>
-                    Maintain an underweight or selective posture on long-duration fixed income given ongoing supply pressures from corporate AI debt issuance.
+                    Long-duration fixed income remains sensitive to corporate AI debt issuance and persistent supply pressure.
                 </strong>
 
                 <p>
@@ -1351,7 +1393,7 @@ h4 {
 
             <div>
                 <strong>
-                    Favor equities with verified enterprise AI adoption and strong cash generation over speculative hardware plays approaching peak allocation capacity.
+                    Verified enterprise AI adoption and cash generation remain important differentiators between fundamental and speculative equity exposure.
                 </strong>
 
                 <p>
@@ -1372,7 +1414,11 @@ h4 {
 
 
 <div class="footer">
-    Bloomberg Surveillance Research Engine · 2026-08-26
+    Independent Market Research Engine · 2026-08-26
+    <br>
+    Independent research project. Not affiliated with or
+    endorsed by Bloomberg. Bloomberg Surveillance is used
+    solely as a source program for research.
 </div>
 
 </div>

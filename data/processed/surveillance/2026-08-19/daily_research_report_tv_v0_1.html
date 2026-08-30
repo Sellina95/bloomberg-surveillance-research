@@ -249,6 +249,34 @@ body {
     color: #111214;
 }
 
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+
 .screen {
     position: relative;
     background: linear-gradient(135deg,#17191b,#101113);
@@ -747,7 +775,7 @@ h4 {
     <div class="tv-top">
 
         <div class="brand">
-            BLOOMBERG SURVEILLANCE · RESEARCH DESK
+            INDEPENDENT MARKET RESEARCH · SURVEILLANCE DESK
         </div>
 
         <div class="top-actions">
@@ -975,6 +1003,10 @@ h4 {
         <div class="macro-card">
             <h3>Fiscal Sustainability and Bond Market Pressures</h3>
 
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
             <p>
                 Deteriorating fiscal situations and massive debt issuance empower bond vigilantes, keeping long-term yields elevated despite Treasury efforts to manage supply via buybacks.
             </p>
@@ -984,55 +1016,14 @@ h4 {
             </div>
 
 
-                <div class="evidence">
-                    <span class="timestamp">
-                        N/A
-                    </span>
-                    <span>
-                        THE BOND VIGILANTES GET MORE AND MORE POWERFUL EVERY DAY THE FISCAL SITUATION DETERIORATES.
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        N/A
-                    </span>
-                    <span>
-                        THE SUPPLY DYNAMICS IS VERY MUCH IN THE TREASURY&#x27;S CONTROL.
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        N/A
-                    </span>
-                    <span>
-                        APPEARED TRUMP HAS UPENDED THE IDEOLOGY OF THE REPUBLICAN PARTY AND REALLY DEGRADED THEIR CREDIBILITY WHEN IT COMES TO CUTTING DEFICITS.
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        N/A
-                    </span>
-                    <span>
-                        AT SOME POINT THIS COULD LOOK VERY MUCH LIKE OPERATION TWIST
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        N/A
-                    </span>
-                    <span>
-                        THE RECENT BACKUP IN THE LONG END OVER THE LAST MONTH OR TWO HAS DRIVEN MORE ON TERM PREMIUM AND GROWTH EXPECTATIONS RATHER THAN INFLATION CREDIBILITY
-                    </span>
-                </div>
-
         </div>
 
         <div class="macro-card">
             <h3>AI Infrastructure Spending and Corporate Cash Flows</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
 
             <p>
                 Heavy capital expenditures on artificial intelligence are viewed as existential necessities by corporations, testing cash flows and raising questions about return horizons while higher interest rates impose financial friction.
@@ -1043,37 +1034,14 @@ h4 {
             </div>
 
 
-                <div class="evidence">
-                    <span class="timestamp">
-                        N/A
-                    </span>
-                    <span>
-                        WHERE THEY WILL VIEW IF THEY DO NOT SPEND, IT IS AN EXISTENTIAL RISK. AT THIS POINT IN TIME, THE COST OF FINANCING HAS NOT ACTUALLY BEEN HIGH ENOUGH
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        N/A
-                    </span>
-                    <span>
-                        CAPEX BUT I THINK THE LEVEL OF INTEREST RATES ACTS AS A ... LOT OF FRICTION THAT SLOWS THE ABILITY FOR THE BUBBLE TO REALLY GET OUT OF CONTROL.
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        N/A
-                    </span>
-                    <span>
-                        NOT ONLY WILL THEY NEARLY DOUBLE THE REVENUE BUT THEIR EARNINGS, AS WELL. WE HAVE GOOD VISIBILITY TO THAT.
-                    </span>
-                </div>
-
         </div>
 
         <div class="macro-card">
             <h3>Consumer Strain versus Declining Inflation Metrics</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
 
             <p>
                 Consumers are intolerant of further price increases and are pulling back on spending, but decelerating shelter costs and softer inflation measures signal lower price pressures ahead.
@@ -1083,24 +1051,6 @@ h4 {
                 <span class="guest">Dana Peterson, The Conference Board</span> <span class="guest">Emily Roland, Manulife John Hancock Investments</span>
             </div>
 
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        N/A
-                    </span>
-                    <span>
-                        THEY ARE INTOLERANT OF ANY INCREASE. ... CONSUMERS ARE DEFINITELY PULLING BACK ON THEIR SPENDING.
-                    </span>
-                </div>
-
-                <div class="evidence">
-                    <span class="timestamp">
-                        N/A
-                    </span>
-                    <span>
-                        YOU LOOK AT SOFTER CPI. THAT TO US IS TELLING US THE STORY OF BOND YIELDS COMING DOWN.
-                    </span>
-                </div>
 
         </div>
 
@@ -1382,6 +1332,12 @@ h4 {
         RESEARCH TAKEAWAYS
     </div>
 
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION
+    </div>
+
+    <br>
+
     <ul>
 
         <li class="takeaway-item">
@@ -1416,11 +1372,11 @@ h4 {
 <section class="card">
 
     <div class="section-title">
-        DAILY ACTION
+        MONITORING IMPLICATIONS
     </div>
 
     <div class="small">
-        Analytical interpretation —
+        SYSTEM RESEARCH INTERPRETATION ·
         not a Bloomberg guest quote.
     </div>
 
@@ -1434,7 +1390,7 @@ h4 {
 
             <div>
                 <strong>
-                    Maintain tactical exposure to gold and hard assets as a hedge against currency debasement and fiscal expansion.
+                    Gold and hard assets remain useful indicators of currency-debasement and fiscal-expansion concerns.
                 </strong>
 
                 <p>
@@ -1455,7 +1411,7 @@ h4 {
 
             <div>
                 <strong>
-                    Selectively rotate toward high-quality front-end fixed income while remaining cautious on long-duration sovereign debt.
+                    Front-end versus long-duration fixed-income performance remains important for assessing duration risk.
                 </strong>
 
                 <p>
@@ -1476,7 +1432,11 @@ h4 {
 
 
 <div class="footer">
-    Bloomberg Surveillance Research Engine · 2026-08-19
+    Independent Market Research Engine · 2026-08-19
+    <br>
+    Independent research project. Not affiliated with or
+    endorsed by Bloomberg. Bloomberg Surveillance is used
+    solely as a source program for research.
 </div>
 
 </div>

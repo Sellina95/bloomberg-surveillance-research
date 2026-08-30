@@ -77,16 +77,24 @@ report = json.loads(
     )
 )
 
-# Korean presentation artifacts wrap the translated canonical
-# report under "report". Normalize it here so the renderer uses
-# the same input contract for EN and KO.
+# Korean presentation artifacts normally wrap the translated
+# canonical report under "report". Historical legacy artifacts
+# may store the report directly at the top level.
+# Normalize both forms to the same renderer contract.
 if LANG == "ko":
     wrapped_report = report.get("report")
-    if not isinstance(wrapped_report, dict):
+
+    if isinstance(wrapped_report, dict):
+        report = wrapped_report
+
+    elif isinstance(report.get("macro_themes"), list):
+        # Legacy flat Korean presentation.
+        pass
+
+    else:
         raise SystemExit(
-            "FAIL — Korean presentation missing report object"
+            "FAIL — invalid Korean presentation structure"
         )
-    report = wrapped_report
 
 
 if PROVENANCE_INPUT.exists():
@@ -619,42 +627,19 @@ def build_html():
 
     for theme in macro:
 
+        # PUBLICATION BOUNDARY:
+        # Evidence/transcript text remains private.
+        # Public cards expose paraphrased synthesis and
+        # supporting guest attribution only.
         evidence_html = ""
-
-        for ev in theme.get(
-            "evidence",
-            []
-        ):
-
-            if isinstance(ev, dict):
-
-                ts = ev.get(
-                    "timestamp_seconds"
-                )
-
-                if ts is not None:
-                    minutes = int(ts // 60)
-                    seconds = int(ts % 60)
-                    stamp = (
-                        f"{minutes:02d}:{seconds:02d}"
-                    )
-                else:
-                    stamp = "N/A"
-
-                evidence_html += f"""
-                <div class="evidence">
-                    <span class="timestamp">
-                        {e(stamp)}
-                    </span>
-                    <span>
-                        {e(ev.get("text"))}
-                    </span>
-                </div>
-                """
 
         macro_html += f"""
         <div class="macro-card">
             <h3>{e(theme.get("theme"))}</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
 
             <p>
                 {e(theme.get("summary"))}
@@ -1591,7 +1576,7 @@ h4 {{
     <div class="tv-top">
 
         <div class="brand">
-            BLOOMBERG SURVEILLANCE · RESEARCH DESK
+            INDEPENDENT MARKET RESEARCH · SURVEILLANCE DESK
         </div>
 
         <div class="top-actions">
@@ -1755,6 +1740,12 @@ h4 {{
         RESEARCH TAKEAWAYS
     </div>
 
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION
+    </div>
+
+    <br>
+
     <ul>
         {takeaways}
     </ul>
@@ -1765,11 +1756,11 @@ h4 {{
 <section class="card">
 
     <div class="section-title">
-        DAILY ACTION
+        MONITORING IMPLICATIONS
     </div>
 
     <div class="small">
-        Analytical interpretation —
+        SYSTEM RESEARCH INTERPRETATION ·
         not a Bloomberg guest quote.
     </div>
 
@@ -1783,7 +1774,11 @@ h4 {{
 
 
 <div class="footer">
-    Bloomberg Surveillance Research Engine · {e(DATE)}
+    Independent Market Research Engine · {e(DATE)}
+    <br>
+    Independent research project. Not affiliated with or
+    endorsed by Bloomberg. Bloomberg Surveillance is used
+    solely as a source program for research.
 </div>
 
 </div>

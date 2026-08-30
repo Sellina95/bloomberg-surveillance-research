@@ -13,11 +13,6 @@
         "George Goncalves, MUFG",
         "Dan Suzuki, iCapital",
         "Robert Sockin, PGIM"
-      ],
-      "evidence": [
-        "MUFG (George Goncalves): Bond market yields reflect a nominal issue where growth is high due to heavy fiscal conditions and spending.",
-        "iCapital (Dan Suzuki): Structural forces between deficits, demographics, and persistent oil prices are placing a structural floor on inflation and interest rates.",
-        "PGIM (Robert Sockin): The macroeconomic backdrop features large deficits, AI capital demands, and an inflation risk premium being built into the curve alongside 2.5% real GDP growth."
       ]
     },
     {
@@ -27,11 +22,6 @@
         "George Goncalves, MUFG",
         "Ted Mortonson, Baird",
         "Dan Greenhaus, Solus Alternative Asset Management"
-      ],
-      "evidence": [
-        "MUFG (George Goncalves): Capital costs and clearing prices are partially a function of private sector competition for capital alongside AI and government infrastructure spending.",
-        "Baird (Ted Mortonson): The supply chain must raise hundreds of billions of dollars, making the cost of capital and 10-year Treasury yields critically important.",
-        "Solus Alternative Asset Management (Dan Greenhaus): The AI story remains so dominant and independent of rates, regulation, valuations, and money flows."
       ]
     },
     {
@@ -40,10 +30,6 @@
       "supporting_guests": [
         "Kate Kalutkiewicz, Former Trump White House Trade Official",
         "Henrietta Treyz, Veda Partners"
-      ],
-      "evidence": [
-        "Veda Partners (Henrietta Treyz): Aggressive trade stances and attacks on allies are designed to galvanize Republicans, the MAGA base, and union voters.",
-        "Former White House Trade Official (Kate Kalutkiewicz): Canada's pushback caught the White House by surprise, but both sides recognize the economic importance of preserving the USMCA framework."
       ]
     }
   ],
@@ -155,7 +141,7 @@
   ],
   "daily_action": [
     {
-      "action": "Reduce portfolio duration sensitivity and underweight high-multiple, unprofitable technology equities.",
+      "action": "Portfolio duration sensitivity and valuation risk in high-multiple, unprofitable technology equities remain key areas to monitor.",
       "why": "Persistent structural fiscal deficits, heavy AI-related capital expenditure, and sticky inflation risks create a high-probability environment where 10-year Treasury yields test or exceed 5%, threatening valuation multiples.",
       "what_to_monitor": "10-year Treasury yield movements through the 4.75%-5.00% range, upcoming Treasury auction demand, and Federal Reserve communications regarding long-end yields."
     }

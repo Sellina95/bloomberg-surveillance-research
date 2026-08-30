@@ -14,11 +14,6 @@
         "Claudia Sahm, New Century Advisors",
         "Patrick Harker, Former Philadelphia Fed President",
         "Subadra Rajappa, Societe Generale Americas"
-      ],
-      "evidence": [
-        "Super-core PCE is trending higher, with readings noted around 3.8% (Subadra Rajappa).",
-        "Supply shocks, tariff friction, and robust AI infrastructure demand are keeping inflation elevated above the 2% target (Claudia Sahm, Patrick Harker).",
-        "The Federal Reserve needs to take concrete action, such as raising the federal funds rate, to signal serious commitment to fighting inflation (Patrick Harker, Subadra Rajappa)."
       ]
     },
     {
@@ -28,11 +23,6 @@
         "Shweta Khajuria, Wolfe Research",
         "Gene Munster, Deepwater Asset Management",
         "Matt Orton, Raymond James Investment Management"
-      ],
-      "evidence": [
-        "Alphabet's TPU sales represent an underappreciated growth driver supported by high demand and strong price-to-performance metrics (Shweta Khajuria).",
-        "Nvidia's calendar '27 revenue is projected to reach approximately $750 billion, growing at roughly 90%, driven by insatiable inference capacity demand (Gene Munster).",
-        "Pullbacks of up to 50% in select AI supply chain and memory names present compelling long-term accumulation opportunities for secular growth exposure (Matt Orton)."
       ]
     }
   ],
@@ -143,12 +133,12 @@
   ],
   "daily_action": [
     {
-      "action": "Scale into long-duration fixed income selectively if 10-year yields approach the 5.00% threshold, while prioritizing quality credit spreads for income cushion.",
+      "action": "A move in the 10-year Treasury yield toward 5.00% would be an important threshold for assessing long-duration fixed-income risk-reward and credit-spread conditions.",
       "why": "High sovereign yields compensate for structural debt supply pressures and offer generational entry points for income investors, as argued by multiple institutional strategists.",
       "what_to_monitor": "Super-core PCE prints, Treasury auction bid-to-cover ratios, and 10-year yield trajectory."
     },
     {
-      "action": "Accumulate secular growth and AI supply chain equities experiencing unjustified pullbacks (35% to 50% off highs).",
+      "action": "Pullbacks in secular-growth and AI supply-chain equities warrant monitoring against earnings fundamentals and forward demand expectations.",
       "why": "Fundamental demand for inference capacity and custom silicon (TPUs/GPUs) remains robust, supporting multi-year revenue expansion independent of near-term macro noise.",
       "what_to_monitor": "Hyperscaler capital expenditure guidance, semiconductor memory pricing trends, and enterprise AI adoption metrics."
     }

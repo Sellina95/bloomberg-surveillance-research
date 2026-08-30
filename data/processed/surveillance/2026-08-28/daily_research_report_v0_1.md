@@ -1,4 +1,4 @@
-# Bloomberg Surveillance — Daily Research
+# Independent Market Research — Daily Brief
 
 **Date:** 2026-08-28
 
@@ -12,6 +12,8 @@
 
 ### Persistent Inflation and the Federal Reserve's Policy Dilemma
 
+> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**
+
 Core inflation components, particularly healthcare and super-core PCE (running near 3.8%), continue to run above target. Analysts and former Fed officials debate whether the central bank should hold steady, signal a hawkish pivot, or actively raise rates to re-establish credibility.
 
 **Supporting Guests**
@@ -21,13 +23,9 @@ Core inflation components, particularly healthcare and super-core PCE (running n
 - Patrick Harker, Former Philadelphia Fed President
 - Subadra Rajappa, Societe Generale Americas
 
-**Evidence**
-
-- Super-core PCE is trending higher, with readings noted around 3.8% (Subadra Rajappa).
-- Supply shocks, tariff friction, and robust AI infrastructure demand are keeping inflation elevated above the 2% target (Claudia Sahm, Patrick Harker).
-- The Federal Reserve needs to take concrete action, such as raising the federal funds rate, to signal serious commitment to fighting inflation (Patrick Harker, Subadra Rajappa).
-
 ### AI Infrastructure Buildup as a Macro and Semiconductor Growth Driver
+
+> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**
 
 The rapid capital expenditure cycle required for generative AI is driving massive semiconductor demand—highlighted by staggering revenue projections for Nvidia and strong custom silicon adoption via Google TPUs—while simultaneously introducing supply-side capital demands.
 
@@ -36,12 +34,6 @@ The rapid capital expenditure cycle required for generative AI is driving massiv
 - Shweta Khajuria, Wolfe Research
 - Gene Munster, Deepwater Asset Management
 - Matt Orton, Raymond James Investment Management
-
-**Evidence**
-
-- Alphabet's TPU sales represent an underappreciated growth driver supported by high demand and strong price-to-performance metrics (Shweta Khajuria).
-- Nvidia's calendar '27 revenue is projected to reach approximately $750 billion, growing at roughly 90%, driven by insatiable inference capacity demand (Gene Munster).
-- Pullbacks of up to 50% in select AI supply chain and memory names present compelling long-term accumulation opportunities for secular growth exposure (Matt Orton).
 
 ## Rates / Bonds
 
@@ -176,21 +168,23 @@ Global energy markets face structural multi-year bottlenecks in refining capacit
 
 ## Research Takeaways
 
+> **SYSTEM RESEARCH INTERPRETATION**
+
 - Fixed-income investors should treat a move toward 5% in 10-year Treasury yields as a compelling multi-decade income locking opportunity while leaning into high-quality credit for spread cushion.
 - In equities, market pullbacks in AI supply chain, memory, and semiconductor names offer attractive risk-adjusted entry points into secular growth ahead of projected multi-hundred-billion-dollar hardware scaling by 2027.
 - Central bank communication risk under Chair Warsh requires portfolios to maintain agility, as reduced forward guidance shifts market sensitivity toward regional Fed commentary and incoming inflation data.
 
-## Daily Action
+## Monitoring Implications
 
-> **Analytical interpretation — not a Bloomberg guest quote.**
+> **SYSTEM RESEARCH INTERPRETATION — not a Bloomberg guest quote.**
 
-### 1. Scale into long-duration fixed income selectively if 10-year yields approach the 5.00% threshold, while prioritizing quality credit spreads for income cushion.
+### 1. A move in the 10-year Treasury yield toward 5.00% would be an important threshold for assessing long-duration fixed-income risk-reward and credit-spread conditions.
 
 **Why:** High sovereign yields compensate for structural debt supply pressures and offer generational entry points for income investors, as argued by multiple institutional strategists.
 
 **What to Monitor:** Super-core PCE prints, Treasury auction bid-to-cover ratios, and 10-year yield trajectory.
 
-### 2. Accumulate secular growth and AI supply chain equities experiencing unjustified pullbacks (35% to 50% off highs).
+### 2. Pullbacks in secular-growth and AI supply-chain equities warrant monitoring against earnings fundamentals and forward demand expectations.
 
 **Why:** Fundamental demand for inference capacity and custom silicon (TPUs/GPUs) remains robust, supporting multi-year revenue expansion independent of near-term macro noise.
 

@@ -71,15 +71,22 @@ IMPORTANT RULES:
    research unit supports the attribution.
 3. Preserve the distinction between:
    - Guest View
-   - Evidence
+   - Private Evidence
    - Research Interpretation
-4. Evidence must remain grounded in the supplied research
-   units.
-5. Do not manufacture consensus when guests disagree.
-6. Explicitly identify disagreement or uncertainty.
-7. The Daily Action section is an analytical interpretation,
-   NOT a Bloomberg guest quote.
-8. Keep the report concise but institutionally useful.
+4. Use supplied evidence internally for grounding, but NEVER
+   reproduce transcript text, evidence text, quotations, or
+   excerpts in the public report.
+5. Public output may contain paraphrased synthesis and
+   supporting guest attribution only.
+6. Do not manufacture consensus when guests disagree.
+7. Explicitly identify disagreement or uncertainty.
+8. The daily_action field represents SYSTEM-GENERATED
+   MONITORING IMPLICATIONS, not investment recommendations.
+   Write observations, conditions, risks, and variables to monitor.
+   Do NOT instruct the reader to buy, sell, accumulate, reduce,
+   increase, overweight, underweight, enter, exit, go long, go short,
+   or otherwise change a portfolio position.
+9. Keep the report concise but institutionally useful.
 
 OUTPUT JSON ONLY.
 
@@ -98,8 +105,7 @@ Required schema:
     {{
       "theme": "...",
       "summary": "...",
-      "supporting_guests": [],
-      "evidence": []
+      "supporting_guests": []
     }}
   ],
 
@@ -169,7 +175,7 @@ Required schema:
 
   "daily_action": [
     {{
-      "action": "...",
+      "action": "Non-prescriptive monitoring implication only.",
       "why": "...",
       "what_to_monitor": "..."
     }}
@@ -358,6 +364,13 @@ def main():
         print(
             "JSON SYNTAX REPAIR: PASS"
         )
+
+    # PUBLICATION BOUNDARY:
+    # Evidence is used upstream for grounding but must never
+    # be serialized into the public daily report.
+    for theme in report.get("macro_themes", []):
+        if isinstance(theme, dict):
+            theme.pop("evidence", None)
 
     OUTPUT.write_text(
         json.dumps(

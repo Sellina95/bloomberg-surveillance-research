@@ -1,0 +1,264 @@
+{
+  "date": "2026-08-14",
+  "method": "chapter_attribution_v0_3",
+  "total_chapters": 14,
+  "guest_chapter_count": 13,
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Treasury's Bond Fight, AI Financing and Oil Stress",
+      "start_seconds": 0,
+      "source": "serpapi",
+      "is_guest": false
+    },
+    {
+      "chapter": 2,
+      "title": "Treasury Can't Control the 30-Year Yield — Patrick Armstrong, Plurimi Wealth",
+      "start_seconds": 277,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 3,
+      "title": "Iran Standoff May Be Decided by Events, Not Time — Norman Roule, CSIS",
+      "start_seconds": 1121,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 4,
+      "title": "Bessent Has More Bullets to Stabilize Bonds — Dirk Willer, Citi Research",
+      "start_seconds": 1854,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 5,
+      "title": "Euro Could Go Lower From Here — Geoffrey Yu, BNY",
+      "start_seconds": 2444,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 6,
+      "title": "AI Boom Is Testing Corporate Cash Flow — Jack Caffrey, JPMorgan Asset Management",
+      "start_seconds": 3231,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 7,
+      "title": "Deficit Won't Matter Until Voters Feel the Pain — Jonathan Lieber, Eurasia Group",
+      "start_seconds": 3934,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 8,
+      "title": "Global Crude Refining Has No Margin for Error — Bob McNally, Rapidan Energy Group",
+      "start_seconds": 4725,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 9,
+      "title": "Warsh Risks Disappointing Markets Without Fed Clarity — Molly Brooks, TD Securities",
+      "start_seconds": 5401,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 10,
+      "title": "Higher Rates May Be Keeping AI Bubble in Check — Julie Biel, Kayne Anderson Rudnick",
+      "start_seconds": 6103,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 11,
+      "title": "Nvidia's Circular Financing Raises Red Flags — Gil Luria, DA Davidson",
+      "start_seconds": 6853,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 12,
+      "title": "Treasury Buybacks Won't Make Bonds a Buy — Ira Jersey",
+      "start_seconds": 7366,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 13,
+      "title": "Consumers Are Refusing to Absorb Higher Prices — Dana Peterson, The Conference Board",
+      "start_seconds": 7643,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 14,
+      "title": "Weaker Dollar Is Markets' Liquidity Release Valve — Emily Roland, Manulife John Hancock Investments",
+      "start_seconds": 8199,
+      "source": "serpapi",
+      "is_guest": true
+    }
+  ],
+  "guest_units": [
+    {
+      "unit_id": 1,
+      "chapter": 2,
+      "title": "Treasury Can't Control the 30-Year Yield — Patrick Armstrong, Plurimi Wealth",
+      "guest": "Patrick Armstrong, Plurimi Wealth",
+      "start_seconds": 277,
+      "end_seconds": 1121,
+      "duration_seconds": 844,
+      "segment_count": 224,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 2,
+      "chapter": 3,
+      "title": "Iran Standoff May Be Decided by Events, Not Time — Norman Roule, CSIS",
+      "guest": "Norman Roule, CSIS",
+      "start_seconds": 1121,
+      "end_seconds": 1854,
+      "duration_seconds": 733,
+      "segment_count": 195,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 3,
+      "chapter": 4,
+      "title": "Bessent Has More Bullets to Stabilize Bonds — Dirk Willer, Citi Research",
+      "guest": "Dirk Willer, Citi Research",
+      "start_seconds": 1854,
+      "end_seconds": 2444,
+      "duration_seconds": 590,
+      "segment_count": 148,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 4,
+      "chapter": 5,
+      "title": "Euro Could Go Lower From Here — Geoffrey Yu, BNY",
+      "guest": "Geoffrey Yu, BNY",
+      "start_seconds": 2444,
+      "end_seconds": 3231,
+      "duration_seconds": 787,
+      "segment_count": 231,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 5,
+      "chapter": 6,
+      "title": "AI Boom Is Testing Corporate Cash Flow — Jack Caffrey, JPMorgan Asset Management",
+      "guest": "Jack Caffrey, JPMorgan Asset Management",
+      "start_seconds": 3231,
+      "end_seconds": 3934,
+      "duration_seconds": 703,
+      "segment_count": 191,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 6,
+      "chapter": 7,
+      "title": "Deficit Won't Matter Until Voters Feel the Pain — Jonathan Lieber, Eurasia Group",
+      "guest": "Jonathan Lieber, Eurasia Group",
+      "start_seconds": 3934,
+      "end_seconds": 4725,
+      "duration_seconds": 791,
+      "segment_count": 217,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 7,
+      "chapter": 8,
+      "title": "Global Crude Refining Has No Margin for Error — Bob McNally, Rapidan Energy Group",
+      "guest": "Bob McNally, Rapidan Energy Group",
+      "start_seconds": 4725,
+      "end_seconds": 5401,
+      "duration_seconds": 676,
+      "segment_count": 185,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 8,
+      "chapter": 9,
+      "title": "Warsh Risks Disappointing Markets Without Fed Clarity — Molly Brooks, TD Securities",
+      "guest": "Molly Brooks, TD Securities",
+      "start_seconds": 5401,
+      "end_seconds": 6103,
+      "duration_seconds": 702,
+      "segment_count": 196,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 9,
+      "chapter": 10,
+      "title": "Higher Rates May Be Keeping AI Bubble in Check — Julie Biel, Kayne Anderson Rudnick",
+      "guest": "Julie Biel, Kayne Anderson Rudnick",
+      "start_seconds": 6103,
+      "end_seconds": 6853,
+      "duration_seconds": 750,
+      "segment_count": 207,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 10,
+      "chapter": 11,
+      "title": "Nvidia's Circular Financing Raises Red Flags — Gil Luria, DA Davidson",
+      "guest": "Gil Luria, DA Davidson",
+      "start_seconds": 6853,
+      "end_seconds": 7366,
+      "duration_seconds": 513,
+      "segment_count": 134,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 11,
+      "chapter": 12,
+      "title": "Treasury Buybacks Won't Make Bonds a Buy — Ira Jersey",
+      "guest": "Ira Jersey",
+      "start_seconds": 7366,
+      "end_seconds": 7643,
+      "duration_seconds": 277,
+      "segment_count": 62,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 12,
+      "chapter": 13,
+      "title": "Consumers Are Refusing to Absorb Higher Prices — Dana Peterson, The Conference Board",
+      "guest": "Dana Peterson, The Conference Board",
+      "start_seconds": 7643,
+      "end_seconds": 8199,
+      "duration_seconds": 556,
+      "segment_count": 132,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 13,
+      "chapter": 14,
+      "title": "Weaker Dollar Is Markets' Liquidity Release Valve — Emily Roland, Manulife John Hancock Investments",
+      "guest": "Emily Roland, Manulife John Hancock Investments",
+      "start_seconds": 8199,
+      "end_seconds": 8661.853000000001,
+      "duration_seconds": 462.853000000001,
+      "segment_count": 118,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    }
+  ]
+}

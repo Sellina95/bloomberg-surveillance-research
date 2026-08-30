@@ -1,7 +1,14 @@
 # Bloomberg Surveillance Research
 
-A personal research workflow for converting long-form Bloomberg Surveillance
-transcripts into structured, source-preserving institutional market briefs.
+An independent research-engineering project for converting long-form
+Bloomberg Surveillance source material into structured institutional
+market briefs.
+
+> **Independent project:** This repository is not affiliated with or endorsed
+> by Bloomberg. Bloomberg Surveillance is used solely as a source program for
+> research. Public outputs contain paraphrased research synthesis; source
+> transcripts and evidence-rich intermediate data are kept outside the public
+> publication layer.
 
 ## Purpose
 
@@ -130,6 +137,45 @@ Detailed evidence:
 `docs/validation/acquisition_gate_v0.1.md`
 
 ---
+
+## Public Data Governance
+
+This project maintains an explicit boundary between private source material
+and public research outputs.
+
+### Private Research Layer
+
+The following materials are not part of the public publication surface:
+
+- Raw or reconstructed source transcripts
+- Guest transcript bodies
+- Canonical transcript segment collections
+- Evidence-rich research datasets and intermediate artifacts
+- Source excerpts used internally for grounding and validation
+
+These materials may be used internally by the research pipeline but are not
+intended for public distribution.
+
+### Public Research Layer
+
+The public surface is limited to:
+
+- Research code, architecture, and methodology
+- Non-sensitive provenance and publication metadata
+- Paraphrased source-derived synthesis
+- Clearly labeled system research interpretation
+- Validated English and Korean presentation artifacts
+
+Public reports do not intentionally reproduce source transcript or evidence
+text. Source-derived synthesis and system-generated interpretation are
+explicitly distinguished in the presentation layer.
+
+System-generated monitoring implications are research observations rather
+than personalized investment recommendations or instructions to change a
+portfolio position.
+
+This is an independent research-engineering project and is not affiliated
+with or endorsed by Bloomberg.
 
 ## Research Boundary
 

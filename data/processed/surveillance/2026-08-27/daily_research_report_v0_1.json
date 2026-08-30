@@ -14,11 +14,6 @@
         "Savita Subramanian, BofA Global Research",
         "Gil Luria, DA Davidson",
         "Michelle Weaver, Morgan Stanley"
-      ],
-      "evidence": [
-        "Nvidia guiding to roughly 70% revenue growth into 2028 supported by architecture shifts across Vera Rubin, Rubin Ultra, and Feynman (Angelo Zino, Segment 15, 18, 42-43; Gil Luria, Segment 7-9).",
-        "A significant gap exists in tech between reported earnings gains and actual cash flow generation, partly due to mark-to-market private investments and leverage obligations hidden in footnotes (Savita Subramanian, Segment 16-18, 37-44).",
-        "25% of S&P 500 companies are reporting tangible impacts from AI adoption, showing 50 basis points of relative net margin expansion (Michelle Weaver, Segment 37-41)."
       ]
     },
     {
@@ -29,11 +24,6 @@
         "Jeffrey Schmid, Kansas City Fed President",
         "Nela Richardson, ADP",
         "Torsten Slok, Apollo"
-      ],
-      "evidence": [
-        "AI creates short-term inflationary pressures and employment displacement for younger workers while offering long-term productivity gains (Aaron Kennon, Segment 8-14; Nela Richardson, Segment 8-9).",
-        "Current short-end policy settings may be accommodative rather than restrictive, and underlying demand pressures could justify a rate hike as soon as September (Jeffrey Schmid, Segment 12, 39).",
-        "Interest rates are projected to stay higher for longer due to persistent inflation pressures and structural factors like fiscal deficits (Torsten Slok, Segment 1-2)."
       ]
     },
     {
@@ -43,11 +33,6 @@
         "Libby Cantrill, PIMCO",
         "Matt Miskin, Manulife John Hancock Investments",
         "Torsten Slok, Apollo"
-      ],
-      "evidence": [
-        "75% of government spending is on autopilot (mandatory entitlement spending), and investors should discount any standalone executive deficit plans until Congress gets involved (Libby Cantrill, Segment 7, 9-10, 15-16).",
-        "Upward pressure on the yield curve is driven by external forces such as fiscal deficits and hyperscaler debt issuance, which are outside the Fed's control (Torsten Slok, Segment 47-59).",
-        "Recent back-ups in bond yields offer attractive opportunistic entry points for high-quality bonds yielding 5% to 6% (Matt Miskin, Segment 30-31)."
       ]
     }
   ],
@@ -174,12 +159,12 @@
   ],
   "daily_action": [
     {
-      "action": "Maintain selective exposure to high-quality fixed income and corporate credit yielding 5% to 6% to capitalize on recent yield backups.",
+      "action": "High-quality fixed income and corporate credit yields in the 5% to 6% range remain important indicators of relative cross-asset attractiveness.",
       "why": "Persistent fiscal issuance and hawkish central bank commentary support a 'higher-for-longer' rate environment, rewarding attractive carry in high-grade bonds.",
       "what_to_monitor": "Incoming FOMC communications, core inflation prints, and Treasury auction demand."
     },
     {
-      "action": "Selectively accumulate AI infrastructure leaders and application-layer software providers on pullbacks while closely auditing footnote leverage and cash flow generation.",
+      "action": "AI infrastructure and application-layer software warrant monitoring for pullback behavior, leverage disclosure, and cash-flow quality.",
       "why": "While top-line demand and margin expansion remain robust, hidden financing structures across the hyperscaler ecosystem warrant heightened balance sheet vigilance.",
       "what_to_monitor": "Corporate capital expenditure disclosures, cash-flow-to-earnings conversion ratios, and localized data center regulatory developments."
     }

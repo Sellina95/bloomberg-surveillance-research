@@ -13,11 +13,6 @@
         "Marvin Loh, State Street",
         "Conrad DeQuadros, Citi Wealth",
         "Michael McKee, Bloomberg"
-      ],
-      "evidence": [
-        "Marvin Loh noted the risk of a Fed remaining patient while the 2% target starts to lose meaning, with half the FOMC viewing the hurdle to hike rates as low (Claim 20260826-U001-C02, 20260826-U001-C03).",
-        "Conrad DeQuadros emphasized that six years of missing the 2% target tests credibility, making a rate hike the likely next move due to persistent inflation (Claim 20260826-U008-C01, 20260826-U008-C02).",
-        "Michael McKee reported that core PCE rose 0.2% on the month and stayed at 3.3% year-over-year alongside stronger consumer spending, increasing the likelihood that some FOMC members will lean toward rate increases (Claim 20260826-U011-C01, 20260826-U011-C03)."
       ]
     },
     {
@@ -27,11 +22,6 @@
         "Andrew Balls, PIMCO",
         "Tracie McMillion, Wells Fargo Investment Institute",
         "Sarah Kunst, Cleo Capital"
-      ],
-      "evidence": [
-        "Andrew Balls cited heavy long-end debt issuance from AI hyperscalers as a key driver of higher yields alongside oil prices and fiscal concerns (Claim 20260826-U004-C01).",
-        "Tracie McMillion stated that companies are now turning from cash flows to credit markets to fund AI infrastructure, compounding Treasury supply issues (Claim 20260826-U009-C01).",
-        "Sarah Kunst noted that hyperscalers are leasing out extensive data center space, indicating uncertainty over exact capacity utilization and monetization (Claim 20260826-U003-C01, 20260826-U003-C03)."
       ]
     }
   ],
@@ -151,12 +141,12 @@
   ],
   "daily_action": [
     {
-      "action": "Maintain an underweight or selective posture on long-duration fixed income given ongoing supply pressures from corporate AI debt issuance.",
+      "action": "Long-duration fixed income remains sensitive to corporate AI debt issuance and persistent supply pressure.",
       "why": "Heavy long-end supply from hyperscalers and persistent inflation credibility risks limit the scope for significant yield compression.",
       "what_to_monitor": "Corporate debt issuance volumes, Treasury auction bid-to-cover ratios, and monthly core PCE/CPI breadth components."
     },
     {
-      "action": "Favor equities with verified enterprise AI adoption and strong cash generation over speculative hardware plays approaching peak allocation capacity.",
+      "action": "Verified enterprise AI adoption and cash generation remain important differentiators between fundamental and speculative equity exposure.",
       "why": "Nvidia and hardware peers face tougher comparisons and questions regarding end-customer monetization, while older economy sectors show broadening AI integration.",
       "what_to_monitor": "S&P earnings transcript mentions of productivity gains, hyperscaler capital expenditure announcements, and data center completion schedules."
     }

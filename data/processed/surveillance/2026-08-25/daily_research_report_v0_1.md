@@ -1,4 +1,4 @@
-# Bloomberg Surveillance — Daily Research
+# Independent Market Research — Daily Brief
 
 **Date:** 2026-08-25
 
@@ -12,6 +12,8 @@
 
 ### Fiscal Dominance and Structural Inflation Pressures
 
+> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**
+
 Heavy government spending, large deficits, and strong nominal growth are placing a structural floor on inflation and interest rates, challenging traditional monetary policy transmission.
 
 **Supporting Guests**
@@ -20,13 +22,9 @@ Heavy government spending, large deficits, and strong nominal growth are placing
 - Dan Suzuki, iCapital
 - Robert Sockin, PGIM
 
-**Evidence**
-
-- MUFG (George Goncalves): Bond market yields reflect a nominal issue where growth is high due to heavy fiscal conditions and spending.
-- iCapital (Dan Suzuki): Structural forces between deficits, demographics, and persistent oil prices are placing a structural floor on inflation and interest rates.
-- PGIM (Robert Sockin): The macroeconomic backdrop features large deficits, AI capital demands, and an inflation risk premium being built into the curve alongside 2.5% real GDP growth.
-
 ### AI Infrastructure CapEx and Capital Competition
+
+> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**
 
 Massive capital expenditure for artificial intelligence and sovereign buildouts is consuming vast amounts of capital, intensifying competition with government borrowing and keeping borrowing costs elevated.
 
@@ -36,13 +34,9 @@ Massive capital expenditure for artificial intelligence and sovereign buildouts 
 - Ted Mortonson, Baird
 - Dan Greenhaus, Solus Alternative Asset Management
 
-**Evidence**
-
-- MUFG (George Goncalves): Capital costs and clearing prices are partially a function of private sector competition for capital alongside AI and government infrastructure spending.
-- Baird (Ted Mortonson): The supply chain must raise hundreds of billions of dollars, making the cost of capital and 10-year Treasury yields critically important.
-- Solus Alternative Asset Management (Dan Greenhaus): The AI story remains so dominant and independent of rates, regulation, valuations, and money flows.
-
 ### Geopolitical and Trade Friction as Domestic Political Strategy
+
+> **SOURCE-DERIVED SYNTHESIS · PARAPHRASED**
 
 Trade escalations with allies like Canada and tough postures toward adversaries are heavily influenced by domestic political strategies aimed at galvanizing core voting bases.
 
@@ -50,11 +44,6 @@ Trade escalations with allies like Canada and tough postures toward adversaries 
 
 - Kate Kalutkiewicz, Former Trump White House Trade Official
 - Henrietta Treyz, Veda Partners
-
-**Evidence**
-
-- Veda Partners (Henrietta Treyz): Aggressive trade stances and attacks on allies are designed to galvanize Republicans, the MAGA base, and union voters.
-- Former White House Trade Official (Kate Kalutkiewicz): Canada's pushback caught the White House by surprise, but both sides recognize the economic importance of preserving the USMCA framework.
 
 ## Rates / Bonds
 
@@ -188,15 +177,17 @@ Commodity markets, particularly oil, face structural price floors driven by geop
 
 ## Research Takeaways
 
+> **SYSTEM RESEARCH INTERPRETATION**
+
 - Fixed-income strategies should favor curve-flattening structures or defensive duration positioning as structural fiscal deficits and heavy issuance keep term premiums elevated.
 - Equity exposure should emphasize cash-generative mega-caps with rock-solid balance sheets capable of absorbing higher capital costs, while trimming exposure to unprofitable tech and high-multiple small caps.
 - Portfolio managers must account for geopolitical trade friction as a persistent feature driven by domestic political incentives rather than transient policy noise.
 
-## Daily Action
+## Monitoring Implications
 
-> **Analytical interpretation — not a Bloomberg guest quote.**
+> **SYSTEM RESEARCH INTERPRETATION — not a Bloomberg guest quote.**
 
-### 1. Reduce portfolio duration sensitivity and underweight high-multiple, unprofitable technology equities.
+### 1. Portfolio duration sensitivity and valuation risk in high-multiple, unprofitable technology equities remain key areas to monitor.
 
 **Why:** Persistent structural fiscal deficits, heavy AI-related capital expenditure, and sticky inflation risks create a high-probability environment where 10-year Treasury yields test or exceed 5%, threatening valuation multiples.
 

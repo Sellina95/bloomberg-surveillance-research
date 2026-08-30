@@ -64,6 +64,10 @@ jobs:
         run: |
           python scripts/run_latest_surveillance_v0_1.py
 
+      - name: Validate public surface
+        run: |
+          python scripts/validate_public_surface_v0_1.py
+
       - name: Verify latest TV report
         run: |
           latest_dir=$(find data/processed/surveillance \
