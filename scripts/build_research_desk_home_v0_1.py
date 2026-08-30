@@ -85,6 +85,8 @@ html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+<meta name="robots" content="noindex, nofollow">
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
@@ -93,7 +95,7 @@ html = f"""<!DOCTYPE html>
         http-equiv="refresh"
         content="0; url={target_html}"
     >
-    <title>Bloomberg Surveillance Research Desk</title>
+    <title>Independent Market Research Desk</title>
 </head>
 <body>
     <main>

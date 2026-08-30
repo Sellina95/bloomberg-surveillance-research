@@ -147,7 +147,7 @@ for path in public_rendered:
 
 
 # ===========================================================================
-# GATE 4 — BRANDING / NON-AFFILIATION
+# GATE 4 — BRANDING / NON-AFFILIATION / DOCUMENT IDENTITY / INDEXING
 # ===========================================================================
 
 htmls = (
@@ -155,10 +155,36 @@ htmls = (
     + sorted(SURVEILLANCE.glob("*/daily_research_report_tv_ko_v0_1.html"))
 )
 
+public_htmls = [SURVEILLANCE / "index.html"] + htmls
+
 DISCLAIMER_RE = re.compile(
     r"not\s+affiliated\s+with\s+or\s+endorsed\s+by\s+Bloomberg",
     re.I,
 )
+
+TITLE_RE = re.compile(
+    r"<title>\s*(.*?)\s*</title>",
+    re.I | re.S,
+)
+
+NOINDEX_TAG = '<meta name="robots" content="noindex, nofollow">'
+
+for path in public_htmls:
+    if not path.exists():
+        fail(f"MISSING PUBLIC HTML: {path.relative_to(ROOT)}")
+        continue
+
+    text = path.read_text(encoding="utf-8", errors="replace")
+
+    title = TITLE_RE.search(text)
+
+    if not title:
+        fail(f"MISSING HTML TITLE: {path.relative_to(ROOT)}")
+    elif "bloomberg" in title.group(1).lower():
+        fail(f"BLOOMBERG PRIMARY TITLE: {path.relative_to(ROOT)}")
+
+    if NOINDEX_TAG not in text:
+        fail(f"MISSING NOINDEX: {path.relative_to(ROOT)}")
 
 for path in htmls:
     text = path.read_text(encoding="utf-8", errors="replace")
