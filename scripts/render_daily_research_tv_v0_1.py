@@ -830,6 +830,15 @@ def build_html():
         </div>
         """
 
+    if LANG.lower().startswith("ko"):
+        portfolio_url = "https://petal-chair-9d2.notion.site/Bloomberg-Surveillance-Research-Pipeline-efa0169c5b49821d834281a9b2d84e0d"
+        portfolio_label = "프로젝트 개요 → PORTFOLIO ↗"
+        github_label = "방법론 및 소스 코드 → GITHUB ↗"
+    else:
+        portfolio_url = "https://petal-chair-9d2.notion.site/Independent-Market-Research-Pipeline-Automated-Evidence-Grounded-Institutional-Market-Research-Sy-3c60169c5b49800bab2cde19b7b74cbb"
+        portfolio_label = "PROJECT OVERVIEW → PORTFOLIO ↗"
+        github_label = "METHODOLOGY & SOURCE CODE → GITHUB ↗"
+
     return f"""<!DOCTYPE html>
 <html lang="{e(LANG)}">
 
@@ -1582,10 +1591,15 @@ footer {{
 .footer-link {{
     display: inline-block;
     margin-top: 8px;
-    font-size: 9px;
-    color: #8a8c91;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
     text-decoration: none;
-    letter-spacing: .2px;
+}}
+
+.footer-link + .footer-link {{
+    margin-left: 18px;
 }}
 
 .footer-link:hover {{
@@ -1875,11 +1889,20 @@ footer {{
     <br>
     <a
         class="footer-link"
+        href="{e(portfolio_url)}"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        {e(portfolio_label)}
+    </a>
+
+    <a
+        class="footer-link"
         href="https://github.com/Sellina95/bloomberg-surveillance-research"
         target="_blank"
         rel="noopener noreferrer"
     >
-        Methodology &amp; Source Code → GitHub ↗
+        {e(github_label)}
     </a>
 </div>
 

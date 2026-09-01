@@ -750,10 +750,15 @@ footer {
 .footer-link {
     display: inline-block;
     margin-top: 8px;
-    font-size: 9px;
-    color: #8a8c91;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
     text-decoration: none;
-    letter-spacing: .2px;
+}
+
+.footer-link + .footer-link {
+    margin-left: 18px;
 }
 
 .footer-link:hover {
@@ -1791,11 +1796,20 @@ footer {
     <br>
     <a
         class="footer-link"
+        href="https://petal-chair-9d2.notion.site/Bloomberg-Surveillance-Research-Pipeline-efa0169c5b49821d834281a9b2d84e0d"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        프로젝트 개요 → PORTFOLIO ↗
+    </a>
+
+    <a
+        class="footer-link"
         href="https://github.com/Sellina95/bloomberg-surveillance-research"
         target="_blank"
         rel="noopener noreferrer"
     >
-        Methodology &amp; Source Code → GitHub ↗
+        방법론 및 소스 코드 → GITHUB ↗
     </a>
 </div>
 

@@ -1,52 +1,39 @@
 # Independent Market Research Pipeline
 
-An evidence-grounded market intelligence system designed to identify
-decision-relevant narratives, separate signal from information noise,
-and preserve the evidence behind each research conclusion.
+An evidence-grounded market research system for transforming long-form institutional market commentary into structured, traceable, and decision-relevant daily research.
 
-🔗 **[Live Research Site](https://sellina95.github.io/bloomberg-surveillance-research/)**
+## Explore the Project
+
+🌐 **[Project Portfolio / Start Here](https://petal-chair-9d2.notion.site/Independent-Market-Research-Pipeline-Automated-Evidence-Grounded-Institutional-Market-Research-Sy-3c60169c5b49800bab2cde19b7b74cbb)**  
+📺 **[Live Research Desk](https://sellina95.github.io/bloomberg-surveillance-research/)**
+
+**Portfolio** explains the research problem and system design.  
+**Live Research Desk** shows the resulting daily market research.  
+This repository contains the methodology, validation framework, and reproducibility evidence behind the system.
 
 ## The Research Problem
 
-Institutional market commentary contains hours of macro, policy,
-cross-asset, and market views every day.
+Financial markets produce an enormous volume of macroeconomic views, policy interpretations, cross-asset perspectives, and institutional commentary every day.
 
-The challenge is not simply summarizing that information.
+The challenge is not simply collecting more information. It is determining:
 
-**The challenge is identifying which narratives matter, which are noise,
-where institutional views agree or conflict, and preserving the evidence
-behind those conclusions.**
+> **Which narratives matter, which views recur or conflict across market participants, and can those conclusions be traced back to the original evidence?**
 
-This project builds a reproducible research workflow around that problem,
-combining point-in-time source integrity, evidence grounding, structured
-cross-guest synthesis, and explicit validation gates.
+This project explores that problem by structuring individual market perspectives and their supporting evidence before synthesizing recurring themes, disagreements, and cross-asset implications into evidence-grounded daily research.
 
 ## Why I Built This
 
-My experience in Global Markets Operations at Bank of America gave me
-exposure to the institutional market environment and the importance of
-timely, reliable information across the trade lifecycle.
+My background spans **Computer Science, technology support and Global Markets Operations at Bank of America, and corporate credit analysis at ICBC**.
 
-As I moved deeper into independent macro and cross-asset research, I became
-interested in a different problem: how institutional market information can
-be filtered, challenged, and transformed into decision-relevant research
-without losing the evidence behind it.
+Across these experiences, I became increasingly interested in a problem at the intersection of markets and technology: **how can large volumes of market information be transformed into structured, traceable, and decision-relevant research?**
 
-I built this project independently to explore that problem systematically.
+I built this project independently to explore that problem as a research system — combining automated information processing with source provenance, evidence grounding, validation controls, and institutional market research workflows.
 
-## Explore
+The current implementation uses Bloomberg Surveillance as a research source. The objective is not to reproduce or republish the program, but to build an independent research workflow that can trace derived market interpretations back to their supporting source evidence.
 
-- **Live Research Desk** — View the current daily research output
-- **Project Portfolio** — Research objective, architecture, and project story
-- **Technical Methodology & Validation** — Continue below
+> **Independent project:** This repository is not affiliated with or endorsed by Bloomberg. Bloomberg Surveillance is used solely as a source program for research. Public outputs contain paraphrased research synthesis; source transcripts and evidence-rich intermediate data are kept outside the public publication layer.
 
-> **Independent project:** This repository is not affiliated with or endorsed
-> by Bloomberg. Bloomberg Surveillance is used solely as a source program for
-> independent research. Public outputs contain paraphrased research synthesis;
-> source transcripts and evidence-rich intermediate data remain outside the
-> public publication layer.
-
----
+## Purpose
 
 This project is designed to reduce the time required to review long-form
 institutional market commentary while preserving the context needed for
