@@ -832,6 +832,21 @@ translated = translate(
     source_report
 )
 
+# Gemini may occasionally return valid JSON whose structure
+# differs from the source. Do not weaken the structural gate:
+# discard that candidate and perform one fresh translation
+# before running the full validation suite.
+if structure_signature(translated) != structure_signature(source_report):
+    print()
+    print(
+        "STRUCTURAL PARITY FAILED — "
+        "ATTEMPTING ONE FRESH TRANSLATION"
+    )
+
+    translated = translate(
+        source_report
+    )
+
 candidate_serialized = (
     json.dumps(
         translated,
