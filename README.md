@@ -21,6 +21,18 @@ The challenge is not simply collecting more information. It is determining:
 
 This project explores that problem by structuring individual market perspectives and their supporting evidence before synthesizing recurring themes, disagreements, and cross-asset implications into evidence-grounded daily research.
 
+## How Source Material Becomes Independent Research
+
+Bloomberg Surveillance is used as **source material**, not as a substitute for independent analysis. Views expressed by guests or market participants are not presented as the author's own market views.
+
+The research pipeline transforms source material through a structured process:
+
+**Source Material → Evidence Extraction → Research Analysis → Cross-Asset Interpretation → Independent Research Synthesis**
+
+Individual claims are first linked to their supporting evidence and source location. The system then compares perspectives across market participants to identify **recurring narratives, areas of disagreement, market-relevant themes, and potential cross-asset implications**.
+
+The resulting daily brief is therefore not intended to reproduce or simply summarize Bloomberg content. It is an **independent, source-grounded research synthesis** whose derived interpretations remain traceable to the underlying evidence.
+
 ## Why I Built This
 
 My background spans **Computer Science, technology support and Global Markets Operations at Bank of America, and corporate credit analysis at ICBC**.
