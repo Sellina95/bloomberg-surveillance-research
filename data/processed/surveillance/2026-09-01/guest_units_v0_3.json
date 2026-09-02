@@ -1,0 +1,245 @@
+{
+  "date": "2026-09-01",
+  "method": "chapter_attribution_v0_3",
+  "total_chapters": 13,
+  "guest_chapter_count": 12,
+  "chapters": [
+    {
+      "chapter": 1,
+      "title": "Global Bond Rout, $92 Oil and AI Rate Risk",
+      "start_seconds": 0,
+      "source": "serpapi",
+      "is_guest": false
+    },
+    {
+      "chapter": 2,
+      "title": "Earnings Make Rising Rates Tolerable for Stocks — Cameron Dawson, NewEdge Wealth",
+      "start_seconds": 239,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 3,
+      "title": "US Assumptions About the Iran War Have Proven Wrong — Lt. Gen. Karen Gibson (Ret.), Academy Securities",
+      "start_seconds": 1033,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 4,
+      "title": "Venezuela Oil Deal May Not Be Sustainable — Doug Rediker, International Capital Strategies",
+      "start_seconds": 1966,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 5,
+      "title": "‘This Is an Inflation First Fed Right Now’ — Krishna Guha, Evercore ISI",
+      "start_seconds": 2452,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 6,
+      "title": "Stocks Can Keep Grinding Higher Through Year-End — Jordan Jackson, JPMorgan Asset Management",
+      "start_seconds": 3160,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 7,
+      "title": "The Last Thing the Economy Needs Is More Stimulus — Henrietta Treyz, Veda Partners",
+      "start_seconds": 3996,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 8,
+      "title": "5% Is the ‘Magic Number’ for the 10-Year Yield — Krishna Memani, Lafayette College",
+      "start_seconds": 4719,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 9,
+      "title": "Nvidia Is Backstopping the AI Ecosystem — Sara Araghi, Franklin Templeton",
+      "start_seconds": 5350,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 10,
+      "title": "AI Trade Is Becoming More Rate Sensitive — Brent Schutte, Northwestern Mutual",
+      "start_seconds": 6052,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 11,
+      "title": "Apple's Next CEO Needs to Take Bigger Swings — Tom Forte, Maxim Group",
+      "start_seconds": 6887,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 12,
+      "title": "Fed's Hawkish Talk May Be More Rhetoric Than Action — Lindsey Piegza, Stifel",
+      "start_seconds": 7536,
+      "source": "serpapi",
+      "is_guest": true
+    },
+    {
+      "chapter": 13,
+      "title": "Small Caps Face an ‘Ominous’ Setup — Jonathan Krinsky, US Bancorp, BTIG",
+      "start_seconds": 8289,
+      "source": "serpapi",
+      "is_guest": true
+    }
+  ],
+  "guest_units": [
+    {
+      "unit_id": 1,
+      "chapter": 2,
+      "title": "Earnings Make Rising Rates Tolerable for Stocks — Cameron Dawson, NewEdge Wealth",
+      "guest": "Cameron Dawson, NewEdge Wealth",
+      "start_seconds": 239,
+      "end_seconds": 1033,
+      "duration_seconds": 794,
+      "segment_count": 224,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 2,
+      "chapter": 3,
+      "title": "US Assumptions About the Iran War Have Proven Wrong — Lt. Gen. Karen Gibson (Ret.), Academy Securities",
+      "guest": "Lt. Gen. Karen Gibson (Ret.), Academy Securities",
+      "start_seconds": 1033,
+      "end_seconds": 1966,
+      "duration_seconds": 933,
+      "segment_count": 260,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 3,
+      "chapter": 4,
+      "title": "Venezuela Oil Deal May Not Be Sustainable — Doug Rediker, International Capital Strategies",
+      "guest": "Doug Rediker, International Capital Strategies",
+      "start_seconds": 1966,
+      "end_seconds": 2452,
+      "duration_seconds": 486,
+      "segment_count": 117,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 4,
+      "chapter": 5,
+      "title": "‘This Is an Inflation First Fed Right Now’ — Krishna Guha, Evercore ISI",
+      "guest": "Krishna Guha, Evercore ISI",
+      "start_seconds": 2452,
+      "end_seconds": 3160,
+      "duration_seconds": 708,
+      "segment_count": 177,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 5,
+      "chapter": 6,
+      "title": "Stocks Can Keep Grinding Higher Through Year-End — Jordan Jackson, JPMorgan Asset Management",
+      "guest": "Jordan Jackson, JPMorgan Asset Management",
+      "start_seconds": 3160,
+      "end_seconds": 3996,
+      "duration_seconds": 836,
+      "segment_count": 223,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 6,
+      "chapter": 7,
+      "title": "The Last Thing the Economy Needs Is More Stimulus — Henrietta Treyz, Veda Partners",
+      "guest": "Henrietta Treyz, Veda Partners",
+      "start_seconds": 3996,
+      "end_seconds": 4719,
+      "duration_seconds": 723,
+      "segment_count": 201,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 7,
+      "chapter": 8,
+      "title": "5% Is the ‘Magic Number’ for the 10-Year Yield — Krishna Memani, Lafayette College",
+      "guest": "Krishna Memani, Lafayette College",
+      "start_seconds": 4719,
+      "end_seconds": 5350,
+      "duration_seconds": 631,
+      "segment_count": 166,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 8,
+      "chapter": 9,
+      "title": "Nvidia Is Backstopping the AI Ecosystem — Sara Araghi, Franklin Templeton",
+      "guest": "Sara Araghi, Franklin Templeton",
+      "start_seconds": 5350,
+      "end_seconds": 6052,
+      "duration_seconds": 702,
+      "segment_count": 180,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 9,
+      "chapter": 10,
+      "title": "AI Trade Is Becoming More Rate Sensitive — Brent Schutte, Northwestern Mutual",
+      "guest": "Brent Schutte, Northwestern Mutual",
+      "start_seconds": 6052,
+      "end_seconds": 6887,
+      "duration_seconds": 835,
+      "segment_count": 217,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 10,
+      "chapter": 11,
+      "title": "Apple's Next CEO Needs to Take Bigger Swings — Tom Forte, Maxim Group",
+      "guest": "Tom Forte, Maxim Group",
+      "start_seconds": 6887,
+      "end_seconds": 7536,
+      "duration_seconds": 649,
+      "segment_count": 167,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 11,
+      "chapter": 12,
+      "title": "Fed's Hawkish Talk May Be More Rhetoric Than Action — Lindsey Piegza, Stifel",
+      "guest": "Lindsey Piegza, Stifel",
+      "start_seconds": 7536,
+      "end_seconds": 8289,
+      "duration_seconds": 753,
+      "segment_count": 198,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    },
+    {
+      "unit_id": 12,
+      "chapter": 13,
+      "title": "Small Caps Face an ‘Ominous’ Setup — Jonathan Krinsky, US Bancorp, BTIG",
+      "guest": "Jonathan Krinsky, US Bancorp, BTIG",
+      "start_seconds": 8289,
+      "end_seconds": 8654.045,
+      "duration_seconds": 365.0450000000001,
+      "segment_count": 90,
+      "source_chapter": "serpapi",
+      "source_transcript": "supadata"
+    }
+  ]
+}
