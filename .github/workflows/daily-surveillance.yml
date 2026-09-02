@@ -97,7 +97,6 @@ jobs:
             -name 'daily_research_report_tv_v0_1.html' -o \
             -name 'daily_research_report_ko_v0_1.json' -o \
             -name 'daily_research_report_tv_ko_v0_1.html' -o \
-            -name 'guest_units_v0_3.json' -o \
             -name 'report_provenance_v0_1.json' -o \
             -name 'publication_status_v0_1.json' \
           \) -print0 | xargs -0 -r git add -f --

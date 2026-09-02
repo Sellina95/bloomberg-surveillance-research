@@ -16,6 +16,7 @@ SURVEILLANCE = ROOT / "data" / "processed" / "surveillance"
 
 PRIVATE_BASENAMES = {
     "guest_transcripts.json",
+    "guest_units_v0_3.json",
     "youtube_canonical_v0_2.json",
     "research_dataset_v0_1.json",
     "research_summaries_gemini_v0_2.json",

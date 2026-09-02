@@ -160,13 +160,44 @@ def extract_numeric_tokens(text):
         "tenth": "10",
     }
 
-    words = re.findall(
+    ordinal_words = {
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eighth",
+        "ninth",
+        "tenth",
+    }
+
+    word_matches = re.finditer(
         r"\b[A-Za-z]+\b",
         text.lower(),
     )
 
-    for word in words:
+    for match in word_matches:
+        word = match.group(0)
+
+        # Exclude lexical compounds such as "inflation-first".
+        # Genuine numeric expressions such as "first quarter"
+        # and "second-half" remain inside the numeric contract.
+        preceded_by_word_hyphen = (
+            match.start() >= 2
+            and text[match.start() - 1] == "-"
+            and text[match.start() - 2].isalpha()
+        )
+
+        if (
+            word in ordinal_words
+            and preceded_by_word_hyphen
+        ):
+            continue
+
         normalized = semantic_numbers.get(word)
+
         if normalized is not None:
             tokens.append(normalized)
 

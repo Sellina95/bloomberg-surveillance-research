@@ -9,3 +9,6 @@ data/processed/*
 
 # Private transcript reference artifacts
 data/reference/youtube/*_transcript.txt
+
+# Private guest/evidence mapping artifacts
+data/processed/surveillance/*/guest_units_v0_3.json
