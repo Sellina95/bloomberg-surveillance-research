@@ -6,10 +6,13 @@ An evidence-grounded market research system for transforming long-form instituti
 
 🌐 **[Project Portfolio / Start Here](https://petal-chair-9d2.notion.site/Independent-Market-Research-Pipeline-Automated-Evidence-Grounded-Institutional-Market-Research-Sy-3c60169c5b49800bab2cde19b7b74cbb)**  
 📺 **[Live Research Desk](https://sellina95.github.io/bloomberg-surveillance-research/)**
+📊 **[Global Capital Flow Monitor](https://sellina95.github.io/Global-Capital-Flow-Monitor/)**
 
 **Portfolio** explains the research problem and system design.  
 **Live Research Desk** shows the resulting daily market research.  
 This repository contains the methodology, validation framework, and reproducibility evidence behind the system.
+**Global Capital Flow Monitor** is a separate cross-asset decision system translating macro, liquidity, credit, positioning, and market-risk signals into systematic risk-budget and portfolio-allocation decisions.  
+This repository contains the methodology, validation framework, and reproducibility evidence behind the research pipeline.
 
 ## The Research Problem
 
