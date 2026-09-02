@@ -638,6 +638,15 @@ STRICT RULES:
 16. Do NOT introduce transcript text or evidence
     that is not already present.
 17. Translate only human-readable presentation prose.
+18. Preserve grammatical force and modality exactly.
+    NEVER convert descriptive or analytical prose into
+    an instruction, recommendation, request, or command.
+    In particular, research_takeaways and daily_action
+    must remain non-prescriptive unless the corresponding
+    English source value is explicitly prescriptive.
+    Do NOT introduce Korean directive expressions such as
+    하십시오, 하세요, 권고합니다, 추천합니다, or
+    선호하십시오 when they do not exist in the source meaning.
 
 FINANCIAL TERMINOLOGY:
 
