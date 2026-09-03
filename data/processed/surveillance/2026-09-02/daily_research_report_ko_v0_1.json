@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-02",
+  "schema_version": "daily_research_report_ko_v0_1",
+  "language": "ko",
+  "source_report": "data/processed/surveillance/2026-09-02/daily_research_report_v0_1.json",
+  "source_report_sha256": "c56c16bd8de3f09b7476d6ff6de063351fed4f0cb3c57a74d3408fd61d40e51d",
+  "translation_model": "gemini-3.5-flash-lite",
+  "translation_policy": {
+    "research_regeneration": false,
+    "provenance_mutation": false,
+    "structure_preserved": true,
+    "guest_attribution_preserved": true,
+    "numeric_values_preserved": true
+  },
+  "report": {
+    "date": "2026-09-02",
+    "executive_summary": [
+      "심각하게 고갈된 전략비축유(SPR) 수입 커버리지와 역사적 최저 수준의 상업용 증류유 재고로 인해 에너지 안보 취약성이 고조되고 있다.",
+      "베네수엘라산 중질유를 이용해 전략비축유를 보충하려는 제안은 필수 고도화 설비와 수소처리기(hydro-treater)의 부재로 인해 기술적 및 실무적으로 실현 불가능하다.",
+      "현재의 낮은 상업용 연료 재고는 계절적 비수기와 맞물려 있으며, 복합 운송, 농업, 난방 수요 시기가 다가옴에 따라 가격 충격에 대한 노출도가 높아지고 있다."
+    ],
+    "macro_themes": [
+      {
+        "theme": "에너지 인프라 및 전략비축유",
+        "summary": "글로벌 에너지 시장은 완충 비축량 감소와 극도로 낮은 국내 연료 공급으로 두드러지는 구조적 공급 및 재고 제약에 직면해 있다.",
+        "supporting_guests": []
+      }
+    ],
+    "rates_bonds": {
+      "summary": "금리 또는 국채와 관련된 구체적인 시각은 본 리서치 유닛에서 다루어지지 않았다.",
+      "key_views": [],
+      "risks": []
+    },
+    "usd_fx": {
+      "summary": "외환과 관련된 구체적인 시각은 본 리서치 유닛에서 다루어지지 않았다.",
+      "key_views": [],
+      "risks": []
+    },
+    "equities": {
+      "summary": "주식시장과 관련된 구체적인 시각은 본 리서치 유닛에서 다루어지지 않았다.",
+      "key_views": [],
+      "risks": []
+    },
+    "credit": {
+      "summary": "크레딧 시장과 관련된 구체적인 시각은 본 리서치 유닛에서 다루어지지 않았다.",
+      "key_views": [],
+      "risks": []
+    },
+    "ai_technology": {
+      "summary": "기술 또는 인공지능(AI)과 관련된 구체적인 시각은 본 리서치 유닛에서 다루어지지 않았다.",
+      "key_views": [],
+      "risks": []
+    },
+    "commodities": {
+      "summary": "글로벌 원자재 논의는 대폭 소진된 전략비축유와 여러 시즌 중 최저 수준인 증류유 재고에 기인한 석유 시장의 심각한 취약점에 집중되어 있다.",
+      "key_views": [
+        "극도 원유 밀도, 높은 점성, 그리고 국내 고도화 및 수소처리 설비의 전면적 부재로 인해 베네수엘라산 원유를 이용한 전략비축유 리필은 비현실적이다.",
+        "전략비축유 수입 커버리지는 위기 이전 수준의 절반으로 감소했다.",
+        "상업용 증류유 재고는 계절적 수요 주기 상 이 시점 기준으로 역사적 최저 수준에 머물러 있다."
+      ],
+      "risks": [
+        "비상 비축유를 쉽게 보충할 수 없는 무능력은 경제를 공급 충격에 노출시킨다.",
+        "계절적 수요가 약세 기간에서 농업, 복합 운송, 난방의 대규모 요구로 전환됨에 따라 급격한 가격 급등에 취약하다."
+      ]
+    },
+    "cross_guest_consensus": [],
+    "cross_guest_conflicts": [],
+    "key_risks": [
+      {
+        "risk": "고수요 시즌 진입 시 심각한 연료 재고 부족",
+        "trigger": "예상치 못한 공급 차질 또는 계절적 운송 및 난방 수요의 급격한 가속화",
+        "market_impact": "원유 및 증류유 선물 가격의 상방 압력으로 작용하며, 이는 에너지 의존 부문 전반의 투입 비용 상승으로 이어진다."
+      },
+      {
+        "risk": "부적절한 비상 비축유 완충력",
+        "trigger": "지정학적 충격 또는 주요 국내 정유 설비 가동 중단",
+        "market_impact": "전략비축유 커버리지 감소로 인한 물리적 시장 타이트닝 심화 및 가격 변동성 확대."
+      }
+    ],
+    "research_takeaways": [
+      "기술 및 정유 제약으로 인해 전략비축유 보충은 베네수엘라산 원유 수입에 의존할 수 없다.",
+      "상업용 증류유 재고는 현재 기록상 최저 계절적 수준에 있어 다가오는 수요 주기에 취약한 기반을 제공한다."
+    ],
+    "daily_action": [
+      {
+        "action": "상업용 증류유 재고 보고서 및 지역 정유 가동률 데이터 모니터링.",
+        "why": "증류유 재고가 전례 없는 계절적 최저 수준에 있어 계절적 수요 전환 시 오차 범위를 거의 남기지 않는다.",
+        "what_to_monitor": "주간 EIA 재고 데이터, 정유 가동률, 그리고 근월물 증류유 크랙 스프레드."
+      },
+      {
+        "action": "전략비축유 재고 수준 및 리필 메커니즘과 관련된 공식 업데이트 추적.",
+        "why": "기존 수입 커버리지가 대폭 축소되어 있어 공급 안보 평가에서 전략비축유 정책이 핵심 변수가 된다.",
+        "what_to_monitor": "미국 에너지부(DOE) 보충 발표, 수입 통계, 그리고 중질유 가격 차이(differential)."
+      }
+    ],
+    "source_mode": "program_level_unattributed"
+  }
+}
