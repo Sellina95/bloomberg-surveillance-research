@@ -129,6 +129,40 @@ def main() -> None:
     print("TITLE:", selected["title"])
     print("=" * 100)
 
+    publication_dir = (
+        ROOT
+        / "data/processed/surveillance"
+        / run_date
+    )
+
+    required_public_outputs = (
+        publication_dir
+        / "daily_research_report_v0_1.json",
+        publication_dir
+        / "daily_research_report_v0_1.md",
+        publication_dir
+        / "daily_research_report_ko_v0_1.json",
+        publication_dir
+        / "daily_research_report_tv_v0_1.html",
+        publication_dir
+        / "daily_research_report_tv_ko_v0_1.html",
+    )
+
+    if all(
+        output.exists()
+        for output in required_public_outputs
+    ):
+        print()
+        print("=" * 100)
+        print(
+            "PUBLICATION ALREADY COMPLETE — "
+            "SKIP REGENERATION"
+        )
+        print("DATE:", run_date)
+        print("VIDEO_ID:", video_id)
+        print("=" * 100)
+        return
+
     env = os.environ.copy()
 
     env["SURVEILLANCE_DATE"] = run_date
