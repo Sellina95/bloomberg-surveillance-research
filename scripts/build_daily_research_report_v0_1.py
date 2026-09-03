@@ -87,6 +87,10 @@ IMPORTANT RULES:
    increase, overweight, underweight, enter, exit, go long, go short,
    or otherwise change a portfolio position.
 9. Keep the report concise but institutionally useful.
+10. If any research unit has attribution_status="unavailable",
+    treat it as program-level synthesis: keep supporting_guests,
+    cross_guest_consensus, and cross_guest_conflicts empty, and
+    do not name or infer speakers.
 
 OUTPUT JSON ONLY.
 
@@ -371,6 +375,20 @@ def main():
     for theme in report.get("macro_themes", []):
         if isinstance(theme, dict):
             theme.pop("evidence", None)
+
+    unattributed_mode = any(
+        unit.get("attribution_status") == "unavailable"
+        for unit in units
+    )
+
+    if unattributed_mode:
+        for theme in report.get("macro_themes", []):
+            if isinstance(theme, dict):
+                theme["supporting_guests"] = []
+
+        report["cross_guest_consensus"] = []
+        report["cross_guest_conflicts"] = []
+        report["source_mode"] = "program_level_unattributed"
 
     OUTPUT.write_text(
         json.dumps(

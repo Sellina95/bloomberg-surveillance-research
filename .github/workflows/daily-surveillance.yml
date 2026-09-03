@@ -44,6 +44,10 @@ jobs:
           echo "GEMINI_API_KEY=SET"
           echo "SERPAPI_API_KEY=SET"
 
+      - name: Validate chapterless program fallback
+        run: |
+          python tests/test_chapterless_program_fallback_v0_1.py
+
       - name: Discover Bloomberg Surveillance videos
         env:
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}

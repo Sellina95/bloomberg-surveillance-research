@@ -98,6 +98,15 @@ for item in data["summaries"]:
             "guest":
                 item.get("guest"),
 
+            "unit_type":
+                item.get("unit_type", "guest"),
+
+            "attribution_status":
+                item.get(
+                    "attribution_status",
+                    "source_chapter",
+                ),
+
             "organization":
                 item.get("title"),
 
@@ -138,7 +147,16 @@ for item in data["summaries"]:
                         "supadata",
 
                     "chapter_source":
-                        "serpapi",
+                        item.get(
+                            "source_chapter",
+                            "serpapi",
+                        ),
+
+                    "attribution_status":
+                        item.get(
+                            "attribution_status",
+                            "source_chapter",
+                        ),
 
                     "llm_model":
                         data["model"],

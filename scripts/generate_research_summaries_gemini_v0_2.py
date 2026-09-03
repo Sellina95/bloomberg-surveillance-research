@@ -27,7 +27,7 @@ client = genai.Client(api_key=API_KEY)
 PROMPT = """
 You are a financial research editor.
 
-Summarize ONE Bloomberg Surveillance guest interview.
+Summarize ONE Bloomberg Surveillance research unit.
 
 CRITICAL EVIDENCE RULE:
 
@@ -74,6 +74,13 @@ Schema:
 Maximum 3 key views.
 
 Evidence segment IDs must come directly from the transcript.
+
+ATTRIBUTION SAFETY:
+
+If ATTRIBUTION_STATUS is "unavailable", the unit covers the
+whole program because source chapters were unavailable. Do not
+identify, infer, or attribute any claim to a named speaker. Write
+only program-level paraphrases grounded in supplied segments.
 """
 
 
@@ -108,6 +115,12 @@ GUEST:
 
 CHAPTER:
 {unit.get("title", "")}
+
+UNIT_TYPE:
+{unit.get("unit_type", "guest")}
+
+ATTRIBUTION_STATUS:
+{unit.get("attribution_status", "source_chapter")}
 
 TRANSCRIPT:
 
@@ -311,6 +324,15 @@ def main():
                         unit["chapter"],
                     "guest":
                         unit.get("guest"),
+                    "unit_type":
+                        unit.get("unit_type", "guest"),
+                    "attribution_status":
+                        unit.get(
+                            "attribution_status",
+                            "source_chapter",
+                        ),
+                    "source_chapter":
+                        unit.get("source_chapter", "serpapi"),
                     "title":
                         unit.get("title"),
                     "timestamp":
@@ -343,6 +365,13 @@ def main():
                         unit["unit_id"],
                     "guest":
                         unit.get("guest"),
+                    "unit_type":
+                        unit.get("unit_type", "guest"),
+                    "attribution_status":
+                        unit.get(
+                            "attribution_status",
+                            "source_chapter",
+                        ),
                     "status":
                         "FAILED",
                     "error":

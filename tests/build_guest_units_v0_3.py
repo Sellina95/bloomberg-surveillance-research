@@ -96,6 +96,10 @@ data = json.loads(
 
 chapters = data["chapters"]
 segments = data["segments"]
+chapter_mode = data.get(
+    "chapter_mode",
+    "source_chapters",
+)
 
 
 # ------------------------------------------------------------
@@ -131,57 +135,91 @@ guest_chapters = [
 
 units = []
 
-for unit_id, chapter in enumerate(
-    guest_chapters,
-    start=1,
-):
+if chapter_mode == "full_program_fallback":
 
-    chapter_index = classified.index(
-        chapter
-    )
-
-    start = chapter["start_seconds"]
-
-    # End at the next actual YouTube Chapter,
-    # regardless of whether that chapter is a guest.
-    if chapter_index + 1 < len(classified):
-
-        end = classified[
-            chapter_index + 1
-        ]["start_seconds"]
-
-    else:
-
-        end = max(
-            s["end_seconds"]
-            for s in segments
-        )
-
-    rows = [
-        s
+    start = min(
+        s["start_seconds"]
         for s in segments
-        if (
-            s["start_seconds"] >= start
-            and s["start_seconds"] < end
-        )
-    ]
+    )
+    end = max(
+        s["end_seconds"]
+        for s in segments
+    )
 
     units.append(
         {
-            "unit_id": unit_id,
-            "chapter": chapter["chapter"],
-            "title": chapter["title"],
-            "guest": chapter["title"]
-                .split(" — ", 1)[-1]
-                .strip(),
+            "unit_id": 1,
+            "chapter": 1,
+            "title": (
+                "Full program (speaker attribution unavailable)"
+            ),
+            "guest": None,
+            "unit_type": "program",
+            "attribution_status": "unavailable",
             "start_seconds": start,
             "end_seconds": end,
             "duration_seconds": end - start,
-            "segment_count": len(rows),
-            "source_chapter": "serpapi",
+            "segment_count": len(segments),
+            "source_chapter": "full_program_fallback",
             "source_transcript": "supadata",
         }
     )
+
+else:
+
+    for unit_id, chapter in enumerate(
+        guest_chapters,
+        start=1,
+    ):
+
+        chapter_index = classified.index(
+            chapter
+        )
+
+        start = chapter["start_seconds"]
+
+        # End at the next actual YouTube Chapter,
+        # regardless of whether that chapter is a guest.
+        if chapter_index + 1 < len(classified):
+
+            end = classified[
+                chapter_index + 1
+            ]["start_seconds"]
+
+        else:
+
+            end = max(
+                s["end_seconds"]
+                for s in segments
+            )
+
+        rows = [
+            s
+            for s in segments
+            if (
+                s["start_seconds"] >= start
+                and s["start_seconds"] < end
+            )
+        ]
+
+        units.append(
+            {
+                "unit_id": unit_id,
+                "chapter": chapter["chapter"],
+                "title": chapter["title"],
+                "guest": chapter["title"]
+                    .split(" — ", 1)[-1]
+                    .strip(),
+                "unit_type": "guest",
+                "attribution_status": "source_chapter",
+                "start_seconds": start,
+                "end_seconds": end,
+                "duration_seconds": end - start,
+                "segment_count": len(rows),
+                "source_chapter": "serpapi",
+                "source_transcript": "supadata",
+            }
+        )
 
 
 # ------------------------------------------------------------
@@ -190,7 +228,11 @@ for unit_id, chapter in enumerate(
 
 artifact = {
     "date": DATE,
-    "method": "chapter_attribution_v0_3",
+    "method": (
+        "full_program_unattributed_v0_1"
+        if chapter_mode == "full_program_fallback"
+        else "chapter_attribution_v0_3"
+    ),
     "total_chapters": len(classified),
     "guest_chapter_count": len(guest_chapters),
     "chapters": classified,
@@ -241,7 +283,7 @@ for unit in units:
 print()
 print("=" * 100)
 
-if guest_chapters:
+if units:
     print("GUEST UNIT BUILD: PASS")
 else:
     print("GUEST UNIT BUILD: FAIL")
