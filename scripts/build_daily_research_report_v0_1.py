@@ -8,6 +8,8 @@ from pathlib import Path
 from google import genai
 from google.genai import errors as genai_errors
 
+from public_language_policy_v0_1 import neutralize_report
+
 
 DATE = os.environ.get(
     "SURVEILLANCE_DATE",
@@ -389,6 +391,16 @@ def main():
         report["cross_guest_consensus"] = []
         report["cross_guest_conflicts"] = []
         report["source_mode"] = "program_level_unattributed"
+
+    directive_normalizations = neutralize_report(
+        report,
+        "en",
+    )
+
+    print(
+        "EN DIRECTIVE NORMALIZATIONS:",
+        directive_normalizations,
+    )
 
     OUTPUT.write_text(
         json.dumps(

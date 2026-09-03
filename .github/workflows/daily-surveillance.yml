@@ -47,6 +47,7 @@ jobs:
       - name: Validate chapterless program fallback
         run: |
           python tests/test_chapterless_program_fallback_v0_1.py
+          python tests/test_public_language_policy_v0_1.py
 
       - name: Discover Bloomberg Surveillance videos
         env:

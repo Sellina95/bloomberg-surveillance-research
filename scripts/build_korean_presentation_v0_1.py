@@ -9,6 +9,8 @@ from pathlib import Path
 
 from google import genai
 
+from public_language_policy_v0_1 import neutralize_report
+
 
 DATE = os.environ.get(
     "SURVEILLANCE_DATE",
@@ -1087,6 +1089,38 @@ if not numeric_result["pass"]:
             source_report,
             translated,
         )
+
+directive_normalizations = neutralize_report(
+    translated,
+    "ko",
+)
+
+# Directive normalization is lexical only and must preserve
+# every numeric token. Re-run the path-aware numeric gate on
+# the exact candidate that may be published.
+numeric_result = compare_numeric_inventory(
+    source_report,
+    translated,
+)
+
+candidate_serialized = (
+    json.dumps(
+        translated,
+        ensure_ascii=False,
+        indent=2,
+    )
+    + "\n"
+)
+
+CANDIDATE.write_text(
+    candidate_serialized,
+    encoding="utf-8",
+)
+
+print(
+    "KO DIRECTIVE NORMALIZATIONS:",
+    directive_normalizations,
+)
 
 numbers_pass = numeric_result[
     "pass"

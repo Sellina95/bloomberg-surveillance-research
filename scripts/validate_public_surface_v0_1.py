@@ -7,6 +7,11 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from public_language_policy_v0_1 import (
+    EN_DIRECTIVE,
+    KO_DIRECTIVE,
+)
+
 ROOT = Path(__file__).resolve().parents[1]
 SURVEILLANCE = ROOT / "data" / "processed" / "surveillance"
 
@@ -29,20 +34,6 @@ PRIVATE_NAME_PATTERNS = (
 OLD_PUBLIC_BRANDING = (
     "BLOOMBERG SURVEILLANCE · RESEARCH DESK",
     "Bloomberg Surveillance Research Engine",
-)
-
-EN_DIRECTIVE = re.compile(
-    r"\b("
-    r"buy|sell|accumulate|reduce|overweight|underweight|"
-    r"enter|exit|go long|go short|scale into"
-    r")\b",
-    re.I,
-)
-
-KO_DIRECTIVE = re.compile(
-    r"매수|매도|분할\s*매수|비중\s*확대|비중\s*축소|"
-    r"오버웨이트|언더웨이트|축적하|진입하|"
-    r"롱\s*포지션을\s*유지|선호하십시오"
 )
 
 failures: list[str] = []
