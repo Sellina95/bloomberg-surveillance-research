@@ -199,14 +199,35 @@ def main() -> None:
         # Bloomberg Surveillance titles contain
         # the actual broadcast date:
         # "Bloomberg Surveillance 8/20/2026"
-        match = re.search(
-            r"Bloomberg Surveillance\s+"
+        numeric_match = re.search(
+            r"Bloomberg Surveillance(?: TV:)?\s+"
             r"(\d{1,2})/(\d{1,2})/(\d{4})",
             title,
             flags=re.IGNORECASE,
         )
 
-        if not match:
+        named_match = re.search(
+            r"Bloomberg Surveillance(?: TV:)?\s+"
+            r"([A-Za-z]+)\s+"
+            r"(\d{1,2})(?:st|nd|rd|th)?,\s+"
+            r"(\d{4})",
+            title,
+            flags=re.IGNORECASE,
+        )
+
+        if numeric_match:
+            month, day, year = numeric_match.groups()
+            parsed_date = datetime.strptime(
+                f"{year}-{month}-{day}",
+                "%Y-%m-%d",
+            )
+        elif named_match:
+            month_name, day, year = named_match.groups()
+            parsed_date = datetime.strptime(
+                f"{month_name} {day} {year}",
+                "%B %d %Y",
+            )
+        else:
             print(
                 "SKIP — unable to parse video date:",
                 video_id,
@@ -215,12 +236,7 @@ def main() -> None:
             )
             continue
 
-        month, day, year = match.groups()
-
-        video_date = datetime.strptime(
-            f"{year}-{month}-{day}",
-            "%Y-%m-%d",
-        ).date().isoformat()
+        video_date = parsed_date.date().isoformat()
 
         normalized = {
             "video_id": video_id,
