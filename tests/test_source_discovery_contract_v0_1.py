@@ -95,6 +95,8 @@ assert '"engine": "youtube"' in discovery_script
 assert '"search_query": query' in discovery_script
 assert '"engine": "youtube_video"' in discovery_script
 assert '"v": video_id' in discovery_script
+assert "SOURCE CANDIDATE DIAGNOSTICS" in discovery_script
+assert '"description": description' not in discovery_script
 print("SERPAPI OFFICIAL PARAMETER CONTRACT: PASS")
 
 title_form = item(

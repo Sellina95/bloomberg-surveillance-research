@@ -16,7 +16,10 @@ from src.acquisition.source_discovery import (
     EXCLUDED_MARKERS,
     OFFICIAL_CHANNEL,
     OFFICIAL_CHANNEL_ID,
+    HOST_MARKERS,
+    PROGRAM_MARKER,
     hydrate_search_result,
+    parse_explicit_date,
     parse_duration,
     select_candidates,
 )
@@ -94,6 +97,32 @@ def main() -> None:
                 "title": item.get("title", ""),
                 "reason": f"metadata hydration failed: {type(exc).__name__}",
             })
+
+    # Non-sensitive diagnostics are printed only to establish the live
+    # provider contract. Never print descriptions or transcript text.
+    print("SOURCE CANDIDATE DIAGNOSTICS")
+    for item in hydrated:
+        channel = item.get("channel") or {}
+        description = str(item.get("description") or "")
+        print(json.dumps({
+            "video_id": item.get("video_id"),
+            "title": item.get("title", ""),
+            "channel_name": channel.get("name"),
+            "channel_id": channel.get("id") or channel.get("channel_id"),
+            "channel_verified": channel.get("verified"),
+            "duration_seconds": parse_duration(
+                item.get("length") or item.get("duration")
+            ),
+            "broadcast_date_detected": parse_explicit_date(
+                f"{item.get('title', '')}\n{description}"
+            ),
+            "upload_date_raw": item.get("published_date") or item.get("upload_date"),
+            "description_program_marker": bool(PROGRAM_MARKER.search(description)),
+            "description_host_markers": [
+                marker for marker in HOST_MARKERS if marker in description.lower()
+            ],
+            "chapters_available": bool(item.get("chapters")),
+        }, ensure_ascii=False, sort_keys=True))
 
     try:
         selected, rejected = select_candidates(hydrated)
