@@ -17,6 +17,7 @@ from src.acquisition.source_discovery import (
     OFFICIAL_CHANNEL,
     OFFICIAL_CHANNEL_ID,
     hydrate_search_result,
+    parse_duration,
     select_candidates,
 )
 
@@ -27,8 +28,7 @@ QUERIES = (
     "site:youtube.com Bloomberg Television Surveillance full broadcast",
     "site:youtube.com Bloomberg Television Jonathan Ferro Annmarie Hordern full show",
 )
-CHANNEL_HANDLE = "@markets"
-MAX_DETAIL_CANDIDATES = 12
+MAX_DETAIL_CANDIDATES = 5
 OUTPUT = ROOT / "data/processed/surveillance/surveillance_video_inventory_v0_3.json"
 
 
@@ -36,18 +36,6 @@ def search_youtube(query: str) -> list[dict]:
     url = ENDPOINT + "?" + urlencode({
         "engine": "youtube",
         "search_query": query,
-        "api_key": API_KEY,
-    })
-    with urlopen(
-        Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=60
-    ) as response:
-        return json.loads(response.read().decode("utf-8")).get("video_results", [])
-
-
-def fetch_channel_uploads() -> list[dict]:
-    url = ENDPOINT + "?" + urlencode({
-        "engine": "youtube",
-        "channel": CHANNEL_HANDLE,
         "api_key": API_KEY,
     })
     with urlopen(
@@ -80,27 +68,23 @@ def official_search_candidate(item: dict) -> bool:
 
 def main() -> None:
     discovered: dict[str, dict] = {}
-    for item in fetch_channel_uploads():
-        video_id = item.get("video_id")
-        if not video_id:
-            continue
-        channel_item = dict(item)
-        channel_item.setdefault("channel", {
-            "name": OFFICIAL_CHANNEL,
-            "id": OFFICIAL_CHANNEL_ID,
-            "verified": True,
-        })
-        if official_search_candidate(channel_item):
-            discovered[video_id] = channel_item
     for query in QUERIES:
         for item in search_youtube(query):
             video_id = item.get("video_id")
             if video_id and official_search_candidate(item):
                 discovered[video_id] = item
 
+    # The official search response already supplies channel and length.
+    # Hydrate only full-program candidates to cap SerpApi calls and obtain
+    # the complete description needed by the strict identity contract.
+    shortlist = [
+        item for item in discovered.values()
+        if parse_duration(item.get("length") or item.get("duration")) >= 110 * 60
+    ][:MAX_DETAIL_CANDIDATES]
+
     hydrated = []
     hydration_failures = []
-    for item in list(discovered.values())[:MAX_DETAIL_CANDIDATES]:
+    for item in shortlist:
         video_id = item["video_id"]
         try:
             hydrated.append(hydrate_search_result(item, fetch_video_detail(video_id)))
@@ -128,6 +112,7 @@ def main() -> None:
         "discovered_at": datetime.now(timezone.utc).isoformat(),
         "query_count": len(QUERIES),
         "candidate_count": len(discovered),
+        "shortlist_count": len(shortlist),
         "hydrated_count": len(hydrated),
         "selected_count": len(selected),
         "videos": [candidate.as_dict() for candidate in selected],

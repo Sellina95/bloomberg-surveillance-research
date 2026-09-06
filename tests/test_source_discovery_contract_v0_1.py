@@ -86,6 +86,17 @@ assert selected[0].url.endswith("headline-full")
 print("SOURCE DISCOVERY CONTRACT: PASS")
 print("HEADLINE-TITLE DISCOVERY: PASS")
 
+discovery_script = (
+    Path(__file__).resolve().parents[1]
+    / "scripts/discover_surveillance_videos_v0_3.py"
+).read_text(encoding="utf-8")
+assert '"channel": CHANNEL_HANDLE' not in discovery_script
+assert '"engine": "youtube"' in discovery_script
+assert '"search_query": query' in discovery_script
+assert '"engine": "youtube_video"' in discovery_script
+assert '"v": video_id' in discovery_script
+print("SERPAPI OFFICIAL PARAMETER CONTRACT: PASS")
+
 title_form = item(
     "title-form",
     "Bloomberg Surveillance 9/3/2026",
