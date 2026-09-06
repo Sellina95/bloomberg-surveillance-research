@@ -275,6 +275,7 @@ def main() -> None:
             "video_date": video_date,
             "duration_seconds": video.get("duration_seconds", 0),
             "source_mode": video.get("source_mode", "chapter_unknown"),
+            "identity_mode": video.get("identity_mode", ""),
         }
 
         existing_videos.append(

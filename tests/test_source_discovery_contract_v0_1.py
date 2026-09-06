@@ -102,11 +102,22 @@ print("SERPAPI OFFICIAL PARAMETER CONTRACT: PASS")
 title_form = item(
     "title-form",
     "Bloomberg Surveillance 9/3/2026",
-    "Bloomberg Surveillance full broadcast with Tom Keene and Lisa Abramowicz.",
+    "Markets coverage with Tom Keene and Lisa Abramowicz.",
     "1:58:00",
 )
 selected, _ = select_candidates([title_form], today=TODAY)
 assert selected[0].broadcast_date == "2026-09-03"
+assert selected[0].identity_mode == "title_program_description_hosts"
+
+missing_program = item(
+    "missing-program",
+    "Jobs Shock Reshapes the Rate Path 9/3/2026",
+    "Markets coverage with Tom Keene and Lisa Abramowicz.",
+    "1:58:00",
+)
+selected, rejected = select_candidates([missing_program], today=TODAY)
+assert selected == []
+assert rejected[0]["reason"] == "metadata does not identify Bloomberg Surveillance"
 
 selected, rejected = select_candidates([short], today=TODAY)
 assert selected == []

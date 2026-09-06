@@ -43,6 +43,7 @@ class Candidate:
     upload_date: str
     upload_date_raw: str
     source_mode: str
+    identity_mode: str
     host_markers: tuple[str, ...]
 
     def as_dict(self) -> dict:
@@ -174,12 +175,23 @@ def normalize_candidate(item: dict, *, today: date | None = None) -> Candidate:
         raise DiscoveryError("official channel identity is not verified")
     if any(marker in combined for marker in EXCLUDED_MARKERS):
         raise DiscoveryError("excluded Bloomberg program or summary")
-    if not PROGRAM_MARKER.search(description):
-        raise DiscoveryError("description does not identify Bloomberg Surveillance")
-
     hosts = tuple(marker for marker in HOST_MARKERS if marker in description.lower())
     if not hosts:
         raise DiscoveryError("description does not identify a Surveillance host")
+
+    # SerpApi's current youtube_video response can expose the programme name in
+    # the title while its full description names the presenters but omits the
+    # words "Bloomberg Surveillance". Treat those two metadata fields as one
+    # identity record; never infer identity from a headline title alone.
+    program_in_description = bool(PROGRAM_MARKER.search(description))
+    program_in_title = bool(PROGRAM_MARKER.search(title))
+    if not program_in_description and not program_in_title:
+        raise DiscoveryError("metadata does not identify Bloomberg Surveillance")
+    identity_mode = (
+        "description_program_and_hosts"
+        if program_in_description
+        else "title_program_description_hosts"
+    )
 
     video_id = str(item.get("video_id") or item.get("id") or "").strip()
     if not video_id:
@@ -213,6 +225,7 @@ def normalize_candidate(item: dict, *, today: date | None = None) -> Candidate:
         upload_date=upload_date,
         upload_date_raw=upload_raw,
         source_mode=("chaptered" if item.get("chapters") else "chapter_unknown"),
+        identity_mode=identity_mode,
         host_markers=hosts,
     )
 
