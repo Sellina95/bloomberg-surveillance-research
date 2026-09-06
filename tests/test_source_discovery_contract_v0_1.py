@@ -6,10 +6,46 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.acquisition.source_discovery import DiscoveryError, select_candidates
+from src.acquisition.source_discovery import (
+    DiscoveryError,
+    hydrate_search_result,
+    select_candidates,
+)
 
 
 TODAY = date(2026, 9, 6)
+
+snippet = {
+    "video_id": "hydration-test",
+    "title": "Jobs Shock Reshapes the Rate Path",
+    "channel": {"name": "Bloomberg Television", "verified": True},
+}
+detail = {
+    "video_results": {
+        "video_id": "hydration-test",
+        "description": "Bloomberg Surveillance full broadcast for Sep 4, 2026, "
+        "with Tom Keene and Lisa Abramowicz.",
+        "published_date": "Sep 5, 2026",
+        "length": "2:03:00",
+        "channel": {
+            "name": "Bloomberg Television",
+            "id": "UCIALMKvObZNtJ6AmdCLP7Lg",
+            "verified": True,
+        },
+    },
+    "chapters": [{"title": "Opening", "time_start": 0}],
+}
+hydrated = hydrate_search_result(snippet, detail)
+selected, _ = select_candidates([hydrated], today=TODAY)
+assert selected[0].video_id == "hydration-test"
+assert selected[0].source_mode == "chaptered"
+print("SOURCE METADATA HYDRATION: PASS")
+
+top_level = dict(detail["video_results"])
+top_level["chapters"] = detail["chapters"]
+hydrated_top_level = hydrate_search_result(snippet, top_level)
+selected, _ = select_candidates([hydrated_top_level], today=TODAY)
+assert selected[0].video_id == "hydration-test"
 
 
 def item(video_id: str, title: str, description: str, length: str, **extra):

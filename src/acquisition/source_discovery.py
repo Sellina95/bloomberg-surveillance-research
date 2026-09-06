@@ -82,20 +82,59 @@ def parse_explicit_date(text: str) -> str:
             pass
 
     named = re.search(
-        r"\b(January|February|March|April|May|June|July|August|"
-        r"September|October|November|December)\s+(\d{1,2})"
+        r"\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|"
+        r"Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|"
+        r"Nov(?:ember)?|Dec(?:ember)?)\s+(\d{1,2})"
         r"(?:st|nd|rd|th)?,?\s+(20\d{2})\b",
         text,
         re.I,
     )
     if named:
         try:
-            return datetime.strptime(
-                " ".join(named.groups()), "%B %d %Y"
-            ).date().isoformat()
+            raw = " ".join(named.groups())
+            for format_string in ("%B %d %Y", "%b %d %Y"):
+                try:
+                    return datetime.strptime(raw, format_string).date().isoformat()
+                except ValueError:
+                    pass
         except ValueError:
             pass
     return ""
+
+
+def hydrate_search_result(search_item: dict, detail_payload: dict) -> dict:
+    """Merge exact youtube_video metadata over an incomplete search snippet."""
+    detail = (
+        detail_payload.get("video_results")
+        or detail_payload.get("video")
+        or detail_payload
+    )
+    if isinstance(detail, list):
+        wanted = search_item.get("video_id")
+        detail = next(
+            (row for row in detail if isinstance(row, dict) and row.get("video_id") == wanted),
+            detail[0] if detail and isinstance(detail[0], dict) else {},
+        )
+    if not isinstance(detail, dict):
+        detail = {}
+
+    merged = dict(search_item)
+    for field in (
+        "video_id", "title", "link", "description", "published_date",
+        "upload_date", "length", "duration",
+    ):
+        value = detail.get(field)
+        if value not in (None, "", [], {}):
+            merged[field] = value
+
+    search_channel = search_item.get("channel") or {}
+    detail_channel = detail.get("channel") or detail_payload.get("channel") or {}
+    if isinstance(search_channel, dict) and isinstance(detail_channel, dict):
+        merged["channel"] = {**search_channel, **detail_channel}
+    if detail_payload.get("chapters"):
+        merged["chapters"] = detail_payload["chapters"]
+    merged["metadata_hydrated"] = True
+    return merged
 
 
 def normalize_upload_date(value: object, *, today: date | None = None) -> str:
