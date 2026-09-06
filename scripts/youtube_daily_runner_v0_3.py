@@ -88,8 +88,12 @@ run(
     "scripts/build_daily_research_report_v0_1.py"
 )
 
+# 8. Public, text-free source/claim provenance
+run(
+    "scripts/build_report_provenance_v0_1.py"
+)
 
-# 8. Human-readable Markdown report
+# 9. Human-readable Markdown report
 run(
     "scripts/render_daily_research_report_v0_1.py"
 )
@@ -103,6 +107,7 @@ expected = [
     BASE / "research_dataset_v0_1.json",
     BASE / "daily_research_report_v0_1.json",
     BASE / "daily_research_report_v0_1.md",
+    BASE / "report_provenance_v0_1.json",
 ]
 
 

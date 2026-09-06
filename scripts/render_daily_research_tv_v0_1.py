@@ -1886,6 +1886,7 @@ footer {{
     Independent research project. Not affiliated with or
     endorsed by Bloomberg. Bloomberg Surveillance is used
     solely as a source program for research.
+    Bloomberg material is research material, not a trading signal.
     <br>
     <a
         class="footer-link"

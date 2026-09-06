@@ -12,3 +12,9 @@ data/reference/youtube/*_transcript.txt
 
 # Private guest/evidence mapping artifacts
 data/processed/surveillance/*/guest_units_v0_3.json
+data/processed/surveillance/surveillance_video_inventory_*.json
+data/processed/surveillance/*/youtube_canonical*.json
+data/processed/surveillance/*/guest_transcripts*.json
+data/processed/surveillance/*/research_summaries*.json
+data/processed/surveillance/*/research_dataset*.json
+data/processed/surveillance/*/evidence*.json

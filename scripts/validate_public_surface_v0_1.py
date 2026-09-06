@@ -29,6 +29,13 @@ PRIVATE_BASENAMES = {
 
 PRIVATE_NAME_PATTERNS = (
     re.compile(r".*_transcript\.txt$", re.I),
+    re.compile(r".*canonical.*\.json$", re.I),
+    re.compile(r".*guest[_-]?transcripts?.*\.json$", re.I),
+    re.compile(r".*guest[_-]?units?.*\.json$", re.I),
+    re.compile(r".*research[_-]?dataset.*\.json$", re.I),
+    re.compile(r".*research[_-]?summaries.*\.json$", re.I),
+    re.compile(r".*evidence.*\.json$", re.I),
+    re.compile(r"surveillance_video_inventory_.*\.json$", re.I),
 )
 
 OLD_PUBLIC_BRANDING = (
@@ -328,3 +335,4 @@ if failures:
 
 print("=" * 78)
 print("PUBLIC SURFACE GATE v0.1: PASS")
+print("PRIVATE ARTIFACT TRACKING: 0")

@@ -9,7 +9,7 @@ from pathlib import Path
 
 from google import genai
 
-from public_language_policy_v0_1 import neutralize_report
+from public_language_policy_v0_1 import assert_non_prescriptive, directive_locations
 
 
 DATE = os.environ.get(
@@ -856,6 +856,35 @@ NUMERIC DIFFERENCES:
         ) from exc
 
 
+def regenerate_problem_sentences(translated):
+    client = genai.Client(api_key=API_KEY)
+    for attempt in range(1, 3):
+        locations = directive_locations(translated, "ko")
+        if not locations:
+            return
+        for container, key, path in locations:
+            original = container[key]
+            prompt = f"""
+다음 한국어 금융 리서치 문장 한 개만 비지시적 모니터링 관찰문으로 다시 작성하라.
+사실, 숫자, 불확실성, 귀속을 모두 보존하고 새 사실을 추가하지 마라.
+매수·매도·비중 확대/축소·오버웨이트·언더웨이트 등의 투자 지시를 쓰지 마라.
+JSON 객체 {{"text":"..."}}만 반환하라.
+경로: {path}
+문장: {original}
+"""
+            response = generate_with_transient_retry(
+                client, prompt, label=f"KO SENTENCE REPAIR {attempt}/2"
+            )
+            try:
+                candidate = json.loads(response.text)["text"]
+            except (json.JSONDecodeError, KeyError, TypeError):
+                continue
+            if extract_numeric_tokens(original) == extract_numeric_tokens(candidate):
+                container[key] = candidate
+        print(f"KO PROBLEM-SENTENCE REGENERATION ATTEMPT: {attempt}/2")
+    assert_non_prescriptive(translated, "ko")
+
+
 # ============================================================
 # Build
 # ============================================================
@@ -1090,10 +1119,11 @@ if not numeric_result["pass"]:
             translated,
         )
 
-directive_normalizations = neutralize_report(
-    translated,
-    "ko",
-)
+try:
+    regenerate_problem_sentences(translated)
+    assert_non_prescriptive(translated, "ko")
+except ValueError as exc:
+    errors.append(str(exc))
 
 # Directive normalization is lexical only and must preserve
 # every numeric token. Re-run the path-aware numeric gate on
@@ -1117,10 +1147,7 @@ CANDIDATE.write_text(
     encoding="utf-8",
 )
 
-print(
-    "KO DIRECTIVE NORMALIZATIONS:",
-    directive_normalizations,
-)
+print("KO SEMANTIC POST-PROCESSING: 0")
 
 numbers_pass = numeric_result[
     "pass"

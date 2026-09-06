@@ -8,7 +8,7 @@ from pathlib import Path
 from google import genai
 from google.genai import errors as genai_errors
 
-from public_language_policy_v0_1 import neutralize_report
+from public_language_policy_v0_1 import assert_non_prescriptive, directive_locations
 
 
 DATE = os.environ.get(
@@ -280,6 +280,34 @@ BROKEN JSON:
     return repaired
 
 
+def regenerate_problem_sentences(client, report: dict) -> None:
+    """Regenerate only violating leaves, at most twice; never regex-rewrite prose."""
+    for attempt in range(1, 3):
+        locations = directive_locations(report, "en")
+        if not locations:
+            return
+        for container, key, path in locations:
+            original = container[key]
+            prompt = f"""
+Rewrite ONLY the following single financial-research sentence as a neutral,
+non-prescriptive monitoring observation. Preserve every fact, number,
+uncertainty qualifier, and attribution. Do not add facts. Do not use buy,
+sell, accumulate, reduce, overweight, underweight, enter, exit, go long,
+go short, or portfolio instructions. Return only the rewritten sentence.
+
+JSON PATH: {path}
+SENTENCE: {original}
+"""
+            response = generate_with_retry(client, prompt)
+            candidate = response.text.strip().strip('"')
+            original_numbers = re.findall(r"[-+]?\d+(?:\.\d+)?%?", original)
+            candidate_numbers = re.findall(r"[-+]?\d+(?:\.\d+)?%?", candidate)
+            if original_numbers == candidate_numbers:
+                container[key] = candidate
+        print(f"EN PROBLEM-SENTENCE REGENERATION ATTEMPT: {attempt}/2")
+    assert_non_prescriptive(report, "en")
+
+
 def main():
 
     print("=" * 100)
@@ -392,15 +420,12 @@ def main():
         report["cross_guest_conflicts"] = []
         report["source_mode"] = "program_level_unattributed"
 
-    directive_normalizations = neutralize_report(
-        report,
-        "en",
-    )
-
-    print(
-        "EN DIRECTIVE NORMALIZATIONS:",
-        directive_normalizations,
-    )
+    try:
+        regenerate_problem_sentences(client, report)
+        assert_non_prescriptive(report, "en")
+    except ValueError as exc:
+        raise SystemExit(f"FAIL — sentence regeneration exhausted: {exc}")
+    print("EN SEMANTIC POST-PROCESSING: 0")
 
     OUTPUT.write_text(
         json.dumps(

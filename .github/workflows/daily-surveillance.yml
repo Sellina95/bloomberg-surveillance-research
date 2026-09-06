@@ -46,14 +46,13 @@ jobs:
 
       - name: Validate chapterless program fallback
         run: |
+          python tests/test_source_discovery_contract_v0_1.py
           python tests/test_chapterless_program_fallback_v0_1.py
           python tests/test_public_language_policy_v0_1.py
-
-      - name: Discover Bloomberg Surveillance videos
-        env:
-          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
-        run: |
-          python scripts/discover_surveillance_videos_v0_3.py
+          python tests/test_en_ko_semantic_parity_v0_1.py
+          python tests/test_verbatim_gate_v0_1.py
+          python tests/test_provenance_contract_v0_1.py
+          python tests/test_atomic_publication_contract_v0_1.py
 
       - name: Update surveillance inventory
         env:
@@ -61,13 +60,13 @@ jobs:
         run: |
           python scripts/update_surveillance_inventory_v0_1.py
 
-      - name: Run latest surveillance pipeline
+      - name: Build, validate, and atomically publish latest surveillance
         env:
           SUPADATA_API_KEY: ${{ secrets.SUPADATA_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         run: |
-          python scripts/run_latest_surveillance_v0_1.py
+          python scripts/run_atomic_publication_v0_1.py
 
       - name: Validate public surface
         run: |

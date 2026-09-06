@@ -35,6 +35,19 @@ def main() -> None:
         / "surveillance_video_inventory_v0_3.json"
     )
 
+    if not DISCOVER.exists():
+        raise SystemExit(f"FAIL — discovery script not found: {DISCOVER}")
+
+    # Discovery is executed exactly once per workflow. Its output is a
+    # private runtime inventory and is never part of the public release.
+    discovery_result = subprocess.run(
+        [sys.executable, str(DISCOVER)],
+        cwd=ROOT,
+        env=os.environ.copy(),
+    )
+    if discovery_result.returncode != 0:
+        raise SystemExit("FAIL — surveillance discovery failed")
+
     if not INVENTORY.exists():
 
         if not discovery_path.exists():
@@ -81,11 +94,6 @@ def main() -> None:
             )
         )
 
-    if not DISCOVER.exists():
-        raise SystemExit(
-            f"FAIL — discovery script not found: {DISCOVER}"
-        )
-
     print("=" * 100)
     print("SURVEILLANCE INVENTORY UPDATE v0.1")
     print("=" * 100)
@@ -99,19 +107,7 @@ def main() -> None:
     print("RUN DISCOVERY")
     print("=" * 100)
 
-    result = subprocess.run(
-        [
-            sys.executable,
-            str(DISCOVER),
-        ],
-        cwd=ROOT,
-        env=os.environ.copy(),
-    )
-
-    if result.returncode != 0:
-        raise SystemExit(
-            "FAIL — surveillance discovery failed"
-        )
+    print("DISCOVERY ARTIFACT: READY")
 
     # ------------------------------------------------------------
     # 2. Locate discovery artifacts
@@ -196,9 +192,9 @@ def main() -> None:
         if video_id in existing_ids:
             continue
 
-        # Bloomberg Surveillance titles contain
-        # the actual broadcast date:
-        # "Bloomberg Surveillance 8/20/2026"
+        # Prefer the date contract resolved by discovery. Legacy title
+        # parsing remains only for historical inventory compatibility.
+        discovered_broadcast_date = video.get("broadcast_date")
         numeric_match = re.search(
             r"Bloomberg Surveillance(?: TV:)?\s+"
             r"(\d{1,2})/(\d{1,2})/(\d{4})",
@@ -215,7 +211,15 @@ def main() -> None:
             flags=re.IGNORECASE,
         )
 
-        if numeric_match:
+        if discovered_broadcast_date:
+            try:
+                parsed_date = datetime.fromisoformat(
+                    discovered_broadcast_date[:10]
+                )
+            except ValueError:
+                print("SKIP — invalid discovery broadcast date:", video_id)
+                continue
+        elif numeric_match:
             month, day, year = numeric_match.groups()
             parsed_date = datetime.strptime(
                 f"{year}-{month}-{day}",
@@ -242,12 +246,13 @@ def main() -> None:
             "video_id": video_id,
             "title": title,
             "link": video.get(
+                "url", video.get(
                 "link",
                 (
                     "https://www.youtube.com/watch?v="
                     + video_id
                 ),
-            ),
+            )),
             "channel_name": video.get(
                 "channel_name",
                 "Bloomberg Television",
@@ -256,10 +261,9 @@ def main() -> None:
                 "channel_verified",
                 True,
             ),
-            "published_date": video.get(
-                "published_date",
-                "",
-            ),
+            "published_date": video.get("upload_date", ""),
+            "upload_date_raw": video.get("upload_date_raw", ""),
+            "broadcast_date": video_date,
             "length": video.get(
                 "length",
                 "",
@@ -269,6 +273,8 @@ def main() -> None:
                 "",
             ),
             "video_date": video_date,
+            "duration_seconds": video.get("duration_seconds", 0),
+            "source_mode": video.get("source_mode", "chapter_unknown"),
         }
 
         existing_videos.append(
