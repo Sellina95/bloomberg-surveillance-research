@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
   schedule:
-    # 07:30 KST = 22:30 UTC (previous day)
-    - cron: "30 22 * * 1-5"
+    # Mon-Fri 07:30 KST = Sun-Thu 22:30 UTC (previous day)
+    - cron: "30 22 * * 0-4"
 
 permissions:
   contents: write
