@@ -264,6 +264,7 @@ def main() -> None:
             "published_date": video.get("upload_date", ""),
             "upload_date_raw": video.get("upload_date_raw", ""),
             "broadcast_date": video_date,
+            "broadcast_date_basis": video.get("broadcast_date_basis", ""),
             "length": video.get(
                 "length",
                 "",

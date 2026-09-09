@@ -40,6 +40,7 @@ class Candidate:
     description: str
     duration_seconds: int
     broadcast_date: str
+    broadcast_date_basis: str
     upload_date: str
     upload_date_raw: str
     source_mode: str
@@ -143,13 +144,39 @@ def normalize_upload_date(value: object, *, today: date | None = None) -> str:
     explicit = parse_explicit_date(raw)
     if explicit:
         return explicit
-    match = re.fullmatch(r"(\d+)\s+(day|days)\s+ago", raw, re.I)
+    match = re.fullmatch(
+        r"(\d+)\s+(minute|minutes|hour|hours|day|days|week|weeks)\s+ago",
+        raw,
+        re.I,
+    )
     if match:
         anchor = today or datetime.now(timezone.utc).date()
-        return (anchor - timedelta(days=int(match.group(1)))).isoformat()
+        amount = int(match.group(1))
+        unit = match.group(2).lower()
+        days = amount * 7 if unit.startswith("week") else (
+            amount if unit.startswith("day") else 0
+        )
+        return (anchor - timedelta(days=days)).isoformat()
     if raw.lower() in {"today", "streamed today"}:
         return (today or datetime.now(timezone.utc).date()).isoformat()
     return ""
+
+
+def rank_search_candidates(
+    items: Iterable[dict], *, today: date | None = None
+) -> list[dict]:
+    """Prefer recent full-program search results before paid hydration."""
+    anchor = today or datetime.now(timezone.utc).date()
+
+    def key(item: dict) -> tuple[str, int]:
+        upload_date = normalize_upload_date(
+            item.get("published_date") or item.get("upload_date"),
+            today=anchor,
+        )
+        duration = parse_duration(item.get("length") or item.get("duration"))
+        return upload_date or "0000-00-00", duration
+
+    return sorted(items, key=key, reverse=True)
 
 
 def normalize_candidate(item: dict, *, today: date | None = None) -> Candidate:
@@ -200,9 +227,6 @@ def normalize_candidate(item: dict, *, today: date | None = None) -> Candidate:
     if not url:
         url = f"https://www.youtube.com/watch?v={video_id}"
 
-    broadcast_date = parse_explicit_date(f"{title}\n{description}")
-    if not broadcast_date:
-        raise DiscoveryError("explicit broadcast date missing")
     upload_raw = str(item.get("published_date") or item.get("upload_date") or "")
     upload_date = normalize_upload_date(upload_raw, today=today)
     if not upload_date:
@@ -211,6 +235,27 @@ def normalize_candidate(item: dict, *, today: date | None = None) -> Candidate:
     duration = parse_duration(item.get("length") or item.get("duration"))
     if not duration:
         raise DiscoveryError("duration missing or invalid")
+
+    supplied_broadcast_date = str(item.get("broadcast_date") or "").strip()
+    broadcast_date = parse_explicit_date(supplied_broadcast_date)
+    broadcast_date_basis = "provider_broadcast_date"
+    if not broadcast_date:
+        broadcast_date = parse_explicit_date(f"{title}\n{description}")
+        broadcast_date_basis = "title_or_description"
+    if not broadcast_date:
+        # Headline-titled full shows may omit the calendar date from both the
+        # title and description. Only use the provider upload date after the
+        # official channel, programme, host, hydration, and duration contracts
+        # have all passed. Short clips can never enter this fallback.
+        if (
+            item.get("metadata_hydrated")
+            and program_in_description
+            and duration >= FULL_PROGRAM_SECONDS
+        ):
+            broadcast_date = upload_date
+            broadcast_date_basis = "official_full_show_upload_date"
+        else:
+            raise DiscoveryError("explicit broadcast date missing")
 
     return Candidate(
         video_id=video_id,
@@ -222,6 +267,7 @@ def normalize_candidate(item: dict, *, today: date | None = None) -> Candidate:
         description=description,
         duration_seconds=duration,
         broadcast_date=broadcast_date,
+        broadcast_date_basis=broadcast_date_basis,
         upload_date=upload_date,
         upload_date_raw=upload_raw,
         source_mode=("chaptered" if item.get("chapters") else "chapter_unknown"),

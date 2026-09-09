@@ -67,6 +67,7 @@ def main() -> None:
         "source": {
             "broadcast_title": required_env("SOURCE_BROADCAST_TITLE"),
             "broadcast_date": broadcast_date,
+            "broadcast_date_basis": required_env("SOURCE_BROADCAST_DATE_BASIS"),
             "upload_date": required_env("SOURCE_UPLOAD_DATE"),
             "video_url": required_env("SOURCE_VIDEO_URL"),
             "provider": "Supadata",

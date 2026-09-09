@@ -21,6 +21,7 @@ from src.acquisition.source_discovery import (
     hydrate_search_result,
     parse_explicit_date,
     parse_duration,
+    rank_search_candidates,
     select_candidates,
 )
 
@@ -29,7 +30,7 @@ ENDPOINT = "https://serpapi.com/search.json"
 QUERIES = (
     "site:youtube.com Bloomberg Television full show Tom Keene Lisa Abramowicz",
     "site:youtube.com Bloomberg Television Surveillance full broadcast",
-    "site:youtube.com Bloomberg Television Jonathan Ferro Annmarie Hordern full show",
+    "site:youtube.com Bloomberg Television Jonathan Ferro Lisa Abramowicz Annmarie Hordern",
 )
 MAX_DETAIL_CANDIDATES = 5
 OUTPUT = ROOT / "data/processed/surveillance/surveillance_video_inventory_v0_3.json"
@@ -80,10 +81,11 @@ def main() -> None:
     # The official search response already supplies channel and length.
     # Hydrate only full-program candidates to cap SerpApi calls and obtain
     # the complete description needed by the strict identity contract.
-    shortlist = [
+    full_program_results = [
         item for item in discovered.values()
         if parse_duration(item.get("length") or item.get("duration")) >= 110 * 60
-    ][:MAX_DETAIL_CANDIDATES]
+    ]
+    shortlist = rank_search_candidates(full_program_results)[:MAX_DETAIL_CANDIDATES]
 
     hydrated = []
     hydration_failures = []

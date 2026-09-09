@@ -13,7 +13,7 @@ def validate(payload: dict, expected_date: str) -> None:
     source = payload["source"]
     assert source["broadcast_date"] == expected_date
     for key in (
-        "broadcast_title", "upload_date", "video_url", "provider",
+        "broadcast_title", "broadcast_date_basis", "upload_date", "video_url", "provider",
         "transcript_type", "collected_at", "source_mode",
     ):
         assert source[key]
@@ -33,6 +33,7 @@ fixture = {
     "source": {
         "broadcast_title": "Rates Reset",
         "broadcast_date": "2026-09-05",
+        "broadcast_date_basis": "title_or_description",
         "upload_date": "2026-09-05",
         "video_url": "https://www.youtube.com/watch?v=test",
         "provider": "Supadata",

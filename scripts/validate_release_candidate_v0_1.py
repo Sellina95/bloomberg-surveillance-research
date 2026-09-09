@@ -54,6 +54,12 @@ def main() -> None:
     source = provenance.get("source", {})
     if provenance.get("report_date") != DATE or source.get("broadcast_date") != DATE:
         raise SystemExit("PROVENANCE CONTRACT: FAIL — date mismatch")
+    if source.get("broadcast_date_basis") not in {
+        "provider_broadcast_date",
+        "title_or_description",
+        "official_full_show_upload_date",
+    }:
+        raise SystemExit("PROVENANCE CONTRACT: FAIL — broadcast date basis missing")
     if not provenance.get("claims"):
         raise SystemExit("PROVENANCE CONTRACT: FAIL — claims missing")
     if '"text"' in json.dumps(provenance, ensure_ascii=False).lower():

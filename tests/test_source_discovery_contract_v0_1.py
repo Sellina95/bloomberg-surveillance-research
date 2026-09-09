@@ -9,6 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.acquisition.source_discovery import (
     DiscoveryError,
     hydrate_search_result,
+    rank_search_candidates,
     select_candidates,
 )
 
@@ -85,6 +86,32 @@ assert selected[0].upload_date == "2026-09-05"
 assert selected[0].url.endswith("headline-full")
 print("SOURCE DISCOVERY CONTRACT: PASS")
 print("HEADLINE-TITLE DISCOVERY: PASS")
+
+live_headline = {
+    "video_id": "live-headline",
+    "title": "Stocks Waver at Start of Week Filled With Key Inflation Data",
+    "description": "Jonathan Ferro, Lisa Abramowicz and Annmarie Hordern "
+    "present Bloomberg Surveillance.",
+    "published_date": "September 8, 2026",
+    "length": "2:24:13",
+    "metadata_hydrated": True,
+    "channel": {
+        "name": "Bloomberg Television",
+        "id": "UCIALMKvObZNtJ6AmdCLP7Lg",
+        "verified": True,
+    },
+}
+selected, _ = select_candidates([live_headline], today=date(2026, 9, 9))
+assert selected[0].broadcast_date == "2026-09-08"
+assert selected[0].broadcast_date_basis == "official_full_show_upload_date"
+print("LIVE HEADLINE DATE FALLBACK: PASS")
+
+ranked = rank_search_candidates([
+    {"video_id": "archive", "published_date": "February 16, 2023", "length": "2:30:00"},
+    {"video_id": "current", "published_date": "1 day ago", "length": "2:24:13"},
+], today=date(2026, 9, 9))
+assert [row["video_id"] for row in ranked] == ["current", "archive"]
+print("RECENT SEARCH SHORTLIST: PASS")
 
 discovery_script = (
     Path(__file__).resolve().parents[1]
