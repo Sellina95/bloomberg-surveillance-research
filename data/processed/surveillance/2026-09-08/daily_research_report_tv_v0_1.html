@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="robots" content="noindex, nofollow">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+
+<title>
+Independent Market Research — 2026-09-08
+</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #111214;
+    --panel: #191a1d;
+    --panel-2: #151619;
+    --panel-3: #202125;
+    --line: #303136;
+    --text: #f1f1ee;
+    --muted: #96979b;
+    --amber: #f2a23a;
+    --amber-soft: #c9852c;
+    --green: #72c7a7;
+    --red: #e46f6f;
+    --blue: #7fa9d8;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #292b2f 0%,
+            #151619 35%,
+            #0d0e10 100%
+        );
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-size: 14px;
+}
+
+.page {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+}
+
+.tv {
+    background: #17181b;
+    border: 1px solid #303136;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow:
+        0 22px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    overflow: hidden;
+}
+
+.research-hero {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    background: #111;
+}
+
+.research-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 68%;
+}
+
+.research-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 18, 0.78) 0%,
+        rgba(5, 10, 18, 0.35) 52%,
+        rgba(5, 10, 18, 0.10) 100%
+    );
+}
+
+.research-hero-content {
+    position: absolute;
+    left: 34px;
+    bottom: 34px;
+    z-index: 2;
+}
+
+.research-hero-kicker {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+}
+
+.research-hero-title {
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.research-hero-credit {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    z-index: 2;
+    font-size: 10px;
+    opacity: 0.72;
+}
+
+.tv-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 18px;
+    background: linear-gradient(180deg,#222327,#18191c);
+    border-bottom: 1px solid #333438;
+}
+
+.brand {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #f4f4f1;
+}
+
+.live {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: var(--amber);
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background: #111214;
+    border: 1px solid #34353a;
+    border-radius: 6px;
+}
+
+.lang-option {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.lang-active {
+    background: var(--amber);
+    color: #111214;
+}
+
+.lang-disabled {
+    color: #626368;
+    cursor: not-allowed;
+}
+
+.calendar-control {
+    position: relative;
+}
+
+.calendar-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 29px;
+    padding: 5px 9px;
+    background: #17181b;
+    border: 1px solid #3a3b40;
+    border-radius: 6px;
+    color: #dededb;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.calendar-button:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+}
+
+.calendar-icon {
+    font-size: 13px;
+}
+
+.calendar-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    z-index: 100;
+    width: 270px;
+    padding: 14px;
+    background: #151619;
+    border: 1px solid #3a3b40;
+    border-radius: 8px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55);
+}
+
+.calendar-control.open
+.calendar-panel {
+    display: block;
+}
+
+.nav-month + .nav-month {
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid #303136;
+}
+
+.nav-month-label {
+    margin-bottom: 10px;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.nav-date-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(7,1fr);
+    gap: 5px;
+}
+
+.nav-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 1px solid #303136;
+    border-radius: 5px;
+    background: #1d1e22;
+    color: #bdbec1;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-date:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+    background: #24211c;
+}
+
+.nav-date-current {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #111214;
+}
+
+.nav-date-current:hover {
+    color: #111214;
+}
+
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+
+.screen {
+    position: relative;
+    background: linear-gradient(135deg,#17191b,#101113);
+    min-height: 220px;
+    padding: 30px 34px;
+    border-bottom: 1px solid #303136;
+}
+
+.screen-label {
+    color: var(--amber);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.6px;
+    margin-bottom: 12px;
+}
+
+.screen h1 {
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.date {
+    margin-top: 10px;
+    color: var(--muted);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 12px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 28px;
+}
+
+.knob {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #67686b;
+}
+
+.status {
+    margin-left: 12px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.content {
+    margin-top: 18px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #e8e8e5;
+    margin-bottom: 16px;
+}
+
+.section-title::before {
+    content: "";
+    width: 3px;
+    height: 14px;
+    background: var(--amber);
+    border-radius: 2px;
+}
+
+.executive {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.executive ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.executive li {
+    margin-bottom: 9px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.market-card {
+    position: relative;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 17px;
+    min-height: 190px;
+}
+
+.market-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: var(--amber-soft);
+    opacity: .75;
+}
+
+.market-card .section-title {
+    padding-left: 8px;
+}
+
+.summary {
+    color: #c8c9cb;
+    line-height: 1.55;
+    margin: 0 0 14px;
+}
+
+h4 {
+    margin: 16px 0 7px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: var(--amber);
+}
+
+.market-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.market-card li {
+    margin-bottom: 7px;
+    color: #d9d9d7;
+    line-height: 1.45;
+}
+
+.macro-card {
+    background: var(--panel-2);
+    border: 1px solid #292a2e;
+    border-radius: 8px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+.macro-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #f0f0ed;
+}
+
+.macro-card p {
+    color: #c6c7c9;
+    line-height: 1.55;
+}
+
+.guest-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 12px 0;
+}
+
+.guest {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid #3a3b3f;
+    border-radius: 4px;
+    background: #222327;
+    color: #c5c6c8;
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.evidence {
+    display: flex;
+    gap: 10px;
+    padding: 9px 10px;
+    margin-top: 6px;
+    background: #111214;
+    border: 1px solid #292a2d;
+    border-left: 2px solid var(--green);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.timestamp {
+    flex: 0 0 auto;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.insight,
+.conflict,
+.risk {
+    border-radius: 7px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    line-height: 1.55;
+}
+
+.insight {
+    background: #151c19;
+    border: 1px solid #293a34;
+    border-left: 3px solid var(--green);
+}
+
+.conflict {
+    background: #1b1815;
+    border: 1px solid #3c3025;
+    border-left: 3px solid var(--amber);
+}
+
+.risk {
+    background: #1c1617;
+    border: 1px solid #40292b;
+    border-left: 3px solid var(--red);
+}
+
+.small {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.provenance-block {
+    margin-top: 11px;
+    padding-top: 9px;
+    border-top: 1px solid #2c2d31;
+}
+
+.prov-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 7px;
+}
+
+.prov-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.prov-approved {
+    color: var(--green);
+    background: #14231e;
+    border: 1px solid #2e5547;
+}
+
+.prov-review {
+    color: var(--amber);
+    background: #261e14;
+    border: 1px solid #634826;
+}
+
+.prov-type {
+    color: #b9c9dc;
+    background: #171d24;
+    border: 1px solid #344252;
+}
+
+.prov-warning {
+    margin: 7px 0;
+    padding: 7px 9px;
+    border-left: 2px solid var(--amber);
+    background: #211b14;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.provenance-details {
+    margin-top: 6px;
+}
+
+.provenance-details summary {
+    cursor: pointer;
+    color: #9fa8b4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    user-select: none;
+}
+
+.provenance-details summary:hover {
+    color: var(--text);
+}
+
+.claim-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.claim-id {
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid #353b43;
+    border-radius: 4px;
+    background: #121519;
+    color: #aeb8c4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+}
+
+.prov-note {
+    margin-top: 8px;
+    color: #73777e;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.conflict-view {
+    margin-top: 10px;
+}
+
+.takeaway-item {
+    margin-bottom: 12px;
+}
+
+.action {
+    display: flex;
+    gap: 14px;
+    padding: 15px;
+    background: #171a18;
+    border: 1px solid #304238;
+    border-radius: 8px;
+    margin-bottom: 9px;
+}
+
+.action-number {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: var(--amber);
+    color: #17120b;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.action p {
+    margin: 7px 0;
+    color: #b9babd;
+    line-height: 1.5;
+}
+
+.monitor {
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+}
+
+.
+footer {
+    text-align: center;
+    color: #66686d;
+    font-size: 10px;
+    padding: 26px;
+}
+
+.footer-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+    text-decoration: none;
+}
+
+.footer-link + .footer-link {
+    margin-left: 18px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        padding: 12px;
+    }
+
+    .tv-top {
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .top-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .calendar-panel {
+        position: fixed;
+        top: 70px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }
+
+    .screen {
+        padding: 24px;
+    }
+
+    .screen h1 {
+        font-size: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+
+
+<style id="publication-status-nav-style">
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+
+<div class="tv">
+
+    <section class="research-hero" aria-label="Independent Market Research">
+        <img
+            class="research-hero-image"
+            src="../assets/wall-street-roberto-junior-unsplash.jpg"
+            alt="Wall Street street sign in New York"
+        >
+        <div class="research-hero-overlay"></div>
+
+        <div class="research-hero-content">
+            <div class="research-hero-kicker">📺 INDEPENDENT MARKET RESEARCH</div>
+            <div class="research-hero-title">Markets, Macro & Capital Flows</div>
+        </div>
+
+        <div class="research-hero-credit">
+            Photo by Roberto Junior on Unsplash
+        </div>
+    </section>
+
+    <div class="tv-top">
+
+        <div class="brand">
+            INDEPENDENT MARKET RESEARCH · SURVEILLANCE DESK
+        </div>
+
+        <div class="top-actions">
+
+            <div class="live">
+                ● DAILY RESEARCH
+            </div>
+
+            <div
+                class="calendar-control"
+                id="calendarControl"
+            >
+
+                <button
+                    class="calendar-button"
+                    id="calendarButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="calendarPanel"
+                >
+                    <span class="calendar-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        2026-09-08
+                    </span>
+                </button>
+
+                <div
+                    class="calendar-panel"
+                    id="calendarPanel"
+                >
+
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    SEP 2026
+                </div>
+
+                <div class="nav-date-grid">
+                    
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-01/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-01"
+                    >
+                        01
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-02/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-02"
+                    >
+                        02
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-03/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-03"
+                    >
+                        03
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-04/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-04"
+                    >
+                        04
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date nav-date-current"
+                        href="../2026-09-08/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-08"
+                    >
+                        08
+                    </a>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+            
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    AUG 2026
+                </div>
+
+                <div class="nav-date-grid">
+                    
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-14/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-14"
+                    >
+                        14
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-18/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-18"
+                    >
+                        18
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-19/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-19"
+                    >
+                        19
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-20/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-20"
+                    >
+                        20
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-24/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-24"
+                    >
+                        24
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-25/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-25"
+                    >
+                        25
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-26/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-26"
+                    >
+                        26
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-27/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-27"
+                    >
+                        27
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-28/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-28"
+                    >
+                        28
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-31/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-31"
+                    >
+                        31
+                    </a>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+            
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    FEB 2023
+                </div>
+
+                <div class="nav-date-grid">
+                    
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2023-02-15/daily_research_report_tv_v0_1.html?desk=v0_2"
+                        aria-label="2023-02-15"
+                    >
+                        15
+                    </a>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+            
+                </div>
+
+            </div>
+
+            <div class="language-switch"
+                aria-label="Report language"
+            >
+                <span
+                    class="lang-option lang-active"
+                >
+                    EN
+                </span>
+
+                <a
+                    class="lang-option"
+                    href="daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                >
+                    한국어
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="screen">
+
+        <div class="screen-label">
+            GLOBAL MARKET RESEARCH
+        </div>
+
+        <h1>
+            Daily Market Brief
+        </h1>
+
+        <div class="date">
+            2026-09-08
+        </div>
+
+        <div class="controls">
+
+            <span class="knob"></span>
+            <span class="knob"></span>
+            <span class="knob"></span>
+
+            <span class="status">
+                EVIDENCE GROUNDED · RESEARCH ONLY
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content">
+
+<section class="card">
+
+    <div class="section-title">
+        EXECUTIVE SUMMARY
+    </div>
+
+    <div class="executive">
+        <ul>
+            <li>Monetary policy uncertainty remains a central macro focus as sticky inflation prints and tighter financial conditions raise the probability of unexpected Federal Reserve rate hikes.</li><li>Energy markets face acute strains driven by refining capacity constraints, rising natural gas input costs, and geopolitical hurdles in the Persian Gulf, keeping refined products and diesel supply exceptionally tight.</li><li>Artificial intelligence infrastructure expansion encounters physical bottlenecks, community pushback, and heavy hyperscaler bond issuance, though these friction points act as a natural governor against speculative excess.</li>
+        </ul>
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MACRO THEMES
+    </div>
+
+
+        <div class="macro-card">
+            <h3>Monetary Policy Tightening and Federal Reserve Dynamics</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                Persistent inflation concerns and resilient economic growth are pushing the Federal Reserve toward potential policy tightening, supported by commentary on higher terminal rates and changing FOMC leadership chemistry under Chair Kevin Warsh.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Seema Shah</span> <span class="guest">Kit Juckes</span> <span class="guest">Earl Davis</span> <span class="guest">Stephen Stanley</span>
+            </div>
+
+
+        </div>
+
+        <div class="macro-card">
+            <h3>AI Infrastructure Constraints and Hyperscaler Spending</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                Massive capital expenditure and high-quality bond issuance by hyperscalers drive market dynamics, while localized data center pushback, power grid hurdles, and supply chain delays introduce near-term friction.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Oksana Aronov</span> <span class="guest">Barbara Reinhard</span> <span class="guest">Gil Luria</span> <span class="guest">Brian Levitt</span>
+            </div>
+
+
+        </div>
+
+        <div class="macro-card">
+            <h3>Energy Market Bottlenecks and Distillate Pressures</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                Geopolitical friction in the Middle East and capacity damage in refining hubs keep distillate and diesel markets severely constrained, outweighing softer crude oil headline trends.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Jon Lieber</span> <span class="guest">Jim Caron</span> <span class="guest">Samantha Dart</span>
+            </div>
+
+
+        </div>
+
+
+</section>
+
+
+<div class="grid">
+
+
+    <section class="market-card">
+        <div class="section-title">
+            RATES / BONDS
+        </div>
+
+        <p class="summary">
+            Fixed income markets face upward pressure on yields driven by robust nominal economic growth, heavy corporate and hyperscaler debt issuance, and potential mortgage convexity hedging risks.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Long-term bond yields are increasingly reacting to fiscal spending and high-quality corporate issuance rather than near-term central bank actions alone.</li><li>Global yield curve steepness positions U.S. 30-year bonds for potential severe selloffs, exacerbated by constrained dealer liquidity during mortgage convexity hedging.</li><li>Persistent inflation prints above consensus provide the Federal Reserve with justification to execute multiple rate hikes.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Violent selloffs in long-duration debt due to mortgage convexity hedging and insufficient dealer liquidity.</li><li>Uncontrolled surges in Treasury yields approaching technical breaking points if rate-hiking campaigns expand.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            USD / FX
+        </div>
+
+        <p class="summary">
+            Foreign exchange markets navigate diverging central bank tightening cycles, with the Bank of Japan facing pressure to lift rates despite global economic headwinds.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>The Bank of Japan has room to raise interest rates to protect the currency and stabilize debt positions, though global rate-hiking cycles complicate aggressive carry-trade unwinds.</li><li>Persistent U.S. economic resilience and sticky inflation leave little justification for immediate monetary easing.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Intervention strategies and shifting carry-trade dynamics inducing sharp volatility in dollar-yen exchange rates.</li><li>Sustained global energy price pressures weakening foreign currencies relative to the U.S. dollar.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            EQUITIES
+        </div>
+
+        <p class="summary">
+            Equity markets remain supported by positive 12-month forward earnings growth and manageable valuations, though tightening financial conditions and political noise pose headwinds.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Equities remain resilient as long as forward earnings growth stays positive and investor sentiment avoids extreme euphoria.</li><li>Transition toward tighter financial conditions and potential policy errors threaten multiple expansion and create a less conducive environment for broad equity gains.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Aggressive multi-rate hike campaigns by the Federal Reserve triggering equity market corrections.</li><li>Supply-side energy shocks and rising input costs squeezing consumer discretionary spending and corporate margins.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            CREDIT
+        </div>
+
+        <p class="summary">
+            Corporate credit conditions reflect growing strain on higher-leveraged balance sheets amidst elevated borrowing costs and heavy issuance volume.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Higher interest rates are increasingly impacting corporate balance sheets, particularly among higher-levered borrowers.</li><li>Hyperscalers maintain large debt issuance programs, creating high-quality supply that influences long-term yield structures.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Deterioration in lower-rated credit tiers as higher borrowing costs persist.</li><li>Bond market rejections of financing for over-leveraged participants in the technology and AI sectors.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            AI / TECHNOLOGY
+        </div>
+
+        <p class="summary">
+            The artificial intelligence buildout faces physical and regulatory friction, which serves to regulate the investment cycle and prevent speculative excess.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Local community pushback, grid connection delays, and power equipment shortages are acting as natural regulators on data center construction.</li><li>Autonomous AI agents present critical security vulnerabilities, heightening calls for robust regulatory oversight to protect financial and payment systems.</li><li>The eventual termination point of the equity bull cycle will likely be tied to either a hyperscaler capital expenditure pullback or bond market pushback against AI financing.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Severe security breaches and hacking incidents driven by autonomous AI agents.</li><li>Prolonged municipal disputes and power supply bottlenecks causing sharp decelerations in technology infrastructure deployment.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            COMMODITIES
+        </div>
+
+        <p class="summary">
+            Refined products and diesel markets experience extreme tightness due to refining capacity damage, low inventories, and high operational input costs.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>Diesel represents the tightest energy market, exacerbated by historical export losses from Russia and refinery yield shifts away from gasoline.</li><li>Elevated natural gas costs in Europe and unresolved capacity constraints in the Middle East keep refining costs high and product margins elevated.</li><li>U.S. strategic efforts to bypass the Strait of Hormuz face hurdles regarding the export volume of refined products, fertilizer, and aluminum.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>Escalating geopolitical tensions in the Persian Gulf threatening global energy supplies.</li><li>Persistent high crack spreads driving sustained inflationary pressures for industrial and consumer transport sectors.</li>
+        </ul>
+    </section>
+
+
+</div>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONSENSUS
+    </div>
+
+
+        <div class="insight">
+            <strong>
+                The artificial intelligence infrastructure boom and data center expansion face real-world physical and power supply constraints.
+            </strong>
+
+            <div class="small">
+                Guests:
+                Oksana Aronov, Barbara Reinhard, Gil Luria, Brian Levitt
+            </div>
+
+
+        </div>
+
+        <div class="insight">
+            <strong>
+                Refined energy products, particularly diesel, remain exceptionally tight due to structural refining capacity bottlenecks and geopolitical factors.
+            </strong>
+
+            <div class="small">
+                Guests:
+                Jon Lieber, Jim Caron, Samantha Dart
+            </div>
+
+
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONFLICTS
+    </div>
+
+
+        <div class="conflict">
+            <strong>
+                Market resilience versus tightening financial conditions
+            </strong>
+
+            <div class="conflict-view">
+                <b>VIEW A:</b>
+                Equities remain supported by resilient forward earnings growth and manageable valuations without signs of extreme euphoria.
+
+
+            </div>
+
+            <div class="conflict-view">
+                <b>VIEW B:</b>
+                Financial conditions are tightening significantly, creating a less conducive environment that threatens consumer outlooks and risks Federal Reserve-induced sell-offs.
+
+
+            </div>
+
+            <div class="small">
+                Contrasts near-term fundamental earnings support with macro-level monetary policy headwinds and valuation risks.
+            </div>
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        KEY RISKS
+    </div>
+
+
+        <div class="risk">
+            <div class="risk-title">
+                Aggressive Federal Reserve Rate Hike Campaign
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Hotter-than-expected CPI inflation prints and persistent wage-price pressures.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                Sharp equity market corrections, severe upward pressure on bond yields, and tighter financial conditions across consumer and corporate sectors.
+            </div>
+        </div>
+
+        <div class="risk">
+            <div class="risk-title">
+                Refined Energy Supply Bottlenecks
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Persistent capacity damage in refining hubs and escalating geopolitical friction in the Persian Gulf.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                Sustained high diesel and crack spread prices, driving input cost inflation and margin compression for industrial users.
+            </div>
+        </div>
+
+        <div class="risk">
+            <div class="risk-title">
+                AI Infrastructure Spending Deceleration
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                Local community pushback, grid power limitations, or bond market rejection of tech sector financing.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                Downward pressure on long-term Treasury yields through economic slowdown impulses, alongside sector-specific valuation adjustments in technology equities.
+            </div>
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        RESEARCH TAKEAWAYS
+    </div>
+
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION
+    </div>
+
+    <br>
+
+    <ul>
+
+        <li class="takeaway-item">
+            <div>
+                Monetary policy risks are skewed toward tighter conditions as sticky inflation complicates the Federal Reserve&#x27;s path and raises the potential for unexpected rate hikes.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Energy markets require differentiated monitoring where crude oil fundamentals diverge from acute, structural tightness in refined distillates and diesel.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                Technology and AI sector valuations remain dependent on sustained hyperscaler capital expenditures, with physical infrastructure bottlenecks acting as both a constraint and a stabilizing governor.
+            </div>
+
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MONITORING IMPLICATIONS
+    </div>
+
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION ·
+        not a Bloomberg guest quote.
+    </div>
+
+    <br>
+
+
+        <div class="action">
+            <div class="action-number">
+                1
+            </div>
+
+            <div>
+                <strong>
+                    Monitor upcoming consumer price index and inflation prints for deviations above consensus survey estimates.
+                </strong>
+
+                <p>
+                    Higher inflation prints provide the Federal Reserve with justification to initiate rate-hiking campaigns, directly impacting fixed income duration and equity valuations.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    Core CPI components, shelter inflation metrics, and Fed official commentary regarding policy restrictiveness.
+                </div>
+            </div>
+        </div>
+
+        <div class="action">
+            <div class="action-number">
+                2
+            </div>
+
+            <div>
+                <strong>
+                    Track diesel crack spreads, distillate inventory levels, and refining capacity utilization in Europe and the Middle East.
+                </strong>
+
+                <p>
+                    Refined product markets exhibit acute structural tightness independent of crude oil movements, posing direct risks to industrial input costs and consumer inflation.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    Weekly EIA inventory reports, European natural gas pricing impacts on refinery operations, and geopolitical developments in the Persian Gulf.
+                </div>
+            </div>
+        </div>
+
+        <div class="action">
+            <div class="action-number">
+                3
+            </div>
+
+            <div>
+                <strong>
+                    Observe corporate debt issuance volumes from major technology hyperscalers and local regulatory developments regarding data center permits.
+                </strong>
+
+                <p>
+                    Long-term bond yield trajectories and tech sector valuations are sensitive to high-quality credit issuance supply and physical infrastructure friction.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    Primary corporate bond calendar, municipal zoning board decisions on power-intensive facilities, and grid interconnection queues.
+                </div>
+            </div>
+        </div>
+
+
+</section>
+
+</div>
+
+
+<div class="footer">
+    Independent Market Research Engine · 2026-09-08
+    <br>
+    Independent research project. Not affiliated with or
+    endorsed by Bloomberg. Bloomberg Surveillance is used
+    solely as a source program for research.
+    Bloomberg material is research material, not a trading signal.
+    <br>
+    <a
+        class="footer-link"
+        href="https://petal-chair-9d2.notion.site/Independent-Market-Research-Pipeline-Automated-Evidence-Grounded-Institutional-Market-Research-Sy-3c60169c5b49800bab2cde19b7b74cbb"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        PROJECT OVERVIEW → PORTFOLIO ↗
+    </a>
+
+    <a
+        class="footer-link"
+        href="https://github.com/Sellina95/bloomberg-surveillance-research"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        METHODOLOGY &amp; SOURCE CODE → GITHUB ↗
+    </a>
+</div>
+
+</div>
+
+<script>
+(function () {
+    const control =
+        document.getElementById(
+            "calendarControl"
+        );
+
+    const button =
+        document.getElementById(
+            "calendarButton"
+        );
+
+    if (!control || !button) {
+        return;
+    }
+
+    button.addEventListener(
+        "click",
+        function (event) {
+            event.stopPropagation();
+
+            const open =
+                control.classList.toggle(
+                    "open"
+                );
+
+            button.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+        }
+    );
+
+    document.addEventListener(
+        "click",
+        function (event) {
+            if (
+                !control.contains(
+                    event.target
+                )
+            ) {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+            if (event.key === "Escape") {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+})();
+</script>
+
+</body>
+
+</html>

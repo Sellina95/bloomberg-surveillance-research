@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="robots" content="noindex, nofollow">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+
+<title>
+Independent Market Research — 2026-09-08
+</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #111214;
+    --panel: #191a1d;
+    --panel-2: #151619;
+    --panel-3: #202125;
+    --line: #303136;
+    --text: #f1f1ee;
+    --muted: #96979b;
+    --amber: #f2a23a;
+    --amber-soft: #c9852c;
+    --green: #72c7a7;
+    --red: #e46f6f;
+    --blue: #7fa9d8;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #292b2f 0%,
+            #151619 35%,
+            #0d0e10 100%
+        );
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-size: 14px;
+}
+
+.page {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+}
+
+.tv {
+    background: #17181b;
+    border: 1px solid #303136;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow:
+        0 22px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    overflow: hidden;
+}
+
+.research-hero {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    background: #111;
+}
+
+.research-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 68%;
+}
+
+.research-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 18, 0.78) 0%,
+        rgba(5, 10, 18, 0.35) 52%,
+        rgba(5, 10, 18, 0.10) 100%
+    );
+}
+
+.research-hero-content {
+    position: absolute;
+    left: 34px;
+    bottom: 34px;
+    z-index: 2;
+}
+
+.research-hero-kicker {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+}
+
+.research-hero-title {
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.research-hero-credit {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    z-index: 2;
+    font-size: 10px;
+    opacity: 0.72;
+}
+
+.tv-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 18px;
+    background: linear-gradient(180deg,#222327,#18191c);
+    border-bottom: 1px solid #333438;
+}
+
+.brand {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #f4f4f1;
+}
+
+.live {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: var(--amber);
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background: #111214;
+    border: 1px solid #34353a;
+    border-radius: 6px;
+}
+
+.lang-option {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.lang-active {
+    background: var(--amber);
+    color: #111214;
+}
+
+.lang-disabled {
+    color: #626368;
+    cursor: not-allowed;
+}
+
+.calendar-control {
+    position: relative;
+}
+
+.calendar-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 29px;
+    padding: 5px 9px;
+    background: #17181b;
+    border: 1px solid #3a3b40;
+    border-radius: 6px;
+    color: #dededb;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.calendar-button:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+}
+
+.calendar-icon {
+    font-size: 13px;
+}
+
+.calendar-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    z-index: 100;
+    width: 270px;
+    padding: 14px;
+    background: #151619;
+    border: 1px solid #3a3b40;
+    border-radius: 8px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55);
+}
+
+.calendar-control.open
+.calendar-panel {
+    display: block;
+}
+
+.nav-month + .nav-month {
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid #303136;
+}
+
+.nav-month-label {
+    margin-bottom: 10px;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.nav-date-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(7,1fr);
+    gap: 5px;
+}
+
+.nav-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 1px solid #303136;
+    border-radius: 5px;
+    background: #1d1e22;
+    color: #bdbec1;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-date:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+    background: #24211c;
+}
+
+.nav-date-current {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #111214;
+}
+
+.nav-date-current:hover {
+    color: #111214;
+}
+
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+
+.screen {
+    position: relative;
+    background: linear-gradient(135deg,#17191b,#101113);
+    min-height: 220px;
+    padding: 30px 34px;
+    border-bottom: 1px solid #303136;
+}
+
+.screen-label {
+    color: var(--amber);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.6px;
+    margin-bottom: 12px;
+}
+
+.screen h1 {
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.date {
+    margin-top: 10px;
+    color: var(--muted);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 12px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 28px;
+}
+
+.knob {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #67686b;
+}
+
+.status {
+    margin-left: 12px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.content {
+    margin-top: 18px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #e8e8e5;
+    margin-bottom: 16px;
+}
+
+.section-title::before {
+    content: "";
+    width: 3px;
+    height: 14px;
+    background: var(--amber);
+    border-radius: 2px;
+}
+
+.executive {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.executive ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.executive li {
+    margin-bottom: 9px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.market-card {
+    position: relative;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 17px;
+    min-height: 190px;
+}
+
+.market-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: var(--amber-soft);
+    opacity: .75;
+}
+
+.market-card .section-title {
+    padding-left: 8px;
+}
+
+.summary {
+    color: #c8c9cb;
+    line-height: 1.55;
+    margin: 0 0 14px;
+}
+
+h4 {
+    margin: 16px 0 7px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: var(--amber);
+}
+
+.market-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.market-card li {
+    margin-bottom: 7px;
+    color: #d9d9d7;
+    line-height: 1.45;
+}
+
+.macro-card {
+    background: var(--panel-2);
+    border: 1px solid #292a2e;
+    border-radius: 8px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+.macro-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #f0f0ed;
+}
+
+.macro-card p {
+    color: #c6c7c9;
+    line-height: 1.55;
+}
+
+.guest-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 12px 0;
+}
+
+.guest {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid #3a3b3f;
+    border-radius: 4px;
+    background: #222327;
+    color: #c5c6c8;
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.evidence {
+    display: flex;
+    gap: 10px;
+    padding: 9px 10px;
+    margin-top: 6px;
+    background: #111214;
+    border: 1px solid #292a2d;
+    border-left: 2px solid var(--green);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.timestamp {
+    flex: 0 0 auto;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.insight,
+.conflict,
+.risk {
+    border-radius: 7px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    line-height: 1.55;
+}
+
+.insight {
+    background: #151c19;
+    border: 1px solid #293a34;
+    border-left: 3px solid var(--green);
+}
+
+.conflict {
+    background: #1b1815;
+    border: 1px solid #3c3025;
+    border-left: 3px solid var(--amber);
+}
+
+.risk {
+    background: #1c1617;
+    border: 1px solid #40292b;
+    border-left: 3px solid var(--red);
+}
+
+.small {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.provenance-block {
+    margin-top: 11px;
+    padding-top: 9px;
+    border-top: 1px solid #2c2d31;
+}
+
+.prov-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 7px;
+}
+
+.prov-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.prov-approved {
+    color: var(--green);
+    background: #14231e;
+    border: 1px solid #2e5547;
+}
+
+.prov-review {
+    color: var(--amber);
+    background: #261e14;
+    border: 1px solid #634826;
+}
+
+.prov-type {
+    color: #b9c9dc;
+    background: #171d24;
+    border: 1px solid #344252;
+}
+
+.prov-warning {
+    margin: 7px 0;
+    padding: 7px 9px;
+    border-left: 2px solid var(--amber);
+    background: #211b14;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.provenance-details {
+    margin-top: 6px;
+}
+
+.provenance-details summary {
+    cursor: pointer;
+    color: #9fa8b4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    user-select: none;
+}
+
+.provenance-details summary:hover {
+    color: var(--text);
+}
+
+.claim-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.claim-id {
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid #353b43;
+    border-radius: 4px;
+    background: #121519;
+    color: #aeb8c4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+}
+
+.prov-note {
+    margin-top: 8px;
+    color: #73777e;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.conflict-view {
+    margin-top: 10px;
+}
+
+.takeaway-item {
+    margin-bottom: 12px;
+}
+
+.action {
+    display: flex;
+    gap: 14px;
+    padding: 15px;
+    background: #171a18;
+    border: 1px solid #304238;
+    border-radius: 8px;
+    margin-bottom: 9px;
+}
+
+.action-number {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: var(--amber);
+    color: #17120b;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.action p {
+    margin: 7px 0;
+    color: #b9babd;
+    line-height: 1.5;
+}
+
+.monitor {
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+}
+
+.
+footer {
+    text-align: center;
+    color: #66686d;
+    font-size: 10px;
+    padding: 26px;
+}
+
+.footer-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+    text-decoration: none;
+}
+
+.footer-link + .footer-link {
+    margin-left: 18px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        padding: 12px;
+    }
+
+    .tv-top {
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .top-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .calendar-panel {
+        position: fixed;
+        top: 70px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }
+
+    .screen {
+        padding: 24px;
+    }
+
+    .screen h1 {
+        font-size: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+
+
+<style id="publication-status-nav-style">
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+
+<div class="tv">
+
+    <section class="research-hero" aria-label="Independent Market Research">
+        <img
+            class="research-hero-image"
+            src="../assets/wall-street-roberto-junior-unsplash.jpg"
+            alt="Wall Street street sign in New York"
+        >
+        <div class="research-hero-overlay"></div>
+
+        <div class="research-hero-content">
+            <div class="research-hero-kicker">📺 INDEPENDENT MARKET RESEARCH</div>
+            <div class="research-hero-title">Markets, Macro & Capital Flows</div>
+        </div>
+
+        <div class="research-hero-credit">
+            Photo by Roberto Junior on Unsplash
+        </div>
+    </section>
+
+    <div class="tv-top">
+
+        <div class="brand">
+            INDEPENDENT MARKET RESEARCH · SURVEILLANCE DESK
+        </div>
+
+        <div class="top-actions">
+
+            <div class="live">
+                ● DAILY RESEARCH
+            </div>
+
+            <div
+                class="calendar-control"
+                id="calendarControl"
+            >
+
+                <button
+                    class="calendar-button"
+                    id="calendarButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="calendarPanel"
+                >
+                    <span class="calendar-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        2026-09-08
+                    </span>
+                </button>
+
+                <div
+                    class="calendar-panel"
+                    id="calendarPanel"
+                >
+
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    SEP 2026
+                </div>
+
+                <div class="nav-date-grid">
+                    
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-01/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-01"
+                    >
+                        01
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-02/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-02"
+                    >
+                        02
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-03/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-03"
+                    >
+                        03
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-04/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-04"
+                    >
+                        04
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date nav-date-current"
+                        href="../2026-09-08/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-08"
+                    >
+                        08
+                    </a>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+            
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    AUG 2026
+                </div>
+
+                <div class="nav-date-grid">
+                    
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-14/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-14"
+                    >
+                        14
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-18/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-18"
+                    >
+                        18
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-19/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-19"
+                    >
+                        19
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-20/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-20"
+                    >
+                        20
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-24/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-24"
+                    >
+                        24
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-25/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-25"
+                    >
+                        25
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-26/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-26"
+                    >
+                        26
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-27/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-27"
+                    >
+                        27
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-28/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-28"
+                    >
+                        28
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-31/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-31"
+                    >
+                        31
+                    </a>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+            
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    FEB 2023
+                </div>
+
+                <div class="nav-date-grid">
+                    
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2023-02-15/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2023-02-15"
+                    >
+                        15
+                    </a>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+            
+                </div>
+
+            </div>
+
+            <div class="language-switch"
+                aria-label="Report language"
+            >
+                <a
+                    class="lang-option"
+                    href="daily_research_report_tv_v0_1.html?desk=v0_2"
+                >
+                    EN
+                </a>
+
+                <span
+                    class="lang-option lang-active"
+                >
+                    한국어
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="screen">
+
+        <div class="screen-label">
+            GLOBAL MARKET RESEARCH
+        </div>
+
+        <h1>
+            Daily Market Brief
+        </h1>
+
+        <div class="date">
+            2026-09-08
+        </div>
+
+        <div class="controls">
+
+            <span class="knob"></span>
+            <span class="knob"></span>
+            <span class="knob"></span>
+
+            <span class="status">
+                EVIDENCE GROUNDED · RESEARCH ONLY
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content">
+
+<section class="card">
+
+    <div class="section-title">
+        EXECUTIVE SUMMARY
+    </div>
+
+    <div class="executive">
+        <ul>
+            <li>끈질긴 인플레이션 지표와 타이트해진 금융여건이 예상치 못한 미 연방준비제도 금리 인상 확률을 높이면서 통화정책 불확실성이 주요 거시경제적 초점으로 남아 있습니다.</li><li>에너지 시장은 정제설비 제약, 천연가스 투입 비용 상승, 페르시아만의 지정학적 장애물로 인해 심각한 압박에 직면해 있으며, 이로 인해 정제제품과 디젤 공급이 예외적으로 타이트한 상태를 유지하고 있습니다.</li><li>인공지능 인프라 확장은 물리적 병목 현상, 지역사회 반발, 대규모 하이퍼스칼로 회사채 발행에 직면해 있지만, 이러한 마찰 지점들은 투기적 과열을 막는 자연스러운 조절기 역할을 합니다.</li>
+        </ul>
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MACRO THEMES
+    </div>
+
+
+        <div class="macro-card">
+            <h3>통화정책 긴축과 미 연방준비제도 다이내믹스</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                지속되는 인플레이션 우려와 회복력 있는 경제 성장이 미 연방준비제도를 잠재적 정책 긴축으로 몰아가고 있으며, 이는 더 높은 최종 금리에 대한 논평과 케빈 워시 의장 체제 하에서의 FOMC 리더십 화학 작용 변화에 의해 뒷받침됩니다.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Seema Shah</span> <span class="guest">Kit Juckes</span> <span class="guest">Earl Davis</span> <span class="guest">Stephen Stanley</span>
+            </div>
+
+
+        </div>
+
+        <div class="macro-card">
+            <h3>AI 인프라 제약과 하이퍼스칼로 지출</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                하이퍼스칼로들의 막대한 자본지출과 고품질 회사채 발행이 시장 다이내믹스를 주도하는 한편, 지역 데이터센터 반발, 전력망 장애, 공급망 지연이 단기적 마찰을 유발합니다.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Oksana Aronov</span> <span class="guest">Barbara Reinhard</span> <span class="guest">Gil Luria</span> <span class="guest">Brian Levitt</span>
+            </div>
+
+
+        </div>
+
+        <div class="macro-card">
+            <h3>에너지 시장 병목 현상과 디스틸레이트 압력</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                중동의 지정학적 마찰과 정제 허브의 설비 피해로 인해 디스틸레이트 및 디젤 시장이 심각하게 제약된 상태를 유지하고 있으며, 이는 완화된 원유 헤드라인 트렌드를 압도합니다.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Jon Lieber</span> <span class="guest">Jim Caron</span> <span class="guest">Samantha Dart</span>
+            </div>
+
+
+        </div>
+
+
+</section>
+
+
+<div class="grid">
+
+
+    <section class="market-card">
+        <div class="section-title">
+            RATES / BONDS
+        </div>
+
+        <p class="summary">
+            채권 시장은 견조한 명목 경제 성장, 막대한 기업 및 하이퍼스칼로 부채 발행, 잠재적 모기지 볼록성 헤징 리스크로 인해 금리 상승 압력에 직면해 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>장기 국채 금리는 단기 중앙은행의 조치뿐만 아니라 재정 지출과 우량 기업 발행에 점점 더 반응하고 있습니다.</li><li>글로벌 수익률 곡선 가파름은 미 국채 30년물의 잠재적 심각한 매도세를 유발할 위치에 있으며, 이는 모기지 볼록성 헤징 중 제한된 딜러 유동성으로 인해 더욱 악화됩니다.</li><li>컨센서스를 상회하는 지속적인 인플레이션 지표는 미 연방준비제도가 다수의 금리 인상을 단행할 정당성을 제공합니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>모기지 볼록성 헤징과 불충분한 딜러 유동성으로 인한 장기 듀레이션 부채의 급격한 매도세.</li><li>금리 인상 캠페인이 확대될 경우 기술적 돌파점에 접근하는 미 국채 금리의 통제 불능 급등.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            USD / FX
+        </div>
+
+        <p class="summary">
+            외환 시장은 엇갈리는 중앙은행 긴축 주기를 항해하고 있으며, 일본은행은 글로벌 경제 역풍에도 불구하고 금리를 인상해야 하는 압박에 직면해 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>일본은행은 통화를 보호하고 부채 포지션을 안정시키기 위해 금리를 인상할 여지가 있지만, 글로벌 금리 인상 주기는 공격적인 캐리 트레이드 청산을 복잡하게 만듭니다.</li><li>지속적인 미국 경제 회복력과 끈질긴 인플레이션은 즉각적인 통화 완화에 대한 정당성을 거의 남기지 않습니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>개입 전략과 변화하는 캐리 트레이드 다이내믹스가 달러-엔 환율의 날카로운 변동성을 유발함.</li><li>지속적인 글로벌 에너지 가격 압력이 미 달러 대비 외국 통화를 약화시킴.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            EQUITIES
+        </div>
+
+        <p class="summary">
+            주식 시장은 긍정적인 12개월 선행 이익 성장과 관리 가능한 밸류에이션에 의해 지지되고 있지만, 타이트해지는 금융여건과 정치적 소음이 역풍으로 작용하고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>선행 이익 성장이 긍정적으로 유지되고 투자자 심리가 극단적인 도취를 피하는 한 주식은 회복력을 유지합니다.</li><li>타이트해진 금융여건 및 잠재적 정책 오류로의 전환은 멀티플 확장을 위협하고 광범위한 주식 상승에 덜 우호적인 환경을 조성합니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>미 연방준비제도의 공격적인 다중 금리 인상 캠페인이 주식 시장 조정을 촉발함.</li><li>공급 측면의 에너지 충격과 상승하는 투입 비용이 소비자 임의 지출과 기업 마진을 압박함.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            CREDIT
+        </div>
+
+        <p class="summary">
+            기업 신용 여건은 높은 차입 비용과 막대한 발행 물량 속에서 레버리지가 높은 대차대조표에 가해지는 증가하는 부담을 반영합니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>높은 금리는 기업 대차대조표, 특히 레버리지가 더 높은 차입자들 사이에서 점점 더 큰 영향을 미치고 있습니다.</li><li>하이퍼스칼로들은 대규모 부채 발행 프로그램을 유지하며, 장기 금리 구조에 영향을 미치는 고품질 공급을 창출합니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>높은 차입 비용이 지속됨에 따라 하위 등급 신용 티어의 악화.</li><li>기술 및 AI 부문의 과도한 레버리지를 쓴 참여자들에 대한 채권 시장의 자금 조달 거부.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            AI / TECHNOLOGY
+        </div>
+
+        <p class="summary">
+            인공지능 구축은 물리적 및 규제적 마찰에 직면해 있으며, 이는 투자 주기를 규제하고 투기적 과열을 방지하는 역할을 합니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>지역사회 반발, 전력망 연결 지연, 전력 장비 부족이 데이터센터 건설에 대한 자연스러운 조절기로 작용하고 있습니다.</li><li>자율형 AI 에이전트는 치명적인 보안 취약점을 제시하며, 금융 및 결제 시스템을 보호하기 위한 강력한 규제 감독의 필요성을 높이고 있습니다.</li><li>주식 강세 주기의 최종 종결점은 하이퍼스칼로 자본지출 후퇴 또는 AI 자금 조달에 대한 채권 시장의 반발과 연관될 가능성이 높습니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>자율형 AI 에이전트에 의해 유발된 심각한 보안 침해 및 해킹 사건.</li><li>기술 인프라 구축의 급격한 감속을 유발하는 장기화된 시립 분쟁 및 전력 공급 병목 현상.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            COMMODITIES
+        </div>
+
+        <p class="summary">
+            정제제품과 디젤 시장은 정제설비 피해, 낮은 재고, 높은 운영 투입 비용으로 인해 극단적인 타이트함을 겪고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>디젤은 러시아의 역사적 수출 손실과 휘발유에서 벗어난 정유사 수율 변화로 인해 악화된, 가장 타이트한 에너지 시장을 대표합니다.</li><li>유럽의 높은 천연가스 비용과 중동의 해결되지 않은 설비 제약은 정제 비용을 높게 유지하고 제품 마진을 높게 유지합니다.</li><li>호르무즈 해협을 우회하려는 미국의 전략적 노력은 정제제품, 비료, 알루미늄의 수출 물량과 관련하여 장애물에 직면해 있습니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>글로벌 에너지 공급을 위협하는 페르시아만의 고조되는 지정학적 긴장.</li><li>산업 및 소비자 운송 부문에 대해 지속적인 인플레이션 압력을 유발하는 지속적으로 높은 크랙 스프레드.</li>
+        </ul>
+    </section>
+
+
+</div>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONSENSUS
+    </div>
+
+
+        <div class="insight">
+            <strong>
+                인공지능 인프라 붐과 데이터센터 확장은 현실 세계의 물리적 및 전력 공급 제약에 직면해 있습니다.
+            </strong>
+
+            <div class="small">
+                Guests:
+                Oksana Aronov, Barbara Reinhard, Gil Luria, Brian Levitt
+            </div>
+
+
+        </div>
+
+        <div class="insight">
+            <strong>
+                정제 에너지 제품, 특히 디젤은 구조적 정제설비 병목 현상과 지정학적 요인으로 인해 예외적으로 타이트한 상태를 유지하고 있습니다.
+            </strong>
+
+            <div class="small">
+                Guests:
+                Jon Lieber, Jim Caron, Samantha Dart
+            </div>
+
+
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONFLICTS
+    </div>
+
+
+        <div class="conflict">
+            <strong>
+                시장 회복력 대 타이트해지는 금융여건
+            </strong>
+
+            <div class="conflict-view">
+                <b>VIEW A:</b>
+                주식은 극단적인 도취의 징후 없이 회복력 있는 선행 이익 성장과 관리 가능한 밸류에이션에 의해 지지되고 있습니다.
+
+
+            </div>
+
+            <div class="conflict-view">
+                <b>VIEW B:</b>
+                금융여건이 현저하게 타이트해지고 있으며, 이는 소비자 전망을 위협하고 연방준비제도 유도 매도세를 유발하는 덜 우호적인 환경을 조성합니다.
+
+
+            </div>
+
+            <div class="small">
+                단기적 펀더멘털 이익 지지를 거시경제적 통화정책 역풍 및 밸류에이션 리스크와 대조함.
+            </div>
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        KEY RISKS
+    </div>
+
+
+        <div class="risk">
+            <div class="risk-title">
+                공격적인 연방준비제도 금리 인상 캠페인
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                예상보다 뜨거운 CPI 인플레이션 지표와 지속적인 임금-물가 압력.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                날카로운 주식 시장 조정, 채권 금리의 심각한 상승 압력, 소비자 및 기업 부문에 걸친 타이트해진 금융여건.
+            </div>
+        </div>
+
+        <div class="risk">
+            <div class="risk-title">
+                정제 에너지 공급 병목 현상
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                정제 허브의 지속적인 설비 피해와 페르시아만의 고조되는 지정학적 마찰.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                지속되는 높은 디젤 및 크랙 스프레드 가격, 산업 사용자에 대한 투입 비용 인플레이션 및 마진 압축 유발.
+            </div>
+        </div>
+
+        <div class="risk">
+            <div class="risk-title">
+                AI 인프라 지출 감속
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                지역사회 반발, 전력망 전력 제한, 또는 기술 부문 자금 조달에 대한 채권 시장의 거부.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                경제 둔화 충격을 통한 장기 국채 금리의 하방 압력, 동시에 기술 주의 부문별 밸류에이션 조정.
+            </div>
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        RESEARCH TAKEAWAYS
+    </div>
+
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION
+    </div>
+
+    <br>
+
+    <ul>
+
+        <li class="takeaway-item">
+            <div>
+                통화정책 리스크는 끈질긴 인플레이션이 연방준비제도의 경로를 복잡하게 만들고 예상치 못한 금리 인상 가능성을 높임에 따라 더 타이트한 여건으로 기울어져 있습니다.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                에너지 시장은 원유 펀더멘털이 정제된 디스틸레이트와 디젤의 급격하고 구조적인 타이트함으로부터 분리되는 차별화된 모니터링을 요구합니다.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                기술 및 AI 부문 밸류에이션은 지속적인 하이퍼스칼로 자본지출에 계속 의존하고 있으며, 물리적 인프라 병목 현상은 제약이자 안정화 조절기 양쪽 모두로 작용합니다.
+            </div>
+
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MONITORING IMPLICATIONS
+    </div>
+
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION ·
+        not a Bloomberg guest quote.
+    </div>
+
+    <br>
+
+
+        <div class="action">
+            <div class="action-number">
+                1
+            </div>
+
+            <div>
+                <strong>
+                    컨센서스 조사 추정치를 상회하는 일탈에 대해 다가오는 소비자물가지수 및 인플레이션 지표를 모니터링합니다.
+                </strong>
+
+                <p>
+                    더 높은 인플레이션 지표는 연방준비제도에 금리 인상 캠페인을 개시할 정당성을 제공하며, 고정수익 듀레이션과 주식 밸류에이션에 직접적인 영향을 미칩니다.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    근원 CPI 구성요소, 주거비 인플레이션 지표, 정책 제약성에 대한 연준 공식 코멘트.
+                </div>
+            </div>
+        </div>
+
+        <div class="action">
+            <div class="action-number">
+                2
+            </div>
+
+            <div>
+                <strong>
+                    유럽과 중동의 디젤 크랙 스프레드, 디스틸레이트 재고 수준, 정제설비 가동률을 추적합니다.
+                </strong>
+
+                <p>
+                    정제제품 시장은 원유 움직임과 무관한 급성 구조적 타이트함을 보여주며, 산업 투입 비용과 소비자 인플레이션에 직접적인 리스크를 제기합니다.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    주간 EIA 재고 보고서, 정유사 운영에 미치는 유럽 천연가스 가격 책정 영향, 페르시아만의 지정학적 발전.
+                </div>
+            </div>
+        </div>
+
+        <div class="action">
+            <div class="action-number">
+                3
+            </div>
+
+            <div>
+                <strong>
+                    주요 기술 하이퍼스칼로들의 기업 부채 발행 볼륨과 데이터센터 허가에 관한 지역 규제 개발을 관찰합니다.
+                </strong>
+
+                <p>
+                    장기 국채 금리 궤적과 기술 부문 밸류에이션은 고품질 신용 발행 공급과 물리적 인프라 마찰에 민감합니다.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    프라이머리 회사채 캘린더, 전력 집약적 시설에 대한 지자체 구역 조정 위원회 결정, 전력망 상호연결 대기열.
+                </div>
+            </div>
+        </div>
+
+
+</section>
+
+</div>
+
+
+<div class="footer">
+    Independent Market Research Engine · 2026-09-08
+    <br>
+    Independent research project. Not affiliated with or
+    endorsed by Bloomberg. Bloomberg Surveillance is used
+    solely as a source program for research.
+    Bloomberg material is research material, not a trading signal.
+    <br>
+    <a
+        class="footer-link"
+        href="https://petal-chair-9d2.notion.site/Bloomberg-Surveillance-Research-Pipeline-efa0169c5b49821d834281a9b2d84e0d"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        프로젝트 개요 → PORTFOLIO ↗
+    </a>
+
+    <a
+        class="footer-link"
+        href="https://github.com/Sellina95/bloomberg-surveillance-research"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        방법론 및 소스 코드 → GITHUB ↗
+    </a>
+</div>
+
+</div>
+
+<script>
+(function () {
+    const control =
+        document.getElementById(
+            "calendarControl"
+        );
+
+    const button =
+        document.getElementById(
+            "calendarButton"
+        );
+
+    if (!control || !button) {
+        return;
+    }
+
+    button.addEventListener(
+        "click",
+        function (event) {
+            event.stopPropagation();
+
+            const open =
+                control.classList.toggle(
+                    "open"
+                );
+
+            button.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+        }
+    );
+
+    document.addEventListener(
+        "click",
+        function (event) {
+            if (
+                !control.contains(
+                    event.target
+                )
+            ) {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+            if (event.key === "Escape") {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+})();
+</script>
+
+</body>
+
+</html>
