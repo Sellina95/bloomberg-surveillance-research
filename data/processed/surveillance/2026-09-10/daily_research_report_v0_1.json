@@ -1,0 +1,169 @@
+{
+  "date": "2026-09-10",
+  "executive_summary": [
+    "Persistent energy and diesel price shocks are driving up producer price inflation, making it increasingly difficult for central banks to dismiss supply-side pressures as temporary.",
+    "Equity markets remain supported by strong AI-driven capital expenditures and broad corporate earnings resilience, though valuations face headwinds from higher sovereign yields and emerging local regulatory pushback on data centers.",
+    "Disagreement persists over the necessity and effectiveness of further monetary tightening, with some analysts warning that blunt rate hikes risk crushing already-strained lower-income consumers without resolving supply-driven inflation."
+  ],
+  "macro_themes": [
+    {
+      "theme": "Energy Shocks and Pass-Through Inflation",
+      "summary": "Surging diesel and energy costs are driving producer price inflation higher, with risks of rapid pass-through into consumer prices and broader economic sectors.",
+      "supporting_guests": [
+        "Michael McKee",
+        "Mike Reid",
+        "Pooja Kumra"
+      ]
+    },
+    {
+      "theme": "Fiscal Constraints and Sovereign Deficits",
+      "summary": "Structural deficits, heavy long-duration debt issuance for AI infrastructure, and a shrinking buyer base of price-insensitive central banks are driving upward pressure on long-term bond yields.",
+      "supporting_guests": [
+        "Omar Aguilar",
+        "Marc Short",
+        "Kurt Reiman",
+        "Libby Cantrill"
+      ]
+    },
+    {
+      "theme": "AI Infrastructure and Regulatory Headwinds",
+      "summary": "While AI capital spending continues to fuel corporate earnings and technology innovation, local municipal pushback, permit revocations, and power constraints are emerging as significant operational risks.",
+      "supporting_guests": [
+        "Omar Aguilar",
+        "Kurt Reiman",
+        "Venu Krishna",
+        "Libby Cantrill",
+        "Gene Munster"
+      ]
+    }
+  ],
+  "rates_bonds": {
+    "summary": "Sovereign bond markets face ongoing downward pressure and rising yields as persistent energy inflation, heavy long-duration debt supply, and shifting central bank credibility risks challenge prior easing expectations.",
+    "key_views": [
+      "Intermediate high-quality bonds offer some of the most attractive entry yields seen in the past 15 years.",
+      "Long-duration debt issuance to fund AI data center infrastructure is altering supply dynamics at the back end of the curve.",
+      "German bond yields and European yield curves have reacted hawkishly to upgraded inflation projections and recent policy decisions."
+    ],
+    "risks": [
+      "Unchecked fiscal spending and heavy debt issuance could inflict further pain on bond markets.",
+      "Persistent energy price shocks may force central banks into more aggressive tightening than currently priced."
+    ]
+  },
+  "usd_fx": {
+    "summary": "Global currency and rate differentials are increasingly influenced by regional energy vulnerabilities and differing central bank responses to supply-side inflation shocks.",
+    "key_views": [
+      "European bond and currency markets are reacting to natural gas pass-through risks and regional energy dependencies.",
+      "U.S. yield curve movements reflect credibility risks alongside front-end oil price pressures."
+    ],
+    "risks": [
+      "Escalating geopolitical conflicts and trade friction could amplify foreign exchange volatility."
+    ]
+  },
+  "equities": {
+    "summary": "Equity markets demonstrate resilience through broad-based earnings growth and robust capital spending, though elevated discount rates and valuation pressures require strong earnings beats.",
+    "key_views": [
+      "Equity markets face valuation headwinds and borrowing cost pressures when 10-year Treasury yields approach the 5% threshold.",
+      "Cyclical sectors such as financials and health care are participating in market breadth via AI adoption and increased capital expenditures.",
+      "Strong corporate earnings and consumer resilience continue to underpin upgraded index targets."
+    ],
+    "risks": [
+      "Higher borrowing costs and potential monetary tightening could squeeze profit margins.",
+      "Local regulatory roadblocks and data center moratoria threaten the execution of AI-driven revenue growth."
+    ]
+  },
+  "credit": {
+    "summary": "Credit conditions are tightening as central banks respond to sticky inflation, with vulnerable consumer cohorts showing increased financial strain.",
+    "key_views": [
+      "Lower-income and younger consumer cohorts are disproportionately feeling the impact of non-mortgage credit stress and inflation shocks.",
+      "High-quality intermediate fixed income instruments present compelling relative value for institutional reallocations."
+    ],
+    "risks": [
+      "Further rate hikes risk crushing demand in debt-reliant consumer segments."
+    ]
+  },
+  "ai_technology": {
+    "summary": "Artificial intelligence continues to drive corporate capital expenditure and hardware innovation, even as local permitting and infrastructure bottlenecks create new friction points.",
+    "key_views": [
+      "The new foldable iPhone design is projected to capture a significant share of overall device revenue and open new canvases for agentic AI applications.",
+      "Bipartisan pushback and local municipal permit revocations for data centers represent a growing operational risk for the AI trade."
+    ],
+    "risks": [
+      "Regulatory hurdles and power infrastructure constraints could delay large-scale AI deployment and monetization."
+    ]
+  },
+  "commodities": {
+    "summary": "Significant spikes in diesel, crude, and natural gas prices are intensifying upstream inflationary pressures and complicating macroeconomic forecasts.",
+    "key_views": [
+      "Producer price data highlights sharp monthly increases driven largely by energy and fuel price surges.",
+      "Geopolitical tensions and a lack of inspection visibility in key energy-producing regions maintain structural risk premiums."
+    ],
+    "risks": [
+      "Sustained energy inflation risks broader pass-through into consumer prices and economic contraction."
+    ]
+  },
+  "cross_guest_consensus": [
+    {
+      "view": "Energy and supply-side shocks are driving persistent inflation that is increasingly difficult for central banks to ignore.",
+      "guests": [
+        "Michael McKee",
+        "Mike Reid",
+        "Liz Thomas",
+        "Pooja Kumra"
+      ]
+    },
+    {
+      "view": "Local regulatory pushback and permitting hurdles for data centers represent a tangible near-term risk to the AI infrastructure buildout.",
+      "guests": [
+        "Venu Krishna",
+        "Libby Cantrill"
+      ]
+    }
+  ],
+  "cross_guest_conflicts": [
+    {
+      "topic": "Appropriateness of Further Central Bank Rate Hikes",
+      "view_a": "The U.S. economy and eurozone growth are resilient enough to absorb additional rate hikes to stabilize long-term interest rates and combat inflation.",
+      "view_b": "Rate hikes are ineffective against supply shocks and risk crushing strained consumer demand and vulnerable economic cohorts.",
+      "why_it_matters": "Determines whether central banks will risk triggering economic slowdowns or maintain restrictive holds in the face of persistent inflation."
+    }
+  ],
+  "key_risks": [
+    {
+      "risk": "Uncontrolled Energy and Goods Pass-Through",
+      "trigger": "Continued spikes in diesel, crude, and natural gas prices",
+      "market_impact": "Upward pressure on sovereign bond yields, margin compression for consumer sectors, and forced monetary tightening."
+    },
+    {
+      "risk": "AI Infrastructure Backlash",
+      "trigger": "Widespread municipal permit revocations and power moratoriums",
+      "market_impact": "Delayed capital expenditure realization and multiple contraction for technology leaders."
+    },
+    {
+      "risk": "Geopolitical and Trade Disruptions",
+      "trigger": "Lack of nuclear inspection visibility and stalled regional trade negotiations",
+      "market_impact": "Elevated risk premiums in energy markets and capital expenditure delays for multinational corporations."
+    }
+  ],
+  "research_takeaways": [
+    "Bond markets are reacting to a combination of heavy long-duration AI infrastructure supply, sovereign deficits, and sticky energy inflation.",
+    "Equity market breadth is supported by traditional cyclical sectors adopting AI, though high valuations remain sensitive to 10-year Treasury yield levels.",
+    "Monetary policymakers face a difficult trade-off between addressing supply-driven inflation and avoiding excessive damage to indebted consumer segments."
+  ],
+  "daily_action": [
+    {
+      "action": "Monitor sovereign yield curve dynamics and 10-year Treasury proximity to the 5% threshold.",
+      "why": "Approaching key yield thresholds impacts equity valuation multiples and corporate borrowing costs across sectors.",
+      "what_to_monitor": "10-year Treasury yield movements, primary dealer auction demand, and long-duration corporate debt issuance volumes."
+    },
+    {
+      "action": "Track high-frequency energy and producer price inflation metrics.",
+      "why": "Upstream diesel and energy shocks are actively feeding into PPI and threatening to pass through to broader consumer price indices.",
+      "what_to_monitor": "Diesel, crude oil, and natural gas spot prices alongside upcoming producer price releases."
+    },
+    {
+      "action": "Observe regulatory developments and municipal policy announcements regarding data center construction.",
+      "why": "Local permit revocations and zoning pushbacks pose emerging operational hurdles for large-scale AI infrastructure deployment.",
+      "what_to_monitor": "State and local legislative actions, utility power allocation filings, and municipal zoning board decisions."
+    }
+  ]
+}
