@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import calendar
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -21,6 +22,11 @@ EN_TV = "daily_research_report_tv_v0_1.html"
 KO_TV = "daily_research_report_tv_ko_v0_1.html"
 
 NAV_CACHE_TOKEN = "desk=v0_2"
+
+
+def navigation_token(status):
+    encoded = json.dumps(status, sort_keys=True, separators=(",", ":")).encode()
+    return "desk=v0_3-" + hashlib.sha256(encoded).hexdigest()[:12]
 
 
 def load_status() -> dict:
@@ -63,6 +69,8 @@ def build_navigation(
     current_date: str,
     language: str,
 ) -> str:
+
+    cache_token = navigation_token(status)
 
     grouped = {}
 
@@ -123,7 +131,7 @@ def build_navigation(
                 "../"
                 f"{report_date}/"
                 f"{target}"
-                f"?{NAV_CACHE_TOKEN}"
+                f"?{cache_token}"
             )
 
             ko_indicator = (
@@ -279,6 +287,8 @@ def refresh_language_switch(
     status: dict,
 ) -> str:
 
+    cache_token = navigation_token(status)
+
     record = status[report_date]
 
     ko_available = (
@@ -287,11 +297,11 @@ def refresh_language_switch(
     )
 
     en_href = (
-        f"{EN_TV}?{NAV_CACHE_TOKEN}"
+        f"{EN_TV}?{cache_token}"
     )
 
     ko_href = (
-        f"{KO_TV}?{NAV_CACHE_TOKEN}"
+        f"{KO_TV}?{cache_token}"
     )
 
     if language == "ko":
@@ -432,7 +442,7 @@ def main() -> None:
                 continue
 
             html_path.write_text(
-                updated,
+                "\n".join(line.rstrip() for line in updated.splitlines()) + "\n",
                 encoding="utf-8",
             )
 

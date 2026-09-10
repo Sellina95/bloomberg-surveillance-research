@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
+from presentation_contract_v0_1 import scalar_text, list_item_text
 
 
 DATE = os.environ.get(
@@ -34,7 +35,7 @@ report = json.loads(
 def text(value) -> str:
     if value is None:
         return ""
-    return str(value).strip()
+    return scalar_text(value).strip()
 
 
 def bullets(items) -> str:
@@ -42,7 +43,7 @@ def bullets(items) -> str:
         return "- None"
 
     return "\n".join(
-        f"- {text(item)}"
+        f"- {text(list_item_text(item))}"
         for item in items
     )
 

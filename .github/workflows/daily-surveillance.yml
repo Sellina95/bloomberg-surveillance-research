@@ -12,6 +12,11 @@ permissions:
   pages: write
   id-token: write
 
+# A second publisher must not commit/deploy an older snapshot over a new one.
+concurrency:
+  group: surveillance-publication-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   daily-surveillance:
     runs-on: ubuntu-latest
@@ -53,6 +58,7 @@ jobs:
           python tests/test_verbatim_gate_v0_1.py
           python tests/test_provenance_contract_v0_1.py
           python tests/test_atomic_publication_contract_v0_1.py
+          python tests/test_publication_ui_contract_v0_1.py
 
       - name: Update surveillance inventory
         env:
@@ -104,6 +110,8 @@ jobs:
             -name 'report_provenance_v0_1.json' -o \
             -name 'publication_status_v0_1.json' \
           \) -print0 | xargs -0 -r git add -f --
+
+          git add -f -- data/processed/surveillance/index.html
 
           if git diff --cached --quiet; then
             echo "NO NEW ARTIFACTS"

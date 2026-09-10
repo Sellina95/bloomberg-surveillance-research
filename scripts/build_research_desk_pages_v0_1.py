@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import shutil
 from pathlib import Path
+from validate_public_navigation_v0_1 import snapshot_failures
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,6 +21,10 @@ KO_TV = "daily_research_report_tv_ko_v0_1.html"
 
 
 def main() -> None:
+
+    failures = snapshot_failures(SOURCE)
+    if failures:
+        raise SystemExit("PUBLIC SNAPSHOT INVALID: " + "; ".join(failures))
 
     if not SOURCE.exists():
         raise SystemExit(

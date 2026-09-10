@@ -30,7 +30,7 @@ Bond yields face upward pressure globally, driven largely by surging commodity m
 
 ### Key Views
 
-- {'view': 'Bond markets are taking direct pricing cues from triple-digit crude oil and high product crack spreads.', 'evidence_basis': 'Program synthesis notes yield reactions to commodity market inflation.'}
+- Bond markets are taking direct pricing cues from triple-digit crude oil and high product crack spreads.
 
 ### Risks
 
@@ -61,7 +61,7 @@ Equities exhibit strong resilience, underpinned by robust corporate earnings, so
 
 ### Key Views
 
-- {'view': 'Constructive medium-term equity outlook remains intact, with price targets reflecting strong corporate fundamentals despite macroeconomic crosscurrents.', 'evidence_basis': 'Program synthesis indicates strong fundamentals and ongoing multiple compression supporting bullish stances.'}
+- Constructive medium-term equity outlook remains intact, with price targets reflecting strong corporate fundamentals despite macroeconomic crosscurrents.
 
 ### Risks
 
@@ -107,7 +107,7 @@ Crude oil has crossed back above triple-digit thresholds, with product crack spr
 
 ### Key Views
 
-- {'view': 'Brent crude breaking back through $100 reinforces inflationary impulses across global markets.', 'evidence_basis': 'Program synthesis highlights triple-digit crude and heating oil crack spreads.'}
+- Brent crude breaking back through $100 reinforces inflationary impulses across global markets.
 
 ### Risks
 

@@ -5,6 +5,7 @@ import json
 import os
 from html import escape
 from pathlib import Path
+from presentation_contract_v0_1 import scalar_text, list_item_text
 
 
 DATE = os.environ.get(
@@ -454,7 +455,7 @@ def navigation_html():
 def e(value):
     if value is None:
         return ""
-    return escape(str(value))
+    return escape(scalar_text(value))
 
 
 def list_items(items):
@@ -462,7 +463,7 @@ def list_items(items):
         return "<div class='empty'>No data</div>"
 
     return "".join(
-        f"<li>{e(item)}</li>"
+        f"<li>{e(list_item_text(item))}</li>"
         for item in items
     )
 

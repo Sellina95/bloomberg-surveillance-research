@@ -2,19 +2,6 @@
   "schema_version": "publication_status_v0_1",
   "dates": [
     {
-      "date": "2023-02-15",
-      "en": {
-        "status": "available",
-        "report": true,
-        "tv": true
-      },
-      "ko": {
-        "status": "available",
-        "report": true,
-        "tv": true
-      }
-    },
-    {
       "date": "2026-08-14",
       "en": {
         "status": "available",

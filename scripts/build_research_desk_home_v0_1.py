@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from html import escape
 from pathlib import Path
+from refresh_historical_navigation_v0_1 import load_status, navigation_token
 
 
 ROOT = Path(
@@ -14,7 +15,7 @@ TV_FILENAME = (
 
 OUTPUT = ROOT / "index.html"
 
-CACHE_TOKEN = "desk=v0_1"
+CACHE_TOKEN = navigation_token(load_status())
 
 
 def valid_date_dir(path: Path) -> bool:

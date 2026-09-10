@@ -13,6 +13,7 @@ from public_language_policy_v0_1 import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
+from validate_public_navigation_v0_1 import snapshot_failures
 SURVEILLANCE = ROOT / "data" / "processed" / "surveillance"
 
 # ---------------------------------------------------------------------------
@@ -314,6 +315,9 @@ for path in public_rendered:
 # ===========================================================================
 # RESULT
 # ===========================================================================
+
+for issue in snapshot_failures(SURVEILLANCE):
+    fail(issue)
 
 print("=" * 78)
 print("PUBLIC SURFACE GATE v0.1")

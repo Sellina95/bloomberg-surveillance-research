@@ -12,7 +12,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from src.publication.atomic_release import promote_date, promote_file
+from src.publication.atomic_release import promote_snapshot
+from validate_public_navigation_v0_1 import WITHDRAWN_DATES, snapshot_failures
 
 INVENTORY = ROOT / "data/processed/surveillance/surveillance_video_inventory_august_2026.json"
 PUBLIC_ROOT = ROOT / "data/processed/surveillance"
@@ -47,6 +48,8 @@ def validate_daily_source_date(
     today: date | None = None,
     allow_historical: bool = False,
 ) -> None:
+    if report_date in WITHDRAWN_DATES:
+        raise SystemExit("SOURCE FRESHNESS CONTRACT: FAIL — withdrawn accidental publication")
     if allow_historical:
         return
     try:
@@ -84,6 +87,9 @@ def main() -> None:
         "daily_research_report_tv_ko_v0_1.html",
     )
     if all((existing / name).exists() for name in legacy_required):
+        failures = snapshot_failures(PUBLIC_ROOT)
+        if failures:
+            raise SystemExit("PUBLIC SNAPSHOT INVALID: " + "; ".join(failures))
         print("PUBLICATION ALREADY COMPLETE — SKIP REGENERATION")
         print("DATE:", report_date)
         return
@@ -119,14 +125,17 @@ def main() -> None:
         )
 
         staged_public = stage_repo / "data/processed/surveillance"
-        promote_date(
+        def validate_snapshot():
+            failures = snapshot_failures(staged_public)
+            if failures:
+                raise RuntimeError("PUBLIC SNAPSHOT INVALID: " + "; ".join(failures))
+
+        promote_snapshot(
             staged_public,
             PUBLIC_ROOT,
             report_date,
-            validate=lambda: None,
+            validate=validate_snapshot,
         )
-        for name in ("publication_status_v0_1.json", "index.html"):
-            promote_file(staged_public / name, PUBLIC_ROOT / name)
 
     print("ATOMIC PUBLICATION CONTRACT: PASS")
 
