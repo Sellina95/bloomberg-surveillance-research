@@ -1,0 +1,1302 @@
+{
+  "schema_version": "report_provenance_v0_1",
+  "report_date": "2026-09-10",
+  "source": {
+    "broadcast_title": "Stocks Waver at Start of Week Filled With Key Inflation Data | September 8",
+    "broadcast_date": "2026-09-10",
+    "broadcast_date_basis": "official_full_show_upload_date",
+    "upload_date": "2026-09-10",
+    "video_url": "https://www.youtube.com/watch?v=l2yLMSngXBo",
+    "provider": "Supadata",
+    "transcript_type": "timestamped_youtube_transcript",
+    "collected_at": "2026-09-10T00:26:43.899627+00:00",
+    "source_mode": "chapter_attributed"
+  },
+  "boundary": "IDENTIFIERS_AND_TIMESTAMPS_ONLY_NO_SOURCE_TEXT",
+  "claims": [
+    {
+      "claim_id": "20260910-U001-C01",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 70,
+          "timestamp_seconds": 394.08
+        },
+        {
+          "segment_id": 71,
+          "timestamp_seconds": 395.919
+        },
+        {
+          "segment_id": 79,
+          "timestamp_seconds": 411.52
+        },
+        {
+          "segment_id": 84,
+          "timestamp_seconds": 420.88
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U001-C02",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 33,
+          "timestamp_seconds": 321.199
+        },
+        {
+          "segment_id": 38,
+          "timestamp_seconds": 331.44
+        },
+        {
+          "segment_id": 42,
+          "timestamp_seconds": 338.639
+        },
+        {
+          "segment_id": 43,
+          "timestamp_seconds": 341.28
+        },
+        {
+          "segment_id": 44,
+          "timestamp_seconds": 342.72
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U001-C03",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 23,
+          "timestamp_seconds": 303.36
+        },
+        {
+          "segment_id": 24,
+          "timestamp_seconds": 305.04
+        },
+        {
+          "segment_id": 96,
+          "timestamp_seconds": 440.319
+        },
+        {
+          "segment_id": 97,
+          "timestamp_seconds": 442.319
+        },
+        {
+          "segment_id": 167,
+          "timestamp_seconds": 580.24
+        },
+        {
+          "segment_id": 170,
+          "timestamp_seconds": 585.92
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U002-C01",
+      "unit_id": 2,
+      "references": [
+        {
+          "segment_id": 12,
+          "timestamp_seconds": 1041.36
+        },
+        {
+          "segment_id": 13,
+          "timestamp_seconds": 1044.0
+        },
+        {
+          "segment_id": 14,
+          "timestamp_seconds": 1045.199
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U002-C02",
+      "unit_id": 2,
+      "references": [
+        {
+          "segment_id": 24,
+          "timestamp_seconds": 1067.84
+        },
+        {
+          "segment_id": 25,
+          "timestamp_seconds": 1070.4
+        },
+        {
+          "segment_id": 26,
+          "timestamp_seconds": 1071.52
+        },
+        {
+          "segment_id": 27,
+          "timestamp_seconds": 1072.64
+        },
+        {
+          "segment_id": 28,
+          "timestamp_seconds": 1074.559
+        },
+        {
+          "segment_id": 29,
+          "timestamp_seconds": 1076.48
+        },
+        {
+          "segment_id": 30,
+          "timestamp_seconds": 1078.4
+        },
+        {
+          "segment_id": 31,
+          "timestamp_seconds": 1080.32
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U002-C03",
+      "unit_id": 2,
+      "references": [
+        {
+          "segment_id": 33,
+          "timestamp_seconds": 1085.28
+        },
+        {
+          "segment_id": 34,
+          "timestamp_seconds": 1087.44
+        },
+        {
+          "segment_id": 35,
+          "timestamp_seconds": 1089.6
+        },
+        {
+          "segment_id": 36,
+          "timestamp_seconds": 1091.44
+        },
+        {
+          "segment_id": 37,
+          "timestamp_seconds": 1093.039
+        },
+        {
+          "segment_id": 38,
+          "timestamp_seconds": 1095.76
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U003-C01",
+      "unit_id": 3,
+      "references": [
+        {
+          "segment_id": 2,
+          "timestamp_seconds": 1902.96
+        },
+        {
+          "segment_id": 3,
+          "timestamp_seconds": 1905.12
+        },
+        {
+          "segment_id": 4,
+          "timestamp_seconds": 1907.12
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U003-C02",
+      "unit_id": 3,
+      "references": [
+        {
+          "segment_id": 12,
+          "timestamp_seconds": 1924.08
+        },
+        {
+          "segment_id": 13,
+          "timestamp_seconds": 1926.0
+        },
+        {
+          "segment_id": 31,
+          "timestamp_seconds": 1960.32
+        },
+        {
+          "segment_id": 32,
+          "timestamp_seconds": 1962.399
+        },
+        {
+          "segment_id": 33,
+          "timestamp_seconds": 1964.48
+        },
+        {
+          "segment_id": 35,
+          "timestamp_seconds": 1967.84
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U003-C03",
+      "unit_id": 3,
+      "references": [
+        {
+          "segment_id": 112,
+          "timestamp_seconds": 2123.52
+        },
+        {
+          "segment_id": 113,
+          "timestamp_seconds": 2125.839
+        },
+        {
+          "segment_id": 114,
+          "timestamp_seconds": 2128.079
+        },
+        {
+          "segment_id": 115,
+          "timestamp_seconds": 2131.04
+        },
+        {
+          "segment_id": 116,
+          "timestamp_seconds": 2134.64
+        },
+        {
+          "segment_id": 117,
+          "timestamp_seconds": 2136.8
+        },
+        {
+          "segment_id": 118,
+          "timestamp_seconds": 2139.68
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U004-C01",
+      "unit_id": 4,
+      "references": [
+        {
+          "segment_id": 10,
+          "timestamp_seconds": 2498.48
+        },
+        {
+          "segment_id": 11,
+          "timestamp_seconds": 2499.92
+        },
+        {
+          "segment_id": 12,
+          "timestamp_seconds": 2501.52
+        },
+        {
+          "segment_id": 14,
+          "timestamp_seconds": 2506.16
+        },
+        {
+          "segment_id": 15,
+          "timestamp_seconds": 2509.76
+        },
+        {
+          "segment_id": 16,
+          "timestamp_seconds": 2510.96
+        },
+        {
+          "segment_id": 17,
+          "timestamp_seconds": 2512.8
+        },
+        {
+          "segment_id": 18,
+          "timestamp_seconds": 2514.319
+        },
+        {
+          "segment_id": 19,
+          "timestamp_seconds": 2515.839
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U004-C02",
+      "unit_id": 4,
+      "references": [
+        {
+          "segment_id": 38,
+          "timestamp_seconds": 2554.48
+        },
+        {
+          "segment_id": 39,
+          "timestamp_seconds": 2556.64
+        },
+        {
+          "segment_id": 40,
+          "timestamp_seconds": 2559.359
+        },
+        {
+          "segment_id": 41,
+          "timestamp_seconds": 2560.88
+        },
+        {
+          "segment_id": 42,
+          "timestamp_seconds": 2563.28
+        },
+        {
+          "segment_id": 43,
+          "timestamp_seconds": 2565.839
+        },
+        {
+          "segment_id": 44,
+          "timestamp_seconds": 2568.079
+        },
+        {
+          "segment_id": 45,
+          "timestamp_seconds": 2570.0
+        },
+        {
+          "segment_id": 46,
+          "timestamp_seconds": 2572.0
+        },
+        {
+          "segment_id": 55,
+          "timestamp_seconds": 2588.72
+        },
+        {
+          "segment_id": 56,
+          "timestamp_seconds": 2590.72
+        },
+        {
+          "segment_id": 57,
+          "timestamp_seconds": 2592.079
+        },
+        {
+          "segment_id": 58,
+          "timestamp_seconds": 2593.92
+        },
+        {
+          "segment_id": 59,
+          "timestamp_seconds": 2595.76
+        },
+        {
+          "segment_id": 60,
+          "timestamp_seconds": 2597.92
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U004-C03",
+      "unit_id": 4,
+      "references": [
+        {
+          "segment_id": 132,
+          "timestamp_seconds": 2743.04
+        },
+        {
+          "segment_id": 133,
+          "timestamp_seconds": 2745.04
+        },
+        {
+          "segment_id": 134,
+          "timestamp_seconds": 2746.64
+        },
+        {
+          "segment_id": 135,
+          "timestamp_seconds": 2749.68
+        },
+        {
+          "segment_id": 136,
+          "timestamp_seconds": 2751.76
+        },
+        {
+          "segment_id": 137,
+          "timestamp_seconds": 2754.8
+        },
+        {
+          "segment_id": 147,
+          "timestamp_seconds": 2776.4
+        },
+        {
+          "segment_id": 148,
+          "timestamp_seconds": 2779.28
+        },
+        {
+          "segment_id": 149,
+          "timestamp_seconds": 2781.119
+        },
+        {
+          "segment_id": 150,
+          "timestamp_seconds": 2783.359
+        },
+        {
+          "segment_id": 151,
+          "timestamp_seconds": 2785.52
+        },
+        {
+          "segment_id": 152,
+          "timestamp_seconds": 2787.2
+        },
+        {
+          "segment_id": 153,
+          "timestamp_seconds": 2788.8
+        },
+        {
+          "segment_id": 154,
+          "timestamp_seconds": 2790.88
+        },
+        {
+          "segment_id": 155,
+          "timestamp_seconds": 2794.319
+        },
+        {
+          "segment_id": 156,
+          "timestamp_seconds": 2796.56
+        },
+        {
+          "segment_id": 157,
+          "timestamp_seconds": 2798.4
+        },
+        {
+          "segment_id": 158,
+          "timestamp_seconds": 2800.48
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U005-C01",
+      "unit_id": 5,
+      "references": [
+        {
+          "segment_id": 12,
+          "timestamp_seconds": 3257.04
+        },
+        {
+          "segment_id": 13,
+          "timestamp_seconds": 3258.72
+        },
+        {
+          "segment_id": 36,
+          "timestamp_seconds": 3306.0
+        },
+        {
+          "segment_id": 37,
+          "timestamp_seconds": 3308.4
+        },
+        {
+          "segment_id": 38,
+          "timestamp_seconds": 3311.52
+        },
+        {
+          "segment_id": 39,
+          "timestamp_seconds": 3314.0
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U005-C02",
+      "unit_id": 5,
+      "references": [
+        {
+          "segment_id": 68,
+          "timestamp_seconds": 3367.599
+        },
+        {
+          "segment_id": 70,
+          "timestamp_seconds": 3371.76
+        },
+        {
+          "segment_id": 77,
+          "timestamp_seconds": 3386.16
+        },
+        {
+          "segment_id": 93,
+          "timestamp_seconds": 3419.92
+        },
+        {
+          "segment_id": 94,
+          "timestamp_seconds": 3422.24
+        },
+        {
+          "segment_id": 108,
+          "timestamp_seconds": 3453.599
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U005-C03",
+      "unit_id": 5,
+      "references": [
+        {
+          "segment_id": 121,
+          "timestamp_seconds": 3485.359
+        },
+        {
+          "segment_id": 122,
+          "timestamp_seconds": 3487.359
+        },
+        {
+          "segment_id": 131,
+          "timestamp_seconds": 3505.68
+        },
+        {
+          "segment_id": 148,
+          "timestamp_seconds": 3538.72
+        },
+        {
+          "segment_id": 150,
+          "timestamp_seconds": 3543.2
+        },
+        {
+          "segment_id": 185,
+          "timestamp_seconds": 3614.24
+        },
+        {
+          "segment_id": 186,
+          "timestamp_seconds": 3617.359
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U006-C01",
+      "unit_id": 6,
+      "references": [
+        {
+          "segment_id": 15,
+          "timestamp_seconds": 4105.52
+        },
+        {
+          "segment_id": 16,
+          "timestamp_seconds": 4107.52
+        },
+        {
+          "segment_id": 17,
+          "timestamp_seconds": 4110.159
+        },
+        {
+          "segment_id": 21,
+          "timestamp_seconds": 4119.359
+        },
+        {
+          "segment_id": 22,
+          "timestamp_seconds": 4121.04
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U006-C02",
+      "unit_id": 6,
+      "references": [
+        {
+          "segment_id": 31,
+          "timestamp_seconds": 4139.759
+        },
+        {
+          "segment_id": 34,
+          "timestamp_seconds": 4146.56
+        },
+        {
+          "segment_id": 35,
+          "timestamp_seconds": 4148.88
+        },
+        {
+          "segment_id": 36,
+          "timestamp_seconds": 4152.159
+        },
+        {
+          "segment_id": 37,
+          "timestamp_seconds": 4154.96
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U006-C03",
+      "unit_id": 6,
+      "references": [
+        {
+          "segment_id": 58,
+          "timestamp_seconds": 4202.8
+        },
+        {
+          "segment_id": 59,
+          "timestamp_seconds": 4205.52
+        },
+        {
+          "segment_id": 60,
+          "timestamp_seconds": 4207.76
+        },
+        {
+          "segment_id": 61,
+          "timestamp_seconds": 4209.52
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U007-C01",
+      "unit_id": 7,
+      "references": [
+        {
+          "segment_id": 29,
+          "timestamp_seconds": 4862.64
+        },
+        {
+          "segment_id": 30,
+          "timestamp_seconds": 4865.28
+        },
+        {
+          "segment_id": 31,
+          "timestamp_seconds": 4866.88
+        },
+        {
+          "segment_id": 32,
+          "timestamp_seconds": 4869.04
+        },
+        {
+          "segment_id": 33,
+          "timestamp_seconds": 4871.44
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U007-C02",
+      "unit_id": 7,
+      "references": [
+        {
+          "segment_id": 45,
+          "timestamp_seconds": 4896.08
+        },
+        {
+          "segment_id": 47,
+          "timestamp_seconds": 4900.239
+        },
+        {
+          "segment_id": 48,
+          "timestamp_seconds": 4902.48
+        },
+        {
+          "segment_id": 49,
+          "timestamp_seconds": 4905.12
+        },
+        {
+          "segment_id": 50,
+          "timestamp_seconds": 4907.44
+        },
+        {
+          "segment_id": 51,
+          "timestamp_seconds": 4910.0
+        },
+        {
+          "segment_id": 52,
+          "timestamp_seconds": 4912.239
+        },
+        {
+          "segment_id": 53,
+          "timestamp_seconds": 4914.32
+        },
+        {
+          "segment_id": 54,
+          "timestamp_seconds": 4915.76
+        },
+        {
+          "segment_id": 55,
+          "timestamp_seconds": 4917.679
+        },
+        {
+          "segment_id": 56,
+          "timestamp_seconds": 4920.0
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U007-C03",
+      "unit_id": 7,
+      "references": [
+        {
+          "segment_id": 83,
+          "timestamp_seconds": 4972.719
+        },
+        {
+          "segment_id": 84,
+          "timestamp_seconds": 4974.239
+        },
+        {
+          "segment_id": 85,
+          "timestamp_seconds": 4976.8
+        },
+        {
+          "segment_id": 86,
+          "timestamp_seconds": 4978.88
+        },
+        {
+          "segment_id": 87,
+          "timestamp_seconds": 4980.719
+        },
+        {
+          "segment_id": 88,
+          "timestamp_seconds": 4982.96
+        },
+        {
+          "segment_id": 89,
+          "timestamp_seconds": 4984.8
+        },
+        {
+          "segment_id": 90,
+          "timestamp_seconds": 4986.88
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U008-C01",
+      "unit_id": 8,
+      "references": [
+        {
+          "segment_id": 18,
+          "timestamp_seconds": 5425.52
+        },
+        {
+          "segment_id": 19,
+          "timestamp_seconds": 5428.0
+        },
+        {
+          "segment_id": 20,
+          "timestamp_seconds": 5431.04
+        },
+        {
+          "segment_id": 21,
+          "timestamp_seconds": 5433.12
+        },
+        {
+          "segment_id": 22,
+          "timestamp_seconds": 5435.52
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U008-C02",
+      "unit_id": 8,
+      "references": [
+        {
+          "segment_id": 69,
+          "timestamp_seconds": 5538.239
+        },
+        {
+          "segment_id": 70,
+          "timestamp_seconds": 5540.96
+        },
+        {
+          "segment_id": 71,
+          "timestamp_seconds": 5542.32
+        },
+        {
+          "segment_id": 72,
+          "timestamp_seconds": 5544.0
+        },
+        {
+          "segment_id": 73,
+          "timestamp_seconds": 5545.6
+        },
+        {
+          "segment_id": 79,
+          "timestamp_seconds": 5557.679
+        },
+        {
+          "segment_id": 80,
+          "timestamp_seconds": 5559.12
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U008-C03",
+      "unit_id": 8,
+      "references": [
+        {
+          "segment_id": 109,
+          "timestamp_seconds": 5614.96
+        },
+        {
+          "segment_id": 110,
+          "timestamp_seconds": 5617.199
+        },
+        {
+          "segment_id": 111,
+          "timestamp_seconds": 5621.12
+        },
+        {
+          "segment_id": 112,
+          "timestamp_seconds": 5623.44
+        },
+        {
+          "segment_id": 119,
+          "timestamp_seconds": 5640.08
+        },
+        {
+          "segment_id": 120,
+          "timestamp_seconds": 5642.08
+        },
+        {
+          "segment_id": 121,
+          "timestamp_seconds": 5643.84
+        },
+        {
+          "segment_id": 122,
+          "timestamp_seconds": 5645.92
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U009-C01",
+      "unit_id": 9,
+      "references": [
+        {
+          "segment_id": 1,
+          "timestamp_seconds": 6066.0
+        },
+        {
+          "segment_id": 2,
+          "timestamp_seconds": 6067.84
+        },
+        {
+          "segment_id": 3,
+          "timestamp_seconds": 6069.52
+        },
+        {
+          "segment_id": 4,
+          "timestamp_seconds": 6071.36
+        },
+        {
+          "segment_id": 18,
+          "timestamp_seconds": 6096.719
+        },
+        {
+          "segment_id": 19,
+          "timestamp_seconds": 6098.159
+        },
+        {
+          "segment_id": 20,
+          "timestamp_seconds": 6100.08
+        },
+        {
+          "segment_id": 28,
+          "timestamp_seconds": 6112.8
+        },
+        {
+          "segment_id": 29,
+          "timestamp_seconds": 6114.639
+        },
+        {
+          "segment_id": 30,
+          "timestamp_seconds": 6116.719
+        },
+        {
+          "segment_id": 31,
+          "timestamp_seconds": 6118.0
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U009-C02",
+      "unit_id": 9,
+      "references": [
+        {
+          "segment_id": 35,
+          "timestamp_seconds": 6127.6
+        },
+        {
+          "segment_id": 36,
+          "timestamp_seconds": 6129.84
+        },
+        {
+          "segment_id": 37,
+          "timestamp_seconds": 6131.44
+        },
+        {
+          "segment_id": 38,
+          "timestamp_seconds": 6132.88
+        },
+        {
+          "segment_id": 39,
+          "timestamp_seconds": 6134.719
+        },
+        {
+          "segment_id": 40,
+          "timestamp_seconds": 6136.639
+        },
+        {
+          "segment_id": 41,
+          "timestamp_seconds": 6138.8
+        },
+        {
+          "segment_id": 42,
+          "timestamp_seconds": 6140.48
+        },
+        {
+          "segment_id": 43,
+          "timestamp_seconds": 6142.0
+        },
+        {
+          "segment_id": 58,
+          "timestamp_seconds": 6170.48
+        },
+        {
+          "segment_id": 59,
+          "timestamp_seconds": 6173.119
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U009-C03",
+      "unit_id": 9,
+      "references": [
+        {
+          "segment_id": 88,
+          "timestamp_seconds": 6230.0
+        },
+        {
+          "segment_id": 89,
+          "timestamp_seconds": 6232.08
+        },
+        {
+          "segment_id": 90,
+          "timestamp_seconds": 6234.32
+        },
+        {
+          "segment_id": 91,
+          "timestamp_seconds": 6235.679
+        },
+        {
+          "segment_id": 113,
+          "timestamp_seconds": 6274.4
+        },
+        {
+          "segment_id": 114,
+          "timestamp_seconds": 6276.159
+        },
+        {
+          "segment_id": 115,
+          "timestamp_seconds": 6277.6
+        },
+        {
+          "segment_id": 116,
+          "timestamp_seconds": 6279.04
+        },
+        {
+          "segment_id": 117,
+          "timestamp_seconds": 6280.639
+        },
+        {
+          "segment_id": 119,
+          "timestamp_seconds": 6285.04
+        },
+        {
+          "segment_id": 120,
+          "timestamp_seconds": 6286.56
+        },
+        {
+          "segment_id": 121,
+          "timestamp_seconds": 6288.0
+        },
+        {
+          "segment_id": 123,
+          "timestamp_seconds": 6292.88
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U010-C01",
+      "unit_id": 10,
+      "references": [
+        {
+          "segment_id": 12,
+          "timestamp_seconds": 6888.159
+        },
+        {
+          "segment_id": 13,
+          "timestamp_seconds": 6889.76
+        },
+        {
+          "segment_id": 14,
+          "timestamp_seconds": 6891.599
+        },
+        {
+          "segment_id": 15,
+          "timestamp_seconds": 6893.92
+        },
+        {
+          "segment_id": 22,
+          "timestamp_seconds": 6911.36
+        },
+        {
+          "segment_id": 23,
+          "timestamp_seconds": 6913.52
+        },
+        {
+          "segment_id": 40,
+          "timestamp_seconds": 6953.199
+        },
+        {
+          "segment_id": 41,
+          "timestamp_seconds": 6956.0
+        },
+        {
+          "segment_id": 50,
+          "timestamp_seconds": 6977.599
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U010-C02",
+      "unit_id": 10,
+      "references": [
+        {
+          "segment_id": 89,
+          "timestamp_seconds": 7062.08
+        },
+        {
+          "segment_id": 90,
+          "timestamp_seconds": 7064.239
+        },
+        {
+          "segment_id": 91,
+          "timestamp_seconds": 7066.719
+        },
+        {
+          "segment_id": 92,
+          "timestamp_seconds": 7068.88
+        },
+        {
+          "segment_id": 93,
+          "timestamp_seconds": 7071.199
+        },
+        {
+          "segment_id": 94,
+          "timestamp_seconds": 7073.599
+        },
+        {
+          "segment_id": 95,
+          "timestamp_seconds": 7075.92
+        },
+        {
+          "segment_id": 96,
+          "timestamp_seconds": 7078.719
+        },
+        {
+          "segment_id": 97,
+          "timestamp_seconds": 7081.679
+        },
+        {
+          "segment_id": 98,
+          "timestamp_seconds": 7085.52
+        },
+        {
+          "segment_id": 99,
+          "timestamp_seconds": 7087.84
+        },
+        {
+          "segment_id": 100,
+          "timestamp_seconds": 7090.32
+        },
+        {
+          "segment_id": 101,
+          "timestamp_seconds": 7092.96
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U010-C03",
+      "unit_id": 10,
+      "references": [
+        {
+          "segment_id": 124,
+          "timestamp_seconds": 7142.8
+        },
+        {
+          "segment_id": 125,
+          "timestamp_seconds": 7144.56
+        },
+        {
+          "segment_id": 126,
+          "timestamp_seconds": 7147.28
+        },
+        {
+          "segment_id": 127,
+          "timestamp_seconds": 7148.88
+        },
+        {
+          "segment_id": 128,
+          "timestamp_seconds": 7150.719
+        },
+        {
+          "segment_id": 129,
+          "timestamp_seconds": 7152.96
+        },
+        {
+          "segment_id": 130,
+          "timestamp_seconds": 7156.56
+        },
+        {
+          "segment_id": 131,
+          "timestamp_seconds": 7158.639
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U011-C01",
+      "unit_id": 11,
+      "references": [
+        {
+          "segment_id": 1,
+          "timestamp_seconds": 7672.88
+        },
+        {
+          "segment_id": 2,
+          "timestamp_seconds": 7674.639
+        },
+        {
+          "segment_id": 3,
+          "timestamp_seconds": 7676.88
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U011-C02",
+      "unit_id": 11,
+      "references": [
+        {
+          "segment_id": 16,
+          "timestamp_seconds": 7697.599
+        },
+        {
+          "segment_id": 17,
+          "timestamp_seconds": 7700.96
+        },
+        {
+          "segment_id": 18,
+          "timestamp_seconds": 7702.4
+        },
+        {
+          "segment_id": 31,
+          "timestamp_seconds": 7732.56
+        },
+        {
+          "segment_id": 32,
+          "timestamp_seconds": 7734.159
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U011-C03",
+      "unit_id": 11,
+      "references": [
+        {
+          "segment_id": 145,
+          "timestamp_seconds": 7959.76
+        },
+        {
+          "segment_id": 146,
+          "timestamp_seconds": 7961.76
+        },
+        {
+          "segment_id": 147,
+          "timestamp_seconds": 7963.52
+        },
+        {
+          "segment_id": 163,
+          "timestamp_seconds": 7996.8
+        },
+        {
+          "segment_id": 164,
+          "timestamp_seconds": 8000.0
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U012-C01",
+      "unit_id": 12,
+      "references": [
+        {
+          "segment_id": 11,
+          "timestamp_seconds": 8262.96
+        },
+        {
+          "segment_id": 12,
+          "timestamp_seconds": 8264.8
+        },
+        {
+          "segment_id": 13,
+          "timestamp_seconds": 8267.519
+        },
+        {
+          "segment_id": 16,
+          "timestamp_seconds": 8273.84
+        },
+        {
+          "segment_id": 21,
+          "timestamp_seconds": 8285.12
+        },
+        {
+          "segment_id": 22,
+          "timestamp_seconds": 8287.439
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U012-C02",
+      "unit_id": 12,
+      "references": [
+        {
+          "segment_id": 47,
+          "timestamp_seconds": 8340.399
+        },
+        {
+          "segment_id": 48,
+          "timestamp_seconds": 8342.319
+        },
+        {
+          "segment_id": 51,
+          "timestamp_seconds": 8348.479
+        },
+        {
+          "segment_id": 131,
+          "timestamp_seconds": 8540.0
+        },
+        {
+          "segment_id": 132,
+          "timestamp_seconds": 8541.92
+        },
+        {
+          "segment_id": 133,
+          "timestamp_seconds": 8544.56
+        }
+      ]
+    },
+    {
+      "claim_id": "20260910-U012-C03",
+      "unit_id": 12,
+      "references": [
+        {
+          "segment_id": 23,
+          "timestamp_seconds": 8289.28
+        },
+        {
+          "segment_id": 24,
+          "timestamp_seconds": 8292.96
+        },
+        {
+          "segment_id": 25,
+          "timestamp_seconds": 8295.439
+        },
+        {
+          "segment_id": 26,
+          "timestamp_seconds": 8296.88
+        },
+        {
+          "segment_id": 27,
+          "timestamp_seconds": 8300.399
+        },
+        {
+          "segment_id": 28,
+          "timestamp_seconds": 8302.0
+        },
+        {
+          "segment_id": 134,
+          "timestamp_seconds": 8546.72
+        },
+        {
+          "segment_id": 135,
+          "timestamp_seconds": 8549.2
+        },
+        {
+          "segment_id": 136,
+          "timestamp_seconds": 8552.16
+        },
+        {
+          "segment_id": 137,
+          "timestamp_seconds": 8554.319
+        }
+      ]
+    }
+  ]
+}
