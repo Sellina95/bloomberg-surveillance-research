@@ -135,7 +135,18 @@ guest_chapters = [
 
 units = []
 
-if chapter_mode == "full_program_fallback":
+use_program_fallback = (
+    chapter_mode == "full_program_fallback"
+    or not guest_chapters
+)
+
+fallback_reason = (
+    "full_program_fallback"
+    if chapter_mode == "full_program_fallback"
+    else "unrecognized_source_chapter_titles"
+)
+
+if use_program_fallback:
 
     start = min(
         s["start_seconds"]
@@ -160,7 +171,7 @@ if chapter_mode == "full_program_fallback":
             "end_seconds": end,
             "duration_seconds": end - start,
             "segment_count": len(segments),
-            "source_chapter": "full_program_fallback",
+            "source_chapter": fallback_reason,
             "source_transcript": "supadata",
         }
     )
@@ -229,8 +240,12 @@ else:
 artifact = {
     "date": DATE,
     "method": (
-        "full_program_unattributed_v0_1"
-        if chapter_mode == "full_program_fallback"
+        (
+            "full_program_unattributed_v0_1"
+            if chapter_mode == "full_program_fallback"
+            else "chapter_titles_unattributed_v0_1"
+        )
+        if use_program_fallback
         else "chapter_attribution_v0_3"
     ),
     "total_chapters": len(classified),
