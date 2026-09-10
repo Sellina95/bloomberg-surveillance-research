@@ -104,6 +104,32 @@ def parse_explicit_date(text: str) -> str:
     return ""
 
 
+def parse_partial_named_date(text: str, *, reference_year: int) -> str:
+    """Resolve 'September 8' only when an exact provider year is available."""
+    named = re.search(
+        r"\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|"
+        r"Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|"
+        r"Nov(?:ember)?|Dec(?:ember)?)\s+(\d{1,2})"
+        r"(?:st|nd|rd|th)?\b",
+        text,
+        re.I,
+    )
+    if not named:
+        return ""
+    raw = f"{named.group(1)} {named.group(2)} {reference_year}"
+    for format_string in ("%B %d %Y", "%b %d %Y"):
+        try:
+            return datetime.strptime(raw, format_string).date().isoformat()
+        except ValueError:
+            pass
+    return ""
+
+
+def has_exact_provider_date(value: object) -> bool:
+    """Relative labels are useful for ranking, never for broadcast dating."""
+    return bool(parse_explicit_date(str(value or "").strip()))
+
+
 def hydrate_search_result(search_item: dict, detail_payload: dict) -> dict:
     """Merge exact youtube_video metadata over an incomplete search snippet."""
     detail = (
@@ -242,6 +268,13 @@ def normalize_candidate(item: dict, *, today: date | None = None) -> Candidate:
     if not broadcast_date:
         broadcast_date = parse_explicit_date(f"{title}\n{description}")
         broadcast_date_basis = "title_or_description"
+    if not broadcast_date and has_exact_provider_date(upload_raw):
+        broadcast_date = parse_partial_named_date(
+            f"{title}\n{description}",
+            reference_year=date.fromisoformat(upload_date).year,
+        )
+        if broadcast_date:
+            broadcast_date_basis = "partial_title_date_with_provider_year"
     if not broadcast_date:
         # Headline-titled full shows may omit the calendar date from both the
         # title and description. Only use the provider upload date after the
@@ -251,11 +284,15 @@ def normalize_candidate(item: dict, *, today: date | None = None) -> Candidate:
             item.get("metadata_hydrated")
             and program_in_description
             and duration >= FULL_PROGRAM_SECONDS
+            and has_exact_provider_date(upload_raw)
         ):
             broadcast_date = upload_date
             broadcast_date_basis = "official_full_show_upload_date"
         else:
-            raise DiscoveryError("explicit broadcast date missing")
+            raise DiscoveryError(
+                "exact broadcast date missing; relative upload labels "
+                "cannot establish a broadcast date"
+            )
 
     return Candidate(
         video_id=video_id,

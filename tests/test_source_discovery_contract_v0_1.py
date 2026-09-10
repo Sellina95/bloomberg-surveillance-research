@@ -106,6 +106,44 @@ assert selected[0].broadcast_date == "2026-09-08"
 assert selected[0].broadcast_date_basis == "official_full_show_upload_date"
 print("LIVE HEADLINE DATE FALLBACK: PASS")
 
+corrected_reupload = {
+    "video_id": "corrected-september-8",
+    "title": "Stocks Waver at Start of Week | September 8",
+    "description": (
+        "Corrected Bloomberg Surveillance broadcast with "
+        "Jonathan Ferro and Lisa Abramowicz."
+    ),
+    "published_date": "September 9, 2026",
+    "length": "2:24:13",
+    "metadata_hydrated": True,
+    "channel": {
+        "name": "Bloomberg Television",
+        "id": "UCIALMKvObZNtJ6AmdCLP7Lg",
+        "verified": True,
+    },
+}
+selected, _ = select_candidates(
+    [corrected_reupload],
+    today=date(2026, 9, 10),
+)
+assert selected[0].broadcast_date == "2026-09-08"
+assert selected[0].broadcast_date_basis == (
+    "partial_title_date_with_provider_year"
+)
+print("CORRECTED REUPLOAD DATE: PASS")
+
+relative_only = dict(corrected_reupload)
+relative_only["video_id"] = "relative-only"
+relative_only["title"] = "Stocks Fall Ahead of Inflation Data"
+relative_only["published_date"] = "14 hours ago"
+selected, rejected = select_candidates(
+    [relative_only],
+    today=date(2026, 9, 10),
+)
+assert selected == []
+assert "relative upload labels" in rejected[0]["reason"]
+print("RELATIVE UPLOAD BROADCAST DATE REJECTION: PASS")
+
 ranked = rank_search_candidates([
     {"video_id": "archive", "published_date": "February 16, 2023", "length": "2:30:00"},
     {"video_id": "current", "published_date": "1 day ago", "length": "2:24:13"},
