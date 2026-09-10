@@ -1,0 +1,120 @@
+{
+  "schema_version": "report_provenance_v0_1",
+  "report_date": "2026-09-09",
+  "source": {
+    "broadcast_title": "Stocks Fall as Brent Tops $100 Ahead of Key Inflation Data",
+    "broadcast_date": "2026-09-09",
+    "broadcast_date_basis": "title_or_description",
+    "upload_date": "2026-09-09",
+    "video_url": "https://www.youtube.com/watch?v=NSKlGXMHcb4",
+    "provider": "Supadata",
+    "transcript_type": "timestamped_youtube_transcript",
+    "collected_at": "2026-09-10T03:05:48.218503+00:00",
+    "source_mode": "program_level_unattributed"
+  },
+  "boundary": "IDENTIFIERS_AND_TIMESTAMPS_ONLY_NO_SOURCE_TEXT",
+  "claims": [
+    {
+      "claim_id": "20260909-U001-C01",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 0,
+          "timestamp_seconds": 5.4
+        },
+        {
+          "segment_id": 1,
+          "timestamp_seconds": 7.23
+        },
+        {
+          "segment_id": 2,
+          "timestamp_seconds": 9.72
+        },
+        {
+          "segment_id": 4,
+          "timestamp_seconds": 17.22
+        },
+        {
+          "segment_id": 169,
+          "timestamp_seconds": 573.95
+        },
+        {
+          "segment_id": 968,
+          "timestamp_seconds": 3210.07
+        },
+        {
+          "segment_id": 987,
+          "timestamp_seconds": 3265.8
+        }
+      ]
+    },
+    {
+      "claim_id": "20260909-U001-C02",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 16,
+          "timestamp_seconds": 63.92
+        },
+        {
+          "segment_id": 17,
+          "timestamp_seconds": 66.8
+        },
+        {
+          "segment_id": 21,
+          "timestamp_seconds": 81.11
+        },
+        {
+          "segment_id": 89,
+          "timestamp_seconds": 306.26
+        },
+        {
+          "segment_id": 91,
+          "timestamp_seconds": 313.91
+        },
+        {
+          "segment_id": 1829,
+          "timestamp_seconds": 6086.1
+        },
+        {
+          "segment_id": 1830,
+          "timestamp_seconds": 6089.13
+        }
+      ]
+    },
+    {
+      "claim_id": "20260909-U001-C03",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 10,
+          "timestamp_seconds": 39.66
+        },
+        {
+          "segment_id": 14,
+          "timestamp_seconds": 55.83
+        },
+        {
+          "segment_id": 15,
+          "timestamp_seconds": 60.08
+        },
+        {
+          "segment_id": 24,
+          "timestamp_seconds": 93.11
+        },
+        {
+          "segment_id": 25,
+          "timestamp_seconds": 96.56
+        },
+        {
+          "segment_id": 104,
+          "timestamp_seconds": 361.93
+        },
+        {
+          "segment_id": 2284,
+          "timestamp_seconds": 7516.46
+        }
+      ]
+    }
+  ]
+}

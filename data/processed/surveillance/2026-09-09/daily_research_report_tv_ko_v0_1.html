@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="robots" content="noindex, nofollow">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+
+<title>
+Independent Market Research — 2026-09-09
+</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #111214;
+    --panel: #191a1d;
+    --panel-2: #151619;
+    --panel-3: #202125;
+    --line: #303136;
+    --text: #f1f1ee;
+    --muted: #96979b;
+    --amber: #f2a23a;
+    --amber-soft: #c9852c;
+    --green: #72c7a7;
+    --red: #e46f6f;
+    --blue: #7fa9d8;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #292b2f 0%,
+            #151619 35%,
+            #0d0e10 100%
+        );
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-size: 14px;
+}
+
+.page {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+}
+
+.tv {
+    background: #17181b;
+    border: 1px solid #303136;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow:
+        0 22px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    overflow: hidden;
+}
+
+.research-hero {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    background: #111;
+}
+
+.research-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 68%;
+}
+
+.research-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 18, 0.78) 0%,
+        rgba(5, 10, 18, 0.35) 52%,
+        rgba(5, 10, 18, 0.10) 100%
+    );
+}
+
+.research-hero-content {
+    position: absolute;
+    left: 34px;
+    bottom: 34px;
+    z-index: 2;
+}
+
+.research-hero-kicker {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+}
+
+.research-hero-title {
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.research-hero-credit {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    z-index: 2;
+    font-size: 10px;
+    opacity: 0.72;
+}
+
+.tv-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 18px;
+    background: linear-gradient(180deg,#222327,#18191c);
+    border-bottom: 1px solid #333438;
+}
+
+.brand {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #f4f4f1;
+}
+
+.live {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: var(--amber);
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background: #111214;
+    border: 1px solid #34353a;
+    border-radius: 6px;
+}
+
+.lang-option {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.lang-active {
+    background: var(--amber);
+    color: #111214;
+}
+
+.lang-disabled {
+    color: #626368;
+    cursor: not-allowed;
+}
+
+.calendar-control {
+    position: relative;
+}
+
+.calendar-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 29px;
+    padding: 5px 9px;
+    background: #17181b;
+    border: 1px solid #3a3b40;
+    border-radius: 6px;
+    color: #dededb;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.calendar-button:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+}
+
+.calendar-icon {
+    font-size: 13px;
+}
+
+.calendar-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    z-index: 100;
+    width: 270px;
+    padding: 14px;
+    background: #151619;
+    border: 1px solid #3a3b40;
+    border-radius: 8px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55);
+}
+
+.calendar-control.open
+.calendar-panel {
+    display: block;
+}
+
+.nav-month + .nav-month {
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid #303136;
+}
+
+.nav-month-label {
+    margin-bottom: 10px;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.nav-date-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(7,1fr);
+    gap: 5px;
+}
+
+.nav-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 1px solid #303136;
+    border-radius: 5px;
+    background: #1d1e22;
+    color: #bdbec1;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-date:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+    background: #24211c;
+}
+
+.nav-date-current {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #111214;
+}
+
+.nav-date-current:hover {
+    color: #111214;
+}
+
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+
+.screen {
+    position: relative;
+    background: linear-gradient(135deg,#17191b,#101113);
+    min-height: 220px;
+    padding: 30px 34px;
+    border-bottom: 1px solid #303136;
+}
+
+.screen-label {
+    color: var(--amber);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.6px;
+    margin-bottom: 12px;
+}
+
+.screen h1 {
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.date {
+    margin-top: 10px;
+    color: var(--muted);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 12px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 28px;
+}
+
+.knob {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #67686b;
+}
+
+.status {
+    margin-left: 12px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.content {
+    margin-top: 18px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #e8e8e5;
+    margin-bottom: 16px;
+}
+
+.section-title::before {
+    content: "";
+    width: 3px;
+    height: 14px;
+    background: var(--amber);
+    border-radius: 2px;
+}
+
+.executive {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.executive ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.executive li {
+    margin-bottom: 9px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.market-card {
+    position: relative;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 17px;
+    min-height: 190px;
+}
+
+.market-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: var(--amber-soft);
+    opacity: .75;
+}
+
+.market-card .section-title {
+    padding-left: 8px;
+}
+
+.summary {
+    color: #c8c9cb;
+    line-height: 1.55;
+    margin: 0 0 14px;
+}
+
+h4 {
+    margin: 16px 0 7px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: var(--amber);
+}
+
+.market-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.market-card li {
+    margin-bottom: 7px;
+    color: #d9d9d7;
+    line-height: 1.45;
+}
+
+.macro-card {
+    background: var(--panel-2);
+    border: 1px solid #292a2e;
+    border-radius: 8px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+.macro-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #f0f0ed;
+}
+
+.macro-card p {
+    color: #c6c7c9;
+    line-height: 1.55;
+}
+
+.guest-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 12px 0;
+}
+
+.guest {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid #3a3b3f;
+    border-radius: 4px;
+    background: #222327;
+    color: #c5c6c8;
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.evidence {
+    display: flex;
+    gap: 10px;
+    padding: 9px 10px;
+    margin-top: 6px;
+    background: #111214;
+    border: 1px solid #292a2d;
+    border-left: 2px solid var(--green);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.timestamp {
+    flex: 0 0 auto;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.insight,
+.conflict,
+.risk {
+    border-radius: 7px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    line-height: 1.55;
+}
+
+.insight {
+    background: #151c19;
+    border: 1px solid #293a34;
+    border-left: 3px solid var(--green);
+}
+
+.conflict {
+    background: #1b1815;
+    border: 1px solid #3c3025;
+    border-left: 3px solid var(--amber);
+}
+
+.risk {
+    background: #1c1617;
+    border: 1px solid #40292b;
+    border-left: 3px solid var(--red);
+}
+
+.small {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.provenance-block {
+    margin-top: 11px;
+    padding-top: 9px;
+    border-top: 1px solid #2c2d31;
+}
+
+.prov-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 7px;
+}
+
+.prov-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.prov-approved {
+    color: var(--green);
+    background: #14231e;
+    border: 1px solid #2e5547;
+}
+
+.prov-review {
+    color: var(--amber);
+    background: #261e14;
+    border: 1px solid #634826;
+}
+
+.prov-type {
+    color: #b9c9dc;
+    background: #171d24;
+    border: 1px solid #344252;
+}
+
+.prov-warning {
+    margin: 7px 0;
+    padding: 7px 9px;
+    border-left: 2px solid var(--amber);
+    background: #211b14;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.provenance-details {
+    margin-top: 6px;
+}
+
+.provenance-details summary {
+    cursor: pointer;
+    color: #9fa8b4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    user-select: none;
+}
+
+.provenance-details summary:hover {
+    color: var(--text);
+}
+
+.claim-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.claim-id {
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid #353b43;
+    border-radius: 4px;
+    background: #121519;
+    color: #aeb8c4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+}
+
+.prov-note {
+    margin-top: 8px;
+    color: #73777e;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.conflict-view {
+    margin-top: 10px;
+}
+
+.takeaway-item {
+    margin-bottom: 12px;
+}
+
+.action {
+    display: flex;
+    gap: 14px;
+    padding: 15px;
+    background: #171a18;
+    border: 1px solid #304238;
+    border-radius: 8px;
+    margin-bottom: 9px;
+}
+
+.action-number {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: var(--amber);
+    color: #17120b;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.action p {
+    margin: 7px 0;
+    color: #b9babd;
+    line-height: 1.5;
+}
+
+.monitor {
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+}
+
+.
+footer {
+    text-align: center;
+    color: #66686d;
+    font-size: 10px;
+    padding: 26px;
+}
+
+.footer-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+    text-decoration: none;
+}
+
+.footer-link + .footer-link {
+    margin-left: 18px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        padding: 12px;
+    }
+
+    .tv-top {
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .top-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .calendar-panel {
+        position: fixed;
+        top: 70px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }
+
+    .screen {
+        padding: 24px;
+    }
+
+    .screen h1 {
+        font-size: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+
+
+<style id="publication-status-nav-style">
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+
+<div class="tv">
+
+    <section class="research-hero" aria-label="Independent Market Research">
+        <img
+            class="research-hero-image"
+            src="../assets/wall-street-roberto-junior-unsplash.jpg"
+            alt="Wall Street street sign in New York"
+        >
+        <div class="research-hero-overlay"></div>
+
+        <div class="research-hero-content">
+            <div class="research-hero-kicker">📺 INDEPENDENT MARKET RESEARCH</div>
+            <div class="research-hero-title">Markets, Macro & Capital Flows</div>
+        </div>
+
+        <div class="research-hero-credit">
+            Photo by Roberto Junior on Unsplash
+        </div>
+    </section>
+
+    <div class="tv-top">
+
+        <div class="brand">
+            INDEPENDENT MARKET RESEARCH · SURVEILLANCE DESK
+        </div>
+
+        <div class="top-actions">
+
+            <div class="live">
+                ● DAILY RESEARCH
+            </div>
+
+            <div
+                class="calendar-control"
+                id="calendarControl"
+            >
+
+                <button
+                    class="calendar-button"
+                    id="calendarButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="calendarPanel"
+                >
+                    <span class="calendar-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        2026-09-09
+                    </span>
+                </button>
+
+                <div
+                    class="calendar-panel"
+                    id="calendarPanel"
+                >
+
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    SEP 2026
+                </div>
+
+                <div class="nav-date-grid">
+                    
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-01/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-01"
+                    >
+                        01
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-02/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-02"
+                    >
+                        02
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-03/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-03"
+                    >
+                        03
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-04/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-04"
+                    >
+                        04
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-08/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-08"
+                    >
+                        08
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date nav-date-current"
+                        href="../2026-09-09/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-09-09"
+                    >
+                        09
+                    </a>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+            
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    AUG 2026
+                </div>
+
+                <div class="nav-date-grid">
+                    
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-14/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-14"
+                    >
+                        14
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-18/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-18"
+                    >
+                        18
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-19/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-19"
+                    >
+                        19
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-20/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-20"
+                    >
+                        20
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-24/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-24"
+                    >
+                        24
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-25/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-25"
+                    >
+                        25
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-26/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-26"
+                    >
+                        26
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-27/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-27"
+                    >
+                        27
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-28/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-28"
+                    >
+                        28
+                    </a>
+                    
+                </div>
+                
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-31/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2026-08-31"
+                    >
+                        31
+                    </a>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+            
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    FEB 2023
+                </div>
+
+                <div class="nav-date-grid">
+                    
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2023-02-15/daily_research_report_tv_ko_v0_1.html?desk=v0_2"
+                        aria-label="2023-02-15"
+                    >
+                        15
+                    </a>
+                    
+                </div>
+                
+                </div>
+
+            </div>
+            
+                </div>
+
+            </div>
+
+            <div class="language-switch"
+                aria-label="Report language"
+            >
+                <a
+                    class="lang-option"
+                    href="daily_research_report_tv_v0_1.html?desk=v0_2"
+                >
+                    EN
+                </a>
+
+                <span
+                    class="lang-option lang-active"
+                >
+                    한국어
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="screen">
+
+        <div class="screen-label">
+            GLOBAL MARKET RESEARCH
+        </div>
+
+        <h1>
+            Daily Market Brief
+        </h1>
+
+        <div class="date">
+            2026-09-09
+        </div>
+
+        <div class="controls">
+
+            <span class="knob"></span>
+            <span class="knob"></span>
+            <span class="knob"></span>
+
+            <span class="status">
+                EVIDENCE GROUNDED · RESEARCH ONLY
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content">
+
+<section class="card">
+
+    <div class="section-title">
+        EXECUTIVE SUMMARY
+    </div>
+
+    <div class="executive">
+        <ul>
+            <li>다양한 우려 요인에도 불구하고 주식시장은 탄탄한 펀더멘털, 견조한 기업 실적, 밸류에이션 멀티플 압축에 지지받으며 회복력과 건설적 흐름을 유지하고 있습니다.</li><li>세 자릿수를 재돌파한 원유 가격은 글로벌 채권 금리에 상승 압력을 가하고 있으며 핵심적인 인플레이션 파급 경로로 작용하고 있습니다.</li><li>예상되는 대규모 미 국채 바이백을 비롯한 재정 정책 및 부채 관리 개입은 채권시장의 핵심 관심사로 남아 있습니다.</li>
+        </ul>
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MACRO THEMES
+    </div>
+
+
+        <div class="macro-card">
+            <h3>원자재 주도 인플레이션 압력</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                $100를 돌파한 원유와 높은 정제 마진(crack spread)은 글로벌 채권 금리 상승을 직접적으로 견인하고 중앙은행의 인플레이션 책무를 복잡하게 만들고 있습니다.
+            </p>
+
+            <div class="guest-row">
+
+            </div>
+
+
+        </div>
+
+        <div class="macro-card">
+            <h3>재정 및 미 국채 시장 개입</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                시장은 Scott Besson 재무장관의 다가오는 부채 바이백 발표와 잠재적인 수익률 곡선 관리 전략에 깊이 주목하고 있습니다.
+            </p>
+
+            <div class="guest-row">
+
+            </div>
+
+
+        </div>
+
+
+</section>
+
+
+<div class="grid">
+
+
+    <section class="market-card">
+        <div class="section-title">
+            RATES / BONDS
+        </div>
+
+        <p class="summary">
+            채권 금리는 순수 국내 재정 지표보다는 급등하는 원자재 시장과 에너지 가격 충격에 크게 힘입어 글로벌 전반에서 상방 압력에 직면해 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>{&#x27;view&#x27;: &#x27;채권시장은 세 자릿수 원유 가격과 높은 정제 마진으로부터 직접적인 가격 책정 단서를 얻고 있습니다.&#x27;, &#x27;evidence_basis&#x27;: &#x27;프로그램 종합 노트는 원자재 시장 인플레이션에 대한 금리 반응을 시사합니다.&#x27;}</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>기간 프리미엄 상승을 유발하는 지속적인 세 자릿수 원유 가격.</li><li>미 국채 바이백 및 수익률 관리 주변의 실행 리스크.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            USD / FX
+        </div>
+
+        <p class="summary">
+            외환시장은 변화하는 재정 정책 개입과 원자재 충격으로 인한 글로벌 인플레이션 지표의 디커플링 속에서 엇갈린 흐름을 소화하고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>외환시장 동향은 변화하는 국가 부채 전략 및 에너지 가격 격차와 계속해서 맞물려 있습니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>에너지 수입국의 대외 수지를 압박하는 에스컬레이트되는 에너지 수입 비용.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            EQUITIES
+        </div>
+
+        <p class="summary">
+            주식시장은 견조한 기업 실적, 탄탄한 펀더멘털 배경, 최근의 멀티플 압축에 힘입어 강한 회복력을 보여주고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>{&#x27;view&#x27;: &#x27;거시경제적 교차 흐름에도 불구하고 강한 기업 펀더멘털을 반영하는 가격 목표치와 함께 건설적인 중기 주식 전망이 유지되고 있습니다.&#x27;, &#x27;evidence_basis&#x27;: &#x27;프로그램 종합은 강세 입장을 지지하는 탄탄한 펀더멘털과 지속적인 멀티플 압축을 나타냅니다.&#x27;}</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>상승한 에너지 가격으로 인한 투입 비용 급증 및 마진 압축.</li><li>원자재 주도 인플레이션에 대응하는 잠재적 매파적 통화정책 피벗.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            CREDIT
+        </div>
+
+        <p class="summary">
+            크레딧 스프레드와 회사채 시장은 상승하는 국채 금리와 에너지 충격으로 인해 타이트해진 금융여건을 소화하고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>기업 대차대조표는 강한 펀더멘털 실적의 지지를 받고 있으나, 높은 기준금리로 인해 차환 허들(refinancing hurdles)이 높아지고 있습니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>지속적으로 높은 국채 금리로 인해 주도되는 차입 비용 상승.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            AI / TECHNOLOGY
+        </div>
+
+        <p class="summary">
+            인공지능 도입은 기업 생산성과 중기 주식 낙관론의 구조적 지지대 역할을 계속하고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>AI 분야의 지속적인 생산성 향상과 자본지출 트렌드는 경기 순환적 거시경제 우려에 대한 구조적 상쇄 요인을 제공합니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>단기 실적 실현으로 이어지지 못하는 확대된 자본지출 사이클.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            COMMODITIES
+        </div>
+
+        <p class="summary">
+            원유는 정제 석유제품의 극심한 타이트함을 시사하는 제품 정제 마진과 함께 다시 세 자릿수 임계점을 상향 돌파했습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>{&#x27;view&#x27;: &#x27;$100를 다시 돌파한 브렌트유는 글로벌 시장 전반의 인플레이션 압력을 강화합니다.&#x27;, &#x27;evidence_basis&#x27;: &#x27;프로그램 종합은 세 자릿수 원유 및 난방유 정제 마진을 강조합니다.&#x27;}</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>에너지 가격 급등을 악화시키는 공급 차질 또는 지정학적 고조.</li>
+        </ul>
+    </section>
+
+
+</div>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONSENSUS
+    </div>
+
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONFLICTS
+    </div>
+
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        KEY RISKS
+    </div>
+
+
+        <div class="risk">
+            <div class="risk-title">
+                에너지 가격 충격
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                높은 정제 마진과 함께 $100를 상회하는 수준을 지속하는 원유.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                글로벌 채권 금리의 상방 압력, 기업의 투입 비용 증가, 인플레이션 기대치 고조.
+            </div>
+        </div>
+
+        <div class="risk">
+            <div class="risk-title">
+                재정 정책 마찰
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                대규모 미 국채 바이백의 실행 및 규모.
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                수익률 곡선 전반의 잠재적 변동성 및 국가 부채 관리에 대한 감시 강화.
+            </div>
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        RESEARCH TAKEAWAYS
+    </div>
+
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION
+    </div>
+
+    <br>
+
+    <ul>
+
+        <li class="takeaway-item">
+            <div>
+                주식시장은 펀더멘털 실적 강세와 멀티플 압축을 통해 거시경제적 역풍을 계속해서 흡수하고 있습니다.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                원자재 시장, 특히 원유는 채권시장 인플레이션 우려의 파급 메커니즘으로 재부상했습니다.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                국채 시장 개입과 부채 바이백 계획은 수익률 곡선 행태의 핵심 변수를 대변합니다.
+            </div>
+
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MONITORING IMPLICATIONS
+    </div>
+
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION ·
+        not a Bloomberg guest quote.
+    </div>
+
+    <br>
+
+
+        <div class="action">
+            <div class="action-number">
+                1
+            </div>
+
+            <div>
+                <strong>
+                    원유 가격 움직임과 국채 금리 변동 간의 상관관계 구조를 모니터링합니다.
+                </strong>
+
+                <p>
+                    원자재 인플레이션은 현재 채권 가격 결정을 주도하고 중앙은행 정책 산식을 변경하고 있습니다.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    세 자릿수 수준 상단의 브렌트유 가격 안정성, 정제 마진, 유입되는 미 국채 바이백 발표.
+                </div>
+            </div>
+        </div>
+
+        <div class="action">
+            <div class="action-number">
+                2
+            </div>
+
+            <div>
+                <strong>
+                    변화하는 할인율에 대한 주식 멀티플의 회복력을 추적합니다.
+                </strong>
+
+                <p>
+                    상승하는 단기 및 장기 금리는 건설적인 주식 전망의 밸류에이션 멀티플을 시험합니다.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    벤치마크 국채 금리 변화와 관련한 S&amp;P 500 멀티플 확장/압축 지표.
+                </div>
+            </div>
+        </div>
+
+
+</section>
+
+</div>
+
+
+<div class="footer">
+    Independent Market Research Engine · 2026-09-09
+    <br>
+    Independent research project. Not affiliated with or
+    endorsed by Bloomberg. Bloomberg Surveillance is used
+    solely as a source program for research.
+    Bloomberg material is research material, not a trading signal.
+    <br>
+    <a
+        class="footer-link"
+        href="https://petal-chair-9d2.notion.site/Bloomberg-Surveillance-Research-Pipeline-efa0169c5b49821d834281a9b2d84e0d"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        프로젝트 개요 → PORTFOLIO ↗
+    </a>
+
+    <a
+        class="footer-link"
+        href="https://github.com/Sellina95/bloomberg-surveillance-research"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        방법론 및 소스 코드 → GITHUB ↗
+    </a>
+</div>
+
+</div>
+
+<script>
+(function () {
+    const control =
+        document.getElementById(
+            "calendarControl"
+        );
+
+    const button =
+        document.getElementById(
+            "calendarButton"
+        );
+
+    if (!control || !button) {
+        return;
+    }
+
+    button.addEventListener(
+        "click",
+        function (event) {
+            event.stopPropagation();
+
+            const open =
+                control.classList.toggle(
+                    "open"
+                );
+
+            button.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+        }
+    );
+
+    document.addEventListener(
+        "click",
+        function (event) {
+            if (
+                !control.contains(
+                    event.target
+                )
+            ) {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+            if (event.key === "Escape") {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+})();
+</script>
+
+</body>
+
+</html>
