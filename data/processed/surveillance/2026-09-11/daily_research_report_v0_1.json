@@ -1,0 +1,149 @@
+{
+  "date": "2026-09-11",
+  "executive_summary": [
+    "Bond yields are increasingly viewed as being in a secular uptrend rather than a temporary counter-trend move, prompting a fundamental reassessment of portfolio return expectations and equity valuations.",
+    "Persistent headline inflation pressures driven by energy shocks and supply-side constraints have shifted Federal Reserve expectations toward potential policy tightening or prolonged restriction.",
+    "While economic growth and corporate earnings remain resilient—partly supported by AI infrastructure investment and robust front-end yields—concerns persist regarding fiscal deficits and bond term premia."
+  ],
+  "macro_themes": [
+    {
+      "theme": "Secular Shift in Bond Yields and Policy Stance",
+      "summary": "Higher bond yields and potential Federal Reserve rate hikes are placing downward pressure on equity valuations and altering return expectations across asset classes.",
+      "supporting_guests": [
+        "Cameron Dawson - NewEdge Wealth CIO",
+        "Meghan Swiber - Bank of America Securities Senior US Rates Strategist",
+        "Tiffany Wilding - PIMCO Economist"
+      ]
+    },
+    {
+      "theme": "Inflation Dynamics: Supply Shocks vs. Labor Markets",
+      "summary": "Persistent inflation risks are primarily driven by external supply-side factors and energy shocks rather than domestic demand or accelerating wage growth.",
+      "supporting_guests": [
+        "Claudia Sahm - New Century Advisors Chief Economist",
+        "David Kelly - JPMorgan Asset Management Chief Global Strategist",
+        "Tiffany Wilding - PIMCO Economist"
+      ]
+    },
+    {
+      "theme": "Fiscal Policy, Deficits, and Term Premiums",
+      "summary": "Expansionary fiscal proposals face significant legislative hurdles, while growing federal deficits contribute upward pressure on bond term premiums.",
+      "supporting_guests": [
+        "Ed Millis - Raymond James Washington Policy Analyst",
+        "Monica Guerra - Morgan Stanley Wealth Management Head of US"
+      ]
+    }
+  ],
+  "rates_bonds": {
+    "summary": "The fixed income landscape is adjusting to a regime of structurally higher yields and low term premia, with front-end yields reflecting a hawkish central bank stance.",
+    "key_views": [
+      "The shift to a secular uptrend in bond yields provides an attractive income buffer and competitive alternative to equities for long-term investors.",
+      "Treasury buybacks are technical liquidity tools rather than a form of quantitative easing designed to lower long-term borrowing costs.",
+      "Fixed income offers compelling yield levels that serve as an effective portfolio anchor, despite asymmetrical risks around term premia repricing."
+    ],
+    "risks": [
+      "Asymmetrical risk of term premia repricing driven by fiscal credibility concerns.",
+      "Upward pressure on long-end yields if monetary policy remains overly restrictive in response to supply-side shocks."
+    ]
+  },
+  "usd_fx": {
+    "summary": "Cross-border trade and resource integration between North American economies remain critical variables for regional currency and commodity dynamics.",
+    "key_views": [
+      "Closer trade alignment and strategic resource reserves can alleviate regional supply bottlenecks and support economic stability."
+    ],
+    "risks": [
+      "Trade policy friction and tariff disputes impacting cross-border supply chains and input costs."
+    ]
+  },
+  "equities": {
+    "summary": "Equity valuation multiples face downward pressure from higher discount rates, necessitating lowered return expectations compared to the previous decade.",
+    "key_views": [
+      "Growth-driven rate rises rooted in productivity and earnings expectations can allow selective equities to perform alongside an underweight Treasury posture.",
+      "Hyperscalers funding AI infrastructure are issuing debt where return on investment expectations comfortably clear their cost of capital."
+    ],
+    "risks": [
+      "Tightening financial conditions and liquidity withdrawal by the central bank increasing return volatility for risk assets."
+    ]
+  },
+  "credit": {
+    "summary": "Credit markets remain resilient supported by robust corporate balance sheets and strong demand for yield on the front end of the curve.",
+    "key_views": [
+      "Corporate borrowers taking advantage of front-end income and cash reserves have helped cushion the broader economy against higher borrowing costs."
+    ],
+    "risks": [
+      "Persistent debt issuance by large-scale technology and infrastructure investors increasing credit supply."
+    ]
+  },
+  "ai_technology": {
+    "summary": "The AI infrastructure build-out continues at pace, driven by major technology hyperscalers issuing debt to fund capital-intensive projects.",
+    "key_views": [
+      "Capital expenditure on AI infrastructure is supported by high return-on-investment expectations that clear corporate hurdle rates."
+    ],
+    "risks": [
+      "Potential electricity and resource constraints affecting the scaling pace of advanced data centers."
+    ]
+  },
+  "commodities": {
+    "summary": "Energy prices and supply shocks are exerting renewed influence across the yield curve and shaping broader inflation trends.",
+    "key_views": [
+      "Elevated energy costs and geopolitical shocks create persistent second-round effects that complicate central bank policy mandates.",
+      "Access to regional energy and strategic mineral reserves can help mitigate price pressures if tariff-free trade channels are maintained."
+    ],
+    "risks": [
+      "Sustained energy price elevation transmitting into broader consumer price indices and squeezing lower-income consumers."
+    ]
+  },
+  "cross_guest_consensus": [
+    {
+      "view": "Inflation is currently being driven by external supply-side and energy shocks rather than excessive domestic wage growth.",
+      "guests": [
+        "Claudia Sahm - New Century Advisors Chief Economist",
+        "David Kelly - JPMorgan Asset Management Chief Global Strategist",
+        "Tiffany Wilding - PIMCO Economist"
+      ]
+    },
+    {
+      "view": "Large-scale fiscal stimulus checks face severe legislative hurdles and are unlikely to be enacted due to deficit and budget hawk constraints in Congress.",
+      "guests": [
+        "Ed Millis - Raymond James Washington Policy Analyst",
+        "Monica Guerra - Morgan Stanley Wealth Management Head of US"
+      ]
+    }
+  ],
+  "cross_guest_conflicts": [
+    {
+      "topic": "Drivers of Higher Interest Rates",
+      "view_a": "Rates are pushing higher primarily due to positive growth, productivity, and corporate earnings expectations.",
+      "view_b": "Rates and policy tightening are being forced by persistent inflation pressures, supply shocks, and the risk of unanchored inflation expectations.",
+      "why_it_matters": "Determines whether higher yields are a sign of economic strength supporting equity overweights or a restrictive policy constraint threatening valuation multiples."
+    }
+  ],
+  "key_risks": [
+    {
+      "risk": "Persistent Supply-Side Inflation Shocks",
+      "trigger": "Continued geopolitical tensions or energy market disruptions keeping headline inflation elevated.",
+      "market_impact": "Forces central banks into unexpected rate hikes, driving long-term yields higher and increasing volatility across risk assets."
+    },
+    {
+      "risk": "Fiscal Deficit Expansion and Term Premia Repricing",
+      "trigger": "Growing federal debt projections and lack of fiscal discipline triggering credibility concerns.",
+      "market_impact": "Pushes up bond term premiums and long-term borrowing costs, conflicting with broader economic policy goals."
+    }
+  ],
+  "research_takeaways": [
+    "Investors are transitioning away from the low-yield regime of the past decade toward an environment of structurally higher bond yields and compressed equity valuation multiples.",
+    "Monetary policy remains data-dependent on upcoming inflation and energy price prints, with central banks utilizing risk-management hikes to protect credibility.",
+    "Secular growth themes like AI infrastructure maintain strong return metrics, but broader portfolio strategies must account for tighter financial conditions and fiscal debt realities."
+  ],
+  "daily_action": [
+    {
+      "action": "Monitor incoming consumer price index releases and energy market price action for signals regarding Federal Reserve policy adjustments.",
+      "why": "Unanticipated inflation prints serve as the primary catalyst for shifts between rate pauses and active policy tightening.",
+      "what_to_monitor": "Headline and core CPI metrics, diesel and crude oil price trends, and market-implied FOMC rate hike probabilities."
+    },
+    {
+      "action": "Observe sovereign yield curve dynamics and term premium behavior relative to fiscal deficit announcements.",
+      "why": "Growing debt projections and sovereign supply dynamics directly influence long-end Treasury yields and broader financial conditions.",
+      "what_to_monitor": "10-year Treasury yield levels, term premium gauges, and legislative commentary on federal budget negotiations."
+    }
+  ]
+}
