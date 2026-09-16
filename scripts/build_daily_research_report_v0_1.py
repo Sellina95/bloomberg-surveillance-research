@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
 from pathlib import Path
 
@@ -29,17 +30,6 @@ INPUT = BASE / "research_dataset_v0_1.json"
 OUTPUT = BASE / "daily_research_report_v0_1.json"
 
 API_KEY = os.environ.get("GEMINI_API_KEY")
-
-if not API_KEY:
-    raise SystemExit(
-        "FAIL — GEMINI_API_KEY is not set"
-    )
-
-if not INPUT.exists():
-    raise SystemExit(
-        f"FAIL — input not found: {INPUT}"
-    )
-
 
 def load_dataset() -> dict:
 
@@ -309,6 +299,16 @@ SENTENCE: {original}
 
 
 def main():
+
+    if not API_KEY:
+        raise SystemExit(
+            "FAIL — GEMINI_API_KEY is not set"
+        )
+
+    if not INPUT.exists():
+        raise SystemExit(
+            f"FAIL — input not found: {INPUT}"
+        )
 
     print("=" * 100)
     print("DAILY RESEARCH REPORT")

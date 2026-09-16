@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install google-genai
+          pip install google-genai ruff
 
       - name: Verify required secrets
         env:
@@ -51,6 +51,9 @@ jobs:
 
       - name: Validate chapterless program fallback
         run: |
+          python -m compileall -q scripts src tests
+          ruff check scripts src tests --select F821
+          python tests/test_report_regeneration_contract_v0_1.py
           python tests/test_source_discovery_contract_v0_1.py
           python tests/test_chapterless_program_fallback_v0_1.py
           python tests/test_public_language_policy_v0_1.py
