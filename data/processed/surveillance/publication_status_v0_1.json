@@ -260,6 +260,19 @@
         "report": true,
         "tv": true
       }
+    },
+    {
+      "date": "2026-09-16",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      }
     }
   ]
 }
