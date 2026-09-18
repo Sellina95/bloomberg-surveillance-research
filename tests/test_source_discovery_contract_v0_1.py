@@ -162,6 +162,11 @@ assert '"engine": "youtube_video"' in discovery_script
 assert '"v": video_id' in discovery_script
 assert "SOURCE CANDIDATE DIAGNOSTICS" in discovery_script
 assert '"description": description' not in discovery_script
+assert "target_broadcast_date" in discovery_script
+assert "target_aware_shortlist" in discovery_script
+assert "DISCOVERY_WINDOW_DAYS = 2" in discovery_script
+assert "target_selected" in discovery_script
+assert "rank_search_candidates(full_program_results)[:MAX_DETAIL_CANDIDATES]" not in discovery_script
 print("SERPAPI OFFICIAL PARAMETER CONTRACT: PASS")
 
 title_form = item(
