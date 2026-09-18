@@ -167,6 +167,14 @@ assert "target_aware_shortlist" in discovery_script
 assert "DISCOVERY_WINDOW_DAYS = 2" in discovery_script
 assert "target_selected" in discovery_script
 assert "rank_search_candidates(full_program_results)[:MAX_DETAIL_CANDIDATES]" not in discovery_script
+assert "MAX_HYDRATIONS_PER_QUERY = 2" in discovery_script
+assert "MAX_SERPAPI_CALLS = 8" in discovery_script
+assert "consume_serpapi_call" in discovery_script
+assert "build_queries" in discovery_script
+assert "TARGET SOURCE RESOLVED" in discovery_script
+assert '"query_count": executed_queries' in discovery_script
+assert '"serpapi_call_count": SERPAPI_CALLS' in discovery_script
+assert "for query in QUERIES" not in discovery_script
 print("SERPAPI OFFICIAL PARAMETER CONTRACT: PASS")
 
 title_form = item(

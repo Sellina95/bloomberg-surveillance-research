@@ -30,17 +30,50 @@ from src.acquisition.source_discovery import (
 
 API_KEY = os.environ["SERPAPI_API_KEY"]
 ENDPOINT = "https://serpapi.com/search.json"
-QUERIES = (
-    "site:youtube.com Bloomberg Television full show Tom Keene Lisa Abramowicz",
+FALLBACK_QUERIES = (
     "site:youtube.com Bloomberg Television Surveillance full broadcast",
     "site:youtube.com Bloomberg Television Jonathan Ferro Lisa Abramowicz Annmarie Hordern",
 )
 MAX_DETAIL_CANDIDATES = 6
+MAX_HYDRATIONS_PER_QUERY = 2
+MAX_SERPAPI_CALLS = 8
 DISCOVERY_WINDOW_DAYS = 2
+SERPAPI_CALLS = 0
 OUTPUT = ROOT / "data/processed/surveillance/surveillance_video_inventory_v0_3.json"
 
 
+
+def consume_serpapi_call(kind: str) -> None:
+    global SERPAPI_CALLS
+
+    if SERPAPI_CALLS >= MAX_SERPAPI_CALLS:
+        raise SystemExit(
+            "SOURCE DISCOVERY PROVIDER: FAIL — "
+            f"SerpApi per-run hard budget reached ({MAX_SERPAPI_CALLS})"
+        )
+
+    SERPAPI_CALLS += 1
+    print(
+        f"SERPAPI CALL {SERPAPI_CALLS}/{MAX_SERPAPI_CALLS}: {kind}"
+    )
+
+
+def build_queries(target_date: str) -> tuple[str, ...]:
+    target = date.fromisoformat(target_date)
+    date_phrase = (
+        f"{target.strftime('%B')} {target.day} {target.year}"
+    )
+
+    primary = (
+        "site:youtube.com Bloomberg Television "
+        f"Bloomberg Surveillance {date_phrase}"
+    )
+
+    return (primary, *FALLBACK_QUERIES)
+
+
 def search_youtube(query: str) -> list[dict]:
+    consume_serpapi_call("youtube search")
     url = ENDPOINT + "?" + urlencode({
         "engine": "youtube",
         "search_query": query,
@@ -61,6 +94,7 @@ def search_youtube(query: str) -> list[dict]:
 
 
 def fetch_video_detail(video_id: str) -> dict:
+    consume_serpapi_call("youtube video detail")
     url = ENDPOINT + "?" + urlencode({
         "engine": "youtube_video",
         "v": video_id,
@@ -139,112 +173,196 @@ def target_aware_shortlist(items: list[dict], target_date: str) -> list[dict]:
 
 
 def main() -> None:
+    target_date = target_broadcast_date()
+    queries = build_queries(target_date)
+
     discovered: dict[str, dict] = {}
-    for query in QUERIES:
-        for item in search_youtube(query):
+    hydrated: list[dict] = []
+    hydrated_ids: set[str] = set()
+    hydration_failures: list[dict] = []
+
+    selected = []
+    rejected = []
+    target_selected = []
+    executed_queries = 0
+
+    print("TARGET BROADCAST DATE:", target_date)
+
+    # Query cascade:
+    #   1. Target-date query first.
+    #   2. Stop immediately after a validated target-date programme exists.
+    #   3. Use broad searches only as fallbacks.
+    #   4. Never exceed the explicit provider call budget.
+    for query_index, query in enumerate(queries, start=1):
+        # A search with no remaining budget for at least one hydration
+        # cannot establish the strict source identity contract.
+        if MAX_SERPAPI_CALLS - SERPAPI_CALLS < 2:
+            print("SERPAPI BUDGET — insufficient calls for another query stage")
+            break
+
+        print(f"DISCOVERY QUERY STAGE {query_index}/{len(queries)}")
+        results = search_youtube(query)
+        executed_queries += 1
+
+        for item in results:
             video_id = item.get("video_id")
             if video_id and official_search_candidate(item):
                 discovered[video_id] = item
 
-    # The official search response already supplies channel and length.
-    # Hydrate only full-program candidates to cap SerpApi calls and obtain
-    # the complete description needed by the strict identity contract.
-    full_program_results = [
-        item for item in discovered.values()
-        if parse_duration(item.get("length") or item.get("duration")) >= 110 * 60
-    ]
-    target_date = target_broadcast_date()
-    shortlist = target_aware_shortlist(full_program_results, target_date)
+        full_program_results = [
+            item
+            for item in discovered.values()
+            if parse_duration(
+                item.get("length") or item.get("duration")
+            ) >= 110 * 60
+        ]
 
-    print("TARGET BROADCAST DATE:", target_date)
-    print("FULL-PROGRAM SEARCH CANDIDATES:", len(full_program_results))
-    print("HYDRATION SHORTLIST:", len(shortlist))
+        shortlist = target_aware_shortlist(
+            full_program_results,
+            target_date,
+        )
 
-    hydrated = []
-    hydration_failures = []
-    for item in shortlist:
-        video_id = item["video_id"]
+        remaining_budget = MAX_SERPAPI_CALLS - SERPAPI_CALLS
+        pending = [
+            item
+            for item in shortlist
+            if item.get("video_id") not in hydrated_ids
+        ][:min(MAX_HYDRATIONS_PER_QUERY, remaining_budget)]
+
+        print("SEARCH RESULTS:", len(results))
+        print("FULL-PROGRAM CANDIDATES:", len(full_program_results))
+        print("NEW HYDRATIONS:", len(pending))
+
+        for item in pending:
+            video_id = item["video_id"]
+            hydrated_ids.add(video_id)
+
+            try:
+                hydrated.append(
+                    hydrate_search_result(
+                        item,
+                        fetch_video_detail(video_id),
+                    )
+                )
+            except Exception as exc:
+                hydration_failures.append({
+                    "video_id": video_id,
+                    "title": item.get("title", ""),
+                    "reason": (
+                        "metadata hydration failed: "
+                        f"{type(exc).__name__}"
+                    ),
+                })
+
         try:
-            hydrated.append(hydrate_search_result(item, fetch_video_detail(video_id)))
-        except Exception as exc:
-            hydration_failures.append({
-                "video_id": video_id,
-                "title": item.get("title", ""),
-                "reason": f"metadata hydration failed: {type(exc).__name__}",
-            })
+            selected, rejected = select_candidates(hydrated)
+        except DiscoveryError as exc:
+            raise SystemExit(
+                f"SOURCE DISCOVERY CONTRACT: FAIL — {exc}"
+            )
 
-    # Non-sensitive diagnostics are printed only to establish the live
-    # provider contract. Never print descriptions or transcript text.
+        target_selected = [
+            candidate
+            for candidate in selected
+            if candidate.broadcast_date == target_date
+        ]
+
+        if target_selected:
+            print(
+                "TARGET SOURCE RESOLVED — "
+                f"stopping after query stage {query_index}"
+            )
+            break
+
+    # Non-sensitive diagnostics only.
+    # Never print descriptions or transcript text.
     print("SOURCE CANDIDATE DIAGNOSTICS")
     for item in hydrated:
         channel = item.get("channel") or {}
         description = str(item.get("description") or "")
+
         print(json.dumps({
             "video_id": item.get("video_id"),
             "title": item.get("title", ""),
             "channel_name": channel.get("name"),
-            "channel_id": channel.get("id") or channel.get("channel_id"),
+            "channel_id": (
+                channel.get("id")
+                or channel.get("channel_id")
+            ),
             "channel_verified": channel.get("verified"),
             "duration_seconds": parse_duration(
-                item.get("length") or item.get("duration")
+                item.get("length")
+                or item.get("duration")
             ),
             "broadcast_date_detected": parse_explicit_date(
                 f"{item.get('title', '')}\n{description}"
             ),
-            "upload_date_raw": item.get("published_date") or item.get("upload_date"),
-            "description_program_marker": bool(PROGRAM_MARKER.search(description)),
+            "upload_date_raw": (
+                item.get("published_date")
+                or item.get("upload_date")
+            ),
+            "description_program_marker": bool(
+                PROGRAM_MARKER.search(description)
+            ),
             "description_host_markers": [
-                marker for marker in HOST_MARKERS if marker in description.lower()
+                marker
+                for marker in HOST_MARKERS
+                if marker in description.lower()
             ],
             "chapters_available": bool(item.get("chapters")),
         }, ensure_ascii=False, sort_keys=True))
 
-    try:
-        selected, rejected = select_candidates(hydrated)
-    except DiscoveryError as exc:
-        raise SystemExit(f"SOURCE DISCOVERY CONTRACT: FAIL — {exc}")
-
-    if not selected:
-        reasons = "; ".join(row["reason"] for row in rejected[:5])
-        raise SystemExit(
-            "SOURCE DISCOVERY CONTRACT: FAIL — no unambiguous official full broadcast; "
-            + reasons
-        )
-
-    target_selected = [
-        candidate
-        for candidate in selected
-        if candidate.broadcast_date == target_date
-    ]
     if not target_selected:
         print("TARGET-DATE REJECTION DIAGNOSTICS")
+
         for row in (rejected + hydration_failures)[:10]:
             print(json.dumps({
                 "video_id": row.get("video_id"),
                 "title": row.get("title", ""),
                 "reason": row.get("reason", ""),
             }, ensure_ascii=False, sort_keys=True))
+
         raise SystemExit(
             "SOURCE DISCOVERY CONTRACT: FAIL — "
-            f"no validated full Bloomberg Surveillance broadcast for {target_date}"
+            f"no validated full Bloomberg Surveillance broadcast "
+            f"for {target_date}; "
+            f"SerpApi calls={SERPAPI_CALLS}/{MAX_SERPAPI_CALLS}"
         )
 
     payload = {
         "schema_version": "surveillance_video_inventory_v0_4",
         "discovered_at": datetime.now(timezone.utc).isoformat(),
-        "query_count": len(QUERIES),
+        "query_count": executed_queries,
+        "serpapi_call_count": SERPAPI_CALLS,
+        "serpapi_call_budget": MAX_SERPAPI_CALLS,
         "candidate_count": len(discovered),
-        "shortlist_count": len(shortlist),
         "hydrated_count": len(hydrated),
         "selected_count": len(selected),
-        "videos": [candidate.as_dict() for candidate in selected],
+        "videos": [
+            candidate.as_dict()
+            for candidate in selected
+        ],
         "rejections": rejected + hydration_failures,
     }
+
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    OUTPUT.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
     print("SOURCE DISCOVERY CONTRACT: PASS")
-    if any("bloomberg surveillance" not in row.title.lower() for row in selected):
+    print(
+        "SERPAPI USAGE:",
+        f"{SERPAPI_CALLS}/{MAX_SERPAPI_CALLS}",
+    )
+
+    if any(
+        "bloomberg surveillance" not in row.title.lower()
+        for row in selected
+    ):
         print("HEADLINE-TITLE DISCOVERY: PASS")
+
     print("OUTPUT:", OUTPUT.relative_to(ROOT))
 
 
