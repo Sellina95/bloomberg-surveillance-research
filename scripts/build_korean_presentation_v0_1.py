@@ -100,22 +100,26 @@ def structure_signature(value):
 
 def extract_numeric_tokens(text):
     """
-    Extract semantic numeric expressions for translation
+    Extract literal numeric expressions for hard translation
     parity at the same JSON path.
 
-    Explicit numeric tokens preserve textual form, while
-    common English month names and ordinal number words are
-    normalized to the numeric form naturally used in Korean.
+    Only numbers explicitly written as digits enter the
+    hard numeric invariant.
 
     Examples:
-      September -> 9
-      December  -> 12
-      fifth     -> 5
-      50        -> 50
-      5%        -> 5%
+      50   -> 50
+      5%   -> 5%
+      5.5% -> 5.5%
+
+    English lexical numbers such as "two", "second", or
+    "fifth" do NOT enter the hard numeric inventory because
+    natural Korean translations may not contain digits.
+
+    Conventional cross-language digit renderings are handled
+    separately by semantic_numeric_allowance().
     """
 
-    tokens = re.findall(
+    return re.findall(
         r"""
         (?<![A-Za-z])
         \$?
@@ -125,85 +129,6 @@ def extract_numeric_tokens(text):
         text,
         flags=re.VERBOSE,
     )
-
-    semantic_numbers = {
-        "january": "1",
-        "february": "2",
-        "march": "3",
-        "april": "4",
-        # "may" intentionally excluded:
-        # ambiguous between calendar month and modal verb.
-        "june": "6",
-        "july": "7",
-        "august": "8",
-        "september": "9",
-        "october": "10",
-        "november": "11",
-        "december": "12",
-        "one": "1",
-        "two": "2",
-        "three": "3",
-        "four": "4",
-        "five": "5",
-        "six": "6",
-        "seven": "7",
-        "eight": "8",
-        "nine": "9",
-        "ten": "10",
-        "first": "1",
-        "second": "2",
-        "third": "3",
-        "fourth": "4",
-        "fifth": "5",
-        "sixth": "6",
-        "seventh": "7",
-        "eighth": "8",
-        "ninth": "9",
-        "tenth": "10",
-    }
-
-    ordinal_words = {
-        "first",
-        "second",
-        "third",
-        "fourth",
-        "fifth",
-        "sixth",
-        "seventh",
-        "eighth",
-        "ninth",
-        "tenth",
-    }
-
-    word_matches = re.finditer(
-        r"\b[A-Za-z]+\b",
-        text.lower(),
-    )
-
-    for match in word_matches:
-        word = match.group(0)
-
-        # Exclude lexical compounds such as "inflation-first".
-        # Genuine numeric expressions such as "first quarter"
-        # and "second-half" remain inside the numeric contract.
-        preceded_by_word_hyphen = (
-            match.start() >= 2
-            and text[match.start() - 1] == "-"
-            and text[match.start() - 2].isalpha()
-        )
-
-        if (
-            word in ordinal_words
-            and preceded_by_word_hyphen
-        ):
-            continue
-
-        normalized = semantic_numbers.get(word)
-
-        if normalized is not None:
-            tokens.append(normalized)
-
-    return tokens
 
 
 def numeric_inventory(value, path="$"):
@@ -337,35 +262,64 @@ def semantic_numeric_allowance(
     translated_text,
 ):
     """
-    Return numeric tokens that are semantically licensed by
-    explicit source-language expressions.
+    Return translated numeric tokens semantically licensed
+    by narrow and explicit source-language expressions.
 
-    This is deliberately narrow.
+    These allowances cover conventional Korean renderings
+    where English lexical text naturally becomes a digit.
 
-    Human-reviewed equivalences frozen from the 2026-08-24
-    Korean presentation candidate:
-
-        two-year   -> 2년
-        secondary  -> 2차
-
-    The function does NOT approve arbitrary added numbers.
+    They do NOT approve arbitrary added numbers.
     """
 
     allowances = []
-
     source_lower = source_text.lower()
 
-    if (
-        "two-year" in source_lower
-        and "2년" in translated_text
-    ):
-        allowances.append("2")
+    equivalences = [
+        # Financial terminology / maturities.
+        (r"\btwo-year\b", "2년", "2"),
+        (r"\bsecondary\b", "2차", "2"),
 
-    if (
-        "secondary" in source_lower
-        and "2차" in translated_text
-    ):
-        allowances.append("2")
+        # English month name -> conventional Korean month form.
+        (r"\bjanuary\b", "1월", "1"),
+        (r"\bfebruary\b", "2월", "2"),
+        (r"\bmarch\b", "3월", "3"),
+        (r"\bapril\b", "4월", "4"),
+        (r"\bmay\b", "5월", "5"),
+        (r"\bjune\b", "6월", "6"),
+        (r"\bjuly\b", "7월", "7"),
+        (r"\baugust\b", "8월", "8"),
+        (r"\bseptember\b", "9월", "9"),
+        (r"\boctober\b", "10월", "10"),
+        (r"\bnovember\b", "11월", "11"),
+        (r"\bdecember\b", "12월", "12"),
+
+        # Conventional quarter notation.
+        (r"\bfirst(?:-|\s+)quarter\b", "1분기", "1"),
+        (r"\bsecond(?:-|\s+)quarter\b", "2분기", "2"),
+        (r"\bthird(?:-|\s+)quarter\b", "3분기", "3"),
+        (r"\bfourth(?:-|\s+)quarter\b", "4분기", "4"),
+    ]
+
+    for source_pattern, translated_marker, token in equivalences:
+        source_count = len(
+            re.findall(
+                source_pattern,
+                source_lower,
+            )
+        )
+
+        translated_count = translated_text.count(
+            translated_marker
+        )
+
+        licensed_count = min(
+            source_count,
+            translated_count,
+        )
+
+        allowances.extend(
+            [token] * licensed_count
+        )
 
     return allowances
 
