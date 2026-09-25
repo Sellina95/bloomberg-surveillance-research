@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 
 from google import genai
+from google.genai import types
 
 
 DATE = os.environ.get("SURVEILLANCE_DATE", "2026-08-14")
@@ -21,7 +22,29 @@ MODEL = "gemini-3.5-flash-lite"
 
 API_KEY = os.environ["GEMINI_API_KEY"]
 
-client = genai.Client(api_key=API_KEY)
+client = genai.Client(
+    api_key=API_KEY,
+    http_options=types.HttpOptions(timeout=120_000),
+)
+
+
+def is_transient_error(exc: Exception) -> bool:
+    message = str(exc).lower()
+    name = type(exc).__name__.lower()
+
+    return (
+        "429" in message
+        or "resource_exhausted" in message
+        or "quota" in message
+        or "500" in message
+        or "502" in message
+        or "503" in message
+        or "504" in message
+        or "unavailable" in message
+        or "timeout" in message
+        or "timed out" in message
+        or "timeout" in name
+    )
 
 
 PROMPT = """
@@ -160,18 +183,7 @@ TRANSCRIPT:
 
         except Exception as exc:
 
-            message = str(exc)
-
-            is_transient = (
-                "429" in message
-                or "RESOURCE_EXHAUSTED" in message
-                or "quota" in message.lower()
-                or "500" in message
-                or "502" in message
-                or "503" in message
-                or "504" in message
-                or "UNAVAILABLE" in message
-            )
+            is_transient = is_transient_error(exc)
 
             if not is_transient:
                 raise

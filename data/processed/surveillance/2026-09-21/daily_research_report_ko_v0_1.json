@@ -1,0 +1,188 @@
+{
+  "date": "2026-09-21",
+  "schema_version": "daily_research_report_ko_v0_1",
+  "language": "ko",
+  "source_report": "data/processed/surveillance/2026-09-21/daily_research_report_v0_1.json",
+  "source_report_sha256": "00a040302147165b6dfed83c5edf38e800d8629f5fe6ac270b88b206b8b0395c",
+  "translation_model": "gemini-3.5-flash-lite",
+  "translation_policy": {
+    "research_regeneration": false,
+    "provenance_mutation": false,
+    "structure_preserved": true,
+    "guest_attribution_preserved": true,
+    "numeric_values_preserved": true
+  },
+  "report": {
+    "date": "2026-09-21",
+    "executive_summary": [
+      "글로벌 주식시장은 광범위한 기업 이익 추정치 조정, 지속적인 인공지능 자본지출, 주요 경제권 전반의 상당한 국제적 재정 부양책에 힘입어 기조적 회복력을 보여주고 있습니다.",
+      "지속적인 에너지 공급 충격, 특히 최대 정제 능력 부근에서 작동하는 높은 디젤 및 연료 가격은 중간선거를 앞두고 극심한 정치적 마찰과 소비자 비용 압박을 유발하고 있습니다.",
+      "중앙은행의 정책 경로는 건실한 경제 성장, 고착화된 인플레이션, 완화적 금융여건이 조기 통화완화 기대를 족쇄처럼 압박함에 따라 매파적 검증에 직면해 있습니다."
+    ],
+    "macro_themes": [
+      {
+        "theme": "AI 인프라 및 기업 자본 지출",
+        "summary": "인공지능, 하드웨어, 사이버보안에 대한 기업 투자는 수조 달러 규모의 속도로 지속되고 있으며, 인접한 산업 및 전력 부문의 주요 매출 동력으로 기능하고 있습니다.",
+        "supporting_guests": [
+          "Venu Krishna - Barclays Head of US Equity Strategy",
+          "Jason Tyler - Northern Trust Wealth MGMT President",
+          "Ulrike Hoffmann-Burchardi - UBS Global Wealth MGMT CIO of Global Equities"
+        ]
+      },
+      {
+        "theme": "에너지 압박과 재정·통화 마찰",
+        "summary": "높은 연료 가격과 높은 정제 가동률은 하위 계층 소비자에게 심각한 부담을 주는 동시에 물가 안정 회복이라는 연방준비제도의 책무를 복잡하게 만들고 있습니다.",
+        "supporting_guests": [
+          "Ed Mills - Raymond James Washington Policy Analyst",
+          "Bob Michele - JPMorgan Asset MGMT Global Head of Fixed Income",
+          "Henrietta Treyz - Veda Partners Director of Economic Policy Research",
+          "James Egelhof - BNP Paribas Chief US Economist"
+        ]
+      },
+      {
+        "theme": "보호무역주의와 공급망 재조정",
+        "summary": "무역 정책은 전통적인 세계화에서 관리무역, 상호 관세, 그리고 환적 거점에 대한 엄격한 모니터링으로 계속 전환되고 있습니다.",
+        "supporting_guests": [
+          "Ed Mills - Raymond James Washington Policy Analyst",
+          "Jamieson Greer - US Trade Representative"
+        ]
+      }
+    ],
+    "rates_bonds": {
+      "summary": "미 국채 밸류에이션은 정점의 비관론 시기를 거치며 매력적인 명목 및 실질 목표치에 도달했으나, 더 끈질긴 인플레이션과 건실한 경제 성장이 단기 금리 인상 리스크를 유입시키고 있습니다.",
+      "key_views": [
+        "미 국채 시장의 비관론은 밸류에이션이 매력적인 실질 및 명목 목표치에 부합하기 전에 극단적인 수준에 도달했습니다.",
+        "통화정책은 조기 완화를 통해 지속적인 에너지 공급 충격을 용인하는 것을 피해야 합니다.",
+        "재정 정책과 자산 효과로부터의 경제적 부양은 중앙은행의 추가 긴축 가능성을 높입니다."
+      ],
+      "risks": [
+        "중앙은행이 헷지되지 않은 금리 인상을 단행하도록 강제하는 지속적인 에너지 인플레이션.",
+        "고착화된 국내 물가 지수에 의해 주도되는 단기물 금리 변동성."
+      ]
+    },
+    "usd_fx": {
+      "summary": "외환 시장 동향은 상반된 무역 철학, 지역 안보 지출, 주요 무역 파트너 간의 변화하는 관세 협상에 의해 점점 더 큰 영향을 받고 있습니다.",
+      "key_views": [
+        "미국 행정부와 캐나다 같은 국제 파트너 간의 무역 정책 차이는 지역 통화 및 무역 조정을 복잡하게 만듭니다.",
+        "핵심 광물 및 무역 휴전에 관한 양자 논의는 국경을 넘는 자본 흐름의 단기 변동성을 주도합니다."
+      ],
+      "risks": [
+        "외환 안정성에 영향을 미치는 보복성 무역 조치 및 수출 금지 조치.",
+        "유럽 지역 통화에 영향을 미치는 고조되는 지정학적 리스크 프리미엄."
+      ]
+    },
+    "equities": {
+      "summary": "주식은 지속적인 소비자 판매 물량 압박에도 불구하고 광범위한 기업 이익 추정치 조정, 건실한 마진 확대, 다년간의 기술 자본지출 주기에 힘입어 구조적 회복력을 유지하고 있습니다.",
+      "key_views": [
+        "유럽 경기순환주와 기업 이익은 기조적 회복력을 보여주며, 프랑스 주식은 현저한 정치적 리스크 할인율로 거래되고 있습니다.",
+        "미국 주식 시장의 주도력은 건실한 기술 자본지출과 광범위한 기업 마진 확대에 의해 강화됩니다.",
+        "K자형 경제 환경은 상승하는 투입 비용에 직면한 경기소비재 부문에 물량 및 가격 책정 과제를 생성합니다."
+      ],
+      "risks": [
+        "높은 운임 및 연료비에 의해 주도되는 소비자 부문 마진 압축.",
+        "금리 기대치 변화에 대한 집중 리스크 및 밸류에이션 취약성."
+      ]
+    },
+    "credit": {
+      "summary": "기업 신용 펀더멘털은 기업 채권 시장의 모든 주요 부문에 걸친 긍정적인 이익 성장에 힘입어 예외적으로 강한 상태를 유지하고 있습니다.",
+      "key_views": [
+        "모든 기업 채권 시장 부문이 긍정적인 이익 성장을 기록하고 있습니다.",
+        "투자등급 신용과 듀레이션 자산은 거시경제적 조정 속에서 매력적인 위험 조정 포지셔닝을 제공합니다."
+      ],
+      "risks": [
+        "소비자 압박이 심화될 경우 하위 등급 하이일드 부채의 취약성.",
+        "레버리지 기업 차입자의 대차대조표로 전가되는 더 높은 투입 비용."
+      ]
+    },
+    "ai_technology": {
+      "summary": "인공지능, 물리적 로봇공학, 사이버보안에 대한 기업 지출은 견조하며, 투자자들은 기초 인프라 및 공급망 픽앤쇼벌(곡괭이와 삽) 공급업체에 점점 더 집중하고 있습니다.",
+      "key_views": [
+        "글로벌 AI 채택은 인프라, 사이버보안, 물리적 로봇공학을 향한 상당한 투자와 함께 급격히 가속화되고 있습니다.",
+        "민간 기업들은 분기별 실적 압박 없이 복잡한 기술 및 안전 개발을 탐색할 수 있는 더 큰 유연성을 유지하고 있습니다.",
+        "빅테크 기업들은 에너지, 전력, 산업 생태계로 매출이 흘러들어가는 수조 달러 규모의 자본지출 능력을 보유하고 있습니다."
+      ],
+      "risks": [
+        "과도한 선행 인프라 지출과 최종 이익 실현 간의 시점 불일치.",
+        "혁신과 공공 안전 검증을 균형 있게 다루어야 하는 상장 기업에 대한 규제 및 공시 압박."
+      ]
+    },
+    "commodities": {
+      "summary": "에너지 시장은 디젤 및 휘발유 가격이 거의 최대 수준의 국내 정제 능력 대비 높은 수준에 머물며 극심한 타이트함을 겪고 있으며, 잠재적 수출 제한에 대한 논의를 주도하고 있습니다.",
+      "key_views": [
+        "기록적인 고공행진의 디젤 가격과 제약된 정제 능력은 중간선거를 앞두고 강렬한 정치적 압력을 유발하고 있습니다.",
+        "유럽의 천연가스 저장 및 수용 인프라는 고가의 가격에도 불구하고 절대적 희소성에 대한 적절한 충격 흡수 장치를 제공합니다."
+      ],
+      "risks": [
+        "글로벌 에너지 공급망의 혼란을 야기하는 연료 수출 금지 조치의 잠재적 시행.",
+        "유럽 지역 에너지 회랑을 교란하는 지속적인 준정규전 및 하이브리드 안보 위협."
+      ]
+    },
+    "cross_guest_consensus": [
+      {
+        "view": "기업 이익과 기조적 사업 펀더멘털은 여러 거시경제적 역풍에도 불구하고 놀라울 정도로 회복력을 유지하고 있습니다.",
+        "guests": [
+          "Beata Manthey - Citi Head of European Equity Strategy",
+          "Bob Michele - JPMorgan Asset MGMT Global Head of Fixed Income",
+          "Venu Krishna - Barclays Head of US Equity Strategy",
+          "Ulrike Hoffmann-Burchardi - UBS Global Wealth MGMT CIO of Global Equities"
+        ]
+      },
+      {
+        "view": "인공지능과 인프라를 향한 막대한 자본지출은 고착화된 다년간의 구조적 동력입니다.",
+        "guests": [
+          "Venu Krishna - Barclays Head of US Equity Strategy",
+          "Jason Tyler - Northern Trust Wealth MGMT President",
+          "Ulrike Hoffmann-Burchardi - UBS Global Wealth MGMT CIO of Global Equities"
+        ]
+      }
+    ],
+    "cross_guest_conflicts": [
+      {
+        "topic": "금리 경로와 시장 회복력",
+        "view_a": "예상되는 금리 인상이나 매파적인 중앙은행 기조는 기업 수요와 성장이 충분히 건실하기 때문에 진행 중인 주식 상승세를 탈선시키지 못할 것입니다 (UBS, BNP Paribas).",
+        "view_b": "고착화된 인플레이션과 공급 충격은 제약적 통화정책을 요구하며, 중앙은행은 경제 과열을 막기 위해 조기 완화를 피해야 합니다 (JPMorgan Asset Management).",
+        "why_it_matters": "더 오래 더 높은 금리 환경에서 주식 멀티플이 추가로 확장될 수 있는지, 아니면 tighter financial conditions(금융여건)이 결국 위험 자산 밸류에이션을 압축할 것인지를 결정합니다."
+      }
+    ],
+    "key_risks": [
+      {
+        "risk": "에너지 가격 충격 및 연료 수출 제한",
+        "trigger": "행정부의 수출 금지 조치로 이어지는 소매 디젤 및 휘발유 가격 급등.",
+        "market_impact": "가속화된 소비자 인플레이션, 운송 의존 부문의 마진 압축, 고조된 원자재 변동성."
+      },
+      {
+        "risk": "지정학적 및 준정규전 사보타주",
+        "trigger": "핵심 서구 인프라를 겨냥한 하이브리드 작전 또는 사이버 공격의 고조.",
+        "market_impact": "공급망 교란, 증가된 국방 지출 요건, 정치적 양극화."
+      },
+      {
+        "risk": "무역 휴전 만료 및 관세",
+        "trigger": "미-중 희토류 및 무역 휴전 연장 실패 또는 북미 파트너와의 분쟁 악화.",
+        "market_impact": "증가된 규제 마찰, 환적 컴플라이언스 비용, 다국적 기업의 마진 압박."
+      }
+    ],
+    "research_takeaways": [
+      "글로벌 주식은 강력한 재정 부양책, 건실한 기업 이익 추정치 조정, 내구성 있는 다년간의 AI 자본지출 주기에 의해 지지받고 있습니다.",
+      "소비자 부문은 높은 연료 비용을 다루는 하위 계층 소비자가 겪는 물량 및 가격 책정 압박을 고소득층 자산 효과가 상쇄하는 K자형 다이버전스에 직면해 있습니다.",
+      "채권 시장은 매력적인 밸류에이션 진입점을 제공하지만, 더 끈질긴 인플레이션 역학이 중앙은행의 비둘기파적 피벗에 도전합니다.",
+      "무역 및 지정학적 정책은 보호무역주의, 관리된 상호주의, 강화된 국내 방위 산업 기반을 향한 결정적 전환을 지속하고 있습니다."
+    ],
+    "daily_action": [
+      {
+        "action": "미국 정제 능력 가동률과 잠재적 연료 수출 제한을 둘러싼 입법 동향을 모니터링합니다.",
+        "why": "높은 디젤 가격과 정유 공장의 운영 제약은 운송 비용, 소비자 인플레이션 지표, 운송 부문 마진에 직접적인 영향을 미칩니다.",
+        "what_to_monitor": "주간 EIA 재고 보고서, 연료 무역 통제에 대한 행정부 발표, 소매 디젤 가격 지수."
+      },
+      {
+        "action": "중앙은행의 인플레이션 책무와 관련하여 경제 과열의 징후가 있는지 유입되는 거시경제 데이터 발표를 추적합니다.",
+        "why": "강한 재정 부양책과 고착화된 인플레이션은 매파적 정책 조정 및 단기 채권수익률 곡선 재가격 책정의 확률을 높입니다.",
+        "what_to_monitor": "고용 지표, 근원 인플레이션 수치, 잠재적 금리 조정에 관한 중앙은행 커뮤니케이션."
+      },
+      {
+        "action": "미-중 핵심 광물 휴전 및 환적 집행 메커니즘과 관련된 무역 협상 이정표를 관찰합니다.",
+        "why": "무역 휴전의 만료일과 멕시코 및 아시아 환적 거점에 대한 강화된 검증은 컴플라이언스 마찰과 공급망 변동성을 유발합니다.",
+        "what_to_monitor": "미국 무역대표부 성명, 세관 집행 업데이트, 양자 무역 대표단 업데이트."
+      }
+    ]
+  }
+}
