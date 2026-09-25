@@ -2,6 +2,15 @@ name: Daily Bloomberg Surveillance Research
 
 on:
   workflow_dispatch:
+    inputs:
+      report_date:
+        description: "Broadcast date (YYYY-MM-DD)"
+        required: false
+        type: string
+      source_url:
+        description: "Verified full Bloomberg Surveillance YouTube URL"
+        required: false
+        type: string
 
   schedule:
     # Mon-Fri 07:30 KST = Sun-Thu 22:30 UTC (previous day)
@@ -43,11 +52,16 @@ jobs:
         run: |
           test -n "$SUPADATA_API_KEY"
           test -n "$GEMINI_API_KEY"
-          test -n "$SERPAPI_API_KEY"
 
           echo "SUPADATA_API_KEY=SET"
           echo "GEMINI_API_KEY=SET"
-          echo "SERPAPI_API_KEY=SET"
+
+          if [ -z "${{ inputs.source_url }}" ]; then
+            test -n "$SERPAPI_API_KEY"
+            echo "SERPAPI_API_KEY=SET"
+          else
+            echo "SERPAPI_API_KEY=SKIPPED_MANUAL_OVERRIDE"
+          fi
 
       - name: Validate chapterless program fallback
         run: |
@@ -57,13 +71,33 @@ jobs:
           python tests/test_source_discovery_contract_v0_1.py
           python tests/test_chapterless_program_fallback_v0_1.py
           python tests/test_public_language_policy_v0_1.py
+          python tests/test_korean_numeric_translation_contract_v0_1.py
+          python tests/test_gemini_timeout_contract_v0_1.py
+          python tests/test_manual_source_override_contract_v0_1.py
           python tests/test_en_ko_semantic_parity_v0_1.py
           python tests/test_verbatim_gate_v0_1.py
           python tests/test_provenance_contract_v0_1.py
           python tests/test_atomic_publication_contract_v0_1.py
           python tests/test_publication_ui_contract_v0_1.py
 
+      - name: Validate manual override inputs
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          if { [ -n "${{ inputs.source_url }}" ] && [ -z "${{ inputs.report_date }}" ]; } ||              { [ -z "${{ inputs.source_url }}" ] && [ -n "${{ inputs.report_date }}" ]; }; then
+            echo "Manual override requires BOTH report_date and source_url"
+            exit 1
+          fi
+
+      - name: Prepare manual source override
+        if: ${{ inputs.source_url != '' }}
+        env:
+          MANUAL_SOURCE_DATE: ${{ inputs.report_date }}
+          MANUAL_SOURCE_URL: ${{ inputs.source_url }}
+        run: |
+          python scripts/prepare_manual_source_override_v0_1.py
+
       - name: Update surveillance inventory
+        if: ${{ inputs.source_url == '' }}
         env:
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         run: |
@@ -75,6 +109,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         run: |
+          if [ -n "${{ inputs.source_url }}" ]; then
+            export ALLOW_HISTORICAL_BACKFILL=1
+          fi
           python scripts/run_atomic_publication_v0_1.py
 
       - name: Validate public surface
