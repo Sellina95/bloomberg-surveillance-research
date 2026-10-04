@@ -634,25 +634,38 @@ def build_html():
         # supporting guest attribution only.
         evidence_html = ""
 
+        # Historical/generated reports may represent a macro theme
+        # either as the canonical object schema or as a plain string.
+        # Rendering must remain robust without mutating the research.
+        if isinstance(theme, dict):
+            theme_title = theme.get("theme", "")
+            theme_summary = theme.get("summary", "")
+            supporting_guests = theme.get("supporting_guests", [])
+        elif isinstance(theme, str):
+            theme_title = theme
+            theme_summary = ""
+            supporting_guests = []
+        else:
+            theme_title = ""
+            theme_summary = ""
+            supporting_guests = []
+
         macro_html += f"""
         <div class="macro-card">
-            <h3>{e(theme.get("theme"))}</h3>
+            <h3>{e(theme_title)}</h3>
 
             <div class="small">
                 SOURCE-DERIVED SYNTHESIS · PARAPHRASED
             </div>
 
             <p>
-                {e(theme.get("summary"))}
+                {e(theme_summary)}
             </p>
 
             <div class="guest-row">
                 {" ".join(
                     f'<span class="guest">{e(g)}</span>'
-                    for g in theme.get(
-                        "supporting_guests",
-                        []
-                    )
+                    for g in supporting_guests
                 )}
             </div>
 

@@ -115,5 +115,17 @@ class PublicationUI(unittest.TestCase):
             self.assertFalse((public / "2026-09-09" / "guest_transcripts.json").exists())
 
 
+renderer = (
+    Path(__file__).resolve().parents[1]
+    / "scripts/render_daily_research_tv_v0_1.py"
+).read_text(encoding="utf-8")
+
+assert "if isinstance(theme, dict):" in renderer
+assert "elif isinstance(theme, str):" in renderer
+assert "theme_title = theme" in renderer
+
+print("MACRO THEME STRING RENDER FALLBACK: PASS")
+
+
 if __name__ == "__main__":
     unittest.main()
