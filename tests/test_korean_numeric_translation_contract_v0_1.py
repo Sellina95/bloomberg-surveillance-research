@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "scripts" / "build_korean_presentation_v0_1.py"
 
 FUNCTIONS = {
+    "normalize_translation_structure",
     "extract_numeric_tokens",
     "numeric_inventory",
     "value_at_json_path",
@@ -45,6 +46,82 @@ exec(
 compare_numeric_inventory = namespace[
     "compare_numeric_inventory"
 ]
+
+normalize_translation_structure = namespace[
+    "normalize_translation_structure"
+]
+
+
+# Model output must never control report schema.
+_source = {
+    "date": "2026-09-25",
+    "macro_themes": [
+        "Rates remain in focus.",
+        {
+            "theme": "Liquidity",
+            "summary": "Conditions remain mixed.",
+            "supporting_guests": ["Guest A"],
+        },
+    ],
+    "count": 2,
+    "flag": True,
+}
+
+_candidate = {
+    "date": {"value": "2026-09-25"},
+    "macro_themes": [
+        {"theme": "금리"},
+        "유동성",
+        "EXTRA ITEM",
+    ],
+    "count": "2",
+    "flag": "true",
+    "extra_key": "must disappear",
+}
+
+_normalized = normalize_translation_structure(
+    _source,
+    _candidate,
+)
+
+assert (
+    structure_signature := (
+        lambda value: (
+            {
+                key: structure_signature(child)
+                for key, child in value.items()
+            }
+            if isinstance(value, dict)
+            else (
+                [
+                    structure_signature(child)
+                    for child in value
+                ]
+                if isinstance(value, list)
+                else (
+                    "<STR>"
+                    if isinstance(value, str)
+                    else (
+                        None
+                        if value is None
+                        else type(value).__name__
+                    )
+                )
+            )
+        )
+    )
+)
+
+assert structure_signature(_normalized) == structure_signature(_source)
+assert list(_normalized) == list(_source)
+assert len(_normalized["macro_themes"]) == 2
+assert _normalized["macro_themes"][0] == _source["macro_themes"][0]
+assert isinstance(_normalized["macro_themes"][1], dict)
+assert _normalized["count"] == 2
+assert _normalized["flag"] is True
+assert "extra_key" not in _normalized
+
+print("KOREAN STRUCTURAL NORMALIZATION CONTRACT: PASS")
 
 
 def assert_pass(en: str, ko: str) -> None:

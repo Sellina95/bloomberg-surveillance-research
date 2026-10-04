@@ -98,6 +98,70 @@ def structure_signature(value):
     return type(value).__name__
 
 
+def normalize_translation_structure(source, candidate):
+    """
+    Rebuild a model-generated translation on the authoritative
+    source JSON structure.
+
+    Gemini is allowed to generate translated prose, but it is
+    never allowed to determine JSON shape, list cardinality,
+    scalar types, or non-text values.
+
+    Rules:
+    - source dict keys are authoritative
+    - source list lengths/order are authoritative
+    - source non-string scalar values are authoritative
+    - translated string leaves are accepted only when the
+      corresponding source leaf is also a string
+    - incompatible/missing translated leaves fall back to the
+      source string rather than corrupting the schema
+    """
+
+    if isinstance(source, dict):
+        candidate_dict = (
+            candidate
+            if isinstance(candidate, dict)
+            else {}
+        )
+
+        return {
+            key: normalize_translation_structure(
+                child,
+                candidate_dict.get(key),
+            )
+            for key, child in source.items()
+        }
+
+    if isinstance(source, list):
+        candidate_list = (
+            candidate
+            if isinstance(candidate, list)
+            else []
+        )
+
+        return [
+            normalize_translation_structure(
+                child,
+                (
+                    candidate_list[index]
+                    if index < len(candidate_list)
+                    else None
+                ),
+            )
+            for index, child in enumerate(source)
+        ]
+
+    if isinstance(source, str):
+        return (
+            candidate
+            if isinstance(candidate, str)
+            else source
+        )
+
+    # Numbers, booleans and null are never translation targets.
+    return source
+
+
 def extract_numeric_tokens(text):
     """
     Extract literal numeric expressions for hard translation
@@ -853,8 +917,11 @@ print(
     source_sha256,
 )
 
-translated = translate(
-    source_report
+translated = normalize_translation_structure(
+    source_report,
+    translate(
+        source_report
+    ),
 )
 
 # Gemini may occasionally return valid JSON whose structure
@@ -868,8 +935,11 @@ if structure_signature(translated) != structure_signature(source_report):
         "ATTEMPTING ONE FRESH TRANSLATION"
     )
 
-    translated = translate(
-        source_report
+    translated = normalize_translation_structure(
+        source_report,
+        translate(
+            source_report
+        ),
     )
 
 candidate_serialized = (
@@ -1013,10 +1083,13 @@ if not numeric_result["pass"]:
         "ATTEMPTING ONE REPAIR"
     )
 
-    translated = repair_numeric_translation(
+    translated = normalize_translation_structure(
         source_report,
-        translated,
-        numeric_result["differences"],
+        repair_numeric_translation(
+            source_report,
+            translated,
+            numeric_result["differences"],
+        ),
     )
 
     # Preserve the repaired private candidate for audit.
@@ -1050,8 +1123,11 @@ if not numeric_result["pass"]:
             "ATTEMPTING ONE FRESH TRANSLATION"
         )
 
-        translated = translate(
-            source_report
+        translated = normalize_translation_structure(
+            source_report,
+            translate(
+                source_report
+            ),
         )
 
         candidate_serialized = (
