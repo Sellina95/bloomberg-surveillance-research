@@ -13,8 +13,17 @@ on:
         type: string
 
   schedule:
-    # Mon-Fri 07:30 KST = Sun-Thu 22:30 UTC (previous day)
+    # Automatic acquisition retry window.
+    #
+    # 07:30 KST: first attempt
+    # 09:30 KST: retry if the target full broadcast was not searchable yet
+    # 11:30 KST: final automatic retry
+    #
+    # The 07:30 run occurs on the previous UTC calendar day, hence 0-4.
+    # The 09:30/11:30 runs are on the same UTC/KST calendar day, hence 1-5.
     - cron: "30 22 * * 0-4"
+    - cron: "30 0 * * 1-5"
+    - cron: "30 2 * * 1-5"
 
 permissions:
   contents: write
@@ -69,6 +78,7 @@ jobs:
           ruff check scripts src tests --select F821
           python tests/test_report_regeneration_contract_v0_1.py
           python tests/test_source_discovery_contract_v0_1.py
+          python tests/test_daily_workflow_reliability_contract_v0_1.py
           python tests/test_chapterless_program_fallback_v0_1.py
           python tests/test_public_language_policy_v0_1.py
           python tests/test_korean_numeric_translation_contract_v0_1.py
@@ -97,13 +107,34 @@ jobs:
           python scripts/prepare_manual_source_override_v0_1.py
 
       - name: Update surveillance inventory
+        id: inventory
         if: ${{ inputs.source_url == '' }}
         env:
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
         run: |
+          set +e
           python scripts/update_surveillance_inventory_v0_1.py
+          rc=$?
+          set -e
+
+          if [ "$rc" -eq 0 ]; then
+            echo "source_ready=true" >> "$GITHUB_OUTPUT"
+            echo "SOURCE READY — publication may continue"
+            exit 0
+          fi
+
+          if [ "$rc" -eq 20 ]; then
+            echo "source_ready=false" >> "$GITHUB_OUTPUT"
+            echo "SOURCE_NOT_READY — no publication on this attempt"
+            echo "A later scheduled run will retry automatically."
+            exit 0
+          fi
+
+          echo "TRUE FAILURE — inventory/discovery exited with code $rc"
+          exit "$rc"
 
       - name: Build, validate, and atomically publish latest surveillance
+        if: ${{ inputs.source_url != '' || steps.inventory.outputs.source_ready == 'true' }}
         env:
           SUPADATA_API_KEY: ${{ secrets.SUPADATA_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -115,10 +146,12 @@ jobs:
           python scripts/run_atomic_publication_v0_1.py
 
       - name: Validate public surface
+        if: ${{ inputs.source_url != '' || steps.inventory.outputs.source_ready == 'true' }}
         run: |
           python scripts/validate_public_surface_v0_1.py
 
       - name: Verify latest TV report
+        if: ${{ inputs.source_url != '' || steps.inventory.outputs.source_ready == 'true' }}
         run: |
           latest_dir=$(find data/processed/surveillance \
             -mindepth 1 \
@@ -135,6 +168,7 @@ jobs:
           echo "$latest_dir/daily_research_report_tv_v0_1.html"
 
       - name: Commit generated research artifacts
+        if: ${{ inputs.source_url != '' || steps.inventory.outputs.source_ready == 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -161,17 +195,21 @@ jobs:
           fi
 
       - name: Build public Research Desk site
+        if: ${{ inputs.source_url != '' || steps.inventory.outputs.source_ready == 'true' }}
         run: |
           python scripts/build_research_desk_pages_v0_1.py
 
       - name: Configure GitHub Pages
+        if: ${{ inputs.source_url != '' || steps.inventory.outputs.source_ready == 'true' }}
         uses: actions/configure-pages@v5
 
       - name: Upload Research Desk Pages artifact
+        if: ${{ inputs.source_url != '' || steps.inventory.outputs.source_ready == 'true' }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
       - name: Deploy Research Desk to GitHub Pages
+        if: ${{ inputs.source_url != '' || steps.inventory.outputs.source_ready == 'true' }}
         id: deployment
         uses: actions/deploy-pages@v4

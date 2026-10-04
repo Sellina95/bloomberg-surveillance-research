@@ -175,7 +175,44 @@ assert "TARGET SOURCE RESOLVED" in discovery_script
 assert '"query_count": executed_queries' in discovery_script
 assert '"serpapi_call_count": SERPAPI_CALLS' in discovery_script
 assert "for query in QUERIES" not in discovery_script
+
+# Search snippets are non-authoritative discovery hints.
+# Missing duration must not prevent metadata hydration.
+assert "discovery_candidates = list(discovered.values())" in discovery_script
+assert "FULL-PROGRAM CANDIDATES:" not in discovery_script
+
 print("SERPAPI OFFICIAL PARAMETER CONTRACT: PASS")
+print("PRE-HYDRATION METADATA BOUNDARY: PASS")
+
+# Missing target source is an operational readiness state, not a
+# programming/contract failure. Exit 20 is reserved for that state.
+assert "SOURCE_NOT_READY_EXIT_CODE = 20" in discovery_script
+assert "raise SystemExit(SOURCE_NOT_READY_EXIT_CODE)" in discovery_script
+print("SOURCE NOT READY EXIT CONTRACT: PASS")
+
+# YouTube engine queries should use native search terms rather than
+# Google-style site: operators.
+assert "site:youtube.com" not in discovery_script
+
+# Missing search-snippet identity metadata must survive until hydration.
+assert "if channel_id and channel_id != OFFICIAL_CHANNEL_ID:" in discovery_script
+assert "not channel_id" in discovery_script
+assert "Completely missing metadata is" in discovery_script
+
+print("YOUTUBE QUERY CONTRACT: PASS")
+print("MISSING CHANNEL METADATA HYDRATION BOUNDARY: PASS")
+
+# Production search must prioritize Bloomberg's actual M/D/YYYY title
+# convention and target-date evidence before paid hydration.
+assert "numeric_date" in discovery_script
+assert "Bloomberg Surveillance {numeric_date}" in discovery_script
+assert "exact_target" in discovery_script
+assert "nearby_dated" in discovery_script
+assert "nearby_upload" in discovery_script
+assert "months away from the" in discovery_script
+
+print("TARGET-DATE QUERY PRIORITY: PASS")
+print("TARGET-DATE HYDRATION PRIORITY: PASS")
 
 title_form = item(
     "title-form",
@@ -210,6 +247,32 @@ excluded = item(
 )
 selected, rejected = select_candidates([excluded], today=TODAY)
 assert selected == [] and rejected
+
+# Bloomberg descriptions may cross-promote other programmes.
+# A valid full Surveillance show must not be rejected merely because
+# its DESCRIPTION mentions Opening Bell / Closing Bell / Daybreak.
+cross_promo_surveillance = item(
+    "cross-promo-surveillance",
+    "Sept. Jobs Report | Bloomberg Surveillance 10/02/2026",
+    (
+        "Bloomberg Surveillance with Jonathan Ferro, Lisa Abramowicz "
+        "and Annmarie Hordern. Also watch Opening Bell and Daybreak."
+    ),
+    "2:24:09",
+    published_date="October 2, 2026",
+)
+
+selected, rejected = select_candidates(
+    [cross_promo_surveillance],
+    today=date(2026, 10, 3),
+)
+
+assert [row.video_id for row in selected] == [
+    "cross-promo-surveillance"
+]
+assert selected[0].broadcast_date == "2026-10-02"
+
+print("DESCRIPTION CROSS-PROMOTION FALSE-POSITIVE: PASS")
 
 
 ambiguous_a = item(

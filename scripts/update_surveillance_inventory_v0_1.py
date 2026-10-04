@@ -45,8 +45,19 @@ def main() -> None:
         cwd=ROOT,
         env=os.environ.copy(),
     )
+    if discovery_result.returncode == 20:
+        print(
+            "SOURCE_NOT_READY — "
+            "validated target broadcast is not available yet",
+            file=sys.stderr,
+        )
+        raise SystemExit(20)
+
     if discovery_result.returncode != 0:
-        raise SystemExit("FAIL — surveillance discovery failed")
+        raise SystemExit(
+            "FAIL — surveillance discovery failed "
+            f"(exit={discovery_result.returncode})"
+        )
 
     if not INVENTORY.exists():
 

@@ -210,6 +210,7 @@ def normalize_candidate(item: dict, *, today: date | None = None) -> Candidate:
     title = str(item.get("title") or "").strip()
     description = str(item.get("description") or "").strip()
     combined = f"{title}\n{description}".lower()
+    title_lower = title.lower()
 
     channel_name = str(
         item.get("channel_name") or channel.get("name") or ""
@@ -226,7 +227,12 @@ def normalize_candidate(item: dict, *, today: date | None = None) -> Candidate:
         raise DiscoveryError("channel id conflicts with Bloomberg Television")
     if not verified and channel_id != OFFICIAL_CHANNEL_ID:
         raise DiscoveryError("official channel identity is not verified")
-    if any(marker in combined for marker in EXCLUDED_MARKERS):
+    # Programme exclusion is a TITLE identity rule.
+    # Bloomberg descriptions can contain cross-promotional references
+    # to Opening Bell, Closing Bell, Daybreak, podcasts, etc. Those
+    # references must not invalidate an otherwise verified full
+    # Bloomberg Surveillance programme.
+    if any(marker in title_lower for marker in EXCLUDED_MARKERS):
         raise DiscoveryError("excluded Bloomberg program or summary")
     hosts = tuple(marker for marker in HOST_MARKERS if marker in description.lower())
     if not hosts:

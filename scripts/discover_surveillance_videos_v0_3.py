@@ -22,6 +22,7 @@ from src.acquisition.source_discovery import (
     PROGRAM_MARKER,
     hydrate_search_result,
     parse_explicit_date,
+    parse_partial_named_date,
     parse_duration,
     normalize_upload_date,
     rank_search_candidates,
@@ -31,8 +32,8 @@ from src.acquisition.source_discovery import (
 API_KEY = os.environ["SERPAPI_API_KEY"]
 ENDPOINT = "https://serpapi.com/search.json"
 FALLBACK_QUERIES = (
-    "site:youtube.com Bloomberg Television Surveillance full broadcast",
-    "site:youtube.com Bloomberg Television Jonathan Ferro Lisa Abramowicz Annmarie Hordern",
+    "Bloomberg Television Bloomberg Surveillance full broadcast",
+    "Bloomberg Television Jonathan Ferro Lisa Abramowicz Annmarie Hordern",
 )
 MAX_DETAIL_CANDIDATES = 6
 MAX_HYDRATIONS_PER_QUERY = 2
@@ -40,6 +41,10 @@ MAX_SERPAPI_CALLS = 8
 DISCOVERY_WINDOW_DAYS = 2
 SERPAPI_CALLS = 0
 OUTPUT = ROOT / "data/processed/surveillance/surveillance_video_inventory_v0_3.json"
+
+# Operational state, not a code failure:
+# the correct broadcast may simply not be searchable yet.
+SOURCE_NOT_READY_EXIT_CODE = 20
 
 
 
@@ -60,16 +65,32 @@ def consume_serpapi_call(kind: str) -> None:
 
 def build_queries(target_date: str) -> tuple[str, ...]:
     target = date.fromisoformat(target_date)
-    date_phrase = (
+
+    numeric_date = (
+        f"{target.month}/{target.day}/{target.year}"
+    )
+    named_date = (
         f"{target.strftime('%B')} {target.day} {target.year}"
     )
 
+    # Bloomberg Surveillance full-show titles commonly use M/D/YYYY.
+    # Search that exact naming convention first, then a named-date
+    # variant, then the broad host/program fallback.
     primary = (
-        "site:youtube.com Bloomberg Television "
-        f"Bloomberg Surveillance {date_phrase}"
+        "Bloomberg Television "
+        f"Bloomberg Surveillance {numeric_date}"
     )
 
-    return (primary, *FALLBACK_QUERIES)
+    secondary = (
+        "Bloomberg Television "
+        f"Bloomberg Surveillance {named_date}"
+    )
+
+    return (
+        primary,
+        secondary,
+        FALLBACK_QUERIES[-1],
+    )
 
 
 def search_youtube(query: str) -> list[dict]:
@@ -115,13 +136,52 @@ def fetch_video_detail(video_id: str) -> dict:
 
 
 def official_search_candidate(item: dict) -> bool:
+    """Cheap pre-hydration filter.
+
+    Search snippets are incomplete discovery hints, not authoritative
+    source identity metadata. Missing channel metadata must survive to
+    exact-video hydration. Only explicit conflicting identity evidence
+    is rejected here.
+    """
     channel = item.get("channel") or {}
-    name = str(channel.get("name") or item.get("channel_name") or "").strip()
-    channel_id = str(channel.get("id") or channel.get("channel_id") or "").strip()
-    if name.casefold() != OFFICIAL_CHANNEL.casefold() and channel_id != OFFICIAL_CHANNEL_ID:
+
+    name = str(
+        channel.get("name")
+        or item.get("channel_name")
+        or ""
+    ).strip()
+
+    channel_id = str(
+        channel.get("id")
+        or channel.get("channel_id")
+        or ""
+    ).strip()
+
+    # Explicit conflicting channel ID is authoritative enough to reject.
+    if channel_id and channel_id != OFFICIAL_CHANNEL_ID:
         return False
-    combined = f"{item.get('title', '')}\n{item.get('description', '')}".lower()
-    return not any(marker in combined for marker in EXCLUDED_MARKERS)
+
+    # If no channel ID is supplied, an explicit different channel name
+    # is also useful negative evidence. Completely missing metadata is
+    # retained for hydration.
+    if (
+        not channel_id
+        and name
+        and name.casefold() != OFFICIAL_CHANNEL.casefold()
+    ):
+        return False
+
+    title_lower = str(
+        item.get("title") or ""
+    ).lower()
+
+    # Exclusion is based on the search-result TITLE only.
+    # Descriptions frequently contain Bloomberg cross-promotion and
+    # must not cause a valid Surveillance programme to be discarded.
+    return not any(
+        marker in title_lower
+        for marker in EXCLUDED_MARKERS
+    )
 
 
 def target_broadcast_date() -> str:
@@ -145,31 +205,87 @@ def target_broadcast_date() -> str:
     return target.isoformat()
 
 
-def target_aware_shortlist(items: list[dict], target_date: str) -> list[dict]:
+def target_aware_shortlist(
+    items: list[dict],
+    target_date: str,
+) -> list[dict]:
     target = date.fromisoformat(target_date)
     ranked = rank_search_candidates(items)
 
-    nearby: list[dict] = []
-    for item in ranked:
-        upload_date = normalize_upload_date(
-            item.get("published_date") or item.get("upload_date")
-        )
-        if not upload_date:
-            continue
-        try:
-            upload = date.fromisoformat(upload_date)
-        except ValueError:
-            continue
-        if abs((upload - target).days) <= DISCOVERY_WINDOW_DAYS:
-            nearby.append(item)
+    exact_target: list[dict] = []
+    nearby_dated: list[dict] = []
+    nearby_upload: list[dict] = []
+    unknown_date: list[dict] = []
 
-    # For the target-date window, do not truncate before hydration.
-    # If provider date metadata is unavailable, retain a bounded fallback.
-    return (
-        nearby[:MAX_DETAIL_CANDIDATES]
-        if nearby
-        else ranked[:MAX_DETAIL_CANDIDATES]
+    for item in ranked:
+        combined = (
+            f"{item.get('title', '')}\n"
+            f"{item.get('description', '')}"
+        )
+
+        # Search-result title/description date is only a ranking hint.
+        # Final broadcast-date authority still comes from hydrated
+        # metadata + normalize_candidate().
+        hinted_date = parse_explicit_date(combined)
+
+        if not hinted_date:
+            hinted_date = parse_partial_named_date(
+                combined,
+                reference_year=target.year,
+            )
+
+        if hinted_date:
+            try:
+                hinted = date.fromisoformat(hinted_date)
+            except ValueError:
+                hinted = None
+
+            if hinted is not None:
+                distance = abs((hinted - target).days)
+
+                if distance == 0:
+                    exact_target.append(item)
+                elif distance <= DISCOVERY_WINDOW_DAYS:
+                    nearby_dated.append(item)
+
+                # A candidate explicitly dated months away from the
+                # target must never consume a paid hydration call.
+                continue
+
+        upload_date = normalize_upload_date(
+            item.get("published_date")
+            or item.get("upload_date")
+        )
+
+        if upload_date:
+            try:
+                upload = date.fromisoformat(upload_date)
+            except ValueError:
+                upload = None
+
+            if (
+                upload is not None
+                and abs((upload - target).days)
+                <= DISCOVERY_WINDOW_DAYS
+            ):
+                nearby_upload.append(item)
+            continue
+
+        # No usable date evidence at all: retain as bounded fallback.
+        unknown_date.append(item)
+
+    preferred = (
+        exact_target
+        + nearby_dated
+        + nearby_upload
     )
+
+    if preferred:
+        return preferred[:MAX_DETAIL_CANDIDATES]
+
+    # Never hydrate candidates that explicitly identify themselves
+    # as old/wrong-date broadcasts merely because they rank highly.
+    return unknown_date[:MAX_DETAIL_CANDIDATES]
 
 
 def main() -> None:
@@ -209,16 +325,17 @@ def main() -> None:
             if video_id and official_search_candidate(item):
                 discovered[video_id] = item
 
-        full_program_results = [
-            item
-            for item in discovered.values()
-            if parse_duration(
-                item.get("length") or item.get("duration")
-            ) >= 110 * 60
-        ]
+        # Search-result metadata is discovery evidence only.
+        # Do NOT require duration before hydration: provider search snippets
+        # may omit or vary duration/channel/description metadata even when the
+        # underlying video is the correct full Bloomberg Surveillance show.
+        #
+        # Strict identity, duration, programme and date validation happens only
+        # after exact video metadata has been hydrated.
+        discovery_candidates = list(discovered.values())
 
         shortlist = target_aware_shortlist(
-            full_program_results,
+            discovery_candidates,
             target_date,
         )
 
@@ -230,7 +347,7 @@ def main() -> None:
         ][:min(MAX_HYDRATIONS_PER_QUERY, remaining_budget)]
 
         print("SEARCH RESULTS:", len(results))
-        print("FULL-PROGRAM CANDIDATES:", len(full_program_results))
+        print("DISCOVERY CANDIDATES:", len(discovery_candidates))
         print("NEW HYDRATIONS:", len(pending))
 
         for item in pending:
@@ -322,12 +439,14 @@ def main() -> None:
                 "reason": row.get("reason", ""),
             }, ensure_ascii=False, sort_keys=True))
 
-        raise SystemExit(
-            "SOURCE DISCOVERY CONTRACT: FAIL — "
+        print(
+            "SOURCE_NOT_READY — "
             f"no validated full Bloomberg Surveillance broadcast "
             f"for {target_date}; "
-            f"SerpApi calls={SERPAPI_CALLS}/{MAX_SERPAPI_CALLS}"
+            f"SerpApi calls={SERPAPI_CALLS}/{MAX_SERPAPI_CALLS}",
+            file=sys.stderr,
         )
+        raise SystemExit(SOURCE_NOT_READY_EXIT_CODE)
 
     payload = {
         "schema_version": "surveillance_video_inventory_v0_4",
