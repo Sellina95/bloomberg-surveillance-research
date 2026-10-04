@@ -40,4 +40,11 @@ assert source["video_id"] == "uHp4tvxEQJI"
 assert source["video_date"] == "2026-09-23"
 assert source["broadcast_date_basis"] == "manual_verified_url"
 
+validator = (
+    Path(__file__).resolve().parents[1]
+    / "scripts/validate_release_candidate_v0_1.py"
+).read_text(encoding="utf-8")
+
+assert '"manual_verified_url"' in validator
+print("MANUAL RELEASE PROVENANCE BASIS: PASS")
 print("MANUAL SOURCE OVERRIDE CONTRACT: PASS")

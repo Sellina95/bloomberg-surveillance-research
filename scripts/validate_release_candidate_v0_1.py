@@ -58,6 +58,7 @@ def main() -> None:
         "provider_broadcast_date",
         "title_or_description",
         "official_full_show_upload_date",
+        "manual_verified_url",
     }:
         raise SystemExit("PROVENANCE CONTRACT: FAIL — broadcast date basis missing")
     if not provenance.get("claims"):
