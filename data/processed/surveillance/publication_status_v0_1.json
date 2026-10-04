@@ -353,6 +353,19 @@
       }
     },
     {
+      "date": "2026-09-25",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      }
+    },
+    {
       "date": "2026-09-28",
       "en": {
         "status": "available",

@@ -1,0 +1,165 @@
+{
+  "date": "2026-09-25",
+  "executive_summary": [
+    "Unprecedented capital expenditure for artificial intelligence is driving massive global demand for capital, forcing real yields higher and altering traditional monetary policy transmission mechanisms.",
+    "Persistent input cost pressures—highlighted by diesel transportation expenses—are feeding directly into core inflation, complicating the path for central banks and maintaining a higher-for-longer rate environment.",
+    "Geopolitical friction, trade policy uncertainties, and supply chain reshoring initiatives continue to structuralize a shift away from lean efficiency toward economic resilience and security."
+  ],
+  "macro_themes": [
+    {
+      "theme": "AI CapEx and Global Capital Demand",
+      "summary": "The immense scale of artificial intelligence infrastructure spending is fueling robust economic growth while demanding high levels of global capital, pushing real yields higher and altering traditional interest rate sensitivity.",
+      "supporting_guests": [
+        "Subadra Rajappa",
+        "Lotfi Karoui",
+        "Torsten Slok"
+      ]
+    },
+    {
+      "theme": "Energy Markets, Diesel, and Inflation Transmission",
+      "summary": "Geopolitical tensions in energy corridors and political pressures around fuel exports underscore a broader structural shift from efficiency to resilience, with diesel costs passing directly into core transportation and services inflation.",
+      "supporting_guests": [
+        "Peter Tchir",
+        "Emily Ashford",
+        "Torsten Slok"
+      ]
+    },
+    {
+      "theme": "U.S.-China Relations and Managed Competition",
+      "summary": "High-level diplomatic meetings continue to reflect managed competition rather than broad economic resets, with long-term strategic goals centered on domestic industrial resiliency and critical supply chain independence.",
+      "supporting_guests": [
+        "Shehzad Qazi",
+        "Kate Kalutkiewicz"
+      ]
+    }
+  ],
+  "rates_bonds": {
+    "summary": "Fixed income markets are grappling with sticky inflation, term premia build-up, and aggressive central bank pricing, as baseline interest rates normalize away from the ultra-low regime of the past decade.",
+    "key_views": [
+      "The current interest rate environment represents a historical normalization rather than an aberration, forcing investors to adapt to higher baseline yields.",
+      "Treasury buybacks are modest and targeted toward illiquid issues rather than functioning as aggressive yield suppression tools.",
+      "Asset managers are beginning to re-evaluate duration and length as bond yields offer genuine competition to richly valued equities."
+    ],
+    "risks": [
+      "Unanchored term premia driven by midterm elections and heavy fiscal supply.",
+      "Persistent diesel and transport cost pass-through sustaining sticky core inflation.",
+      "Breakdown of traditional Treasury-equity correlations in a high-inflation regime."
+    ]
+  },
+  "usd_fx": {
+    "summary": "Foreign exchange and cross-border capital flows are increasingly influenced by divergent national fiscal health, alternative emerging market outperformance, and structural trade friction.",
+    "key_views": [
+      "Paraguay exemplifies a strong regional outperformer with low inflation, high growth, and disciplined fiscal management while maintaining strategic alliances.",
+      "Greece demonstrates improving fiscal credibility and competitive tax regimes that successfully attract foreign direct investment and talent."
+    ],
+    "risks": [
+      "Escalating trade policy disputes and potential retaliatory measures impacting global commerce.",
+      "Geopolitical instability threatening critical shipping channels and raising transportation costs."
+    ]
+  },
+  "equities": {
+    "summary": "Equity markets remain heavily bifurcated, with mega-cap technology and AI-linked growth outperforming broader cyclical segments that struggle with higher borrowing costs.",
+    "key_views": [
+      "Regional investor sentiment and equity allocations remain exceptionally high, supported by positive corporate earnings revisions in mega-cap technology.",
+      "High equity valuations in top-tier technology firms serve as strong currency for funding private market rounds and infrastructure buildout.",
+      "Higher interest rates and inflation have driven multiple compression in broader equity P/E ratios."
+    ],
+    "risks": [
+      "Vulnerability of richly valued equities to sustained upward pressure on real yields.",
+      "Macroeconomic divergence where rate-sensitive sectors underperform while tech-driven indices remain insulated."
+    ]
+  },
+  "credit": {
+    "summary": "Corporate credit spreads remain remarkably tight for non-financials, but mounting pressure is visible in lower-tier credits and opaque private credit markets.",
+    "key_views": [
+      "Non-financial corporate credit spreads have shown strong resilience despite higher benchmark yields.",
+      "Lower-quality corporate capital structures built during the zero-rate era are encountering significant debt-servicing friction.",
+      "Lower-end high-yield issuance has migrated to private credit, where risks are accumulating with less market visibility."
+    ],
+    "risks": [
+      "Hidden default risks accumulating within private credit vehicles exposed to long-duration cash flows like software.",
+      "Widening credit spreads in riskier tranches if higher-for-longer interest rates persist."
+    ]
+  },
+  "ai_technology": {
+    "summary": "The artificial intelligence spending boom remains the primary engine of macroeconomic resilience, largely unhindered by traditional monetary policy transmission channels.",
+    "key_views": [
+      "Hyperscalers and AI-related economic activity are not interest-rate sensitive, insulating overall growth from central bank tightening.",
+      "State-backed capital investments in China continue to prioritize long-term technological leadership in advanced manufacturing and AI over short-term macroeconomic data."
+    ],
+    "risks": [
+      "Supply chain bottlenecks and restrictions on critical minerals and semiconductor components.",
+      "Potential overextension of capital expenditure cycles if end-market monetization lags behind investment."
+    ]
+  },
+  "commodities": {
+    "summary": "Energy markets are experiencing a structural transformation prioritizing security, spare capacity, and high inventory buffers over lean efficiency.",
+    "key_views": [
+      "Diesel export bans fail to create new fuel supplies, merely reallocating global scarcity and weakening domestic refining economics.",
+      "Geopolitical negotiations regarding energy infrastructure remain in a skeptical 'show me' phase among market participants."
+    ],
+    "risks": [
+      "Disruptions to energy supply corridors driving up distillate spreads and core transportation inflation.",
+      "Political interference in fuel markets worsening global structural supply deficits."
+    ]
+  },
+  "cross_guest_consensus": [
+    {
+      "view": "The artificial intelligence investment cycle is a dominant, non-rate-sensitive economic driver shaping modern capital demand.",
+      "guests": [
+        "Subadra Rajappa",
+        "Lotfi Karoui",
+        "Torsten Slok"
+      ]
+    },
+    {
+      "view": "Global energy and trade systems are undergoing a structural transition toward resilience, security, and supply chain independence at the expense of lean efficiency.",
+      "guests": [
+        "Emily Ashford",
+        "Kate Kalutkiewicz"
+      ]
+    }
+  ],
+  "cross_guest_conflicts": [
+    {
+      "topic": "Interest Rate Restrictiveness and Policy Outlook",
+      "view_a": "Current interest rates are not yet restrictive given strong household balance sheets, and the next move may need to be higher.",
+      "view_b": "The current interest rate environment represents a normal historical baseline, and higher rates have already triggered multiple contraction in equities.",
+      "why_it_matters": "Contrasting views on whether monetary policy has reached a restrictive enough threshold directly impact asset allocation between equities and duration."
+    }
+  ],
+  "key_risks": [
+    {
+      "risk": "Persistent Core Inflation via Transportation Inputs",
+      "trigger": "Spikes in diesel and distillate prices passing through into broader services inflation.",
+      "market_impact": "Downward pressure on long-duration fixed income assets and forced upward repricing of terminal central bank rates."
+    },
+    {
+      "risk": "Private Credit Distress",
+      "trigger": "Prolonged high interest rates straining over-leveraged borrowers with long-dated cash flows.",
+      "market_impact": "Hidden credit defaults surfacing unexpectedly, leading to tighter lending standards and broader risk-off sentiment."
+    }
+  ],
+  "research_takeaways": [
+    "The traditional monetary policy transmission mechanism is impaired by insulated AI capital expenditures and robust household balance sheets.",
+    "Global energy and industrial supply chains are structurally prioritizing redundancy and security, establishing a higher cost floor for commodities.",
+    "Fixed income investors must navigate normalization to higher baseline yields, making duration a competitive asset class against compressed equity multiples."
+  ],
+  "daily_action": [
+    {
+      "action": "Monitor real yield trajectories and term premium expansion relative to incoming AI capital expenditure announcements.",
+      "why": "Unprecedented capital demand from technology infrastructure spending is a primary driver of higher global real yields.",
+      "what_to_monitor": "10-year Treasury yields, corporate debt issuance volumes for technology firms, and sovereign term premium proxies."
+    },
+    {
+      "action": "Track diesel and distillate crack spreads as leading indicators for core transportation and services inflation pass-through.",
+      "why": "Input cost pressures in energy transport correlate strongly with sticky services inflation and long-end rate movements.",
+      "what_to_monitor": "Weekly energy inventory reports, distillate crack spreads, and transportation sector CPI sub-indices."
+    },
+    {
+      "action": "Observe private credit market liquidity conditions and default indicators in interest-rate sensitive sectors like software.",
+      "why": "Lower-tier credits and opaque private financing structures face elevated refinancing pressure in a higher-for-longer rate regime.",
+      "what_to_monitor": "Private credit default rates, sponsor-backed restructuring announcements, and high-yield credit spread widening."
+    }
+  ]
+}
