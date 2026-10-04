@@ -1,0 +1,104 @@
+{
+  "schema_version": "report_provenance_v0_1",
+  "report_date": "2026-10-01",
+  "source": {
+    "broadcast_title": "Bloomberg Surveillance manual source 2026-10-01",
+    "broadcast_date": "2026-10-01",
+    "broadcast_date_basis": "manual_verified_url",
+    "upload_date": "unknown_manual_override",
+    "video_url": "https://www.youtube.com/watch?v=llA0nUCuv0c",
+    "provider": "Supadata",
+    "transcript_type": "timestamped_youtube_transcript",
+    "collected_at": "2026-10-04T15:21:53.788668+00:00",
+    "source_mode": "program_level_unattributed"
+  },
+  "boundary": "IDENTIFIERS_AND_TIMESTAMPS_ONLY_NO_SOURCE_TEXT",
+  "claims": [
+    {
+      "claim_id": "20261001-U001-C01",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 12,
+          "timestamp_seconds": 48.69
+        },
+        {
+          "segment_id": 13,
+          "timestamp_seconds": 52.23
+        },
+        {
+          "segment_id": 112,
+          "timestamp_seconds": 365.15
+        },
+        {
+          "segment_id": 113,
+          "timestamp_seconds": 369.23
+        },
+        {
+          "segment_id": 151,
+          "timestamp_seconds": 522.659
+        },
+        {
+          "segment_id": 284,
+          "timestamp_seconds": 986.28
+        }
+      ]
+    },
+    {
+      "claim_id": "20261001-U001-C02",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 1371,
+          "timestamp_seconds": 4569.51
+        },
+        {
+          "segment_id": 1375,
+          "timestamp_seconds": 4581.18
+        },
+        {
+          "segment_id": 1514,
+          "timestamp_seconds": 5043.45
+        },
+        {
+          "segment_id": 1517,
+          "timestamp_seconds": 5054.6
+        }
+      ]
+    },
+    {
+      "claim_id": "20261001-U001-C03",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 30,
+          "timestamp_seconds": 101.03
+        },
+        {
+          "segment_id": 31,
+          "timestamp_seconds": 104.51
+        },
+        {
+          "segment_id": 946,
+          "timestamp_seconds": 3216.74
+        },
+        {
+          "segment_id": 947,
+          "timestamp_seconds": 3219.47
+        },
+        {
+          "segment_id": 948,
+          "timestamp_seconds": 3222.62
+        },
+        {
+          "segment_id": 949,
+          "timestamp_seconds": 3225.26
+        },
+        {
+          "segment_id": 950,
+          "timestamp_seconds": 3228.53
+        }
+      ]
+    }
+  ]
+}
