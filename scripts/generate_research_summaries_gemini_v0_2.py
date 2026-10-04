@@ -145,6 +145,11 @@ UNIT_TYPE:
 ATTRIBUTION_STATUS:
 {unit.get("attribution_status", "source_chapter")}
 
+VALID_EVIDENCE_SEGMENT_ID_RANGE:
+0 through {max(len(unit["transcript_segments"]) - 1, 0)}
+
+Every evidence_segment_ids value MUST be an integer inside that exact range.
+
 TRANSCRIPT:
 
 {transcript}
@@ -314,19 +319,34 @@ def main():
 
         try:
 
-            summary = generate(unit)
+            validated = None
+            failed = True
 
-            validated = validate_evidence(
-                summary,
-                unit,
-            )
+            for grounding_attempt in range(1, 4):
 
-            failed = any(
-                view["grounding_status"]
-                == "FAIL"
-                for view
-                in validated["key_views"]
-            )
+                summary = generate(unit)
+
+                validated = validate_evidence(
+                    summary,
+                    unit,
+                )
+
+                failed = any(
+                    view["grounding_status"]
+                    == "FAIL"
+                    for view
+                    in validated["key_views"]
+                )
+
+                if not failed:
+                    break
+
+                if grounding_attempt < 3:
+                    print(
+                        "GROUNDING RETRY — "
+                        f"UNIT {unit['unit_id']:02d} "
+                        f"attempt {grounding_attempt}/2"
+                    )
 
             results.append(
                 {
