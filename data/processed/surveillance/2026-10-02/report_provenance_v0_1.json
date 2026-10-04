@@ -1,0 +1,120 @@
+{
+  "schema_version": "report_provenance_v0_1",
+  "report_date": "2026-10-02",
+  "source": {
+    "broadcast_title": "Sept. Jobs Report | Bloomberg Surveillance 10/02/2026",
+    "broadcast_date": "2026-10-02",
+    "broadcast_date_basis": "title_or_description",
+    "upload_date": "2026-10-02",
+    "video_url": "https://www.youtube.com/watch?v=rv6mLPIm7ZU",
+    "provider": "Supadata",
+    "transcript_type": "timestamped_youtube_transcript",
+    "collected_at": "2026-10-04T15:09:43.426610+00:00",
+    "source_mode": "program_level_unattributed"
+  },
+  "boundary": "IDENTIFIERS_AND_TIMESTAMPS_ONLY_NO_SOURCE_TEXT",
+  "claims": [
+    {
+      "claim_id": "20261002-U001-C01",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 2186,
+          "timestamp_seconds": 7249.28
+        },
+        {
+          "segment_id": 2188,
+          "timestamp_seconds": 7256.25
+        },
+        {
+          "segment_id": 2194,
+          "timestamp_seconds": 7283.79
+        },
+        {
+          "segment_id": 2195,
+          "timestamp_seconds": 7287.54
+        },
+        {
+          "segment_id": 2206,
+          "timestamp_seconds": 7331.17
+        },
+        {
+          "segment_id": 2401,
+          "timestamp_seconds": 8009.28
+        },
+        {
+          "segment_id": 2406,
+          "timestamp_seconds": 8023.95
+        }
+      ]
+    },
+    {
+      "claim_id": "20261002-U001-C02",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 17,
+          "timestamp_seconds": 64.69
+        },
+        {
+          "segment_id": 18,
+          "timestamp_seconds": 67.99
+        },
+        {
+          "segment_id": 25,
+          "timestamp_seconds": 87.43
+        },
+        {
+          "segment_id": 26,
+          "timestamp_seconds": 89.44
+        },
+        {
+          "segment_id": 456,
+          "timestamp_seconds": 1504.07
+        },
+        {
+          "segment_id": 457,
+          "timestamp_seconds": 1508.3
+        },
+        {
+          "segment_id": 1766,
+          "timestamp_seconds": 5828.38
+        }
+      ]
+    },
+    {
+      "claim_id": "20261002-U001-C03",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 79,
+          "timestamp_seconds": 248.08
+        },
+        {
+          "segment_id": 249,
+          "timestamp_seconds": 800.97
+        },
+        {
+          "segment_id": 250,
+          "timestamp_seconds": 805.2
+        },
+        {
+          "segment_id": 462,
+          "timestamp_seconds": 1527.81
+        },
+        {
+          "segment_id": 463,
+          "timestamp_seconds": 1532.73
+        },
+        {
+          "segment_id": 1818,
+          "timestamp_seconds": 6000.55
+        },
+        {
+          "segment_id": 1819,
+          "timestamp_seconds": 6005.62
+        }
+      ]
+    }
+  ]
+}
