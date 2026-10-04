@@ -1,0 +1,80 @@
+{
+  "schema_version": "report_provenance_v0_1",
+  "report_date": "2026-09-28",
+  "source": {
+    "broadcast_title": "Bloomberg Surveillance manual source 2026-09-28",
+    "broadcast_date": "2026-09-28",
+    "broadcast_date_basis": "manual_verified_url",
+    "upload_date": "unknown_manual_override",
+    "video_url": "https://www.youtube.com/watch?v=Or3kUq4rRG8",
+    "provider": "Supadata",
+    "transcript_type": "timestamped_youtube_transcript",
+    "collected_at": "2026-10-04T15:35:02.587021+00:00",
+    "source_mode": "chapter_attributed"
+  },
+  "boundary": "IDENTIFIERS_AND_TIMESTAMPS_ONLY_NO_SOURCE_TEXT",
+  "claims": [
+    {
+      "claim_id": "20260928-U001-C01",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 3,
+          "timestamp_seconds": 2573.1
+        },
+        {
+          "segment_id": 4,
+          "timestamp_seconds": 2577.69
+        },
+        {
+          "segment_id": 9,
+          "timestamp_seconds": 2594.91
+        }
+      ]
+    },
+    {
+      "claim_id": "20260928-U001-C02",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 50,
+          "timestamp_seconds": 2727.34
+        },
+        {
+          "segment_id": 51,
+          "timestamp_seconds": 2730.16
+        },
+        {
+          "segment_id": 59,
+          "timestamp_seconds": 2752.92
+        },
+        {
+          "segment_id": 60,
+          "timestamp_seconds": 2754.84
+        },
+        {
+          "segment_id": 64,
+          "timestamp_seconds": 2768.22
+        }
+      ]
+    },
+    {
+      "claim_id": "20260928-U001-C03",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 80,
+          "timestamp_seconds": 2820.87
+        },
+        {
+          "segment_id": 86,
+          "timestamp_seconds": 2838.36
+        },
+        {
+          "segment_id": 91,
+          "timestamp_seconds": 2853.05
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "date": "2026-09-28",
+  "schema_version": "daily_research_report_ko_v0_1",
+  "language": "ko",
+  "source_report": "data/processed/surveillance/2026-09-28/daily_research_report_v0_1.json",
+  "source_report_sha256": "fbe8f2f17c8dccd907d45e80368490b8c3bbd6bcfdc6d02f36f67aca8c79d75d",
+  "translation_model": "gemini-3.5-flash-lite",
+  "translation_policy": {
+    "research_regeneration": false,
+    "provenance_mutation": false,
+    "structure_preserved": true,
+    "guest_attribution_preserved": true,
+    "numeric_values_preserved": true
+  },
+  "report": {
+    "date": "2026-09-28",
+    "executive_summary": [
+      "지속되는 인플레이션 지표로 인해 소극적 해결을 위한 시간이 거의 남지 않았으며, 상승하는 비용을 전가해야 하는 기업들의 압력이 가중되고 있다.",
+      "신용시장은 하이일드 및 이중 B 등급 스프레드 전반에 걸쳐 두드러진 확대가 특징인 신흥 스트레스를 나타내고 있다.",
+      "장기 금리와 신용 스프레드의 동반 상승이 단편적인 리스크 환경을 조성함에 따라, 채권 및 신용시장은 기저의 왜곡을 보여주고 있다."
+    ],
+    "macro_themes": [
+      {
+        "theme": "인플레이션 지속성과 정책적 압력",
+        "summary": "끈질긴 인플레이션 추세가 해결 일정을 단축시키고 있으며, 중앙은행 관계자들이 경계를 유지하는 동안 기업들이 공격적인 가격 책정 조치를 고려하도록 강제하고 있다.",
+        "supporting_guests": [
+          "Collin Martin - Schwab Center for Financial Research"
+        ]
+      }
+    ],
+    "rates_bonds": {
+      "summary": "수익률 곡선 역학의 변화와 함께 장기 금리가 상승세를 보이고 있으나, 동시적인 신용 움직임과 결합될 때 시장 가격 책정은 일관성 문제를 드러내고 있다.",
+      "key_views": [
+        "장기 금리가 신용 스프레드와 동시에 상승하고 있으며, 이는 기저의 시장 왜곡을 반영하는 비전형적인 동조화 현상이다."
+      ],
+      "risks": [
+        "차입 비용과 리스크 프리미엄의 동시 상향 이동은 전반적인 거시경제적 취약성을 증가시킨다."
+      ]
+    },
+    "usd_fx": {
+      "summary": "외환시장 영향은 본 리서치 유닛에서 직접 다루어지지 않았다.",
+      "key_views": [],
+      "risks": []
+    },
+    "equities": {
+      "summary": "기업들이 지속적인 비용 증가의 전가 필요성을 저울질함에 따라 주식시장 밸류에이션이 압박에 직면해 있다.",
+      "key_views": [
+        "자동적인 인플레이션 해결책의 부재로 인해 기업들은 가격 전가를 평가하도록 강요받고 있다."
+      ],
+      "risks": [
+        "더 높은 비용을 최종 소비자에게 성공적으로 전가하지 못하는 기업들의 마진 압축 리스크."
+      ]
+    },
+    "credit": {
+      "summary": "자금 조달 비용 압박이 고조됨에 따라 신용 스프레드가 크게 확대되어 투기등급을 넘어 상위 등급 부채로 이동하고 있다.",
+      "key_views": [
+        "하이일드 및 이중 B 스프레드가 지난 4월 이후 최고 수준으로 확대되어, 취약한 발행사들에게 좁은 오차 범위를 반영하고 있다."
+      ],
+      "risks": [
+        "이중 B 및 하위 등급 부문 전반의 확대는 장기화된 높은 자금 조달 비용 하에서 기업 부실 증가를 시사한다."
+      ]
+    },
+    "ai_technology": {
+      "summary": "기술 섹터 동향은 본 리서치 유닛에서 다루어지지 않았다.",
+      "key_views": [],
+      "risks": []
+    },
+    "commodities": {
+      "summary": "원자재시장 동향은 본 리서치 유닛에서 다루어지지 않았다.",
+      "key_views": [],
+      "risks": []
+    },
+    "cross_guest_consensus": [],
+    "cross_guest_conflicts": [],
+    "key_risks": [
+      {
+        "risk": "기업 신용 스트레스",
+        "trigger": "상승된 차입 비용과 함께 이중 B 및 하이일드 신용 스프레드의 지속적인 확대.",
+        "market_impact": "취약한 기업 발행사들의 높아진 부도 리스크와 심화된 자본 경색."
+      },
+      {
+        "risk": "채권시장 왜곡",
+        "trigger": "장기 금리와 신용 리스크 프리미엄의 일관성 없는 동시 변동.",
+        "market_impact": "고정소득 상품 전반의 변동성 증가 및 가격 책정 효율성 저하."
+      }
+    ],
+    "research_takeaways": [
+      "인플레이션 지속성은 정책 입안자와 기업 모두에게 긴박감을 불러일으키고 있다.",
+      "이중 B 스프레드가 유의미한 확대를 겪음에 따라, 신용 스트레스는 더 이상 최하위 등급(삼중 C)에만 국한되지 않는다.",
+      "시장 간 지표들은 금리와 신용 스프레드 간의 전통적인 상관관계가 압박을 받는 기저의 구조적 왜곡을 드러낸다."
+    ],
+    "daily_action": [
+      {
+        "action": "장기 정부 국채 금리 움직임에 대비한 하이일드 및 이중 B 신용 스프레드 궤적 모니터링.",
+        "why": "금리와 스프레드의 동시 확대는 구조적 시장 왜곡과 취약한 기업 차입자에 대한 금융 긴장 고조를 나타낸다.",
+        "what_to_monitor": "하이일드 지수 스프레드 수준, 이중 B 스프레드 변화, 장기 수익률 곡선 기울기, 그리고 기업 가격 결정력 지표."
+      }
+    ]
+  }
+}
