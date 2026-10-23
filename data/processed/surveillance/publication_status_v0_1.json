@@ -598,6 +598,19 @@
         "report": true,
         "tv": true
       }
+    },
+    {
+      "date": "2026-10-22",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      }
     }
   ]
 }
