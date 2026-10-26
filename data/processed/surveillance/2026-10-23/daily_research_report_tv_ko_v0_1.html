@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="robots" content="noindex, nofollow">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0">
+
+<title>
+Independent Market Research — 2026-10-23
+</title>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #111214;
+    --panel: #191a1d;
+    --panel-2: #151619;
+    --panel-3: #202125;
+    --line: #303136;
+    --text: #f1f1ee;
+    --muted: #96979b;
+    --amber: #f2a23a;
+    --amber-soft: #c9852c;
+    --green: #72c7a7;
+    --red: #e46f6f;
+    --blue: #7fa9d8;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #292b2f 0%,
+            #151619 35%,
+            #0d0e10 100%
+        );
+    color: var(--text);
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    font-size: 14px;
+}
+
+.page {
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 28px 24px 60px;
+}
+
+.tv {
+    background: #17181b;
+    border: 1px solid #303136;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow:
+        0 22px 60px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.04);
+    overflow: hidden;
+}
+
+.research-hero {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 18px;
+    background: #111;
+}
+
+.research-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 68%;
+}
+
+.research-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 18, 0.78) 0%,
+        rgba(5, 10, 18, 0.35) 52%,
+        rgba(5, 10, 18, 0.10) 100%
+    );
+}
+
+.research-hero-content {
+    position: absolute;
+    left: 34px;
+    bottom: 34px;
+    z-index: 2;
+}
+
+.research-hero-kicker {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    margin-bottom: 8px;
+}
+
+.research-hero-title {
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.research-hero-credit {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    z-index: 2;
+    font-size: 10px;
+    opacity: 0.72;
+}
+
+.tv-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 18px;
+    background: linear-gradient(180deg,#222327,#18191c);
+    border-bottom: 1px solid #333438;
+}
+
+.brand {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #f4f4f1;
+}
+
+.live {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    color: var(--amber);
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    padding: 3px;
+    background: #111214;
+    border: 1px solid #34353a;
+    border-radius: 6px;
+}
+
+.lang-option {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.lang-active {
+    background: var(--amber);
+    color: #111214;
+}
+
+.lang-disabled {
+    color: #626368;
+    cursor: not-allowed;
+}
+
+.calendar-control {
+    position: relative;
+}
+
+.calendar-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 29px;
+    padding: 5px 9px;
+    background: #17181b;
+    border: 1px solid #3a3b40;
+    border-radius: 6px;
+    color: #dededb;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    cursor: pointer;
+}
+
+.calendar-button:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+}
+
+.calendar-icon {
+    font-size: 13px;
+}
+
+.calendar-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 9px);
+    right: 0;
+    z-index: 100;
+    width: 270px;
+    padding: 14px;
+    background: #151619;
+    border: 1px solid #3a3b40;
+    border-radius: 8px;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.55);
+}
+
+.calendar-control.open
+.calendar-panel {
+    display: block;
+}
+
+.nav-month + .nav-month {
+    margin-top: 14px;
+    padding-top: 13px;
+    border-top: 1px solid #303136;
+}
+
+.nav-month-label {
+    margin-bottom: 10px;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.nav-date-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(7,1fr);
+    gap: 5px;
+}
+
+.nav-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border: 1px solid #303136;
+    border-radius: 5px;
+    background: #1d1e22;
+    color: #bdbec1;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.nav-date:hover {
+    border-color: var(--amber-soft);
+    color: var(--amber);
+    background: #24211c;
+}
+
+.nav-date-current {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #111214;
+}
+
+.nav-date-current:hover {
+    color: #111214;
+}
+
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+
+.screen {
+    position: relative;
+    background: linear-gradient(135deg,#17191b,#101113);
+    min-height: 220px;
+    padding: 30px 34px;
+    border-bottom: 1px solid #303136;
+}
+
+.screen-label {
+    color: var(--amber);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.6px;
+    margin-bottom: 12px;
+}
+
+.screen h1 {
+    margin: 0;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+}
+
+.date {
+    margin-top: 10px;
+    color: var(--muted);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 12px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 28px;
+}
+
+.knob {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #67686b;
+}
+
+.status {
+    margin-left: 12px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.content {
+    margin-top: 18px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: #e8e8e5;
+    margin-bottom: 16px;
+}
+
+.section-title::before {
+    content: "";
+    width: 3px;
+    height: 14px;
+    background: var(--amber);
+    border-radius: 2px;
+}
+
+.executive {
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.executive ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.executive li {
+    margin-bottom: 9px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.market-card {
+    position: relative;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 17px;
+    min-height: 190px;
+}
+
+.market-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: var(--amber-soft);
+    opacity: .75;
+}
+
+.market-card .section-title {
+    padding-left: 8px;
+}
+
+.summary {
+    color: #c8c9cb;
+    line-height: 1.55;
+    margin: 0 0 14px;
+}
+
+h4 {
+    margin: 16px 0 7px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    color: var(--amber);
+}
+
+.market-card ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.market-card li {
+    margin-bottom: 7px;
+    color: #d9d9d7;
+    line-height: 1.45;
+}
+
+.macro-card {
+    background: var(--panel-2);
+    border: 1px solid #292a2e;
+    border-radius: 8px;
+    padding: 17px;
+    margin-top: 10px;
+}
+
+.macro-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #f0f0ed;
+}
+
+.macro-card p {
+    color: #c6c7c9;
+    line-height: 1.55;
+}
+
+.guest-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 12px 0;
+}
+
+.guest {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid #3a3b3f;
+    border-radius: 4px;
+    background: #222327;
+    color: #c5c6c8;
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.evidence {
+    display: flex;
+    gap: 10px;
+    padding: 9px 10px;
+    margin-top: 6px;
+    background: #111214;
+    border: 1px solid #292a2d;
+    border-left: 2px solid var(--green);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.timestamp {
+    flex: 0 0 auto;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+}
+
+.insight,
+.conflict,
+.risk {
+    border-radius: 7px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    line-height: 1.55;
+}
+
+.insight {
+    background: #151c19;
+    border: 1px solid #293a34;
+    border-left: 3px solid var(--green);
+}
+
+.conflict {
+    background: #1b1815;
+    border: 1px solid #3c3025;
+    border-left: 3px solid var(--amber);
+}
+
+.risk {
+    background: #1c1617;
+    border: 1px solid #40292b;
+    border-left: 3px solid var(--red);
+}
+
+.small {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.provenance-block {
+    margin-top: 11px;
+    padding-top: 9px;
+    border-top: 1px solid #2c2d31;
+}
+
+.prov-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 7px;
+}
+
+.prov-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.prov-approved {
+    color: var(--green);
+    background: #14231e;
+    border: 1px solid #2e5547;
+}
+
+.prov-review {
+    color: var(--amber);
+    background: #261e14;
+    border: 1px solid #634826;
+}
+
+.prov-type {
+    color: #b9c9dc;
+    background: #171d24;
+    border: 1px solid #344252;
+}
+
+.prov-warning {
+    margin: 7px 0;
+    padding: 7px 9px;
+    border-left: 2px solid var(--amber);
+    background: #211b14;
+    color: var(--amber);
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.provenance-details {
+    margin-top: 6px;
+}
+
+.provenance-details summary {
+    cursor: pointer;
+    color: #9fa8b4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    user-select: none;
+}
+
+.provenance-details summary:hover {
+    color: var(--text);
+}
+
+.claim-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 9px;
+}
+
+.claim-id {
+    display: inline-block;
+    padding: 4px 7px;
+    border: 1px solid #353b43;
+    border-radius: 4px;
+    background: #121519;
+    color: #aeb8c4;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 9px;
+}
+
+.prov-note {
+    margin-top: 8px;
+    color: #73777e;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.conflict-view {
+    margin-top: 10px;
+}
+
+.takeaway-item {
+    margin-bottom: 12px;
+}
+
+.action {
+    display: flex;
+    gap: 14px;
+    padding: 15px;
+    background: #171a18;
+    border: 1px solid #304238;
+    border-radius: 8px;
+    margin-bottom: 9px;
+}
+
+.action-number {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background: var(--amber);
+    color: #17120b;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.action p {
+    margin: 7px 0;
+    color: #b9babd;
+    line-height: 1.5;
+}
+
+.monitor {
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+}
+
+.
+footer {
+    text-align: center;
+    color: #66686d;
+    font-size: 10px;
+    padding: 26px;
+}
+
+.footer-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--green);
+    font-family: ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size: 10px;
+    letter-spacing: .4px;
+    text-decoration: none;
+}
+
+.footer-link + .footer-link {
+    margin-left: 18px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    .grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        padding: 12px;
+    }
+
+    .tv-top {
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .top-actions {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .calendar-panel {
+        position: fixed;
+        top: 70px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+    }
+
+    .screen {
+        padding: 24px;
+    }
+
+    .screen h1 {
+        font-size: 30px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+
+
+<style id="publication-status-nav-style">
+.nav-date-cell {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-date-cell .nav-date {
+    width: 100%;
+}
+
+.nav-ko-unavailable {
+    display: block;
+    white-space: nowrap;
+    font-family:
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        monospace;
+    font-size: 7px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.4px;
+    color: #777a80;
+    opacity: 0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+
+<div class="tv">
+
+    <section class="research-hero" aria-label="Independent Market Research">
+        <img
+            class="research-hero-image"
+            src="../assets/wall-street-roberto-junior-unsplash.jpg"
+            alt="Wall Street street sign in New York"
+        >
+        <div class="research-hero-overlay"></div>
+
+        <div class="research-hero-content">
+            <div class="research-hero-kicker">📺 INDEPENDENT MARKET RESEARCH</div>
+            <div class="research-hero-title">Markets, Macro & Capital Flows</div>
+        </div>
+
+        <div class="research-hero-credit">
+            Photo by Roberto Junior on Unsplash
+        </div>
+    </section>
+
+    <div class="tv-top">
+
+        <div class="brand">
+            INDEPENDENT MARKET RESEARCH · SURVEILLANCE DESK
+        </div>
+
+        <div class="top-actions">
+
+            <div class="live">
+                ● DAILY RESEARCH
+            </div>
+
+            <div
+                class="calendar-control"
+                id="calendarControl"
+            >
+
+                <button
+                    class="calendar-button"
+                    id="calendarButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="calendarPanel"
+                >
+                    <span class="calendar-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        2026-10-23
+                    </span>
+                </button>
+
+                <div
+                    class="calendar-panel"
+                    id="calendarPanel"
+                >
+
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    OCT 2026
+                </div>
+
+                <div class="nav-date-grid">
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-01/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-01"
+                    >
+                        01
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-02/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-02"
+                    >
+                        02
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-05/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-05"
+                    >
+                        05
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-06/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-06"
+                    >
+                        06
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-07/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-07"
+                    >
+                        07
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-08/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-08"
+                    >
+                        08
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-09/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-09"
+                    >
+                        09
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-12/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-12"
+                    >
+                        12
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-13/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-13"
+                    >
+                        13
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-14/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-14"
+                    >
+                        14
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-15/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-15"
+                    >
+                        15
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-16/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-16"
+                    >
+                        16
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-19/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-19"
+                    >
+                        19
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-20/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-20"
+                    >
+                        20
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-21/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-21"
+                    >
+                        21
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-10-22/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-22"
+                    >
+                        22
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date nav-date-current"
+                        href="../2026-10-23/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-10-23"
+                    >
+                        23
+                    </a>
+
+                </div>
+
+                </div>
+
+            </div>
+
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    SEP 2026
+                </div>
+
+                <div class="nav-date-grid">
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-01/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-01"
+                    >
+                        01
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-02/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-02"
+                    >
+                        02
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-03/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-03"
+                    >
+                        03
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-04/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-04"
+                    >
+                        04
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-08/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-08"
+                    >
+                        08
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-09/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-09"
+                    >
+                        09
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-10/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-10"
+                    >
+                        10
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-11/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-11"
+                    >
+                        11
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-14/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-14"
+                    >
+                        14
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-15/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-15"
+                    >
+                        15
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-16/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-16"
+                    >
+                        16
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-17/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-17"
+                    >
+                        17
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-18/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-18"
+                    >
+                        18
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-21/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-21"
+                    >
+                        21
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-22/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-22"
+                    >
+                        22
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-23/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-23"
+                    >
+                        23
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-24/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-24"
+                    >
+                        24
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-25/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-25"
+                    >
+                        25
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-28/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-28"
+                    >
+                        28
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-29/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-29"
+                    >
+                        29
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-09-30/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-09-30"
+                    >
+                        30
+                    </a>
+
+                </div>
+
+                </div>
+
+            </div>
+
+            <div class="nav-month">
+
+                <div class="nav-month-label">
+                    AUG 2026
+                </div>
+
+                <div class="nav-date-grid">
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-14/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-08-14"
+                    >
+                        14
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-18/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-08-18"
+                    >
+                        18
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-19/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-08-19"
+                    >
+                        19
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-20/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-08-20"
+                    >
+                        20
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-24/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-08-24"
+                    >
+                        24
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-25/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-08-25"
+                    >
+                        25
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-26/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-08-26"
+                    >
+                        26
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-27/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-08-27"
+                    >
+                        27
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-28/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-08-28"
+                    >
+                        28
+                    </a>
+
+                </div>
+
+                <div class="nav-date-cell">
+                    <a
+                        class="nav-date"
+                        href="../2026-08-31/daily_research_report_tv_ko_v0_1.html?desk=v0_3-c521a8f02a45"
+                        aria-label="2026-08-31"
+                    >
+                        31
+                    </a>
+
+                </div>
+
+                </div>
+
+            </div>
+
+                </div>
+
+            </div>
+
+            <div class="language-switch"
+                aria-label="Report language"
+            >
+                <a
+                    class="lang-option"
+                    href="daily_research_report_tv_v0_1.html?desk=v0_3-c521a8f02a45"
+                >
+                    EN
+                </a>
+
+                <span
+                    class="lang-option lang-active"
+                >
+                    한국어
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="screen">
+
+        <div class="screen-label">
+            GLOBAL MARKET RESEARCH
+        </div>
+
+        <h1>
+            Daily Market Brief
+        </h1>
+
+        <div class="date">
+            2026-10-23
+        </div>
+
+        <div class="controls">
+
+            <span class="knob"></span>
+            <span class="knob"></span>
+            <span class="knob"></span>
+
+            <span class="status">
+                EVIDENCE GROUNDED · RESEARCH ONLY
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content">
+
+<section class="card">
+
+    <div class="section-title">
+        EXECUTIVE SUMMARY
+    </div>
+
+    <div class="executive">
+        <ul>
+            <li>10년물 미 국채 금리가 5.0%에서 5.5% 부근의 적정 가치 수준을 테스트함에 따라 고정소득 시장에서 기관 투자자들의 매력도가 다시 부각되고 있으며, 일부 주요 운용사들은 수년간의 체계적인 저체중(underweight) 기조에서 벗어나 듀레이션에 대해 긍정적인 시각으로 돌아서고 있습니다.</li><li>인공지능(AI) 관련 투자는 공격적인 자본지출(CAPEX)과 지출 규모 중심에서 현금흐름, 부채 조달 지속가능성, 그리고 수조 달러 규모의 인프라 구축을 실제로 감당할 수 있는 주체에 대한 엄격한 검증 단계로 전환되고 있습니다.</li><li>높아진 조달 비용과 다가오는 중간선거로 인한 정치적 불확실성 속에서 주식시장 폭(breadth)은 동일가중(equal-weight) 지수의 아웃퍼폼과 함께 집중된 대형주 테크에서 수익성이 높고 레버리지가 낮은 대안으로의 섹터 순환매를 통해 확대되고 있습니다.</li>
+        </ul>
+    </div>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MACRO THEMES
+    </div>
+
+
+        <div class="macro-card">
+            <h3>AI 인프라 금융 및 자본비용 압박</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                인공지능 인프라를 위한 급증하는 자본지출 및 채권 발행 수요가 상승하는 차입 비용 및 하이퍼스케러들의 전년 동기 대비 감소하는 현금흐름과 충돌하면서 시장의 양극화와 신용 선별성이 심화되고 있습니다.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Matt Miskin</span> <span class="guest">Jon Lieber</span> <span class="guest">Jean Boivin</span> <span class="guest">Vishy Tirupattur</span> <span class="guest">Liz Ann Sonders</span> <span class="guest">Ted Mortonson</span> <span class="guest">Lesley Marks</span>
+            </div>
+
+
+        </div>
+
+        <div class="macro-card">
+            <h3>재정 적자, 선거 및 지정학적 리스크 프리미엄</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                분할 정부의 높은 가능성, 다가오는 예산 타협, 지속되는 중동 에너지 운송 제약이 장기 채권 금리에 구조적 압박을 가하고 있으며 중간선거를 앞두고 변동성을 주입하고 있습니다.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Jon Lieber</span> <span class="guest">Kurt Reiman</span> <span class="guest">Rebecca Babin</span> <span class="guest">Liz Ann Sonders</span> <span class="guest">Lesley Marks</span>
+            </div>
+
+
+        </div>
+
+        <div class="macro-card">
+            <h3>시장 폭 및 퀄리티 팩터 로테이션</h3>
+
+            <div class="small">
+                SOURCE-DERIVED SYNTHESIS · PARAPHRASED
+            </div>
+
+            <p>
+                차입 비용이 상승하고 지수 집중도가 역사적 극치에 달함에 따라 시장 참여자들은 동일가중 주식 전략, 수익성 있는 소형주, 우량 신용물로 이동하는 한편, 수익성이 없거나 레버리지가 높은 기업들에 대해서는 페널티를 부과하고 있습니다.
+            </p>
+
+            <div class="guest-row">
+                <span class="guest">Matt Miskin</span> <span class="guest">Liz Ann Sonders</span> <span class="guest">Lesley Marks</span>
+            </div>
+
+
+        </div>
+
+
+</section>
+
+
+<div class="grid">
+
+
+    <section class="market-card">
+        <div class="section-title">
+            RATES / BONDS
+        </div>
+
+        <p class="summary">
+            고정소득에 대한 기관의 시각이 진화하고 있으며, 10년물 미 국채 금리가 5.0%에서 5.5% 부근의 적정 가치에 접근함에 따라 일부 주요 자산운용사들은 장기 듀레이션에 대해 긍정적인 입장을 취하고 있습니다. 다만 구조적 적자와 높은 자본 수요가 금리에 대한 상방 압력을 지속적으로 가중시키고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>5.0%에서 5.5% 부근의 국채 금리는 기관 투자자들에 의해 점점 적정 가치로 간주되고 있으며, 이는 체계적인 저체중(underweight)에서 긍정적인 듀레이션 스탠스로의 전환을 유도하고 있습니다.</li><li>분할 정부에 대한 기대와 지출 및 부채 한도를 둘러싼 입법적 타협은 재정 적자를 높은 수준으로 유지시켜 장기 금리의 유의미한 하락을 방지할 것으로 예상됩니다.</li><li>채권은 수십 년 만에 최고 수준의 인컴 스트림에 힘입어 포트폴리오 다각화 수단으로서의 역할을 다시금 성공적으로 수행하고 있습니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>지속되는 재정 적자와 대규모 국채 및 회사채 발행은 시장의 흡수 능력을 압도하고 금리를 더 높게 밀어 올릴 수 있습니다.</li><li>경제 데이터와 통화정책 가이드라인 간의 괴리는 예상치 못한 금리 조정과 금리 변동성을 유발할 수 있습니다.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            USD / FX
+        </div>
+
+        <p class="summary">
+            외환 시장 동향은 이번 연구 세션의 주된 초점이 아니었으나, 광범위한 거시경제적 괴리와 에너지 운송 비용 압박이 글로벌 통화에 복잡한 배경을 유지하고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>2.3% 부근의 글로벌 경제 성장 회복력은 상대적 안정을 뒷받침하지만, 원자재 및 에너지 운송 비용의 괴리는 국가 간 마찰을 유발합니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>고조되는 지정학적 갈등과 에너지 가격 급등은 비미국계 외환의 안정성에 심각한 외부 충격을 도입할 수 있습니다.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            EQUITIES
+        </div>
+
+        <p class="summary">
+            주식시장은 극단적인 지수 집중도, 둔화되는 하이퍼스케러 현금흐름, 그리고 수익성 기업과 비수익성 기업 간의 뚜렷한 양극화로 특징지어지는 변화하는 환경에 직면해 있으며, 동일가중 벤치마크가 시가총액 가중 지수를 아웃퍼폼하기 시작했습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>막대한 $7조에서 $9조 달러 규모의 AI 구축 비용을 정당화하기 위해 비정상적인 이익 수준이 요구됨에 따라, 주식은 일부 기관 영역에서 등급 하향 조정에 직면했습니다.</li><li>수익성을 갖춘 소형주 기업들은 비수익성 기업들을 큰 폭으로 아웃퍼폼하고 있으며, 이는 광범위한 퀄리티 팩터 로테이션을 강조합니다.</li><li>중간선거 불확실성과 잠재적인 정책 변화는 성장주 중심 및 테크 중심 주식 섹터에 막대한 리스크 오버행을 생성합니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>주요 기술 기업들의 악화되는 잉여현금흐름(FCF) 창출은 이익 추정치 하향 조정과 급격한 멀티플 축소로 이어질 수 있습니다.</li><li>선거 주도 정책 변화나 규제 변화는 기업 자본지출의 궤적을 교란할 수 있습니다.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            CREDIT
+        </div>
+
+        <p class="summary">
+            기업 신용 시장은 최상위 하이퍼스케러들이 인프라 자금을 조달하기 위해 대규모 채권을 발행함에 따라 상당한 공급 흡수 압박을 받고 있으며, 투자자들은 최우량 AA 발행자와 투기등급 또는 네오 클라우드 경쟁자들 사이에 선명한 선을 긋고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>우량 하이퍼스케러 신용 스프레드는 근본적인 펀더멘털 신용 악화보다는 주로 무거운 채권 발행 물량으로 인해 확대되고 있습니다.</li><li>최상위 하이퍼스케러들은 AA 부근의 강력한 평균 신용등급을 유지하고 있으며, 이는 심각한 자금 조달 반발에 직면한 취약하고 비용이 많이 드는 클라우드 경쟁사들과 명확히 구분됩니다.</li><li>신용 시장은 레버리지 및 이자보상배율에 관해 엄격한 가격 책정 규율을 점점 더 강제하고 있습니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>끊이지 않는 채권 공급 파이프라인은 회사채 흡수 능력을 포화시키고 전반적인 신용 스프레드를 더 넓게 밀어낼 수 있습니다.</li><li>하위 기술 및 산업 플레이어들을 위한 타이트한 신용 가용성은 디폴트 또는 강제적인 기업 긴축을 유발할 수 있습니다.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            AI / TECHNOLOGY
+        </div>
+
+        <p class="summary">
+            인공지능 섹터는 현금흐름이 전년 동기 대비 마이너스로 전환되고 신흥 보안 취약점이 도입 타임라인을 위협함에 따라, 누가 가장 많이 지출하는가에서 누가 인프라를 감당할 수 있는가로 내러티브 전환을 겪고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>하이퍼스케러들의 전년 동기 대비 현금흐름 증가율이 마이너스 영역으로 하락함에 따라, AI 트레이드 내러티브는 현금흐름 지속가능성과 부채 조달 능력 쪽으로 이동하고 있습니다.</li><li>Anthropic과 같은 다가오는 기업공개(IPO)는 연간 반복 매출(ARR), 오픈소스 모델 경쟁, 가격 발견과 관련하여 신중한 투자자 심리에 직면해 있습니다.</li><li>웹 인프라 및 프론트엔드 모델과 관련된 신흥 사이버 보안 리스크는 기업의 AI 도입을 9개월에서 12개월 지연시킬 수 있는 새로운 운영상의 장애물을 도입하고 있습니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>지속되는 사이버 보안 취약점은 기업 도입을 중단시키고 확장이 아닌 개선에 대한 예상치 못한 지출을 강제할 수 있습니다.</li><li>수조 달러 규모 인프라의 투자 수익률(ROI)에 대한 강화된 검증은 성장 전망에 대한 급격한 하향 재평가를 촉발할 수 있습니다.</li>
+        </ul>
+    </section>
+
+
+
+    <section class="market-card">
+        <div class="section-title">
+            COMMODITIES
+        </div>
+
+        <p class="summary">
+            원유 시장은 호르무즈 해협을 통한 운송 병목 현상이 해운 비용을 극적으로 증가시키고 해상 물류를 압박함에 따라 상당한 지정학적 리스크 프리미엄을 반영하고 있습니다.
+        </p>
+
+        <h4>KEY VIEWS</h4>
+        <ul>
+            <li>호르무즈 해협을 통한 원유 운송은 현저히 비용이 많이 들고 실질적으로 더 많은 선박을 요구하며 글로벌 운송 시스템에 극단적인 압박을 가하고 있습니다.</li><li>에너지 트레이더들은 잠재적인 중간선거 정치적 이벤트와 가능한 군사적 행동을 앞두고 매우 위험 회피적인 성향을 유지하고 있습니다.</li><li>노후화된 섀도우 플릿 운송사에 대한 제재 해제는 미미한 완화만을 제공할 뿐 근본적인 구조적 해운 용량 제약을 해결할 수 없습니다.</li>
+        </ul>
+
+        <h4>RISKS</h4>
+        <ul>
+            <li>중동에서의 예상치 못한 지정학적 고조는 핵심 공급망을 심각하게 교란하고 디젤 및 원유 가격의 급격한 급등을 유발할 수 있습니다.</li><li>높아진 에너지 운송 비용은 광범위한 인플레이션 압력을 부추기고 중앙은행의 정책 궤적을 복잡하게 만들 수 있습니다.</li>
+        </ul>
+    </section>
+
+
+</div>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONSENSUS
+    </div>
+
+
+        <div class="insight">
+            <strong>
+                인공지능 트레이드는 광범위한 열광에서 금융, 부채 지속가능성, 현금흐름 수용력, 그리고 인프라 구축의 실제적 감당 능력에 대한 강도 높은 검증으로 전환되고 있습니다.
+            </strong>
+
+            <div class="small">
+                Guests:
+                Matt Miskin, Jon Lieber, Jean Boivin, Vishy Tirupattur, Liz Ann Sonders, Ted Mortonson
+            </div>
+
+
+        </div>
+
+        <div class="insight">
+            <strong>
+                시장 폭이 넓어지고 있으며, 차입 비용이 상승함에 따라 동일가중 지수와 퀄리티 중심의 선별이 고도로 집중된 메가캡 테크 주도주를 아웃퍼폼하고 있습니다.
+            </strong>
+
+            <div class="small">
+                Guests:
+                Matt Miskin, Liz Ann Sonders, Lesley Marks
+            </div>
+
+
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        CROSS-GUEST CONFLICTS
+    </div>
+
+
+        <div class="conflict">
+            <strong>
+                연방준비제도(Fed) 금리 인하 타이밍
+            </strong>
+
+            <div class="conflict-view">
+                <b>VIEW A:</b>
+                연방준비제도는 진행 중인 인플레이션을 관리하기 위해, 예를 들어 12월과 같은 연내 후속 금리 인상 이전에 일시 중지할 것으로 예상됩니다.
+
+
+            </div>
+
+            <div class="conflict-view">
+                <b>VIEW B:</b>
+                끈질긴 인플레이션 수치와 지속적인 물가 가속화는 연방준비제도가 즉시 다중 금리 인상을 시행해야 함을 주장합니다.
+
+
+            </div>
+
+            <div class="small">
+                유입되는 인플레이션 데이터 대 중앙은행 소통에 대한 상반된 해석은 단기 금리 프싱과 채권 시장 변동성에 불확실성을 생성합니다.
+            </div>
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        KEY RISKS
+    </div>
+
+
+        <div class="risk">
+            <div class="risk-title">
+                중동 지정학적 갈등 고조 및 공급망 교란
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                호르무즈 해협 내 군사적 행동 또는 더 엄격한 통과 봉쇄
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                원유 및 디젤 가격 급등, 고조된 지정학적 리스크 프리미엄, 그리고 소비자 심리에 영향을 미치는 재발된 인플레이션 압력.
+            </div>
+        </div>
+
+        <div class="risk">
+            <div class="risk-title">
+                AI 인프라 자금 조달을 위한 기업 대차대조표 과도 확장
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                악화되는 잉여현금흐름(FCF) 지표 및 높은 레버리지와 발행 물량에 대한 투자자 반발
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                확대된 기업 신용 스프레드, 고베타 기술 주식의 멀티플 압축, 그리고 강제적인 자본지출 삭감.
+            </div>
+        </div>
+
+        <div class="risk">
+            <div class="risk-title">
+                사이버 보안 및 구조적 소프트웨어 취약점
+            </div>
+
+            <div>
+                <b>TRIGGER</b>
+                핵심 웹 및 AI 인프라 프레임워크에서의 주요 보안 침해
+            </div>
+
+            <div>
+                <b>IMPACT</b>
+                지연된 기업 기술 도입, 증가된 컴플라이언스 지출, 그리고 테크 섹터 매출 추정치 하향 조정.
+            </div>
+        </div>
+
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        RESEARCH TAKEAWAYS
+    </div>
+
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION
+    </div>
+
+    <br>
+
+    <ul>
+
+        <li class="takeaway-item">
+            <div>
+                10년물 미 국채 금리가 매력적인 적정 가치 진입점인 5%에서 5.5% 부근에 도달함에 따라 고정소득 듀레이션이 기관의 선호를 다시 얻고 있습니다.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                수익성, 이자보상배율, 낮은 레버리지로 정의되는 기업 퀄리티는 주식과 신용 모두에서 분산의 주된 동인입니다.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                AI 인프라 투자 사이클은 자본지출 지속가능성, 현금흐름 창출, 자금 조달 제약과 관련된 현실 점검에 직면해 있습니다.
+            </div>
+
+
+        </li>
+
+        <li class="takeaway-item">
+            <div>
+                에너지 운송에서의 지정학적 마찰과 중간선거를 둘러싼 국내 정치적 불확실성은 지속적인 변동성 오버행을 생성합니다.
+            </div>
+
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+<section class="card">
+
+    <div class="section-title">
+        MONITORING IMPLICATIONS
+    </div>
+
+    <div class="small">
+        SYSTEM RESEARCH INTERPRETATION ·
+        not a Bloomberg guest quote.
+    </div>
+
+    <br>
+
+
+        <div class="action">
+            <div class="action-number">
+                1
+            </div>
+
+            <div>
+                <strong>
+                    5.0%에서 5.5% 임계점 부근의 장기 듀레이션 미 국채 금리 안정을 모니터링하여 기관의 흡수 능력과 고정소득 수요를 평가합니다.
+                </strong>
+
+                <p>
+                    듀레이션에 대한 변화하는 기관의 시각은 주식과 고정소득 간의 자본 배분 흐름 변화를 시사합니다.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    10년물 미 국채 금리 수준, 국채 입찰 응찰률(bid-to-cover ratios), 기업 채권 발행 물량.
+                </div>
+            </div>
+        </div>
+
+        <div class="action">
+            <div class="action-number">
+                2
+            </div>
+
+            <div>
+                <strong>
+                    하이퍼스케러 채권 발행 파이프라인, 신용 스프레드 행태, 잉여현금흐름 성장 보고서를 추적합니다.
+                </strong>
+
+                <p>
+                    확대되는 신용 스프레드와 마이너스 전년 동기 대비 현금흐름 추세는 기술 금융 구조에 대한 가중되는 압박을 강조합니다.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    투자등급 테크 채권 스프레드, 분기별 기업 현금흐름표, 부채비율(debt-to-equity leverage ratios).
+                </div>
+            </div>
+        </div>
+
+        <div class="action">
+            <div class="action-number">
+                3
+            </div>
+
+            <div>
+                <strong>
+                    S&amp;P 500 동일가중 대 시가총액 가중 상대 성과 및 소형주 수익성 스프레드를 관찰합니다.
+                </strong>
+
+                <p>
+                    확대되는 시장 참여와 퀄리티 팩터 아웃퍼폼은 지수 집중도로부터의 로테이션을 신호합니다.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    시가총액 가중 지수와 동일가중 지수 간의 일일 성과 괴리, 러셀 2000 내 이익 성과 분할.
+                </div>
+            </div>
+        </div>
+
+        <div class="action">
+            <div class="action-number">
+                4
+            </div>
+
+            <div>
+                <strong>
+                    중동 지정학적 헤드라인, 해상 해운 운임, 원유 재고 버퍼에 대한 면밀한 감시를 유지합니다.
+                </strong>
+
+                <p>
+                    호르무즈 해협을 통한 급등하는 해운 비용과 잠재적 갈등 고조는 에너지 리스크 프리미엄과 인플레이션 인풋에 직접적인 영향을 미칩니다.
+                </p>
+
+                <div class="monitor">
+                    MONITOR →
+                    브렌트유 및 WTI 원유 선물, 탱커 해운 운임, 지역 군사 활동에 관한 공식 성명.
+                </div>
+            </div>
+        </div>
+
+
+</section>
+
+</div>
+
+
+<div class="footer">
+    Independent Market Research Engine · 2026-10-23
+    <br>
+    Independent research project. Not affiliated with or
+    endorsed by Bloomberg. Bloomberg Surveillance is used
+    solely as a source program for research.
+    Bloomberg material is research material, not a trading signal.
+    <br>
+    <a
+        class="footer-link"
+        href="https://petal-chair-9d2.notion.site/Bloomberg-Surveillance-Research-Pipeline-efa0169c5b49821d834281a9b2d84e0d"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        프로젝트 개요 → PORTFOLIO ↗
+    </a>
+
+    <a
+        class="footer-link"
+        href="https://github.com/Sellina95/bloomberg-surveillance-research"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        방법론 및 소스 코드 → GITHUB ↗
+    </a>
+</div>
+
+</div>
+
+<script>
+(function () {
+    const control =
+        document.getElementById(
+            "calendarControl"
+        );
+
+    const button =
+        document.getElementById(
+            "calendarButton"
+        );
+
+    if (!control || !button) {
+        return;
+    }
+
+    button.addEventListener(
+        "click",
+        function (event) {
+            event.stopPropagation();
+
+            const open =
+                control.classList.toggle(
+                    "open"
+                );
+
+            button.setAttribute(
+                "aria-expanded",
+                open ? "true" : "false"
+            );
+        }
+    );
+
+    document.addEventListener(
+        "click",
+        function (event) {
+            if (
+                !control.contains(
+                    event.target
+                )
+            ) {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+            if (event.key === "Escape") {
+                control.classList.remove(
+                    "open"
+                );
+
+                button.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+        }
+    );
+})();
+</script>
+
+</body>
+
+</html>
