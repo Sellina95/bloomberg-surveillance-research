@@ -689,6 +689,19 @@
         "report": true,
         "tv": true
       }
+    },
+    {
+      "date": "2026-11-03",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      }
     }
   ]
 }
