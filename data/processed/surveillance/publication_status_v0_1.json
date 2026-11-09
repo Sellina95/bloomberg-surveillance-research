@@ -715,6 +715,19 @@
         "report": true,
         "tv": true
       }
+    },
+    {
+      "date": "2026-11-06",
+      "en": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      },
+      "ko": {
+        "status": "available",
+        "report": true,
+        "tv": true
+      }
     }
   ]
 }
