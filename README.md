@@ -181,6 +181,25 @@ Detailed evidence:
 This project maintains an explicit boundary between private source material
 and public research outputs.
 
+## AI-Assisted Research & Limitations
+
+This project uses Google's Gemini models to assist with extracting, organizing, and synthesizing financial-market commentary into structured research reports.
+
+**Published reports are AI-assisted research outputs, not independently verified transcripts or official records of speakers' statements.**
+
+Although the pipeline includes source-grounding and automated validation controls, these procedures do not guarantee factual accuracy or correct interpretation. Reports may contain:
+
+- Inaccurate or incomplete summaries of market commentary.
+- Incorrect attribution of views to speakers or institutions.
+- Missing context, numerical inaccuracies, or translation errors.
+- System-generated interpretations that differ from the original speakers' intended meaning.
+
+Source-derived synthesis and system research interpretation are labeled separately. These labels indicate the intended distinction between source commentary and derived analysis; they do not certify that every published claim has been manually verified.
+
+Readers should consult the original source material and authoritative financial data before relying on specific statements or conclusions.
+
+The reports are provided for research, educational, and portfolio demonstration purposes only. They do not constitute investment advice or recommendations.
+
 ### Private Research Layer
 
 The following materials are not part of the public publication surface:
