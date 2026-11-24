@@ -1,0 +1,84 @@
+{
+  "schema_version": "report_provenance_v0_1",
+  "report_date": "2026-11-23",
+  "source": {
+    "broadcast_title": "Bloomberg Surveillance 11/23/2026",
+    "broadcast_date": "2026-11-23",
+    "broadcast_date_basis": "title_or_description",
+    "upload_date": "2026-11-24",
+    "video_url": "https://www.youtube.com/watch?v=DOygZwiArF0",
+    "provider": "Supadata",
+    "transcript_type": "timestamped_youtube_transcript",
+    "collected_at": "2026-11-24T12:50:19.425625+00:00",
+    "source_mode": "program_level_unattributed"
+  },
+  "boundary": "IDENTIFIERS_AND_TIMESTAMPS_ONLY_NO_SOURCE_TEXT",
+  "claims": [
+    {
+      "claim_id": "20261123-U001-C01",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 11,
+          "timestamp_seconds": 38.49
+        },
+        {
+          "segment_id": 76,
+          "timestamp_seconds": 240.71
+        },
+        {
+          "segment_id": 83,
+          "timestamp_seconds": 259.73
+        }
+      ]
+    },
+    {
+      "claim_id": "20261123-U001-C02",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 14,
+          "timestamp_seconds": 49.11
+        },
+        {
+          "segment_id": 15,
+          "timestamp_seconds": 53.64
+        },
+        {
+          "segment_id": 16,
+          "timestamp_seconds": 57.33
+        },
+        {
+          "segment_id": 27,
+          "timestamp_seconds": 91.54
+        },
+        {
+          "segment_id": 28,
+          "timestamp_seconds": 94.93
+        }
+      ]
+    },
+    {
+      "claim_id": "20261123-U001-C03",
+      "unit_id": 1,
+      "references": [
+        {
+          "segment_id": 105,
+          "timestamp_seconds": 334.74
+        },
+        {
+          "segment_id": 131,
+          "timestamp_seconds": 412.29
+        },
+        {
+          "segment_id": 146,
+          "timestamp_seconds": 470.62
+        },
+        {
+          "segment_id": 341,
+          "timestamp_seconds": 1151.88
+        }
+      ]
+    }
+  ]
+}
