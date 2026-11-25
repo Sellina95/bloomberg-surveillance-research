@@ -1,0 +1,178 @@
+{
+  "date": "2026-11-24",
+  "schema_version": "daily_research_report_ko_v0_1",
+  "language": "ko",
+  "source_report": "data/processed/surveillance/2026-11-24/daily_research_report_v0_1.json",
+  "source_report_sha256": "e1d6494a2e820b712236501bce42f5a88ac771dac8830f5a832fb89377a34c97",
+  "translation_model": "gemini-3.5-flash-lite",
+  "translation_policy": {
+    "research_regeneration": false,
+    "provenance_mutation": false,
+    "structure_preserved": true,
+    "guest_attribution_preserved": true,
+    "numeric_values_preserved": true
+  },
+  "report": {
+    "date": "2026-11-24",
+    "executive_summary": [
+      "젠슨 황(Jensen Huang)의 Nvidia CEO 복귀는 단기적인 승계 불안과 시스템적 생태계 리스크를 일시적으로 회피시켰으나, 거버넌스 실패, 진행 중인 법무부(DOJ) 및 주 정부 차원의 조사, 그리고 다가오는 양당 의회의 심사로 인해 상당한 규제 및 법적 불확실성이 남아 있습니다.",
+      "민간 기업에 대한 전례 없는 행정부 및 정부의 개입은 기업 거버넌스에 미지의 영역을 도입했으며, 분석가들은 정치적 간섭으로 인해 주식이 영구적으로 더 높은 위험 프리미엄을 안고 갈 수 있음을 경고하도록 유도하고 있습니다.",
+      "상류 하드웨어 수요가 여전히 견조하고 금융여건이 신용 불안보다는 주로 주식 시장 움직임으로 인해 긴축 상태를 유지하고 있는 한편, 2027년이 AI 자본지출 주기의 정점을 기록할지 여부에 대한 논쟁은 지속되고 있습니다."
+    ],
+    "macro_themes": [
+      {
+        "theme": "AI CapEx Cycle and Demand Dynamics",
+        "summary": "AI 공급망 전반의 기저 수요는 회복력을 유지하고 있으나, 매출 장벽, 역사적 통신(telecom) 주기와의 레버리지 비교, 그리고 2027년이 자본지출의 정점을 나타낼 것인지 여부에 대한 의문이 고조되고 있습니다.",
+        "supporting_guests": [
+          "Steve Chiavarone, Federated Hermes",
+          "Ellen Zentner, Morgan Stanley",
+          "Ohsung Kwon, Wells Fargo",
+          "Eric Freedman, Northern Trust"
+        ]
+      },
+      {
+        "theme": "Geopolitical Intervention and Regulatory Overhang",
+        "summary": "기업 리더십과 칩 수출 통제에 대한 전례 없는 정부의 개입은 심오한 정책적 모호성을 창출했으며, 입법부에서는 초당파적 수출 통제 입법, 원격 접속 규정, 그리고 더 엄격한 수출 후 추적을 추진하고 있습니다.",
+        "supporting_guests": [
+          "Tyler Kendall",
+          "Jeannette Lowe, Baird Strategas",
+          "Angelo Zino, CFRA",
+          "Daniel Newman, The Futurum Group",
+          "Ed Ludlow",
+          "Gil Luria, DA Davidson",
+          "Jay Goldberg, Seaport"
+        ]
+      },
+      {
+        "theme": "Monetary Policy and Financial Conditions",
+        "summary": "주식 시장 재가격 매기기로 인해 주도된 긴축된 금융여건은, 신용 시장이 회복력을 유지하고 고정수익이 포트폴리오 방파제로서의 역할을 재개하는 와중에도 연방준비제도(Fed)의 과도한 긴축 가능성에 대한 우려를 제기했습니다.",
+        "supporting_guests": [
+          "Ellen Zentner, Morgan Stanley",
+          "Tony Rodriguez, Nuveen",
+          "Lindsay Rosner, Goldman Sachs"
+        ]
+      }
+    ],
+    "rates_bonds": {
+      "summary": "고정수익 상품은 리스크오프 심리 속에서 포트폴리오 방파제로서의 전통적 역할을 성공적으로 재개했으며, 주식 변동성이 고조됨에 따라 미 국채는 랠리를 보였습니다.",
+      "key_views": [
+        "금융여건이 최근 긴축되었으나, 이러한 긴축은 광범위한 신용 부실이라기보다는 거의 독점적으로 주식 시장의 움직임에 의해 주도되었습니다.",
+        "지속되는 높은 재정 적자와 고금리는 미국 성장의 장애물이며 경제 침체에 대응할 재정적 유연성을 제한합니다."
+      ],
+      "risks": [
+        "주택 등 취약 부문에서의 경제 쿨링을 금리 인상이 앞지르는 경우 잠재적인 연방준비제도(Fed)의 과도한 긴축.",
+        "막대한 국채 발행 및 재정 적자에서 기인하는 기간 프리미엄과 장기 금리의 상방 압력."
+      ]
+    },
+    "usd_fx": {
+      "summary": "외환 동향은 다변화되는 성장 기대치, 재정 정책 경로, 그리고 변화하는 지정학적 무역 규제와 점점 더 연관되고 있습니다.",
+      "key_views": [
+        "지정학적 마찰과 수출 통제 집행은 국제 무역 흐름과 국가 간 통화 동향에 구조적 변화를 창출합니다."
+      ],
+      "risks": [
+        "무역 정책 및 수출 통제와 관련한 워싱턴의 상충되는 신호로부터의 고조된 변동성."
+      ]
+    },
+    "equities": {
+      "summary": "주식 시장은 견조한 상류 AI 인프라 수요와 압축된 밸류에이션 멀티플, 규제 조사, 그리고 전례 없는 정부 개입 사이에서 균형을 맞추며 양 갈래의 압력에 직면해 있습니다.",
+      "key_views": [
+        "Nvidia의 리더십 복귀는 즉각적인 승계 불확실성을 제거했으나, 법적 조사와 다가오는 의회 청문회는 지속적인 헤드라인 변동성을 보장합니다.",
+        "반도체 선도 기업들의 밸류에이션 멀티플은 상당한 규제 리스크와 미래 지향적 정책 역풍을 선반영하며 압축되었습니다."
+      ],
+      "risks": [
+        "기업 이사회와 거버넌스에 대한 국가 간섭으로 인해 유발되는 영구적인 주식 위험 프리미엄.",
+        "수출 통제와 클라우드 액세스 제약이 영구화될 경우 아시아에서의 상당한 시장 점유율 잠재적 상실."
+      ]
+    },
+    "credit": {
+      "summary": "신용 시장은 주식 시장과 구조화 신용에서 관측된 급격한 변동성과 디커플링된 채 주목할 만한 회복력을 보이고 있습니다.",
+      "key_views": [
+        "신용 스프레드는 부실 소비재 부문을 제외한 건전한 기저 대차대조표를 반영하며 최근의 주식 매도세로부터 비교적 격리된 상태를 유지했습니다.",
+        "구조화 신용 및 고정수익 자산은 거시경제적 불확실성 속에서도 매력적인 수익률을 계속해서 제공하고 있습니다."
+      ],
+      "risks": [
+        "통화 정책이 확장된 기간 동안 제한적인 상태로 유지될 경우 하위 소득 소비자 부문과 주택 부문의 스트레스가 전이되는 것."
+      ]
+    },
+    "ai_technology": {
+      "summary": "AI 인프라 구축은 근본적으로 강세를 유지하고 있으나, 투자 대비 수익(ROI) 지표, 용량 포화, 그리고 수조 달러 규모 자본지출의 장기적 지속가능성에 대한 논쟁은 계속되고 있습니다.",
+      "key_views": [
+        "하드웨어 공급망 수요는 견조하게 유지되고 있으나, 기업 확산과 실제 생산성 향상은 여전히 초기 국면에 있습니다.",
+        "일부 분석가들은 CapEx 주기가 2027년경에 정점을 찍을 수 있을 것으로 전망하며 미래 매출 장벽에 대한 의문을 제기하고 있습니다."
+      ],
+      "risks": [
+        "심각한 규제 조사, 중국 내 클라우드 액세스에 대한 잠재적 수출 통제, 그리고 과거 판매 관행을 둘러싼 컴플라이언스 리스크.",
+        "막대한 인프라 지출 속도를 따라잡지 못하는 엔터프라이즈 소프트웨어 채택의 실패."
+      ]
+    },
+    "commodities": {
+      "summary": "에너지 가격과 광범위한 원자재 동향은 소비자에게 비용 압력을 지속적으로 가하고 거시경제 정책 경로에 큰 영향을 미치고 있습니다.",
+      "key_views": [
+        "높은 금리와 병행되는 고공행진의 에너지 가격은 소비자 지출 하위 절반의 금융 스트레스를 적극적으로 악화시키고 있습니다."
+      ],
+      "risks": [
+        "공급 쇼크 또는 지속되는 높은 에너지 비용이 고착화된 인플레이션 지표로 다시 유입되는 것."
+      ]
+    },
+    "cross_guest_consensus": [
+      {
+        "view": "CEO로서 젠슨 황의 복귀는 시장 신뢰의 즉각적인 파멸적 붕괴와 AI 생태계 전반의 시스템적 리스크를 회피시켰습니다.",
+        "guests": [
+          "Daniel Newman, The Futurum Group",
+          "Gil Luria, DA Davidson"
+        ]
+      },
+      {
+        "view": "민간 기업 거버넌스에 대한 직접적인 정부 개입은 광범위한 경제에 불편하고 잠재적으로 위험한 선례를 확립합니다.",
+        "guests": [
+          "Angelo Zino, CFRA",
+          "Ellen Zentner, Morgan Stanley",
+          "Gil Luria, DA Davidson",
+          "Eric Freedman, Northern Trust"
+        ]
+      }
+    ],
+    "cross_guest_conflicts": [
+      {
+        "topic": "Outlook for 2027 CapEx and AI Cycle Longevity",
+        "view_a": "AI 주기는 이제 겨우 30% 정도 진행되었으며, 공급망 전반의 기저 수요는 훼손되지 않은 상태로 남아 있습니다.",
+        "view_b": "자본지출은 2027년까지 정점을 찍을 수 있으며, 막대한 매출 장벽은 과거 통신 레버리지 주기를 연상시키는 의문을 제기합니다.",
+        "why_it_matters": "AI 구축의 성숙도에 대한 상반된 타임라인은 투자자들이 공격적인 성장 할당을 유지해야 할지 아니면 방어적 자산으로 순환매해야 할지를 좌우합니다."
+      }
+    ],
+    "key_risks": [
+      {
+        "risk": "Escalating Regulatory and Legal Probes for Nvidia",
+        "trigger": "불법 선적 및 투자자 오도와 관련한 다가오는 의회 청문회, DOJ 조사, 또는 주 정부 차원의 발견 사항.",
+        "market_impact": "급격한 주식 낙폭, 고조된 컴플라이언스 비용, 그리고 핵심 국제 시장의 잠재적 영구 상실."
+      },
+      {
+        "risk": "Policy Overtightening and Economic Softening",
+        "trigger": "주택 및 하위 소득 소비자 지출에서의 신흥 스트레스에도 불구하고 금리를 완화하는 데 실패하거나 공격적인 통화 정책 조치를 취하는 것.",
+        "market_impact": "더딘 명목 GDP 성장, 압축된 기업 실적, 그리고 광범위한 거시경제 수축."
+      },
+      {
+        "risk": "Unprecedented State Interference Precedent",
+        "trigger": "기업 리더십 결정에 대한 추가적인 행정부의 개입.",
+        "market_impact": "미국 주식에 대한 영구적으로 고조된 위험 프리미엄과 약화된 기업 자율성."
+      }
+    ],
+    "research_takeaways": [
+      "기술 부문의 기업 거버넌스 표준은 임원 임명에 대한 고압적인 정부 개입 이후 분수령에 직면해 있습니다.",
+      "상류 하드웨어 수요가 여전히 견조한 한편, AI 연계 주식을 위한 밸류에이션 프레임워크는 법적 불확실성, 수출 컴플라이언스, 그리고 최종 현금 수익 지표를 점차적으로 반영해야 합니다.",
+      "고정수익 상품은 주식 시장이 정책 불확실성과름 씨름하는 가운데 다각화를 제공하며 방파제 속성을 성공적으로 재구축했습니다."
+    ],
+    "daily_action": [
+      {
+        "action": "반도체 수출 통제 및 기업 컴플라이언스와 관련된 다가오는 의회 청문회와 규제 서류를 모니터링합니다.",
+        "why": "다가오는 입법 조치와 무역 집행 결정은 반도체 공급망과 국가 간 기술 밸류에이션에 직접적인 함의를 지닙니다.",
+        "what_to_monitor": "예정된 캐피톨 힐(Capitol Hill) 증언, NDAA 수출 통제 조항에 대한 업데이트, 그리고 상무부(Commerce Department) 엔티티 리스트 추가."
+      },
+      {
+        "action": "주택 부문 건전성과 하위 소득 소비자 신용 스트레스와 관련된 거시경제 데이터 발표를 추적합니다.",
+        "why": "회복력 있는 기업 신용과 스트레스를 받는 소비자 부문 간의 괴리는 연방준비제도(Fed) 정책 오류와 관련된 중대한 시그널을 제공합니다.",
+        "what_to_monitor": "소매판매 데이터, 연체율, 주택착공건수, 그리고 금융여건에 대한 중앙은행 논평."
+      }
+    ]
+  }
+}
